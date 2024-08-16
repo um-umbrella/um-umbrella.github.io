@@ -3,7 +3,7 @@
 //,{ name: '', url: '', etc: '' }
 
 //作った
-const selfMadeLists = [
+const worksLists = [
   { name: '習作', url: 'works/unknownPeople.html', etc: 'たいへんだった' },
   { name: 'a', url: 'a', etc: 'a' }
 ];
@@ -51,7 +51,7 @@ const dont_its = [
 ];
 
 //関数の形で四回分呼ぶ
-listCreate(['selfMade', selfMadeLists]);
+listCreate(['works', worksLists]);
 listCreate(['memo', memos]);
 listCreate(['do_it', do_its]);
 listCreate(['dont_it', dont_its]);
