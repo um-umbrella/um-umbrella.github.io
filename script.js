@@ -4,7 +4,7 @@
 
 //作った
 const selfMadeLists = [
-  { name: '習作', url: 'selfMade/unknownPeople.html', etc: 'たいへんだった' },
+  { name: '習作', url: 'works/unknownPeople.html', etc: 'たいへんだった' },
   { name: 'a', url: 'a', etc: 'a' }
 ];
 //メモ
