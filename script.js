@@ -5,10 +5,12 @@
 //◆作った
 const worksLists = [{ name: '習作', url: 'works/unknownPeople.html', etc: 'クリックで反応を返す。たいへんだった……' }];
 
-//◆メモ
+//◆メモ－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
 const memo = [
+  '飽きたらgodotを試そう。Pythonライクらしい。',
+  'unityもgodotもC言語らしい。unityはJS非対応予定。気が向いたらC++やるか',
   'html2canvasリベンジ。Nodeと共に導入した。`element`をレンダリングするには次のように呼び出す：`html2canvas(element[, options]);`Promiseの勉強が必要らしい。自分にはまだ早い気がする。',
-  '増えたテキストがフォーカス付きでだんだん下に伸びていくとか。ボタン画面と２カラムに分けたらゲームっぽくなる？',
+  'フォーカス付きで増えたテキストがだんだん下に伸びていく＋ボタン画面と２カラムで。長さ指定ありのテキストボックスでもいい。',
   'ElectronやNW.js（Node.jpとも関わり）でJSでデスクトップ（GUI）アプリ制作もできる。パッケージを使うにもNode.jpが必要。',
   'ブラウザいっぱいの宇宙作りたい',
   'p5.jsなどを専用エディタ以外で使うには？jsファイルみたいに読み込むのかな。→どうやらそうらしい',
@@ -16,7 +18,27 @@ const memo = [
   'キー入力でADWSを取得したら割と動くものが作れるのか…？',
   '└position:relative;で（ゲーム向けではないが）それっぽい動きはできるかも。'
 ];
-//◆メモ
+
+//◆ゲ制作関連－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
+const gameRelation = [
+  {
+    name: 'Godot ドキュメント - master ブランチ',
+    url: 'https://docs.godotengine.org/ja/4.x/index.html',
+    etc: '公式まとめだと思う。読む。'
+  },
+  {
+    name: 'Peanutas Code',
+    url: 'https://www.peanuts-code.com/ja/tutorials/',
+    etc: 'チュートリアルがいっぱいある。具体例ありきで参考にしやすそうだ。'
+  },
+  {
+    name: 'OSSゲームエンジン「Godot」の特徴とは〜Unity・Unrealとの比較〜',
+    url: 'https://qiita.com/t_katsumura/items/c9d46532be81604e62b6',
+    etc: 'やや古いが詳しい仕様。慣れたら意味が分かりそう。'
+  }
+];
+
+//◆資料－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
 const data = [
   {
     name: 'MDN',
@@ -41,7 +63,7 @@ const data = [
   }
 ];
 
-//◆やった
+//◆やった－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
 const do_its = [
   {
     name: '文系学生のための○○',
@@ -70,7 +92,7 @@ const do_its = [
   }
 ];
 
-//◆やってない
+//◆やってない－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
 const dont_its = [
   {
     name: '現代の JavaScript チュートリアル',
@@ -120,6 +142,7 @@ const dont_its = [
   }
 ];
 
+//◆やらない－－－－－　－－－－－　－－－－－　－－－－－　－－－－－
 const no_touch = [
   {
     name: 'chot.design',
@@ -131,6 +154,7 @@ const no_touch = [
 //関数の形で四回分呼ぶ
 listCreate(['works', worksLists]);
 memoList(['memo', memo]);
+listCreate(['game_relation', gameRelation]);
 listCreate(['data', data]);
 listCreate(['do_it', do_its]);
 listCreate(['dont_it', dont_its]);

@@ -77,22 +77,22 @@ a:any-link {
   color: var(--most-white);
   background-color: var(--main-color);
   border-radius: 0.2em;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  padding: 0.1em 0.5em 0 1.5em;
+  padding: 0 15px;
 
   position: relative;
 }
 
 a::before {
+  display: inline-block;
+
   position: absolute;
-  left: -0.2em;
+  left: -10px;
   bottom: 0;
-  width: 0.4em;
-  height: 0.4em;
+  width: 4px;
+  height: 4px;
   content: '';
-  border: solid 9px var(--main-color);
   border-radius: 50%;
+  border: solid 9px var(--main-color);
   background: var(--most-white);
 }
 
@@ -137,11 +137,7 @@ p {
   font-size: 1.3em;
 }
 
-#works,
-#data,
-#do_it,
-#dont_it,
-#no_touch {
+.list {
   list-style-type: disc;
   list-style-position: inside;
   border: solid 2px var(--low-gray);
@@ -151,10 +147,7 @@ p {
   font-size: var(--font-size);
 }
 
-#data dd:not(:last-child),
-#do_it dd:not(:last-child),
-#dont_it dd:not(:last-child),
-#no_touch dd:not(:last-child) {
+dd:not(:last-child) {
   padding: 0 0 0.5em;
   padding: 0 0 1em;
   border-bottom: dashed 1px #ccc;
