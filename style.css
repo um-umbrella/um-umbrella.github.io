@@ -4,16 +4,29 @@
   --main-color: #481;
   --most-white: #fff; /*メインの土台*/
   --most-black: #000;
-  --high-gray: #ccc; /*背景*/
+  --high-gray: #eee; /*背景*/
   --low-gray: #298; /*枠など*/
   --font-size: 14px;
   line-height: 1.3em;
+}
+
+::selection {
+  /*   選択したテキストに適用 */
+  color: var(--most-white);
+  background-color: var(--main-color);
 }
 
 body {
   font-size: 14px;
   padding: 1em;
   background-color: var(--high-gray);
+
+  font-family: sans-serif;
+  padding: 0;
+  margin: 3em;
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
 }
 /*h1 {
   color: var(--most-white);
@@ -47,6 +60,7 @@ h2::before {
 }
 
 h3 {
+  transform: rotate(5deg); /*傾き*/
   display: inline-block;
   position: relative;
   translate: -0.5em 1em;
@@ -65,26 +79,28 @@ a:any-link {
   border-radius: 0.2em;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
-  padding: 0.1em 0.5em;
-  padding-left: 1.5em;
+  padding: 0.1em 0.5em 0 1.5em;
 
   position: relative;
 }
 
 a::before {
   position: absolute;
-  left: 0.5em;
-  bottom: 0.6em;
-  width: 0.5em;
-  height: 0.5em;
+  left: -0.2em;
+  bottom: 0;
+  width: 0.4em;
+  height: 0.4em;
   content: '';
+  border: solid 9px var(--main-color);
   border-radius: 50%;
   background: var(--most-white);
 }
 
 div {
-  max-width: 600px;
+  max-width: 500px;
   min-width: 300px;
+  margin: auto;
+  text-align: left; /*★*/
 }
 
 p {
@@ -108,12 +124,12 @@ p {
   margin: 0;
   border: solid 2px var(--low-gray);
   background-color: var(--most-white);
-  font-size: 12px;
+  font-size: 13px;
 }
 #memo li {
   padding: 0.1em;
 }
-#memo li:not(last-child) {
+#memo li:not(:last-child) {
   border-bottom: dashed 1px #ccc;
 }
 #memo li::marker {
@@ -126,7 +142,6 @@ p {
 #do_it,
 #dont_it,
 #no_touch {
-  transform: rotate(0.5deg); /*傾き*/
   list-style-type: disc;
   list-style-position: inside;
   border: solid 2px var(--low-gray);
@@ -136,76 +151,19 @@ p {
   font-size: var(--font-size);
 }
 
-#data dd,
-#do_it dd,
-#dont_it dd,
-#no_touch dd {
-  padding: 0.7em 0;
+#data dd:not(:last-child),
+#do_it dd:not(:last-child),
+#dont_it dd:not(:last-child),
+#no_touch dd:not(:last-child) {
+  padding: 0 0 0.5em;
+  padding: 0 0 1em;
   border-bottom: dashed 1px #ccc;
-}
-dl {
 }
 
 dl dt {
   font-weight: 600;
-  margin: 0.3em 2em;
+  margin: 1 2em;
 }
 dl dd {
-  margin: 0 3em;
-}
-
-/*
-#memo li::marker {
-  content: '？';
-  color: #ccc;
-  background-color: #a33;
-  border-radius: 1em;
-  font-size: 3em;
-}
-  */
-
-/* idを指定する時は＃ 
-#fisrt {
-}
-
-/* クラスを指定する時は. 
-.A {
-}
-
-/* 同じクラス名を持つうちの特定の要素だけ指定 
-  この場合、「p要素のクラス名だけ」を指定（h要素のクラス名は含まれない）
-p.クラス名 {
-}
-
-/*   複数のinput要素のうち、type属性を持つものだけに適用 
-  特定属性を指定するなら[type="属性名"]と書く
-input[type] {
-  background-color: aquamarine;
-}
-
-label:focus-within {
-  background-color: #a33;
-}
-
-/* 複数セレクターに同じCSSを適用 
-h2,h3 {
-  background-color: #a33;
-}
-  */
-
-/*
-  特定要素の子孫要素を選択：半角スペース
-  子孫要素だけを選択する：  ＞  上記で睡蓮花現象になるときはこっちを使う 
-  兄弟関係を選択するとき：  ~   要素A自体は含まれない。途中に別タグが挟まっても途切れないし、指定自体は兄弟要素でなくともいい
-  直後の兄弟要素だけを指定：+   要素Aの直後だけ適用される
-  以上は組み合わせもできる
- */
-
-/*   疑似要素（要素の一部を選ぶ）セレクタ::キーワード　キーワードは既存のやつ… 
-    疑似クラス（一部の要素を選ぶ）セレクタ:キーワード */
-
-::selection {
-  /*   選択したテキストに適用 */
-  color: #eee;
-  background-color: #aaa;
+  margin: 0 3em 1em;
 }

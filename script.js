@@ -7,9 +7,9 @@ const worksLists = [{ name: '習作', url: 'works/unknownPeople.html', etc: 'ク
 
 //◆メモ
 const memo = [
+  'html2canvasリベンジ。Nodeと共に導入した。`element`をレンダリングするには次のように呼び出す：`html2canvas(element[, options]);`Promiseの勉強が必要らしい。自分にはまだ早い気がする。',
   '増えたテキストがフォーカス付きでだんだん下に伸びていくとか。ボタン画面と２カラムに分けたらゲームっぽくなる？',
-  'html2canvasリベンジ',
-  'JSでデスクトップ（GUI）アプリ制作もできるが、ElectronやNW.js（Node.jpとも関わり）が必要。ついでに、パッケージを使うにはNode.jpが必要？',
+  'ElectronやNW.js（Node.jpとも関わり）でJSでデスクトップ（GUI）アプリ制作もできる。パッケージを使うにもNode.jpが必要。',
   'ブラウザいっぱいの宇宙作りたい',
   'p5.jsなどを専用エディタ以外で使うには？jsファイルみたいに読み込むのかな。→どうやらそうらしい',
   'JSの先をやるよりCSSの基礎を先にしたほうがいい気がする。',
@@ -57,6 +57,16 @@ const do_its = [
     name: 'CODEPREP',
     url: 'https://codeprep.jp/',
     etc: 'プログラミング学習サイト。完成形を見られるもののJSは内容が古い。鵜呑みにしないほうがよさそう。'
+  },
+  {
+    name: '本当の初心者のためのNode.js超入門　~環境構築編~',
+    url: 'https://qiita.com/qulylean/items/0ad521885a04a5ebd202',
+    etc: 'Nodeのインストールで見た。新しいしNode・npmの使用法もある。でも更新は途切れている。'
+  },
+  {
+    name: 'Visual Studio CodeとNode.jsの導入について',
+    url: 'https://qiita.com/GRGSIBERIA/items/b8cd4a2b3635d1bb0391',
+    etc: 'nodeの導入時に参考にした。これ以上読むことはない。'
   }
 ];
 
@@ -94,9 +104,9 @@ const dont_its = [
     etc: '便利一覧。情報が新しくてよい。'
   },
   {
-    name: '【全30項目】コーディング時のルールや思想（HTML/CSS/Sass/JSなど）',
+    name: '【全30項目】コーディング時のルールや思想',
     url: 'https://zenn.dev/dadada/articles/8faf8e1e20c0a5',
-    etc: '理解しやすそう。'
+    etc: 'HTML/CSS/Sass/JSなど。理解しやすそう。'
   },
   {
     name: 'javascriptから別のjavascriptの処理を呼出し実行する',
@@ -140,13 +150,12 @@ function memoList(e) {
 }
 
 //リンク・リスト
-//リストの中にdlを入れたら見た目が整う…？
+//都度dllを生成しているのは減らしていいかも
 function listCreate(e) {
   const nowList = document.getElementById(e[0]);
+  const dl = document.createElement('dl');
   for (const prop of e[1]) {
     //listを生成する
-
-    const dl = document.createElement('dl');
     const dt = document.createElement('dt');
     const a = document.createElement('a');
     const dd = document.createElement('dd');
