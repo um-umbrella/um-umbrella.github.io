@@ -63,7 +63,6 @@ const dont_its = [
     url: 'https://qiita.com/birdwatcher/items/db81e4ef637d29d7d193',
     etc: '広めにいろいろ乗ってる。コード、TypeScriopt……一回読むとよさそう。'
   },
-  ,
   {
     name: 'JavaScript Primer',
     url: 'https://jsprimer.net/intro/preparation/',
