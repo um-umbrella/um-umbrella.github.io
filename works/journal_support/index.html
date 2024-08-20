@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="discription" content="ページの説明" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+
+        <link href="style.css" rel="stylesheet" />
+
+        <title>ソロジャーナルプレイ支援ツール</title>
+    </head>
+
+    <body id="mint">
+        <main>
+            <section>
+                <div id="titleArea" class="m-1">
+                    <h1>ログタイトル</h1>
+                    <p class="default-text"></p>
+                </div>
+                <div class="action">
+                    <div class="m-2 action-dice">
+                        <p>
+                            <label>
+                                <span id="dice" class="button">🎲ダイス</span>
+                                <input
+                                    id="dice1"
+                                    class="dicebox"
+                                    type="number"
+                                    value="3"
+                                /><span class="lonely-text">d</span
+                                ><input
+                                    id="dice2"
+                                    class="dicebox"
+                                    type="number"
+                                    value="6"
+                                />
+                            </label>
+                        </p>
+                    </div>
+                    <div class="m-2 action-cards">
+                        <p id="cards"><span class="button">🃏トランプ</span></p>
+                    </div>
+                    <div class="m-2 action-hr">
+                        <p>
+                            <span id="horizontal_role" class="button"
+                                >区切り</span
+                            >
+                        </p>
+                    </div>
+                    <div class="m-2 action-input">
+                        <label
+                            ><p class="lonely-text">
+                                書き込み：<input
+                                    id="input"
+                                    autocomplete="off"
+                                /><span id="input_submit" class="button"
+                                    >送信</span
+                                >
+                            </p></label
+                        >
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label
+                        ><p class="default-text">ログ履歴</p>
+                        <textarea
+                            id="output"
+                            rows="10"
+                            cols="20"
+                            autocomplete="off"
+                        ></textarea>
+                    </label>
+                </div>
+            </section>
+        </main>
+        <div class="demi-footer">
+            <p id="download" class="df">保存</p>
+            <p id="allClear" class="df">初期化</p>
+            <p id="help" class="df">ヘルプ</p>
+        </div>
+        <div id="help_txt">
+            <div id="htd">
+                <p id="htd-menu">
+                    <span id="menuClose">閉じる</span>
+                    ｜<a href="../../mail.html" target="_blank" id="menuMail"
+                        >連絡</a
+                    >
+                    ｜
+                    <span>テーマ</span>
+                </p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
