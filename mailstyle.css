@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+:root {
+    --main-theme: #acc;
+    --main-bg: #fff;
+    --text: #000;
+    --box-in-text: #2c3a35;
+    --box-color: #eee;
+    --button-text: #000;
+}
+
+/*------------------------------------------------------------*/
+
+body {
+    font-family: sans-serif、system-ui;
+    color: var(--box-in-text);
+    padding: 0;
+    margin: 0;
+    background-color: var(--main-theme);
+}
+
+::selection {
+    /*選択中の色変え*/
+    background-color: var(--main-theme);
+    color: var(--button-text);
+}
+
+main {
+    max-width: 500px;
+    min-width: 300px;
+    margin: 2em auto;
+}
+
+a:any-link {
+    text-decoration: none;
+    color: var(--main-theme);
+}
+h1 {
+    color: var(--text);
+}
+
+form {
+    background-color: var(--main-bg);
+    padding: 1em 2em;
+    border-radius: 1em;
+}
+
+/*-------------------------------------------------------------*/
+
+.button {
+    display: inline;
+    padding: 0.5em 1em;
+    background-color: var(--main-theme);
+    color: var(--box-color);
+}
+
+.button:hover {
+    color: var(--box-in-text);
+}
+
+input {
+    border: none;
+    max-width: 200px;
+
+    color: var(--box-in-text);
+    background-color: var(--box-color);
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+
+    background-color: var(--box-color);
+    color: var(--box-in-text);
+    border-radius: 0.5em;
+    border: none;
+}
+
+#powered {
+    font-size: small;
+}
