@@ -1,0 +1,527 @@
+@charset "utf-8";
+
+:root {
+    --main-theme: #649aa1;
+    --body-bg: #ffffff;
+    --table-color: #ffffff;
+    --table-text: #000;
+    --textarea: #eee;
+    --onepoint: #7dc6cf;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg);
+}
+
+main {
+    position: relative;
+    font-size: 14px;
+    color: var(--table-text);
+}
+
+ul,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+p {
+    line-height: 2em;
+}
+
+a:any-link {
+    text-decoration: none;
+    color: var(--main-theme);
+}
+
+a:any-link:hover {
+    color: var(--onepoint);
+}
+
+::selection {
+    background-color: var(--onepoint);
+    color: var(--table-color);
+}
+
+h1 {
+    margin: 0;
+}
+
+#termListAno {
+    background: #649aa1;
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h3#yuyaku {
+    display: block;
+    position: relative;
+    top: 2em;
+    left: 0.5em;
+    width: 95%;
+
+    padding: 0.2em 0;
+
+    font-size: x-large;
+    text-align: center;
+
+    color: #ffffff;
+    background: #000;
+    border-bottom: 3px solid var(--main-theme);
+    transform: skewX(160deg);
+}
+
+h3#yuyaku span {
+    display: block;
+    transform: skewX(-160deg);
+}
+
+h3#letter {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transform: rotate(-5deg);
+    padding: 0.5em 1em;
+    margin: 2em 0 0;
+    top: 1em;
+    left: 30%;
+
+    border-left: 3px dotted rgba(0, 0, 0, 0.2);
+    border-right: 3px dotted rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    font-size: large;
+    background-color: rgb(255, 255, 255, 0.8);
+    color: var(--table-text);
+}
+
+h3#letter::before {
+    position: absolute;
+    transform: rotate(15deg);
+    padding: 0.5em 1em;
+    width: 5em;
+    height: 1.5em;
+    bottom: 0em;
+    left: -6.5em;
+    z-index: 10;
+
+    border-left: 3px dotted rgba(0, 0, 0, 0.2);
+    border-right: 3px dotted rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    content: '';
+    background: rgba(243, 170, 170, 0.7);
+}
+
+h3#letter::after {
+    position: absolute;
+    transform: rotate(10deg);
+    padding: 0.5em 1em;
+    width: 6em;
+    height: 1.5em;
+    top: 1em;
+    left: 12em;
+    z-index: 10;
+
+    border-left: 3px dotted rgba(0, 0, 0, 0.2);
+    border-right: 3px dotted rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    content: '';
+    background: rgba(75, 225, 208, 0.5);
+}
+
+h3#grayEgg {
+    display: inline-block;
+    position: relative;
+    left: 40%;
+    transform: rotate(-1deg);
+    top: 0.8em;
+
+    font-size: xx-large;
+    font-family: 'Hina Mincho';
+    background-color: var(--table-color);
+}
+
+h3#grayEgg::before {
+    /*まる*/
+    position: absolute;
+    z-index: -10;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    border-radius: 50%;
+
+    content: '';
+    border: solid 2px #ccc;
+}
+
+h3#grayEgg::after {
+    /*下地の城*/
+    position: absolute;
+    z-index: -1;
+    width: 3.5em;
+    height: 0.8em;
+    padding: 0.5em 0;
+    left: 0;
+
+    transform: translate(-5deg);
+    content: '';
+
+    background-color: var(--table-color);
+}
+
+h3#grayEgg::first-letter {
+    font-size: larger;
+    position: relative;
+}
+
+hr {
+    color: var(--onepoint);
+}
+
+/*----------------------------------------------------------*/
+.mainGrid {
+    /*全てのコンテンツ*/
+    background-color: var(--table-color);
+    padding: 1em 2em;
+    margin: 1em 0;
+}
+
+#first {
+    background-color: var(--table-color);
+    padding: 1em 2em;
+}
+
+#first-ano {
+    position: relative;
+    z-index: 3;
+}
+
+#update {
+    margin: 2em 2em 1em;
+    text-align: center;
+}
+
+textarea {
+    /*更新履歴*/
+    font-family: inherit;
+    border: none;
+    resize: none;
+    outline: none;
+
+    width: 80%;
+    height: 5em;
+    padding: 0 1em;
+
+    line-height: 1.5em;
+    color: var(--main-theme);
+    background-color: var(--textarea);
+    border-radius: 0.5em;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#term {
+    margin: 3em 0;
+}
+
+#termList {
+    /*利用規約*/
+    list-style-position: inside;
+    padding: 1em 2em;
+    margin: 0.5em auto;
+    width: 70%;
+
+    border: 2px solid var(--main-theme);
+    background-color: var(--table-color);
+}
+
+#termList li {
+    padding: 0.5em;
+}
+
+#termList li:not(:last-child) {
+    border-bottom: 1px dashed var(--main-theme);
+}
+
+#termList li::marker {
+    color: var(--onepoint);
+    font-size: 1.1em;
+}
+
+/*シナリオ---------------------------------------------*/
+
+.infoMain {
+    /*左右の土台*/
+}
+
+.infoTable {
+    padding: 0 0 4em;
+    margin: 0 0 3em;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+.fv {
+    font-family: 'Hina Mincho';
+    text-align: center;
+
+    color: var(--main-theme);
+    line-height: 3em;
+    padding: 2em;
+}
+
+.divParent {
+    /*リンクボタン入れ*/
+    display: inline-block;
+    position: absolute;
+    padding: 1em;
+    bottom: 0;
+    right: 0;
+}
+
+button {
+    border: none;
+    margin: 1em;
+    padding: 0.5em 2em;
+
+    text-decoration: none;
+    border-radius: 3px;
+
+    background-color: var(--onepoint);
+    color: var(--table-color);
+    font-size: small;
+}
+
+.too-padding {
+    /*画像を除いた場所のテキスト系*/
+    padding: 0 3em 1em;
+    margin: 0 0 5em;
+    position: relative;
+}
+
+.too-padding > a {
+    position: absolute;
+    bottom: -3em;
+    right: 1em;
+}
+
+button:hover {
+    background-color: var(--main-theme);
+    color: var(--table-color);
+}
+
+footer {
+    width: 100%;
+    background-color: var(--main-theme);
+    background-image: url('img/title.jpg');
+}
+
+footer > div {
+    display: flex;
+
+    color: var(--table-color);
+    font-size: small;
+}
+
+footer > div > ul {
+    margin: 1em auto;
+    display: flex;
+
+    list-style: none;
+}
+
+footer > div > ul > li {
+    padding: 0 1em;
+}
+
+footer > div > ul > li:not(:last-child) {
+    border-right: solid 1px var(--textarea);
+}
+
+#menu {
+    display: none;
+    color: var(--table-color);
+}
+
+#menu a:any-link {
+    color: var(--textarea);
+}
+
+#menuOpen {
+    position: fixed;
+    right: 0.2em;
+    z-index: 5;
+
+    padding: 2px;
+    color: var(--table-text);
+
+    font-size: 40px;
+}
+
+#menuClose {
+    position: absolute;
+    right: 0.2em;
+    z-index: 100;
+
+    font-size: 40px;
+    color: var(--main-theme);
+}
+
+#menu {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    padding: 1em;
+
+    background-color: var(--main-theme);
+    background-image: url('img/title.jpg');
+    background-size: cover;
+}
+
+#menu ul {
+    text-align: center;
+    list-style: none;
+}
+
+#menu li {
+    padding: 1.5em 0;
+}
+
+#menu li:not(:last-child) {
+    border-bottom: solid 1px var(--textarea);
+}
+
+/*-----------------------------------------------------*/
+@media screen and (min-width: 768px) {
+    /* PC向け上書き */
+
+    footer {
+        display: none;
+    }
+    body {
+        display: grid;
+        grid-template-columns: 0.75fr 2fr;
+    }
+
+    main {
+        margin: 0;
+        padding: 5em 0;
+
+        width: attr(width * 0.5);
+        max-width: 700px;
+        min-width: 300px;
+
+        background-color: var(--table-color);
+    }
+
+    .mainGrid {
+        margin: 0 0.5em 0 2em;
+        padding: 0;
+    }
+
+    #menuOpen,
+    #menuClose {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+        background-color: var(--table-color);
+
+        position: fixed;
+        width: 200px;
+        height: 100%;
+    }
+
+    #menu h1 {
+        padding: 1em 0;
+
+        color: var(--table-color);
+    }
+
+    main > h1 {
+        display: none;
+    }
+
+    textarea {
+        width: 80%;
+    }
+
+    #termList {
+        margin: 0 auto 3em;
+        width: 80%;
+        max-width: 600px;
+        min-width: 300px;
+        padding: 1em 2em;
+    }
+
+    button {
+        padding: 0.5em 1.5em;
+        margin: 0 0.5em;
+    }
+} /*@mediaの終わり*/
+
+/*-834?----------------------------------------------------------------*/
+@media screen and (min-width: 1064px) {
+    body {
+        grid-template-columns: 0.5fr 2fr 0.2fr;
+    }
+
+    main {
+        margin: auto 0 auto 170px;
+        width: 100%;
+    }
+
+    #menu {
+        width: 30%;
+        min-width: 100px;
+        max-width: 300px;
+        height: 100%;
+    }
+
+    #grid-here {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 2em;
+    }
+
+    h3#yuyaku {
+        left: 15%;
+        width: 70%;
+    }
+
+    .infoMain {
+        text-align: center;
+    }
+
+    .infoMain img {
+        width: 80%;
+        max-width: 600px;
+        max-height: 300px;
+    }
+
+    .infoRight {
+        margin: auto;
+        margin-bottom: 1em;
+        width: 70%;
+        min-width: 450px;
+
+        text-align: left;
+    }
+} /*@mediaの終わり*/

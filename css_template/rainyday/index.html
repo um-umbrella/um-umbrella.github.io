@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="discription" content="ページの説明" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「雨の日」</title>
+    </head>
+    <body>
+        <i id="menuOpen" class="ri-menu-line"></i>
+        <div id="menu">
+            <i id="menuClose" class="ri-close-fill"></i>
+            <ul>
+                <h1><a href="#">タイトル</a></h1>
+                <li><a href="#term">ページ内リンク１</a></li>
+                <li><a href="#scenario">ページ内リンク２</a></li>
+                <li><a href="#etc">ページ内リンク３</a></li>
+                <li>
+                    <a href="#">メール<i class="ri-mail-fill"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <main>
+            <!--更新履歴、制作物の一覧、ツール、メールへのリンク-->
+            <h1>タイトル</h1>
+            <div id="c-1" class="mainGrid">
+                <p>初めの説明。</p>
+                <p>初めの説明二つ目。</p>
+                <p><a href="#">リンク１</a>｜<a href="#">リンク２ </a></p>
+                <textarea>
+12/1　サイト更新
+10/5　書き物＋１
+7/30　イベント情報＋１
+        </textarea
+                >
+                <h2>見出し２</h2>
+                <ul>
+                    <li>通常のリスト１</li>
+                    <li>通常のリスト２</li>
+                </ul>
+                <ul class="memo">
+                    <li>リスト項目１</li>
+                    <li>リスト項目２</li>
+                </ul>
+            </div>
+
+            <div id="c-1" class="mainGrid">
+                <h2>見出し２</h2>
+                <h3 id="yuyaku">見出し２</h3>
+                <img src="" />
+                <p class="fv">フレーバー文章<br />中央ぞろえ</p>
+                <p>テキスト</p>
+                <button>ボタン１</button><button>ボタン２</button>
+                <div class="txt-right"><button>右寄せボタン１</button><button>右寄せボタン２</button></div>
+
+                <hr />
+
+                <h3>見出し２</h3>
+
+                <img src="img/thum.jpg" class="trailer" />
+                <p class="fv">画像カラム例　ふれ～ば～</p>
+                <p>画像。横いっぱいに表示されます。横向きの画像向け</p>
+
+                <hr />
+
+                <h3>見出し２</h3>
+                <div class="grid">
+                    <img src="img/title.jpg" />
+                    <p class="fv">画像カラム例　ふれ～ば～</p>
+                </div>
+                <div class="grid">
+                    <img src="img/title.jpg" />
+                    <div>
+                        <!-- この中の要素が右側に配置されます -->
+                        <p class="fv">画像カラム例　ふれ～ば～</p>
+                        <p>草　面白い　見てないで</p>
+                    </div>
+                </div>
+                <p>ここに文章。縦長画像ありきでグリッド有効にする？</p>
+            </div>
+
+            <script src="script.js"></script>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <ul>
+                <li>サイト名</li>
+                <li>サイト情報</li>
+                <li>あいうえお</li>
+            </ul>
+        </footer>
+    </body>
+</html>
