@@ -1,5 +1,15 @@
-/*やるぞ～*/
-/* カスタムプロパティ */
+@charset "utf-8";
+
+body,
+ul,
+p,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --main-color: #481;
     --most-white: #fff; /*メインの土台*/
@@ -17,117 +27,105 @@
 }
 
 body {
-    font-size: 14px;
-    padding: 1em;
-    background-color: var(--high-gray);
-
     font-family: sans-serif;
-    padding: 0;
-    margin: 3em;
-    color: #333333;
-    font-size: 14px;
-    text-align: center;
+    background-color: var(--low-gray);
 }
 
-h1,
-h2 {
-    display: inline;
-    width: 200px;
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+div {
+    width: 25%;
+    padding: 0 1em 1em;
+    margin: 2em 1em;
+    flex-grow: 1;
+
+    list-style-type: disc;
+    list-style-position: inside;
+
+    bottom: 1em;
+
+    border: solid 2px var(--low-gray);
+    font-size: 13px;
+    background-color: var(--high-gray);
+}
+
+a:any-link {
+    text-decoration: 0;
+    color: var(--main-color);
+}
+
+h1 {
     position: relative;
-    translate: -0.5em 1em;
-    padding: 0.5em 0.7em;
-    z-index: 1;
-    border: 2px solid var(--most-black);
-    box-shadow: 5px 5px var(--most-black);
-    background-color: var(--most-white);
-    color: var(--most-black);
+    display: block;
+    z-index: 50;
+    margin: 0;
+    padding: 0.5em;
+    font-size: medium;
+
+    width: 100%;
+    background-color: var(--main-color);
 }
 
-h3 {
-    transform: rotate(5deg); /*傾き*/
+h2 {
+    transform: rotate(-10deg);
     display: inline-block;
     position: relative;
-    translate: -0.5em 1em;
+    top: -1em;
+    left: -1em;
     padding: 0.5em 0.7em;
     z-index: 1;
+    margin: 0;
+
     border: 2px solid var(--most-black);
     box-shadow: 5px 5px var(--most-black);
     background-color: var(--most-white);
-    color: var(--most-black);
 }
 
 a:any-link {
     display: inline-block;
+    position: relative;
+    left: -1em;
     text-decoration: none;
-    color: var(--most-white);
-    background-color: var(--main-color);
+    padding: 0.5em 1em;
+
     border-top-right-radius: 5em;
     border-bottom-right-radius: 5em;
-    padding: 0.5em 15px;
-    margin-bottom: 0.5em;
+
+    color: var(--most-white);
+    background-color: var(--main-color);
 }
 
-div {
-    max-width: 500px;
-    min-width: 300px;
-    margin: auto;
-    text-align: left; /*★*/
-}
-
-p {
-    list-style-type: disc;
-    list-style-position: inside;
-    border: solid 2px var(--low-gray);
-    background-color: var(--most-white);
-    margin: 1.5em 0 3em;
-    padding: 1em;
-    font-size: var(--font-size);
-}
-
-/*メモリス*/
-#memo ol {
-    transform: rotate(-1deg); /*傾き*/
-    list-style-type: disc;
-    list-style-position: inside;
-    position: relative;
-    bottom: 1em;
-    padding: 2em;
-    margin: 5px auto;
-    border: solid 2px var(--low-gray);
-    background-color: var(--most-white);
-    font-size: 13px;
-}
-#memo li {
+li {
     padding: 0.1em;
 }
-#memo li:not(:last-child) {
+li:not(:last-child) {
     border-bottom: dashed 1px #ccc;
 }
-#memo li::marker {
+li::marker {
     color: var(--main-color);
     font-size: 1.3em;
 }
 
-.list {
-    list-style-type: disc;
-    list-style-position: inside;
-    border: solid 2px var(--low-gray);
-    font-size: 14px;
-    background-color: var(--most-white);
-    padding: 1em 0;
-    font-size: var(--font-size);
+ol {
+    margin: 0 2em 1em;
+    padding: 0;
 }
 
-dd:not(:last-child) {
-    padding: 0 0 0.5em;
-    padding: 0 0 1em;
-    border-bottom: dashed 1px #ccc;
+dl {
+    margin: -1em 0 1em;
 }
 
 dl dt {
     font-weight: 600;
-    margin: 1 2em;
+    margin: 1em 0 0;
 }
 dl dd {
-    margin: 0 3em 1em;
+    margin: 0 1em;
+    line-height: 1.5em;
 }

@@ -169,7 +169,7 @@ download.addEventListener('click', () => {
     if (output.value.length == 0) {
         window.alert('ログ履歴がないので保存を中止しました。');
     } else {
-        const fileFirstPara = `# ${h1.textContent}\n\n`;
+        const fileFirstPara = `# ${h1.textContent}\n`;
         const fileLastPara = `\n－－－－－　－－－－－　－－－－－　－－－－－　－－－－－　        \n\n	ソロジャーナル向けプレイ支援ツール ${version}（by倉林）\n`;
         const text = fileFirstPara + output.value + fileLastPara; //ファイル内容
 
@@ -279,12 +279,10 @@ themeChangePre();
 //テーマ切り替えの設置
 function themeChangePre() {
     const form = document.createElement('form');
-    //    htdMenu.lastElementChild.appendChild(form);
     htdMenu.appendChild(form);
     for (const el of theme) {
         const option = document.createElement('option');
         option.textContent = el;
-        //結局いらなかった気がする        option.value = el;
         form.appendChild(menuSelect);
 
         menuSelect.appendChild(option);
@@ -294,6 +292,5 @@ function themeChangePre() {
 
 //テーマ切り替えが発火　できた！！！！！！！！
 function themeChange(e) {
-    //    console.log(e);
     document.body.id = e.target.value;
 }
