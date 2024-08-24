@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="discription" content="個人製作ソロジャーナル置き場" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+        <link href="style.css" rel="stylesheet" />
+
+        <title>傘の下 - ソロジャーナル制作物</title>
+    </head>
+    <body>
+        <i id="menuOpen" class="ri-menu-line"></i>
+        <div id="menu">
+            <i id="menuClose" class="ri-close-fill"></i>
+            <ul>
+                <h1><a href="#">傘の下</a></h1>
+                <li><a href="#c-0">利用規約</a></li>
+                <li><a href="#c-1">シナリオ</a></li>
+                <li><a href="#c-2">その他</a></li>
+                <li>
+                    <a href="../mail.html">メール<i class="ri-mail-fill"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <main>
+            <h1>傘の下</h1>
+            <div class="mainGrid grid">
+                <div>
+                    <p>倉林という個人がソロジャーナル関連のいろいろを作っています。</p>
+                    <p id="p-link"></p>
+                </div>
+                <div id="update"></div>
+            </div>
+
+            <div id="c-0">
+                <h2 subtitle="　term"><span>取り扱い・利用規約</span></h2>
+                <ul id="termList"></ul>
+            </div>
+
+            <div id="c-1" class="mainGrid">
+                <h2 subtitle="　solo journaling scenario"><span>シナリオ</span></h2>
+                <p>
+                    各シナリオは複数個所に投稿していますが、今のところファイル内容に違いはありません。<br />お好きな媒体でご覧ください。
+                </p>
+                <h3 id="yuyaku"><span>勇躍きたれ</span></h3>
+                <div class="infoMain">
+                    <div>
+                        <img src="img/t_01.jpg" />
+                        <p class="fv">
+                            あなたは、ある目的を胸にこの闘技場を訪れた。<br />求めるものは富か？ 名声か？
+                            それとも力か？<br />
+                            ――あなたの数日間は、武器を握ることで始まる。
+                        </p>
+                    </div>
+                    <div class="infoRight"></div>
+                </div>
+
+                <h3 id="kyuhai">朽廃のささやき</h3>
+                <div class="infoMain">
+                    <div>
+                        <img src="img/t_02.jpg" />
+                        <p class="fv">
+                            とある場所で、未踏の建造物が発見された！<br />そこは一体なんのための建築物で、何が隠されているのだろう？<br />物言わぬ建造物のしらべに耳を傾けてみるとしよう。
+                        </p>
+                    </div>
+                    <div class="infoRight"></div>
+                </div>
+
+                <h3 id="letter">便りに乗せて</h3>
+                <div class="infoMain">
+                    <div>
+                        <img src="img/t_03.jpg" />
+                        <p class="fv">
+                            あなたに手紙を送りたい。<br />私の選んだ便箋でなくとも、私の記した文字でなくとも、<br />伝えたいことには変わりがないから。
+                        </p>
+                    </div>
+                    <div class="infoRight"></div>
+                </div>
+
+                <h3 id="grayEgg">灰の卵</h3>
+                <div class="infoMain">
+                    <div>
+                        <img src="img/t_04.jpg" />
+                        <p class="fv"></p>
+                    </div>
+                    <div class="infoRight"></div>
+                </div>
+            </div>
+
+            <div id="c-2" class="mainGrid">
+                <h2 subtitle="　etc tools"><span>その他</span></h2>
+                <h3>ソロジャーナルプレイ支援ツール</h3>
+                <p>
+                    デジタルでのプレイをちょっと補助・肩代わりするツールです。<br />ダイス・トランプでの判定、ログ生成、テキストファイル出力、無駄なテーマ切り替え機能などがあります。
+                </p>
+                <p>HTML/CSS/JavaScript勉強の一発目で作りました。順次改良～できたらいいな～。</p>
+                <div class="divParent">
+                    <a href="../works/journal_support/index.html" target="_blank"
+                        ><button>ソロジャーナルプレイ支援ツール<i class="ri-external-link-fill"></i></button
+                    ></a>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <ul>
+                <li>©2024 under my umbrella</li>
+            </ul>
+        </footer>
+    </body>
+</html>
