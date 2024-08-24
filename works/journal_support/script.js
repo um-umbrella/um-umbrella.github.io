@@ -1,6 +1,7 @@
 'use strict';
+//アイコンが消える：h1の削除をstyle.display.noneに変えてみる？
 
-const version = 'ver 1.0';
+const version = 'ver 1.1';
 
 const anoTxt = [
     'このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）デジタルで遊んだり、プレイログを作ったりするためのものです。',
@@ -18,7 +19,11 @@ const memo = [
 ];
 const update = [
     { day: '8/18', change: 'ver 0.01（仮）　作り始めた。' },
-    { day: '8/20', change: version + '  　いったん完成。' },
+    { day: '8/20', change: 'ver 1.0　いったん完成。' },
+    {
+        day: '8/25',
+        change: 'ver 1.1　細かい手入れと使用アイコンの差し替え。タイトル編集時に編集マークが消える不具合を生んだ（直せたら直します）。',
+    },
 ];
 
 const theme = ['mint', 'red', 'grass', 'sea', 'robot', 'brown', 'gray', 'night'];

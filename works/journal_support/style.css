@@ -143,15 +143,6 @@ h3 {
     color: var(--main-bg);
 }
 
-h1::after {
-    font-family: 'MAterial Icons';
-    content: '\e3c9';
-    font-size: 0.9em;
-    color: var(--main-theme);
-    position: relative;
-    top: 3px;
-}
-
 h2 {
     margin: 1.5em 0 0;
 }
@@ -268,24 +259,7 @@ textarea {
     font-weight: 600;
 }
 
-#download::after {
-    font-family: 'MAterial Icons';
-    content: '\f090';
-    font-size: 18px;
-    position: relative;
-    top: 5px;
-}
-
-#help::after {
-    font-family: 'MAterial Icons';
-    content: '\e887';
-    font-size: 18px;
-    position: relative;
-    top: 4px;
-}
-
 #help_txt {
-    /*ヘルプ*/
     display: none;
     overflow: auto; /*スクロールできるように*/
     background-color: var(--main-theme);
@@ -316,7 +290,7 @@ textarea {
 #htd li {
     position: relative;
     right: 1em;
-    padding: 0.2em 0; /*行間*/
+    padding: 0.2em 0;
     font-size: 14px;
 }
 
@@ -347,21 +321,8 @@ form {
     display: inline;
 }
 
-#menuMail::after {
-    font-family: 'MAterial Icons';
-    content: '\e158';
-
-    font-size: 1.3em;
-    color: var(--main-theme);
+i {
     position: relative;
-    top: 5px;
+    top: 3px;
+    font-size: 1.2em;
 }
-
-/*--------------------------------------------------------------*/
-/*スマホの場合に非表示
-@media screen and (max-width: 600px) {
-    .action-input {
-        display: none;
-    }
-}
-*/
