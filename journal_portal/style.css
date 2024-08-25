@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-/* -------------------------------------------------------
-*   Template: 倉林
-*
-*------------------------------------------------------- */
-
 h1,
 h2,
 h3,
@@ -27,6 +22,10 @@ td {
     --table-text: #000;
     --textarea: #eee;
     --onepoint: #d8c44f;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -64,7 +63,7 @@ a:any-link:hover {
 }
 
 h1 {
-    margin: 0;
+    margin: 0 0.5em;
     padding: 0.5em;
     font-size: 2em;
 }
@@ -249,11 +248,20 @@ h3#grayEgg::first-letter {
 
 #update {
     margin: 0 1em;
-    text-align: center;
 }
 
+#update > ul {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    height: 4em;
+    padding: 0 1em;
+
+    background-color: var(--textarea);
+}
+/*
 textarea {
-    /*更新履歴*/
     font-family: inherit;
     border: none;
     resize: none;
@@ -269,7 +277,7 @@ textarea {
     background-color: var(--textarea);
     border-radius: 0.1em;
 }
-
+*/
 textarea::-webkit-scrollbar {
     display: none;
 }
@@ -347,6 +355,11 @@ li::marker {
 }
 
 #menu h1 {
+    color: rgba(0 0 0 / 0);
+    -webkit-text-stroke: 1px #000;
+
+    font-weight: normal;
+
     margin: 0;
     padding: 1em 0em;
 }

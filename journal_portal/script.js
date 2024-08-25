@@ -18,12 +18,12 @@ const link = [
 
 //更新履歴
 const update = [
-    '8/22　このページを作った',
-    '8/20　『ソロジャーナルプレイ支援ツール』公開',
-    '8/9　『便りに乗せて』公開',
-    '8/7　『勇躍きたれ』加筆・修正',
-    '8/4　『朽廃のささやき』公開',
     '7/31　『勇躍きたれ』公開',
+    '8/4　『朽廃のささやき』公開',
+    '8/7　『勇躍きたれ』加筆・修正',
+    '8/9　『便りに乗せて』公開',
+    '8/20　『ソロジャーナルプレイ支援ツール』公開',
+    '8/22　このページを作った',
 ];
 
 //注意事項
@@ -135,15 +135,15 @@ function linkWrite() {
 //更新履歴を生成（配列）
 function updateWrite(e) {
     const updateLog = document.getElementById('update');
-    const textArea = document.createElement('textArea');
-    for (const log of update) {
-        if (textArea.value.length > 0) {
-            textArea.value += `\n`;
-        }
-        textArea.value += `${log}`;
-    }
+    const ul = document.createElement('ul');
 
-    updateLog.appendChild(textArea);
+    updateLog.appendChild(ul);
+
+    for (const log of update) {
+        const li = document.createElement('ul');
+        li.textContent = `${log}`;
+        ul.appendChild(li);
+    }
 }
 
 //注意事項を生成
