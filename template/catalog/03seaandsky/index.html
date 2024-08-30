@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「海と空」</title>
+    </head>
+
+    <body>
+        <!-- メニュー -->
+        <nav>
+            <ul>
+                <li><a href="#">タイトル</a></li>
+                <li><a href="#sec1">メニュー</a></li>
+                <li><a href="#sec2">メニュー</a></li>
+                <li><a href="#sec3">メニュー</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!--セクションはじまり-->
+            <section id="sec1">
+                <h1>ページタイトル</h1>
+                <p>明るくさわやかめの雰囲気を目指したテーマです。</p>
+                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </section>
+            <!--セクションおわり-->
+
+            <!--セクションはじまり-->
+            <section id="sec2">
+                <h2>見出し２</h2>
+                <h3>見出し3</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <!--更新履歴はじまり-->
+                <ul class="update">
+                    <li><time>6/31</time>更新内容</li>
+                    <li><time>7/2</time>更新内容</li>
+                    <li><time>7/5</time>更新内容</li>
+                    <li><time>7/9</time>更新内容</li>
+                </ul>
+                <!--更新履歴終わり-->
+                <p>テキストに<mark>下線を引く</mark></p>
+                <p><a href="">リンク</a> <a href="">リンク</a> <a href="">リンク</a></p>
+                <!--リストはじまり-->
+                <ul>
+                    <li>ここにリスト１</li>
+                    <li>ここにリスト２</li>
+                </ul>
+                <!--リスト終わり-->
+
+                <!--カラムはじまり-->
+                <div class="partition">
+                    <!--カラム左側の内容-->
+                    <div>
+                        <p>
+                            PC向けの２カラム表示です。（左側）<br /><mark>class="partition"</mark
+                            >直下のタグ二つがブロックとして認識されます。
+                        </p>
+                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                    <div>
+                        <!--カラム右側の内容-->
+                        <p>PC向けの２カラム表示です。（右側）<br /></p>
+                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </div>
+                <!--カラムおわり-->
+            </section>
+            <!--セクション終わり-->
+
+            <!--セクションはじまり-->
+            <section id="sec3">
+                <h2>画像・カラム</h2>
+                <img src="img/thum.jpg" />
+                <p>画像は全体が映るよう、縦400pxで縮小表示します。</p>
+                <img src="img/thum.jpg" class="trim" />
+                <p>
+                    画像に<mark>class="trim"</mark>を付けると、縦400pxまででトリミング表示します。<br />見える範囲は狭まりますが、しっかりアップで見せたい時向け。
+                </p>
+
+                <!--カラムはじまり-->
+                <div class="partition">
+                    <!--カラム左側の内容-->
+                    <img src="img/thum_ver.jpg" class="trim" />
+                    <!--カラム右側の内容-->
+                    <img src="img/thum_ob.jpg" class="trim" />
+                </div>
+                <!--カラムおわり-->
+                <p>PC向けの２カラム表示。画像の場合です。</p>
+            </section>
+            <!--セクション終わり-->
+        </main>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「シンプル」</title>
+    </head>
+    <body>
+        <i id="menuOpen" class="ri-menu-line"></i>
+        <div id="menu">
+            <i id="menuClose" class="ri-close-fill"></i>
+            <ul>
+                <h1><a href="#">タイトル</a></h1>
+                <li><a href="#s-1">メニュー１</a></li>
+                <li><a href="#s-2">メニュー２</a></li>
+                <li><a href="#s-3">メニュー３</a></li>
+                <li>
+                    <a href="#">メール<i class="ri-mail-fill"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <main>
+            <h1>タイトル</h1>
+
+            <section id="s-1">
+                <p>シンプルめなテーマです。</p>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />テキストテキストテキストテキスト
+                </p>
+                <p><a href="#">リンク</a>｜<a href="#">リンク</a></p>
+
+                <h2>見出し２</h2>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <h6>見出し６</h6>
+
+                <ul id="update">
+                    <li><time>10/3</time>更新内容</li>
+                    <li><time>11/7</time>更新内容</li>
+                    <li><time>11/26</time>更新内容</li>
+                    <li><time>12/3</time>更新内容</li>
+                </ul>
+
+                <ul>
+                    <li>通常のリスト１</li>
+                    <li>通常のリスト２</li>
+                </ul>
+                <ul class="memo">
+                    <li>メモ的なリスト１</li>
+                    <li>メモ的なリスト２</li>
+                </ul>
+            </section>
+
+            <section id="s-2">
+                <h2>その他のタグ例</h2>
+                <img src="img/thum.jpg" />
+                <p>画像は最大縦300pxで縮小表示されます。</p>
+                <p class="fv">class="fv"を付けると、色付き・中央揃えの装飾になります。</p>
+                <button>ボタン１</button><button>ボタン２</button>
+                <div class="txt-right"><button>右寄せボタン１</button><button>右寄せボタン２</button></div>
+                <p>
+                    buttonタグは装飾が付きます。buttonを<mark>div class="txt-right"</mark>で囲むと右側に表示されます。
+                </p>
+
+                <hr />
+
+                <p><mark>&lt;div class="grid"&gt;</mark>で囲んだ内容は２カラム表示になります。</p>
+
+                <div class="grid">
+                    <!--カラム左側-->
+                    <img src="img/thum_ob.jpg" class="trim" />
+                    <!--カラム右側-->
+                    <p>
+                        画像に<mark>class="trim"</mark>を付けると、縦最大300pxでトリミングされます。<br />見える範囲は狭まりますが、しっかりアップで見せたい時向け。
+                    </p>
+                </div>
+
+                <div class="grid">
+                    <!--カラム左側-->
+                    <img src="img/thum_ver.jpg" class="trim" />
+                    <!--カラム右側-->
+                    <div>
+                        <p class="fv">画像カラム例のフレーバー文</p>
+                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </div>
+            </section>
+
+            <script src="script.js"></script>
+        </main>
+
+        <footer>
+            <ul>
+                <li>サイト名</li>
+                <li>サイト情報</li>
+            </ul>
+        </footer>
+    </body>
+</html>

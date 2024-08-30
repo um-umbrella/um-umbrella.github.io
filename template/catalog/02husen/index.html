@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet" />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「付箋」</title>
+    </head>
+
+    <body>
+        <nav>
+            <h1>Site name</h1>
+            <ul>
+                <li><a href="">メニュー</a></li>
+                <li><a href="">メニュー</a></li>
+                <li><a href="">メニュー</a></li>
+            </ul>
+        </nav>
+        <main>
+            <!-- 紙一枚 -->
+            <div>
+                <h2>About</h2>
+                <p>付箋ベタ貼りをテーマにしたデザインです。</p>
+                <p>&lt;main&gt;の中に<mark>&lt;div&gt; &lt;/div&gt;</mark>を追加すると紙が増えます。</p>
+                <p>
+                    画面幅に応じて左右の列が増えますが、行ごとに上下の幅は共通なので、似たような文字数の内容を並べる記述向けです。
+                </p>
+                <div class="double-tape"></div>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="red">
+                <h2>見出し２</h2>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <p><a href="">リンク</a><a href="">リンク</a><a href="">リンク</a></p>
+                <button>ボタン</button><button>ボタン</button>
+
+                <p><mark>&lt;mark &gt;&lt;/mark &gt;</mark>で下線を引きます。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="blue">
+                <p>
+                    紙の色を変更するには、紙のdivに&lt;div
+                    <mark>class="red"</mark> &gt;というように色の指定を追加してください。デフォルトは白です。
+                </p>
+                <ul>
+                    <li>白（指定なし）</li>
+                    <li>赤（red）</li>
+                    <li>青（blue）</li>
+                    <li>黄色（yellow）</li>
+                    <li>緑（green）</li>
+                    <li>灰（gray）</li>
+                </ul>
+                <div class="double-tape"></div>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="yellow">
+                <p>
+                    紙のdiv内に<mark>&lt;div class="single-tape" &gt; &lt;/div &gt;</mark
+                    >を一行追加すると、紙の上部にぺたっとテープが付きます。
+                </p>
+                <div class="single-tape"></div>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="green">
+                <p>
+                    紙のdiv内に<mark>&lt;div class="double-tape" &gt; &lt;/div &gt;</mark
+                    >を一行追加すると、紙の右上・左下の２か所にテープが付きます。
+                </p>
+                <div class="double-tape"></div>
+                <div class="double-tape"></div>
+                <p>もう一行追加すると、紙の角４か所にテープが付きます。４つ以上は増えません。</p>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="gray">
+                <h2 class="tape-h">テープ見出し</h2>
+                <p>
+                    見出しに<mark>class="tape-h"</mark>を追加すると、見出し自体がテープ装飾になります。<br />一つの紙内に複数のテープ装飾を付けることはできません。
+                </p>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="ruled-paper">
+                <h2>ノート的な紙</h2>
+                <p>
+                    ノート的な紙です。紙の追加時に<mark>&lt;div class="ruled-paper" &gt; &lt;/div &gt;</mark
+                    >と指定するとこれになります。<br />短文よりも、文字数の多い内容のがそれっぽい雰囲気になります。
+                </p>
+                <h3>見出し３</h3>
+                <p>見出し・本文も通常通りに使えます（多分）。<br />見出しの連続や多用でずれます。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="red">
+                <h2 class="tape-h">画像の表示</h2>
+                <img src="img/thum.jpg" />
+                <p>画僧はこんな感じ。</p>
+                <p>大きい画像は最大縦300pxで縮小表示されます。</p>
+            </div>
+
+            <!-- 紙一枚 -->
+            <div class="green">
+                <h2 class="tape-h">画像の表示２</h2>
+
+                <img src="img/thum_ver.jpg" class="trim" />
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、最大縦300pxでトリミングし、応じた横幅で表示します。横長すぎるなどの画像向け。
+                </p>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
