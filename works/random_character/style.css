@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+:root {
+    --theme: #fefefe;
+    --onepoint: #cc2525;
+    --table-color: #fefefe;
+    --text-color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+img,
+p,
+ul,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 300;
+    background-color: var(--body-bg);
+}
+
+p {
+    line-height: 2em;
+    padding: 0.3em 0;
+}
+
+mark {
+    background-color: rgb(255, 255, 255, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, var(--onepoint) 60%);
+}
+
+::selection {
+    background-color: var(--theme);
+    color: var(--onepoint);
+}
+
+/*------------------------------------------------------------*/
+
+body {
+    background-color: var(--theme);
+}
+
+main {
+    margin: 16px;
+}
+h2 {
+    color: #ccc;
+}
+
+#hair > h2::before {
+    content: '髪';
+    color: var(--text-color);
+}
+
+#eye > h2::before {
+    content: '目';
+    color: var(--text-color);
+}
+
+#personal > h2::before {
+    content: '人となり';
+    color: var(--text-color);
+}
+
+div {
+    padding: 16px;
+
+    text-align: center;
+}
+
+.contena > div {
+    margin: auto;
+    padding: 20px 0;
+    width: 90%;
+    max-width: 300px;
+    background-color: var(--table-color);
+
+    border-left: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);
+}
+
+.contena > div:first-child {
+    border-top: 2px solid var(--text-color);
+}
+
+.contena > div:last-child {
+    border-bottom: 2px solid var(--text-color);
+}
+
+p {
+    padding: 0 16px;
+}
+
+button {
+    display: block;
+    margin: 8px;
+    padding: 8px 28px;
+
+    border: none;
+    border-radius: 5em;
+    background-color: var(--text-color);
+    color: var(--table-color);
+}
+
+button:hover {
+    background-color: var(--onepoint);
+    color: var(--text-color);
+}
+
+.button_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    main {
+        margin: auto;
+        width: 70%;
+        height: 55vh;
+    }
+
+    .contena {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contena > div {
+        display: grid;
+        grid-template-rows: auto;
+        align-items: center;
+        margin: 8px;
+        height: 25vh;
+        max-height: 200px;
+
+        border: 2px solid var(--text-color);
+    }
+
+    .contena > div {
+    }
+} /*@media*/

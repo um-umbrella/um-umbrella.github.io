@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+img,
+p,
+ul,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 300;
+    font-size: larger;
+}
+
+main {
+    position: relative;
+}
+
+p {
+    line-height: 2em;
+    padding: 0;
+}
+
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+#color1,
+#color2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#color1 {
+    background-color: #fff;
+    color: #000;
+}
+
+#color1 > div,
+#color2 > div {
+    padding: 50px;
+
+    text-align: center;
+    border: solid 2px;
+}
+
+#color2 {
+    background-color: #000;
+    color: #fff;
+}
+
+button {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 8px 20px 8px 16px;
+    border: none;
+    border-bottom-right-radius: 2em;
+    font-family: inherit;
+    color: #eee;
+    background: #222;
+}

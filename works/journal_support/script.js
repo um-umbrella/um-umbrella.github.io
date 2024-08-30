@@ -1,7 +1,7 @@
 'use strict';
 //アイコンが消える：h1の削除をstyle.display.noneに変えてみる？
 
-const version = 'ver 1.1';
+const version = 'ver 1.3';
 
 const anoTxt = [
     'このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）デジタルで遊んだり、プレイログを作ったりするためのものです。',
@@ -14,7 +14,6 @@ const memo = [
     '編集できる項目：ログタイトル、ログ履歴。',
     '下部「保存」　：ログ履歴を.txtファイルでダウンロードします。「日付＋ログタイトル」がファイル名になります。',
     '下部「初期化」：タイトル・ログ履歴を全て消去します。ブラウザ自体の再読み込みなどでも同様に初期化されます。',
-    'ダイスロール後、フォーカスがテキストエリアではなくダイスに戻る→直せませんでした。',
     'デザインが崩れている→すみません。大目に見てください。',
 ];
 const update = [
@@ -23,6 +22,14 @@ const update = [
     {
         day: '8/25',
         change: 'ver 1.1　細かい手入れと使用アイコンの差し替え。タイトル編集時に編集マークが消える不具合を生んだ（直せたら直します）。',
+    },
+    {
+        day: '8/29',
+        change: 'ver 1.2　保存ログのファイル名について、日付とタイトルが逆だったうっかりを修正。また、ダイスロール後のフォーカスを、ダイスではなく書き込みエリアに戻るよう変更。',
+    },
+    {
+        day: '8/30',
+        change: 'ver 1.3　保存ログのファイル名について、肝心の日付が一か月前になっていたぽんこつを修正。ついでに、10月未満の日付がちゃんと連番になるように変更。',
     },
 ];
 
@@ -174,14 +181,20 @@ download.addEventListener('click', () => {
     if (output.value.length == 0) {
         window.alert('ログ履歴がないので保存を中止しました。');
     } else {
-        const fileFirstPara = `# ${h1.textContent}\n`;
-        const fileLastPara = `\n－－－－－　－－－－－　－－－－－　－－－－－　－－－－－　        \n\n	ソロジャーナル向けプレイ支援ツール ${version}（by倉林）\n`;
+        const fileFirstPara = `# ${h1.textContent}\n\n－－－－－　－－－－－　－－－－－　－－－－－　－－－－－　        \n\n`;
+        const fileLastPara = `\n－－－－－　－－－－－　－－－－－　－－－－－　－－－－－　        \n\n	ソロジャーナルプレイ支援ツール ${version}（by倉林）\n`;
         const text = fileFirstPara + output.value + fileLastPara; //ファイル内容
 
+        //日付でファイル名生成
         const date = new Date();
-        const filename = `${
-            h1.textContent
-        }_${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}${date.getMinutes()}.txt`; //ファイル名
+        let dayPlus = '';
+        if (date.getMonth() < 10) {
+            dayPlus = 0;
+        }
+        console.log(dayPlus);
+        const filename = `${h1.textContent}_${date.getFullYear()}${dayPlus}${
+            date.getMonth() + 1
+        }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 
         const blob = new Blob([text], { type: 'text/plain' }); //クラスか
         const link = document.createElement('a');
