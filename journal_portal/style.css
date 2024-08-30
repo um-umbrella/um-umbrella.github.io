@@ -355,11 +355,6 @@ li::marker {
 }
 
 #menu h1 {
-    color: rgba(0 0 0 / 0);
-    -webkit-text-stroke: 1px #000;
-
-    font-weight: normal;
-
     margin: 0;
     padding: 1em 0em;
 }
@@ -382,9 +377,9 @@ li::marker {
     text-align: center;
 
     color: var(--main-theme);
-    line-height: 3em;
-    padding: 2em;
-    margin: 0;
+    line-height: 2em;
+    padding: 0.5em;
+    margin: 1em 0;
 }
 
 img {
@@ -417,6 +412,26 @@ button {
 button:hover {
     background-color: var(--onepoint);
     color: var(--main-theme);
+}
+
+.grid {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+
+    margin: 0 0 64px;
+}
+
+.grid img {
+    object-fit: scale-down;
+    max-height: 200px;
+}
+
+.right_button {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
 }
 
 footer {
@@ -531,11 +546,9 @@ footer > ul > li:not(:last-child) {
         min-width: 300px;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 1em 0;
-        column-gap: 2em;
+    .grid img {
+        object-fit: contain;
+        height: 200px;
     }
 
     #menu {
