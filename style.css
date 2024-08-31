@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+:root {
+    --theme: #04445f;
+    --onepoint: #f5deb4;
+    --body-bg: #f5deb4;
+    --table-color: #f5deb4;
+    --text-color: #04445f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+img,
+p,
+ul,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 300;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+a:any-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p {
+    line-height: 2em;
+    padding: 0.3em 0;
+}
+
+mark {
+    background-color: rgb(255, 255, 255, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, var(--onepoint) 60%);
+}
+
+::selection {
+    background-color: var(--theme);
+    color: var(--onepoint);
+}
+
+img {
+    display: block;
+    margin: 1em auto;
+
+    object-fit: scale-down;
+    width: 100%;
+    max-height: 200px;
+}
+
+#update {
+    /*更新履歴*/
+    overflow-y: scroll;
+    list-style: none;
+
+    width: 80%;
+    max-width: 500px;
+    height: 8em;
+    margin: 0 auto;
+    padding: 0 0.5em;
+
+    border: solid 1px;
+    border-radius: 16px;
+    line-height: 1em;
+    color: var(--main-theme);
+
+    font-family: inherit;
+    font-size: small;
+}
+
+#update > li {
+    margin: 4px 0;
+    line-height: 20px;
+}
+
+#update::-webkit-scrollbar {
+    display: none;
+}
+
+time {
+    padding-right: 1em;
+}
+
+footer {
+    position: relative;
+    margin: 64px 0 0;
+    padding: 16px;
+
+    text-align: center;
+    font-size: small;
+}
+/*------------------------------------------------------ */
+
+.title {
+    width: 100%;
+    height: 15vh;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20320%22%3E%3Cpath%20fill%3D%22%2304445f%22%20fill-opacity%3D%221%22%20d%3D%22M0%2C288L48%2C288C96%2C288%2C192%2C288%2C288%2C277.3C384%2C267%2C480%2C245%2C576%2C240C672%2C235%2C768%2C245%2C864%2C250.7C960%2C256%2C1056%2C256%2C1152%2C261.3C1248%2C267%2C1344%2C277%2C1392%2C282.7L1440%2C288L1440%2C0L1392%2C0C1344%2C0%2C1248%2C0%2C1152%2C0C1056%2C0%2C960%2C0%2C864%2C0C768%2C0%2C672%2C0%2C576%2C0C480%2C0%2C384%2C0%2C288%2C0C192%2C0%2C96%2C0%2C48%2C0L0%2C0Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    background-repeat: repeat-x;
+}
+
+section {
+    margin: 8px;
+    padding: 16px 16px 0;
+}
+
+.centerText {
+    text-align: center;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    flex-wrap: wrap;
+}
+
+dt {
+    margin: 4px 0 0 auto;
+    padding: 4px 16px;
+    border: solid 1px;
+
+    text-align: right;
+}
+
+dd {
+    margin: auto 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 64px;
+    text-align: center;
+}
+
+h3 {
+    margin: 32px 0 0;
+    padding: 8px 16px;
+
+    border: solid 1px;
+}
+
+footer {
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    section {
+        position: relative;
+        margin: 32px auto;
+        padding: 32px 0;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    img.trim {
+        object-fit: cover;
+        width: 200px;
+        height: 100px;
+    }
+
+    h1 {
+        margin: -32px 0 0;
+    }
+
+    h2 {
+        position: absolute;
+        top: -64px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        padding: 16px 16px;
+        overflow: hidden;
+
+        font-size: 1em;
+    }
+
+    h3 > a:hover {
+        color: var(--table-color);
+    }
+
+    h3::before {
+        position: absolute;
+        width: 120%;
+        height: 0;
+        transform: rotate(-30deg);
+        transition: height 0.3s ease;
+        z-index: -1;
+
+        content: '';
+        background-color: var(--text-color);
+    }
+
+    h3:hover::before {
+        height: 400%;
+    }
+
+    /**/
+
+    section:has(.grid) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .grid {
+        width: 40%;
+    }
+
+    .grid > p {
+        margin: 0 12px;
+    }
+
+    dl {
+        margin: 32px auto 0;
+        width: 90%;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    main {
+        margin: 0 auto;
+
+        width: 1000px;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    section:has(.grid) {
+        gap: 16px;
+    }
+
+    .grid {
+        width: 30%;
+    }
+} /*@media*/
