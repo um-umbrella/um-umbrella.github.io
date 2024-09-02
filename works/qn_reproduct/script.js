@@ -232,7 +232,6 @@ function screenGo() {
         }${dayPlus}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 
         const imageData = canvas.toDataURL('image/png');
-        imageData.crossOrigin = 'anonymous';
 
         const element = document.createElement('a');
         element.setAttribute('href', imageData);
