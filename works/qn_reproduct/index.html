@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>クエノのアクション画面を再現するやつ</title>
+    </head>
+
+    <body>
+        <h1>
+            <span class="span_block">クエノの</span><span class="span_block">アクション画面を</span
+            ><span class="span_block">再現するやつ</span>
+        </h1>
+
+        <div class="menu_colum">
+            <input id="new_colum" value="PC1" /><button id="new_colum_sub" autocomplete="”off”">PC追加</button>
+            <button id="delete_colum_sub">最下部のPCを削除</button>
+            <button id="delete_last_action">最新の行動を削除</button>
+
+            <label>
+                プリセット
+                <select id="preset">
+                    <option>攻撃</option>
+                    <option>移動</option>
+                    <option>アイテム</option>
+                    <option>待機</option>
+                    <option>アクション</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="menu_main">
+            <labe class="span_block"
+                >アイコン
+                <select id="action_icon">
+                    <option>剣</option>
+                    <option>盾</option>
+                    <option>アイテム</option>
+                    <option>炎</option>
+                    <option>きらきら</option>
+                    <option>あわ</option>
+                    <option>丸</option>
+                    <option>手</option>
+                    <option>移動</option>
+                    <option>セリフ</option>
+                    <option>なし</option>
+                </select>
+            </labe>
+
+            <hr />
+
+            <label class="span_block"
+                >SPD
+                <select id="action_spd">
+                    <option>1</option>
+                    <option selected>通常</option>
+                    <option>-1</option>
+                </select></label
+            >
+            <labe class="span_block"
+                >Will
+                <input id="action_will" value="0" type="number" />
+            </labe>
+
+            <hr />
+
+            <label class="span_block">アクション名<input id="action_name" value="攻撃" autocomplete="”off”" /></label>
+            <label class="span_block">AP<input id="action_ap" value="4" type="number" /></label>
+            <label class="span_block">対象<input id="action_target" value="[x,y]" autocomplete="”off”" /></label>
+
+            <button id="new_action">行動を追加</button>
+        </div>
+
+        <div id="camera">
+            <div id="capture">
+                <p>ROUND X</p>
+                <!--選択追加-->
+                <div class="tl_frame_large">
+                    <p class="action_player">PC1</p>
+                    <div class="tl_frame_small">
+                        <div class="action_set">
+                            <p class="action_name">移動</p>
+                            <div class="action_icon icon_move"></div>
+                            <p class="action_target">[x,y]</p>
+                        </div>
+                    </div>
+                </div>
+                <!--選択追加終わり-->
+            </div>
+        </div>
+        <button id="cap_button">画像で保存</button>
+
+        <div class="ano">
+            <p>
+                <a href="https://www.questnotes.net/" target="_blank">Quest Notes</a
+                >のアクション画面っぽいものを再現するツールです。再現結果は画像で保存できます。<br />クエノの画面スクショを撮るのが面倒な時などにどうぞ。
+                何かあったら<a href="../../mail.html">ここにお知らせください</a>。
+            </p>
+            <dl>
+                <dt>レイアウトがずれる・画面に収まらない。</dt>
+                <dd>そういうこともある。見づらいだけで動作に問題はないです。</dd>
+                <dt>画像が保存できない。</dt>
+                <dd>一部OSはそうらしいです。</dd>
+            </dl>
+            <p>
+                <a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a>｜<a
+                    href="https://remixicon.com/"
+                    target="_blank"
+                    >REMIX ICON</a
+                >
+            </p>
+        </div>
+
+        <script src="../../html2canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
