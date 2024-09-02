@@ -227,7 +227,7 @@ function screenGo() {
         if (date.getDate() < 10) {
             dayPlus = 0;
         }
-        const filename = `ファイル名_${date.getFullYear()}${monthPlus}${
+        const filename = `クエノアクション_${date.getFullYear()}${monthPlus}${
             date.getMonth() + 1
         }${dayPlus}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 

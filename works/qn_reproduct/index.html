@@ -21,9 +21,27 @@
             ><span class="span_block">再現するやつ</span>
         </h1>
 
+        <div id="camera">
+            <div id="capture">
+                <p>ROUND X</p>
+                <!--選択追加-->
+                <div class="tl_frame_large">
+                    <p class="action_player">PC1</p>
+                    <div class="tl_frame_small">
+                        <div class="action_set">
+                            <p class="action_name">移動</p>
+                            <div class="action_icon icon_move"></div>
+                            <p class="action_target">[x,y]</p>
+                        </div>
+                    </div>
+                </div>
+                <!--選択追加終わり-->
+            </div>
+        </div>
+
         <div class="menu_colum">
             <input id="new_colum" value="PC1" /><button id="new_colum_sub" autocomplete="”off”">PC追加</button>
-            <button id="delete_colum_sub">最下部のPCを削除</button>
+            <button id="delete_colum_sub">最後のPCを削除</button>
             <button id="delete_last_action">最新の行動を削除</button>
 
             <label>
@@ -70,44 +88,29 @@
                 >Will
                 <input id="action_will" value="0" type="number" />
             </labe>
+            <label class="span_block">AP<input id="action_ap" value="4" type="number" /></label>
 
             <hr />
 
             <label class="span_block">アクション名<input id="action_name" value="攻撃" autocomplete="”off”" /></label>
-            <label class="span_block">AP<input id="action_ap" value="4" type="number" /></label>
             <label class="span_block">対象<input id="action_target" value="[x,y]" autocomplete="”off”" /></label>
 
             <button id="new_action">行動を追加</button>
         </div>
 
-        <div id="camera">
-            <div id="capture">
-                <p>ROUND X</p>
-                <!--選択追加-->
-                <div class="tl_frame_large">
-                    <p class="action_player">PC1</p>
-                    <div class="tl_frame_small">
-                        <div class="action_set">
-                            <p class="action_name">移動</p>
-                            <div class="action_icon icon_move"></div>
-                            <p class="action_target">[x,y]</p>
-                        </div>
-                    </div>
-                </div>
-                <!--選択追加終わり-->
-            </div>
-        </div>
+        <hr />
+
         <button id="cap_button">画像で保存</button>
 
         <div class="ano">
             <p>
                 <a href="https://www.questnotes.net/" target="_blank">Quest Notes</a
-                >のアクション画面っぽいものを再現するツールです。再現結果は画像で保存できます。<br />クエノの画面スクショを撮るのが面倒な時などにどうぞ。
-                何かあったら<a href="../../mail.html">ここにお知らせください</a>。
+                >のアクション画面っぽいものを再現するツールです。
             </p>
+            <p>再現結果は画像で保存できます。クエノの画面スクショを撮るのが面倒な時などにどうぞ。</p>
             <dl>
-                <dt>レイアウトがずれる・画面に収まらない。</dt>
-                <dd>そういうこともある。見づらいだけで動作に問題はないです。</dd>
+                <dt>レイアウトがずれる。</dt>
+                <dd>そういうこともある。</dd>
                 <dt>画像が保存できない。</dt>
                 <dd>一部OSはそうらしいです。</dd>
             </dl>
@@ -116,7 +119,7 @@
                     href="https://remixicon.com/"
                     target="_blank"
                     >REMIX ICON</a
-                >
+                >｜<a href="../../mail.html">連絡</a>
             </p>
         </div>
 
