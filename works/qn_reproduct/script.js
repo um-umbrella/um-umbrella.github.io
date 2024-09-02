@@ -203,9 +203,23 @@ newAction.addEventListener('click', () => {
     actionSet.appendChild(actionWillFrame);
 
     const actionWillNum = document.getElementById('action_will');
+    const actionWillColor = document.getElementById('action_will_color');
+
     for (let i = 0; i < actionWillNum.value; i++) {
         const actionWill = document.createElement('div');
         actionWill.className = 'action_will';
+        console.log(actionWillColor.value);
+        if (actionWillColor.value === '桃') {
+            actionWill.classList.add('will_pink');
+        } else if (actionWillColor.value === '赤') {
+            actionWill.classList.add('will_red');
+        } else if (actionWillColor.value === '緑') {
+            actionWill.classList.add('will_green');
+        } else if (actionWillColor.value === '青') {
+            actionWill.classList.add('will_blue');
+        } else {
+            actionWill.classList.add('will_white');
+        }
         actionWillFrame.appendChild(actionWill);
     }
 });
