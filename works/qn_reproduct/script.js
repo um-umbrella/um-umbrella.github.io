@@ -195,8 +195,9 @@ newAction.addEventListener('click', () => {
     actionSet.appendChild(actionName);
     actionSet.appendChild(pAp);
     actionSet.appendChild(actionIcon);
-    actionSet.appendChild(actionTarget);
-
+    if (!actionTarget.textContent == '') {
+        actionSet.appendChild(actionTarget);
+    }
     //div   action_will
     const actionWillFrame = document.createElement('div');
     actionWillFrame.className = 'action_will_frame';
