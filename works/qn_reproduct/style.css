@@ -282,6 +282,9 @@ input {
 }
 
 button {
+    position: relative;
+    top: 2px;
+
     margin: 8px;
     margin-left: 1px;
     padding: 4px 8px;
@@ -300,14 +303,19 @@ button:hover {
 
 .menu_colum > label {
     display: inline-block;
-    margin: 8px 0 32px;
+    margin: 8px 0 24px;
+}
+
+label,
+.span_block {
+    margin-right: 16px;
 }
 
 .menu_main {
     display: inline-block;
     padding: 16px;
 
-    line-height: 2em;
+    line-height: 1.3em;
     border-radius: 8px;
     background-color: #ddcdcd;
 }
