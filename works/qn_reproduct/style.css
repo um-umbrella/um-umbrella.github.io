@@ -306,8 +306,7 @@ button:hover {
     margin: 8px 0 24px;
 }
 
-label,
-.span_block {
+label {
     margin-right: 16px;
 }
 
