@@ -344,6 +344,20 @@ dd {
     width: 70%;
 }
 
+dd:has(.banner) {
+    padding: 0 2%;
+}
+
+.banner {
+    margin: 0;
+    padding: 0;
+
+    width: 200px;
+    height: 40px;
+
+    text-align: left;
+}
+
 /*------------------------------------------------------ */
 
 @media screen and (min-width: 520px) {

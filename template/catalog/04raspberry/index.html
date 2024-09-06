@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Capriola&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「ラズベリー」</title>
+    </head>
+
+    <body>
+        <div class="title"></div>
+        <main>
+            <section>
+                <h1>タイトル</h1>
+                <p class="centerText">なんだかぐちゃぐちゃしているテーマです。<br />ゆるっとしたい雰囲気向け。</p>
+                <ul id="update">
+                    <li><time>10/31</time>更新内容</li>
+                    <li><time>12/24</time>更新内容</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>見出し２</h2>
+                <p>
+                    <a href="">リンク</a><a href="">リンク</a><a href="">リンク</a><br />
+                    markで<mark>下線を引きます</mark>。
+                </p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+                <dl>
+                    <dt>項目名</dt>
+                    <dd>dl要素は中央に寄せた一覧表示になります。<br />リンク集などに。</dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                </dl>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <h6>見出し６</h6>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <p class="centerText">pに<mark>class="centerText"</mark>を付けると、テキストを中央寄せで表示します。</p>
+            </section>
+
+            <section>
+                <h2 class="h2-2">見出し２（h2-2）</h2>
+                <p>以下はグリッド表示の例です。</p>
+
+                <div class="grid">
+                    <h3>見出し３（文字数によって縦幅が膨らみます）</h3>
+                    <img src="img/thum_ob.jpg" />
+                    <p>
+                        section内のdivに<mark>class="grid"</mark>を追加すると、２～３列で表示されます。画面の広いPCやパッド向け。
+                    </p>
+                </div>
+                <div class="grid">
+                    <h3>見出し３</h3>
+                    <img src="img/thum.jpg" />
+                    <p>大きな画像は縦200pxまでに縮小表示されます。</p>
+                </div>
+                <div class="grid">
+                    <h3>見出し３</h3>
+                    <img src="img/thum_ver.jpg" class="trim" />
+                    <p>画像に<mark>class="trim"</mark>を付けると、横いっぱい×縦300pxまででトリミング表示になります。</p>
+                </div>
+            </section>
+        </main>
+        <footer>サイト名</footer>
+    </body>
+</html>

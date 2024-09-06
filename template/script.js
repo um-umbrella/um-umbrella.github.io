@@ -5,6 +5,7 @@ const temp = [
     { name: '01 シンプル', file: '01simple' },
     { name: '02 付箋', file: '02husen' },
     { name: '03 海と空', file: '03seaandsky' },
+    { name: '04 ラズベリー', file: '04raspberry' },
 ];
 
 const searchLink = [
@@ -103,6 +104,7 @@ function linkListWrite(e) {
         const a = document.createElement('a');
         a.textContent = obj.name;
         a.href = obj.file;
+        a.target = '_blank';
         p.appendChild(a);
 
         if (i < e.length - 1) {
