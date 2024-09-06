@@ -11,6 +11,7 @@ const temp = [
 const searchLink = [
     { name: 'COMPASS LINK', file: 'https://compslink.jp' },
     { name: 'いえつく', file: 'https://ietsuku.i-ra.site/' },
+    { name: 'LONY', file: 'https://lony.jp/' },
 ];
 
 const studyLink = [{ name: '文系大学生のための○○入門', file: 'https://zenn.dev/ojk?tab=books' }];
