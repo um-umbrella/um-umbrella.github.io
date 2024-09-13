@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「道」</title>
+    </head>
+
+    <body>
+        <main>
+            <!-- サイト基本情報 -->
+            <div class="ab">
+                <h1 class="title">Site Name</h1>
+                <div class="subtitle">
+                    <p>サブタイトル的な内容</p>
+                    <br />
+                    <p>複数行も可</p>
+                </div>
+                <img class="title_bg" src="img/background.jpg" />
+            </div>
+
+            <nav id="menu">
+                <!--ナビメニュー-->
+                <ul>
+                    <li><a href="#">TOP</a></li>
+                    <li><a href="#sec1">メニュー１</a></li>
+                    <li><a href="#sec2">メニュー２</a></li>
+                    <li><a href="#sec3">メニュー３</a></li>
+                </ul>
+            </nav>
+
+            <section id="sec1">
+                <p>透明感とシンプルを目標にしたテーマです。</p>
+                <p>
+                    PCなどでは本文の左側と被るので、タイトル画像は淡い色彩のものが向くかもしれません。<br />
+                    タイトル画像をよりしっかり見せたいときには、sectionに<mark>class="none"</mark>を付けると、テキストエリアの背景を透過します。（タイトル画像:
+                    <a href="https://jaymantri.com/" target="_blank">jay mantry</a>）
+                </p>
+
+                <ul id="update">
+                    <!--更新履歴-->
+                    <li><time>10/15</time>更新履歴３</li>
+                    <li><time>9/31</time>更新履歴２</li>
+                    <li><time>9/11</time>更新履歴１</li>
+                </ul>
+            </section>
+
+            <section id="sec2">
+                <h2>見出し２</h2>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <button>ボタン</button> <button>ボタン</button>
+                <p><mark>markで下線を引きます</mark>。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+            </section>
+
+            <section id="sec3">
+                <img src="img/thum.jpg" />
+                <p>画像はこんな感じ。 大きい画像は最大縦300pxで表示されます。</p>
+                <img src="img/thum.jpg" class="trim" />
+                <p>imgにclass="trim"を付けると、横100％、最大縦300pxでトリミングします。縦横比に差がある画像向け。</p>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
