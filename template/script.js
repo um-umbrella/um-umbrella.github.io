@@ -6,7 +6,10 @@ const temp = [
     { name: '02 付箋', file: '02husen' },
     { name: '03 海と空', file: '03seaandsky' },
     { name: '04 ラズベリー', file: '04raspberry' },
+    { name: '05 道', file: '05load' },
 ];
+
+const materialLink = [{ name: 'jay mantri', file: 'https://jaymantri.com/' }];
 
 const searchLink = [
     { name: 'COMPASS LINK', file: 'https://compslink.jp' },
@@ -18,6 +21,7 @@ const studyLink = [{ name: '文系大学生のための○○入門', file: 'htt
 
 //--------------------------------------------------------------------
 tempListWrite();
+linkListWrite(materialLink);
 linkListWrite(searchLink);
 linkListWrite(studyLink);
 
