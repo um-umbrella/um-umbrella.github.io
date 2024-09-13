@@ -297,7 +297,7 @@ button:hover {
         margin: 16px;
 
         color: rgba(0, 0, 0, 0);
-        -webkit-text-stroke: 0.2px var(--theme);
+        -webkit-text-stroke: 0.5px var(--theme);
 
         font-size: 5em;
     }
