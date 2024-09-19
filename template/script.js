@@ -7,6 +7,7 @@ const temp = [
     { name: '03 海と空', file: '03seaandsky' },
     { name: '04 ラズベリー', file: '04raspberry' },
     { name: '05 道', file: '05load' },
+    { name: '06 四角', file: '06square' },
 ];
 
 const materialLink = [{ name: 'jay mantri', file: 'https://jaymantri.com/' }];

@@ -7,7 +7,7 @@
 *------------------------------------------------------ */
 
 :root {
-    --onepoint: #ec4899;
+    --onepoint: #ebdbdb;
     --body-bg: #fbf5ee;
     --table-color: #ffffff;
     --text-color: #222;
@@ -28,17 +28,7 @@ body {
     color: var(--text-color);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-img,
-p,
-ul,
-table,
-th,
-td {
+* {
     margin: 0;
     padding: 0;
 }
@@ -74,6 +64,10 @@ img {
     width: 100%;
 }
 
+mark {
+    background-color: rgb(255, 255, 255, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, var(--onepoint) 60%);
+}
 /*---------------------*/
 
 main {
@@ -160,6 +154,7 @@ nav > ul > li > a {
 h2 {
     position: relative;
     margin: 0 0 16px;
+    padding: 0 8px;
 }
 
 h2::after {
@@ -198,13 +193,13 @@ section {
     overflow-y: scroll;
     list-style: none;
 
-    font-family: inherit;
-
     width: 90%;
-    height: 4em;
+    height: 80px;
     margin: 16px auto;
     padding: 0 16px;
+    box-sizing: border-box;
 
+    font-family: inherit;
     line-height: 1em;
     border-radius: 8px;
     border: 1px solid var(--text-color);
@@ -221,6 +216,25 @@ section {
 
 time {
     padding-right: 1em;
+}
+
+div:has(#update) {
+    position: relative;
+}
+
+#update-jump {
+    display: inline-block;
+    position: absolute;
+    bottom: -4px;
+    right: 48px;
+    z-index: 50;
+
+    margin: 0;
+    padding: 0 8px;
+    line-height: 1em;
+
+    font-size: smaller;
+    background-color: var(--body-bg);
 }
 
 #term,
@@ -268,6 +282,7 @@ time {
     left: 16px;
 
     font-size: 1.5em;
+    text-shadow: #fff 0 0 5px;
 }
 
 .button-area {
@@ -356,6 +371,39 @@ dd:has(.banner) {
     height: 40px;
 
     text-align: left;
+}
+
+#log {
+    margin: 0;
+    padding: 0 0 56px;
+}
+
+#log dl {
+    margin: 64px 0 0;
+}
+
+#log dt {
+    margin: 4px 0;
+    padding: 8px 0;
+    padding-right: 8px;
+    width: 15%;
+
+    text-align: right;
+
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text-color);
+}
+
+#log dd {
+    margin: 4px 0;
+    padding: 8px;
+    width: 75%;
+}
+
+#log hr {
+    margin: 4px 0;
+    width: 50%;
+    border: none;
 }
 
 /*------------------------------------------------------ */
@@ -471,3 +519,19 @@ dd:has(.banner) {
         opacity: 0.5;
     }
 } /*@media*/
+
+@media screen and (max-width: 1080px) {
+    .main-view {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .main-view footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}
