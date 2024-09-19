@@ -1,139 +1,147 @@
 @charset "utf-8";
 
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
 :root {
-    --main-theme: #da4167;
+    --theme: #da4167;
     --onepoint: #f4d35e;
 
     --body-bg: #ffffff;
     --table-color: #ffffff;
-    --table-text: #333;
-    --textarea: #eee;
+    --text-light-color: #fff;
+    --text-dark-color: #333;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Noto Sans JP', system-ui;
+* {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+
+    font-weight: 300;
     background-color: var(--body-bg);
 }
 
 main {
     position: relative;
-    font-size: 14px;
-    color: var(--table-text);
-}
-
-ul,
-table,
-th,
-td {
-    margin: 0;
-    padding: 0;
-}
-p {
-    line-height: 2em;
-}
-
-a:any-link {
-    text-decoration: none;
-    color: var(--main-theme);
-}
-
-a:any-link:hover {
-    color: var(--onepoint);
 }
 
 ::selection {
-    background-color: var(--onepoint);
-    color: var(--table-color);
+    background-color: var(--theme);
+    color: var(--body-bg);
 }
 
-h1 {
-    position: relative;
-    margin: 0;
-
-    padding: 0.5rem;
-    background: var(--main-theme);
-    color: var(--table-color);
-    text-align: center;
+li {
+    margin: 0 32px;
 }
 
-h2 {
-    position: relative;
-    margin: 40px 0 0;
-    padding: 8px 24px;
-    text-align: center;
-    font-size: 24px;
-
-    border: solid 1px var(--main-theme);
-}
-
-h3 {
+nav > ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    font-size: 22px;
-    text-align: center;
-}
-h3::before,
-h3::after {
-    position: relative;
-    content: '';
-    width: 80px;
-    height: 1px;
-    margin: 0 1em;
-
-    background-color: var(--main-theme);
 }
 
-h5,
-h6 {
-    font-size: 1em;
-    margin: 1em 0;
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
 }
 
-hr {
-    max-width: 25%;
-    margin: 5em auto;
+a {
+    text-decoration: none;
+    color: var(--theme);
+    transition: color 0.3s;
+}
 
-    border: 0.5px solid #ccc;
+a:hover {
+    color: var(--text-dark-color);
+}
+
+p {
+    line-height: 2em;
+    padding: 0.3em 0;
 }
 
 mark {
+    color: inherit;
     background-color: rgb(255, 255, 255, 0);
     background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, var(--onepoint) 60%);
 }
 
-/*----------------------------------------------------------*/
-section {
-    /*全てのコンテンツ*/
-    padding: 1em;
-    margin: 1em;
+hr {
+    margin: 32px;
+    border: none;
+    border-top: 1px solid var(--onepoint);
+}
 
-    background-color: var(--table-color);
+h2 {
+    padding: 16px 0 8px;
+}
+h3 {
+    padding: 32px 0 8px;
+}
+
+h4 {
+    padding: 16px 0 0;
+}
+
+h4::before {
+    display: inline-block;
+    position: relative;
+    margin-right: 4px;
+
+    content: '';
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+
+    background-color: var(--theme);
+}
+
+h5,
+h6 {
+    margin: 16px 0 0;
+    font-size: 1em;
+}
+
+img:not(:where(.img-grid, .addWindow) > img) {
+    display: block;
+    margin: 16px auto;
+    object-fit: scale-down;
+    width: 100%;
+    max-height: 300px;
+}
+
+img.trim {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
 }
 
 #update {
     /*更新履歴*/
     overflow-y: scroll;
     list-style: none;
+    box-sizing: border-box;
 
+    width: 100%;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 8px;
+
+    border-radius: 4px;
     font-family: inherit;
-
-    width: 80%;
-    height: 4em;
-    margin: 1em 0;
-    padding: 0 1em;
-
+    font-size: inherit;
     line-height: 1em;
-    color: var(--main-theme);
-    background-color: var(--textarea);
-    border-radius: 0.1em;
+    background-color: #eee;
 }
 
 #update > li {
@@ -141,84 +149,155 @@ section {
     padding: 0;
 }
 
-time {
-    padding-right: 1em;
-}
-
 #update::-webkit-scrollbar {
     display: none;
 }
 
-li {
-    margin: 0 24px;
-    padding-bottom: 8px;
+time {
+    padding-right: 1em;
 }
 
-li::marker {
-    color: var(--onepoint);
+button {
+    margin: 0 4px;
+    padding: 4px 16px;
+    border: none;
+    border-radius: 500px;
+
+    background-color: var(--theme);
+    color: var(--body-bg);
+    transition: background-color 0.3s;
 }
 
-ul.memo {
-    list-style-position: inside;
-    padding: 1em 2em;
+button:hover {
+    background-color: var(--onepoint);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
     margin: 16px 0;
-
-    border: 1px dotted var(--main-theme);
-    background-color: var(--table-color);
+    padding: 16px 0;
 }
 
-ul.memo li {
-    padding: 0.5em;
-    margin: 0;
+.grid > * {
+    display: block;
+    width: 100%;
 }
 
-ul.memo li:not(:last-child) {
-    max-width: 95%;
-    border-bottom: 1px dashed var(--main-theme);
+.img-grid {
+    text-align: center;
 }
 
-ul.memo li::marker {
-    color: var(--onepoint);
-    font-size: 1.1em;
+.img-grid img {
+    margin: 4px;
 }
+
+@media screen and (min-width: 600px) {
+    .grid {
+        justify-content: center;
+        align-items: baseline;
+        gap: 16px;
+    }
+
+    .img-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grid > * {
+        width: 45%;
+    }
+
+    .img-grid > img {
+        max-width: 300px;
+        margin: 8px;
+    }
+} /*512px*/
+
+/*モーダルウィンドウ*/
+.addWindow {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+
+    content: '';
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.25s ease-out;
+}
+
+.addWindow > img {
+    position: relative;
+    object-fit: scale-down;
+    z-index: 50;
+    margin: 16px auto;
+    top: 0;
+    left: 0;
+
+    width: 80%;
+    height: 80%;
+    max-height: 80%;
+}
+
+.addWindow > p {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 70%;
+    margin: auto;
+    padding: 0;
+
+    text-align: center;
+    color: var(--text-light-color);
+}
+
+/*----------------------------------------------------------*/
 
 #menu a:any-link {
-    color: var(--table-color);
+    color: var(--text-light-color);
 }
 
 #menuOpen {
     position: fixed;
-    right: 0.5em;
-    top: 0.4em;
-    z-index: 5;
+    right: 16px;
+    top: 12px;
+    z-index: 55;
 
-    color: var(--table-text);
+    color: #fff;
+    -webkit-text-stroke: var(--theme) 1px;
     font-size: 2em;
 }
 
-#menuClose {
-    position: absolute;
-    right: 0.2em;
-    top: 0.1em;
-    z-index: 100;
-
-    font-size: 3em;
-    color: var(--main-theme);
+#check_input {
+    display: none;
 }
 
+/*動きをつけたい要素、チェック前*/
 #menu {
-    display: none;
     position: fixed;
     z-index: 50;
+    top: 0;
     left: 0;
-    right: 0;
-    padding: 0.5em;
+    transform: translateY(-105%);
+    width: 100%;
+    padding: 8px;
 
-    background-image: linear-gradient(150deg, var(--main-theme) 20%, var(--onepoint) 80%);
-
-    background: linear-gradient(45deg, var(--onepoint), var(--main-theme));
-    background-size: 400% 400%;
+    background-image: linear-gradient(150deg, var(--theme) 20%, var(--onepoint) 80%);
     animation: GradientBackground 7s ease infinite;
+    background: linear-gradient(45deg, var(--onepoint), var(--theme));
+    background-size: 400% 400%;
+    transition: 0.5s;
+}
+
+input[type='checkbox']:checked ~ #menu {
+    transform: translateY(0);
 }
 
 @keyframes GradientBackground {
@@ -254,125 +333,139 @@ ul.memo li::marker {
 }
 
 #menu > ul > li:not(:last-child) {
-    border-bottom: solid 1px var(--textarea);
+    border-bottom: solid 1px var(--text-light-color);
 }
 
-.txt-right {
-    display: inline-block;
-    position: absolute;
-    right: 1.5em;
+section {
+    margin: 32px;
+    padding: 16px;
+}
+
+section:last-child {
+    padding-bottom: 64px;
+}
+
+h1,
+footer {
+    background-image: linear-gradient(150deg, var(--theme) 20%, var(--onepoint) 80%);
+    animation: GradientBackground 7s ease infinite;
+    background: linear-gradient(45deg, var(--onepoint), var(--theme));
+    background-size: 400% 400%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    padding: 0.5rem;
+
+    text-align: center;
+    color: var(--table-color);
+}
+
+h2 {
+    position: relative;
+    margin: 40px 0 0;
+    padding: 8px 24px;
+    font-size: 24px;
+
+    border: solid 1px var(--theme);
+}
+
+h3 {
+    display: flex;
+    font-size: 1.4em;
+}
+
+h3::after {
+    position: relative;
+    margin: 0 16px;
+    width: 50%;
+    height: 1px;
+    bottom: -0.7em;
+    left: 0;
+
+    content: '';
+    background-color: var(--theme);
 }
 
 .fv {
-    font-family: 'Hina Mincho';
-    text-align: center;
-
-    color: var(--main-theme);
-    line-height: 2em;
     padding: 2em 0;
     margin: 0;
-}
+    opacity: 0.8;
 
-img {
-    display: block;
-    margin: 1em auto;
-
-    object-fit: scale-down;
-    max-width: 100%;
-    max-height: 300px;
-}
-
-img.trim {
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-}
-
-button {
-    margin: 1em 0.5em;
-    padding: 0.3em 0.5em;
-
-    border: none;
-    border-radius: 3px;
-
-    background-color: var(--onepoint);
-    color: var(--table-color);
-    font-size: small;
-    font-family: inherit;
-}
-
-button:hover {
-    background-color: var(--main-theme);
-    color: var(--onepoint);
+    line-height: 2em;
+    font-family: 'Hina Mincho';
+    text-align: center;
+    color: var(--text-dark-color);
 }
 
 footer {
     position: relative;
     display: flex;
     width: 100%;
-    background-color: var(--onepoint);
+    background-color: var(--theme);
     font-size: small;
 }
 
-footer > ul {
-    margin: 1em auto;
+footer > * {
+    position: relative;
+    margin: 16px auto 20px;
     display: flex;
 
     list-style: none;
 }
 
-footer > ul > li {
+footer li {
     margin: 0;
-    padding: 0 1em;
+    padding: 0 12px;
     color: var(--table-color);
 }
 
-footer > ul > li:not(:last-child) {
-    border-right: solid 1px var(--textarea);
+footer li:not(:last-child) {
+    border-right: solid 1px var(--text-light-color);
 }
 
-footer > ul::after {
-    display: inline;
+footer::after {
     position: absolute;
 
-    bottom: 0;
-    right: 4px;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    font-size: small;
-    color: #fff;
     opacity: 0.5;
     content: 'template by under my umbrella';
-    background-color: var(--onepoint);
-}
-
-/*-----------------------------------------------------*/
-@media screen and (min-width: 520px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin: 1em 0;
-        column-gap: 1em;
-    }
+    font-size: smaller;
+    color: #fff;
 }
 
 /*-----------------------------------------------------*/
 @media screen and (min-width: 768px) {
-    footer {
-        display: none;
+    /*モーダルウィンドウ*/
+    .addWindow {
+        z-index: 100;
     }
 
     main {
-        margin: 0 300px;
-        padding: 5em 0;
-        width: 60%;
+        margin-left: 240px;
+        padding: 32px 0;
+        width: 68%;
         max-width: 800px;
         min-width: 300px;
     }
 
-    #menuOpen,
-    #menuClose {
+    #menuOpen {
         display: none;
     }
+
     #menu {
         display: block;
         position: fixed;
@@ -380,32 +473,58 @@ footer > ul::after {
         min-width: 100px;
         max-width: 200px;
         height: 100%;
+
+        transform: translateY(0);
     }
 
     #menu h1 {
-        padding: 1em 0;
+        padding: 40px 0;
     }
 
-    #menu li:hover {
-        list-style: none;
-    }
-
-    #menu::after {
-        position: fixed;
-
-        bottom: 0;
-        left: 8px;
-        z-index: 10;
-
-        font-size: small;
-        color: #fff;
-        opacity: 0.3;
-        content: 'template by under my umbrella';
-        background-color: rgba(0, 0, 0, 0);
-    }
-
-    main > h1 {
+    main h1 {
         display: none;
+    }
+
+    section {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        position: relative;
+    }
+
+    footer {
+        display: inline-block;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: 8px;
+        width: 216px;
+
+        text-align: center;
+        background: rgba(0, 0, 0, 0);
+    }
+
+    footer * {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer li:not(:last-child) {
+        border: none;
+    }
+
+    footer::after {
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+
+        opacity: 0.5;
+        content: 'template by under my umbrella';
+        font-size: smaller;
     }
 } /*@mediaの終わり*/
 
@@ -413,9 +532,9 @@ footer > ul::after {
 @media screen and (min-width: 1064px) {
     main {
         margin: 0 400px;
-        padding: 5em 0;
+        padding: 64px 0;
         width: 60%;
-        max-width: 800px;
+        max-width: 100%;
         min-width: 300px;
     }
 
@@ -430,11 +549,7 @@ footer > ul::after {
         left: 64px;
     }
 
-    hr {
-        margin: 6em auto;
-    }
-
-    img {
-        height: 100%;
+    footer {
+        width: 316px;
     }
 } /*@mediaの終わり*/

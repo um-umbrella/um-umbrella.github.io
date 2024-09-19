@@ -5,67 +5,63 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@300&display=swap"
-            rel="stylesheet"
-        />
+        <link href="style.css" rel="stylesheet" />
 
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-        <link href="style.css?20240919" rel="stylesheet" />
-
-        <title>テンプレート「シンプル」</title>
+        <title>テンプレート「四角」テキストページ</title>
     </head>
 
     <body>
-        <input type="checkbox" id="check_input" />
-        <label id="menuOpen" for="check_input"><i class="ri-menu-line"></i></label>
-        <div id="menu">
-            <ul>
-                <h1><a href="#">タイトル</a></h1>
-                <li><a href="#s-1">メニュー１</a></li>
-                <li><a href="#s-2">メニュー２</a></li>
-                <li><a href="#s-3">メニュー３</a></li>
-                <li>
-                    <a href="#">メール<i class="ri-mail-fill"></i></a>
-                </li>
-            </ul>
-        </div>
-
         <main>
-            <h1>タイトル</h1>
+            <div class="menu_bar">
+                <h1>About</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Gallery</a></li>
+                        <li><a href="#">メニュー１</a></li>
+                        <li><a href="#">メニュー２</a></li>
+                    </ul>
+                    <a href="#"><button class="to-top"></button></a>
+                </nav>
+            </div>
 
-            <section id="s-1">
-                <p>シンプルめなテーマです。</p>
-
+            <section>
+                <p>
+                    ギャラリー向けテーマ、テキストメインのページです。<br />サイト説明や小説用ページなどに。<a
+                        href="index.html"
+                        >画像メインはこっち</a
+                    >。
+                </p>
                 <ul id="update">
-                    <li><time>10/3</time>更新内容</li>
-                    <li><time>9/16</time>更新内容</li>
-                    <li><time>8/30</time>更新内容</li>
+                    <li><time>10/10</time>更新履歴１</li>
+                    <li><time>9/30</time>更新履歴２</li>
+                    <li><time>9/17</time>更新履歴３</li>
                 </ul>
+            </section>
 
+            <section>
                 <h2>見出し２</h2>
                 <h3>見出し３</h3>
                 <h4>見出し４</h4>
                 <h5>見出し５</h5>
                 <h6>見出し６</h6>
-                <p><a href="#">リンク</a>｜<a href="#">リンク</a></p>
-                <button>ボタン１</button><button>ボタン２</button>
+
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <button>ボタン</button> <button>ボタン</button>
+                <p><mark>markで下線を引きます</mark>。</p>
                 <hr />
                 <ul>
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
-                <p class="fv">class="fv"を付けると、色付き・中央揃えの装飾になります。</p>
             </section>
 
             <section>
-                <h2>グリッド表示・画像</h2>
                 <div class="grid">
                     <div>
                         <p>
-                            グリッド表示１。<br /><mark>div class="grid"</mark
-                            >の中身はグリッド表示（最大２列）になります。
+                            グリッド表示１。<br /><mark>div class="grid"</mark>で、グリッド表示（最大三列）になります。
                         </p>
                     </div>
                     <div>
@@ -79,20 +75,19 @@
                         </p>
                     </div>
                     <div>
-                        <p>グリッド表示４。</p>
+                        <p>
+                            グリッド表示４。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
                     </div>
                 </div>
 
-                <p>画像のみグリッドはこんな感じです。</p>
                 <div class="img-grid">
-                    <!--画像を3列以上で並べるときはimg-gridを指定してください-->
+                    <!--画像を3列以上で並べたいときはimg-gridを指定してください-->
                     <div><img src="img/banner.jpg" /></div>
                     <div><img src="img/banner.jpg" /></div>
                     <div><img src="img/banner.jpg" /></div>
                     <div><img src="img/banner.jpg" /></div>
                 </div>
-
-                <hr />
 
                 <p>
                     imgに<mark>class="trim"</mark>を付けると、横幅いっぱい・縦最大300pxでトリミングします。縦横比に差がある画像向け。それ以外の大きい画像は、最大縦300pxまで縮小表示します。
@@ -105,14 +100,6 @@
                 <img src="img/thum.jpg" class="trim modal-window" name="画像の説明" />
             </section>
         </main>
-
-        <footer>
-            <ul>
-                <li>サイト情報</li>
-                <li>管理者など</li>
-            </ul>
-        </footer>
-
-        <script src="script.js?20240919"></script>
+        <script src="script.js"></script>
     </body>
 </html>
