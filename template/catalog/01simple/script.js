@@ -9,15 +9,13 @@ for (const imgClass of imgArray) {
 }
 
 function imgClick() {
-    console.log(this.name);
-
     //i生成
     let div = document.createElement('div');
     let img = document.createElement('img');
     let p = document.createElement('p');
 
     img.src = this.src;
-    p.textContent = this.name;
+    p.textContent = this.alt;
     div.classList.toggle('addWindow');
 
     document.body.appendChild(div);
@@ -33,7 +31,6 @@ const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time)); //t
 
 //sleep/async
 async function imgDelete() {
-    console.log(this);
     this.style.opacity = 0;
     await sleep(250);
     this.remove();

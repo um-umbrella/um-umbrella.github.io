@@ -15,7 +15,7 @@ function imgClick() {
     let p = document.createElement('p');
 
     img.src = this.src;
-    p.textContent = this.name;
+    p.textContent = this.alt;
     div.classList.toggle('addWindow');
 
     document.body.appendChild(div);

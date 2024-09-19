@@ -417,6 +417,10 @@ nav li {
     padding: 32px;
 }
 
+.gallery:last-child {
+    margin-bottom: 64px;
+}
+
 .new::after {
     position: absolute;
     z-index: 2;

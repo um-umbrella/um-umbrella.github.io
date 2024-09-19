@@ -12,7 +12,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-        <link href="style.css?20240919" rel="stylesheet" />
+        <link href="style.css?2024091902" rel="stylesheet" />
 
         <title>テンプレート「シンプル」</title>
     </head>
@@ -60,49 +60,38 @@
             </section>
 
             <section>
-                <h2>グリッド表示・画像</h2>
-                <div class="grid">
-                    <div>
-                        <p>
-                            グリッド表示１。<br /><mark>div class="grid"</mark
-                            >の中身はグリッド表示（最大２列）になります。
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                    <div>
-                        <p>グリッド表示４。</p>
-                    </div>
-                </div>
+                <h2>グリッド・画像</h2>
 
-                <p>画像のみグリッドはこんな感じです。</p>
-                <div class="img-grid">
-                    <!--画像を3列以上で並べるときはimg-gridを指定してください-->
-                    <div><img src="img/banner.jpg" /></div>
-                    <div><img src="img/banner.jpg" /></div>
-                    <div><img src="img/banner.jpg" /></div>
-                    <div><img src="img/banner.jpg" /></div>
-                </div>
-
-                <hr />
-
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
                 <p>
-                    imgに<mark>class="trim"</mark>を付けると、横幅いっぱい・縦最大300pxでトリミングします。縦横比に差がある画像向け。それ以外の大きい画像は、最大縦300pxまで縮小表示します。
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
                 </p>
-                <p><mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
 
-                <img src="img/thum.jpg" class="modal-window" name="画像の説明" />
-                <img src="img/thum_ob.jpg" class="modal-window" name="画像の説明" />
-                <img src="img/thum_ver.jpg" class="modal-window" name="画像の説明" />
-                <img src="img/thum.jpg" class="trim modal-window" name="画像の説明" />
+                <div class="grid">
+                    <p>
+                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
+                </div>
+
+                <div class="img-grid">
+                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
         </main>
 
@@ -113,6 +102,6 @@
             </ul>
         </footer>
 
-        <script src="script.js?20240919"></script>
+        <script src="script.js?2024091902"></script>
     </body>
 </html>
