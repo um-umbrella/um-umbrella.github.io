@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="style.css?20240921" rel="stylesheet" />
 
         <title>テンプレート「道」</title>
     </head>
@@ -60,7 +60,7 @@
                 <a href="">リンク</a>
                 <a href="">リンク</a>
                 <a href="">リンク</a>
-                <button>ボタン</button> <button>ボタン</button>
+                <button><a>ボタン</a></button> <button><a>ボタン</a></button>
                 <p><mark>markで下線を引きます</mark>。</p>
                 <ul>
                     <li>リスト１</li>
@@ -69,12 +69,20 @@
             </section>
 
             <section id="sec3">
-                <img src="img/thum.jpg" />
-                <p>画像はこんな感じ。 大きい画像は最大縦300pxで表示されます。</p>
-                <img src="img/thum.jpg" class="trim" />
-                <p>imgにclass="trim"を付けると、横100％、最大縦300pxでトリミングします。縦横比に差がある画像向け。</p>
+                <h2>画像</h2>
+
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                </p>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
+                <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+                <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
+                <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
             </section>
         </main>
+
         <script src="script.js"></script>
     </body>
 </html>

@@ -9,7 +9,7 @@
             href="https://fonts.googleapis.com/css2?family=Capriola&family=Zen+Maru+Gothic:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <link href="style.css" rel="stylesheet" />
+        <link href="style.css?20240921" rel="stylesheet" />
 
         <title>テンプレート「ラズベリー」</title>
     </head>
@@ -51,32 +51,62 @@
                 <p>
                     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                 </p>
-                <p class="centerText">pに<mark>class="centerText"</mark>を付けると、テキストを中央寄せで表示します。</p>
+                <p class="centerText">
+                    pに<mark>class="centerText"</mark>を付けると、<br />テキストを中央寄せで表示します。
+                </p>
             </section>
 
             <section>
-                <h2 class="h2-2">見出し２（h2-2）</h2>
-                <p>以下はグリッド表示の例です。</p>
+                <h2>グリッド・画像</h2>
+
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                </p>
 
                 <div class="grid">
-                    <h3>見出し３（文字数によって縦幅が膨らみます）</h3>
-                    <img src="img/thum_ob.jpg" />
-                    <p>
-                        section内のdivに<mark>class="grid"</mark>を追加すると、２～３列で表示されます。画面の広いPCやパッド向け。
-                    </p>
+                    <div>
+                        <h3>見出し３（文字数で縦に伸びます）</h3>
+                        <p>
+                            グリッド表示１。<br /><mark>div class="grid"</mark
+                            >の中身はグリッド表示（最大二列）になります。
+                        </p>
+                    </div>
+                    <div>
+                        <h3>見出し３</h3>
+                        <p>
+                            グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                    </div>
+                    <div>
+                        <h3>見出し３</h3>
+                        <p>
+                            グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                    </div>
+
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
                 </div>
-                <div class="grid">
-                    <h3>見出し３</h3>
-                    <img src="img/thum.jpg" />
-                    <p>大きな画像は縦200pxまでに縮小表示されます。</p>
+
+                <div class="img-grid">
+                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
                 </div>
-                <div class="grid">
-                    <h3>見出し３</h3>
-                    <img src="img/thum_ver.jpg" class="trim" />
-                    <p>画像に<mark>class="trim"</mark>を付けると、横いっぱい×縦300pxまででトリミング表示になります。</p>
-                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
         </main>
-        <footer>サイト名</footer>
+
+        <footer>
+            <ul>
+                <li>フッター・サイト名など</li>
+            </ul>
+        </footer>
+        <script src="script.js"></script>
     </body>
 </html>

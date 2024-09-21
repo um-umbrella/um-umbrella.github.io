@@ -5,18 +5,18 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="style.css?20240921" rel="stylesheet" />
 
         <title>テンプレート「海と空」</title>
     </head>
 
     <body>
-        <!-- メニュー -->
+        <!--背景画像-->
+        <img src="img/title.jpg" id="main-bg" />
+
+        <h1>See and Sky</h1>
         <nav>
             <ul>
-                <li><a href="#">タイトル</a></li>
                 <li><a href="#sec1">メニュー</a></li>
                 <li><a href="#sec2">メニュー</a></li>
                 <li><a href="#sec3">メニュー</a></li>
@@ -24,78 +24,67 @@
         </nav>
 
         <main>
-            <!--セクションはじまり-->
             <section id="sec1">
-                <h1>ページタイトル</h1>
-                <p>明るくさわやかめの雰囲気を目指したテーマです。</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p>青いっぱいのテーマです。</p>
+                <ul id="update">
+                    <li><time>9/26</time>更新履歴</li>
+                    <li><time>9/6</time>更新履歴</li>
+                    <li><time>8/31</time>更新履歴</li>
+                </ul>
             </section>
-            <!--セクションおわり-->
 
-            <!--セクションはじまり-->
             <section id="sec2">
-                <h2>見出し２</h2>
+                <h2>見出し2</h2>
                 <h3>見出し3</h3>
-                <h4>見出し４</h4>
-                <h5>見出し５</h5>
-                <!--更新履歴はじまり-->
-                <ul class="update">
-                    <li><time>6/31</time>更新内容</li>
-                    <li><time>7/2</time>更新内容</li>
-                    <li><time>7/5</time>更新内容</li>
-                    <li><time>7/9</time>更新内容</li>
-                </ul>
-                <!--更新履歴終わり-->
-                <p>テキストに<mark>下線を引く</mark></p>
-                <p><a href="">リンク</a> <a href="">リンク</a> <a href="">リンク</a></p>
-                <!--リストはじまり-->
+                <h4>見出し4</h4>
+                <h5>見出し5</h5>
+                <h6>見出し6</h6>
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <button>ボタン</button> <button>ボタン</button>
+                <p><mark>markで下線を引きます</mark>。</p>
                 <ul>
-                    <li>ここにリスト１</li>
-                    <li>ここにリスト２</li>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
                 </ul>
-                <!--リスト終わり-->
-
-                <!--カラムはじまり-->
-                <div class="partition">
-                    <!--カラム左側の内容-->
-                    <div>
-                        <p>
-                            PC向けの２カラム表示です。（左側）<br /><mark>class="partition"</mark
-                            >直下のタグ二つがブロックとして認識されます。
-                        </p>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </div>
-                    <div>
-                        <!--カラム右側の内容-->
-                        <p>PC向けの２カラム表示です。（右側）<br /></p>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </div>
-                </div>
-                <!--カラムおわり-->
             </section>
-            <!--セクション終わり-->
 
-            <!--セクションはじまり-->
             <section id="sec3">
-                <h2>画像・カラム</h2>
-                <img src="img/thum.jpg" />
-                <p>画像は全体が映るよう、縦400pxで縮小表示します。</p>
-                <img src="img/thum.jpg" class="trim" />
+                <h2>グリッド・画像</h2>
+
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
                 <p>
-                    画像に<mark>class="trim"</mark>を付けると、縦400pxまででトリミング表示します。<br />見える範囲は狭まりますが、しっかりアップで見せたい時向け。
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
                 </p>
 
-                <!--カラムはじまり-->
-                <div class="partition">
-                    <!--カラム左側の内容-->
-                    <img src="img/thum_ver.jpg" class="trim" />
-                    <!--カラム右側の内容-->
-                    <img src="img/thum_ob.jpg" class="trim" />
+                <div class="grid">
+                    <p>
+                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
                 </div>
-                <!--カラムおわり-->
-                <p>PC向けの２カラム表示。画像の場合です。</p>
+
+                <div class="img-grid">
+                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
-            <!--セクション終わり-->
         </main>
+        <script src="script.js?20240919"></script>
     </body>
 </html>
