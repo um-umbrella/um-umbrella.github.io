@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>メモを画像で保存する</title>
+    </head>
+
+    <body>
+        <script src="//accaii.com/works/script.js" async></script>
+        <noscript><img src="//accaii.com/works/script?guid=on" /></noscript>
+
+        <main>
+            <a href="../../index.html"><button id="nav"></button></a>
+            <section>
+                <h1>メモを画像で保存する</h1>
+                <p>テキストのメモを画像で保存するやつです。</p>
+
+                <div>
+                    <label>
+                        マーク：
+                        <select id="mark-theme">
+                            <option value="list-mark-circle">丸</option>
+                            <option value="list-mark-triangle">三角</option>
+                            <option value="list-mark-square">四角</option>
+                            <option value="list-mark-pentagon">五角</option>
+                            <option value="list-mark-asterisk">アスタリスク</option>
+                            <option value="list-mark-music-fill">音符</option>
+                            <option value="list-mark-shining">きらきら</option>
+                            <option value="list-mark-cute">ハート</option>
+                        </select></label
+                    >
+                    <label
+                        >見出し：<input type="textarea" value="メモ" id="input-h" autocomplete="off" /><button
+                            id="input-h-btn"
+                        >
+                            変更
+                        </button></label
+                    >
+                    <label
+                        >リスト：<textarea type="textarea" id="input-text" autocomplete="off"></textarea
+                        ><button id="input-text-btn">追加</button></label
+                    >
+                </div>
+            </section>
+
+            <section>
+                <button id="cap">スクリーンショットを保存</button> <button id="clear">入力をクリア</button>
+            </section>
+
+            <section id="main">
+                <div>
+                    <!--ここから内容-->
+                    <h2 id="cap-h2">メモ</h2>
+                    <ul id="cap-ul" class="list-mark-circle"></ul>
+                    <!--内容終わり-->
+                </div>
+            </section>
+        </main>
+
+        <script src="../html2canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

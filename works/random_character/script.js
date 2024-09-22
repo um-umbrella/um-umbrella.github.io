@@ -1,100 +1,5 @@
 'use strict';
 
-//カラーコード生成
-const colorCodes = [0, 1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e', 'f'];
-//髪質
-const hairType = [
-    'ウェーブ',
-    'ストレート',
-    '癖毛',
-    'ぼさぼさ',
-    'さっぱり',
-    'あっさり',
-    'ごわごわ',
-    'つんつん',
-    'ちりちり',
-    'もこもこ',
-];
-//髪型
-const hairStyle = ['ぱっつん', '編み込み', '結い髪', '長髪', '短髪', '刈り上げ', 'マンバン', '尻尾髪', 'アシンメトリ'];
-
-//目の特徴
-const eyeTyle = [
-    'ぎょろりとした',
-    '目力のある',
-    'にやにやした',
-    '陰気な',
-    '強気な',
-    '眠たそうな',
-    '虚ろな',
-    'きらきらした',
-    '前向きな',
-    '澄んだ',
-];
-const eyeStyle = [
-    'まんまる目',
-    '釣り目',
-    '垂れ目',
-    '猫目',
-    '糸目',
-    'まつ毛',
-    '三白眼',
-    '下まつげ目',
-    '伏目',
-    'つぶら目',
-];
-
-//見て分かる雰囲気
-const lookStyle = [
-    '癒し系な',
-    '近寄りがたい',
-    '強面な',
-    'やさしげな',
-    'おどおどした',
-    '根暗な',
-    '男っぽい',
-    '女っぽい',
-    '美形な',
-    '醜悪な',
-    '老け込んだ',
-    '寡黙な',
-    '控えめな',
-    'ひねくれた',
-    '無礼な',
-    '高飛車な',
-    '淑やかな',
-    'とげとげしい',
-    '柳に風の',
-    '好青年な',
-];
-//付き合って分かる性格
-const talkStyle = [
-    'けちんぼ',
-    'おっとりさん',
-    'せっかち',
-    'ポジティブ',
-    '後ろ向き',
-    '無頓着',
-    '無頼漢',
-    '少女趣味',
-    '（心が）少年',
-    '正義感',
-    '稚魚',
-    '雨女/男',
-    '晴れ女/男',
-    '倒錯者',
-    '体力お化け',
-    '貪欲',
-    '大食い',
-    '嫉妬心',
-    '負け犬',
-    '泣き虫',
-    'ミニマリスト',
-    '嘘つき',
-    '前科者',
-    '正直者',
-];
-
 ///////////////////////////////////////////////////
 //呼ぶやつ１セット
 document.querySelector('button').addEventListener('click', () => {
@@ -149,7 +54,7 @@ function hairStyleSelect() {
 
 //目選出セット
 function eyeStyleSelect() {
-    let result = oneChoise(eyeTyle) + oneChoise(eyeStyle);
+    let result = oneChoise(eyeType) + oneChoise(eyeStyle);
     return result;
 }
 
@@ -218,4 +123,38 @@ function screenGo() {
         element.setAttribute('download', `${filename}.png`);
         element.click(); //リンクをクリック
     });
+}
+
+////////////////////////////////csv読み込み
+const colorCodes = csv2Array('data.csv')[0];
+colorCodes.pop();
+const hairType = csv2Array('data.csv')[1];
+hairType.pop();
+const hairStyle = csv2Array('data.csv')[2];
+hairStyle.pop();
+const eyeType = csv2Array('data.csv')[3];
+eyeType.pop();
+const eyeStyle = csv2Array('data.csv')[4];
+eyeStyle.pop();
+const lookStyle = csv2Array('data.csv')[5];
+lookStyle.pop();
+const talkStyle = csv2Array('data.csv')[6];
+talkStyle.pop();
+
+function csv2Array(filePath) {
+    //引数：csvファイルの相対or絶対パス
+    var csvData = new Array();
+    var data = new XMLHttpRequest();
+    data.open('GET', filePath, false); //true:非同期,false:同期
+    data.send(null);
+
+    var LF = String.fromCharCode(10); //改行ｺｰﾄﾞ
+    var lines = data.responseText.split(LF);
+    for (var i = 0; i < lines.length; ++i) {
+        var cells = lines[i].split(',');
+        if (cells.length != 1) {
+            csvData.push(cells);
+        }
+    }
+    return csvData;
 }
