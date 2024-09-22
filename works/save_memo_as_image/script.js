@@ -62,7 +62,7 @@ function addList() {
 
 const button = document.getElementById('cap');
 button.addEventListener('click', screenGo);
-const main = document.body;
+const title = document.getElementById('cap-h2');
 
 function screenGo() {
     html2canvas(document.getElementById('main'), {}).then(function (canvas) {
@@ -71,7 +71,7 @@ function screenGo() {
         if (date.getMonth() < 10) {
             dayPlus = 0;
         }
-        const filename = `メモ画像_${date.getFullYear()}${dayPlus}${
+        const filename = `${title.textContent}_${date.getFullYear()}${dayPlus}${
             date.getMonth() + 1
         }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 
