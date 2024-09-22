@@ -117,7 +117,7 @@ footer {
 }
 
 section {
-    margin: 8px;
+    margin-inline: auto;
     padding: 16px 16px 0;
 }
 
@@ -159,22 +159,20 @@ h3 {
     border: solid 1px;
 }
 
-footer {
-}
-
 /*------------------------------------------------------ */
 
 @media screen and (min-width: 768px) {
     section {
         position: relative;
-        margin: 32px auto;
-        padding: 32px 0;
+        margin-top: 32px;
+        padding-top: 32px;
         width: 100%;
+        box-sizing: border-box;
         max-width: 800px;
     }
 
     img.trim {
-        object-fit: cover;
+        object-fit: scale-down;
         width: 200px;
         height: 100px;
     }
@@ -202,7 +200,7 @@ footer {
         font-size: 1em;
     }
 
-    h3 > a:hover {
+    h3:hover a {
         color: var(--table-color);
     }
 
@@ -222,17 +220,15 @@ footer {
         height: 400%;
     }
 
-    /**/
-
     section:has(.grid) {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 8px;
     }
 
     .grid {
-        width: 40%;
+        width: 30%;
     }
 
     .grid > p {
@@ -249,9 +245,8 @@ footer {
 
 @media screen and (min-width: 1080px) {
     main {
-        margin: 0 auto;
-
-        width: 1000px;
+        margin-inline: auto;
+        width: 100%;
     }
 
     section {
