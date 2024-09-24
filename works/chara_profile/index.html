@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="icon.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <title>プロフを作る</title>
+    </head>
+
+    <body>
+        <main>
+            <hgroup>
+                <h1>プロフを作る</h1>
+                <p>プロフカード的なのを出力したい。</p>
+            </hgroup>
+
+            <section class="column-left">
+                <p>変更項目</p>
+                <ul class="edit-menu">
+                    <li>
+                        <label>プロフィール名<input id="input-h2" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        <label>性別<input id="input-gender" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        <label>髪色<input id="input-hair" autocomplete="off" /></label>
+                        <label>髪質<input id="input-hair-q" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        <label>目色<input id="input-eye" autocomplete="off" /></label>
+                        <label>目質<input id="input-eye-q" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        <label>ひとこと（仮）<input id="input-comment" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        <select id="icon-select"></select>
+
+                        <select id="theme">
+                            <option value="theme-light">ライト</option>
+                            <option value="theme-dark">ダーク</option>
+                            <option value="theme-red">赤</option>
+                            <option value="theme-sea">海</option>
+                            <option value="theme-"></option>
+                            <option value="theme-"></option>
+                            <option value="theme-"></option>
+                        </select>
+                    </li>
+                    <li>
+                        <label
+                            >項目名<input id="input-dt" autocomplete="off" />項目内容<textarea
+                                id="input-dd"
+                                autocomplete="off"
+                            ></textarea></label
+                        ><button id="input-dl-btn">追加</button>
+                        <button id="random-dl-btn">ランダム追加</button>
+                        <button id="delete-dl-btn">最後を削除</button>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="column-right">
+                <button id="random-btn">ランダム決定</button>
+                <button id="delete-btn">リセット</button>
+
+                <button id="cap-btn">とる</button>
+
+                <div id="screenshot-area" class="theme-light">
+                    <h2 id="prof-h2">プロフィール</h2>
+                    <div id="prof-looks">
+                        <div id="icon" class="icon-default"></div>
+                        <div id="hair">
+                            <p id="hair-color">髪色</p>
+                            <p id="hair-detail">髪の特質</p>
+                        </div>
+                        <div id="eye">
+                            <p id="eye-color">目色</p>
+                            <p id="eye-detail">目の特質</p>
+                        </div>
+                        <div id="gender-block">
+                            <p id="gender-title">身体</p>
+                            <p id="gender">性別</p>
+                        </div>
+                    </div>
+
+                    <div id="prof-etc">
+                        <div id="first-step">
+                            <p id="prof-comment">ひとこと</p>
+                        </div>
+                        <dl id="prof-dl">
+                            <div class="dl-div"></div>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="html2canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
