@@ -34,8 +34,8 @@ main {
 }
 
 ::selection {
-    background-color: var(--main-theme);
-    color: var(--body-bg);
+    background-color: #333;
+    color: #fff;
 }
 
 nav > ul {
@@ -51,29 +51,22 @@ nav li {
 
 a {
     text-decoration: none;
-    color: var(--sub-theme);
+    color: #333;
+    opacity: 0.9;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--main-theme);
-}
-
-nav a {
-    color: var(--text-dark-color);
+    color: #000;
 }
 
 a:not(:where(nav a, button a)) {
     color: #333;
     transition: 0.3s;
-
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
 }
 
 a:not(:where(nav a, button a)):hover {
-    color: var(--main-theme);
-    background-color: var(--text-dark-color);
+    opacity: 1;
 }
 
 p {
@@ -90,7 +83,7 @@ mark {
 hr {
     margin: 32px;
     border: none;
-    border-top: 1px solid #333;
+    border-top: 1px solid #ccc;
 }
 
 h2 {
@@ -175,6 +168,10 @@ button {
     background-color: #555;
     color: #fff;
     transition: background-color 0.3s;
+}
+
+.button-area button {
+    border-radius: 50em;
 }
 
 button:hover {
@@ -309,8 +306,33 @@ section:last-child {
     padding-bottom: 64px;
 }
 
+#home-btn {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+}
+
+#home-btn > * {
+    display: block;
+    margin: 6px;
+    padding: 0;
+
+    content: '';
+}
+
+#home-btn > a {
+    margin: 0 8px;
+}
+
+.bbbrrr {
+    display: inline-block;
+}
+
 hgroup {
-    margin: 0 0 32px;
+    margin: 16px;
 }
 
 li {
@@ -320,19 +342,23 @@ li {
 .edit-menu {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 4px;
 }
 
 .edit-menu li {
-    border: 1px solid #000;
+    margin: 0;
 }
 
 .edit-menu li > * {
     display: block;
 }
 
+input:not(#input-comment) {
+    width: 128px;
+}
+
 label {
-    margin: 8px;
+    margin: 4px 8px;
 }
 
 input,
@@ -346,11 +372,44 @@ textarea {
     background-color: #eee;
 }
 
+select {
+    margin: 4px;
+
+    outline: none;
+    border: 1px solid #555;
+}
+
 textarea {
+    width: 100px;
+    height: 100px;
     resize: none;
 }
 
+label:has(#input-dt) {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#input-dt,
+#input-dd {
+    width: 100%;
+}
+
+.box {
+    display: block;
+    width: 100%;
+}
+
+label:has(#input-dt) ~ button {
+    display: inline-block;
+    margin: 8px;
+}
+
 .column-right {
+}
+
+.button-area {
+    margin-left: 16px;
 }
 
 #screenshot-area {
@@ -378,7 +437,7 @@ textarea {
     height: 240px;
     transform: rotate(-12deg);
 
-    opacity: 0.1;
+    opacity: var(--bg-opacity);
     content: '';
     background-color: var(--decoration-color);
 }
@@ -405,11 +464,8 @@ textarea {
 
 #prof-h2 {
     padding: 0;
-    margin: 16px;
+    margin: 0 16px 16px;
     z-index: 5;
-
-    /*    -webkit-text-stroke: 2px var(--h2-frame);*/
-    text-shadow: var(--h2-frame) 0 0 4px;
     text-align: center;
     font-size: 2em;
     font-weight: 600;
@@ -446,7 +502,7 @@ textarea {
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--icon-bg);
-    border-radius: 50%;
+    border-radius: 8px;
 }
 
 #hair,
@@ -456,7 +512,6 @@ textarea {
     margin-bottom: 8px;
     width: 128px;
 
-    white-space: nowrap;
     font-size: 12px;
     text-align: center;
 }
@@ -475,7 +530,13 @@ textarea {
 
 #hair-color,
 #eye-color {
-    background-color: var(--fog-line);
+    background-color: var(--sub-theme);
+}
+
+#hair-detail,
+#eye-detail,
+#gender {
+    color: var(--text-dark-color);
 }
 
 #gender-title {
@@ -501,8 +562,8 @@ textarea {
 .dl-div {
     display: flex;
     margin: 8px 0;
-    border-top: 1px solid var(--fog-line);
-    border-bottom: 1px solid var(--fog-line);
+    border-top: 1px solid var(--sub-theme);
+    border-bottom: 1px solid var(--sub-theme);
     border-radius: 50em 0 0 50em;
 }
 
@@ -523,10 +584,64 @@ textarea {
 .dl-div dd {
     display: flex;
     align-items: flex-start;
-    padding: 0 0 8px;
+    padding: 0 0 12px;
     width: calc(420px - 128px - var(--dl-width));
 
     color: var(--text-dark-color);
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    margin: auto;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.window-center {
+    position: relative;
+    padding: 32px 16px 64px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#window-close {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 16px;
+    right: 16px;
+
+    font-size: 2em;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.display-none {
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#info h2 {
+    padding: 0;
+}
+
+.icon-right {
+    position: absolute;
+    right: 32px;
+    bottom: 16px;
+    font-size: 24px;
 }
 
 /*------------------------------------------------------ */
@@ -547,8 +662,7 @@ textarea {
     hgroup {
         position: absolute;
         top: 0;
-        left: 300px;
-        background-color: #d8c44f;
+        left: 320px;
     }
 
     .column-left {
@@ -557,27 +671,40 @@ textarea {
         height: 100svh;
         padding: 0;
 
-        overflow-y: scroll;
         box-sizing: border-box;
-
-        background-color: #eee;
-        background-color: rgba(0, 0, 0, 0);
     }
 
     .column-right {
         margin: 0;
-        margin-left: 300px;
+        margin-left: 320px;
         padding: 0;
-        padding-top: 100px;
+        padding-top: 96px;
+        height: 100svh;
 
-        overflow-y: scroll;
         box-sizing: border-box;
+    }
 
-        background-color: #eee;
+    #screenshit-area {
+    }
+
+    .edit-menu {
+        margin-top: 16px;
     }
 
     .edit-menu li {
-        margin: 0;
+        margin: 0 4px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    li:has(#input-dd) button {
+        margin: 4px;
+    }
+
+    button {
+        margin: 8px;
     }
 } /*@media*/
 

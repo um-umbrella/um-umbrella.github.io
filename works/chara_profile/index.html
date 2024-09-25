@@ -5,26 +5,63 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="icon.css" rel="stylesheet" />
+        <link href="colors.css" rel="stylesheet" />
         <link href="style.css" rel="stylesheet" />
-        <title>プロフを作る</title>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+        <title>キャラのプロフを作るツール</title>
     </head>
 
     <body>
+        <script src="//accaii.com/works/script.js" async></script>
+        <noscript><img src="//accaii.com/works/script?guid=on" /></noscript>
+
+        <div id="home-btn">
+            <i class="ri-information-line"></i>
+        </div>
+
         <main>
             <hgroup>
-                <h1>プロフを作る</h1>
-                <p>プロフカード的なのを出力したい。</p>
+                <h1>
+                    <span class="bbbrrr">キャラの</span><span class="bbbrrr">プロフを</span
+                    ><span class="bbbrrr">作るツール</span>
+                </h1>
+                <p>プロフカード的なのを出力します。</p>
             </hgroup>
 
             <section class="column-left">
-                <p>変更項目</p>
                 <ul class="edit-menu">
                     <li>
-                        <label>プロフィール名<input id="input-h2" autocomplete="off" /></label>
+                        <label>キャラ名<input id="input-h2" autocomplete="off" /></label>
                     </li>
                     <li>
-                        <label>性別<input id="input-gender" autocomplete="off" /></label>
+                        <label>一文<input id="input-comment" autocomplete="off" /></label>
+                    </li>
+                    <li>
+                        アイコン
+                        <select id="icon-select"></select>
+                    </li>
+                    <li>
+                        テーマ
+                        <select id="theme">
+                            <option value="theme-light">ライト</option>
+                            <option value="theme-dark">ダーク</option>
+
+                            <option value="theme-moon">月</option>
+
+                            <option value="theme-ice-blue">アイスブルー</option>
+                            <option value="theme-sky">青空</option>
+                            <option value="theme-dream">夢むらさき</option>
+
+                            <option value="theme-gray-purple">ぶどう</option>
+                            <option value="theme-ringo">りんご</option>
+
+                            <option value="theme-forest">森林</option>
+                            <option value="theme-brown">砂漠</option>
+                            <option value="theme-yellow">黄色</option>
+                            <!--
+                            <option value="theme-"></option>
+                            <option value="theme-"></option>
+                        --></select>
                     </li>
                     <li>
                         <label>髪色<input id="input-hair" autocomplete="off" /></label>
@@ -35,42 +72,29 @@
                         <label>目質<input id="input-eye-q" autocomplete="off" /></label>
                     </li>
                     <li>
-                        <label>ひとこと（仮）<input id="input-comment" autocomplete="off" /></label>
+                        <label>性別<input id="input-gender" autocomplete="off" /></label>
                     </li>
                     <li>
-                        <select id="icon-select"></select>
-
-                        <select id="theme">
-                            <option value="theme-light">ライト</option>
-                            <option value="theme-dark">ダーク</option>
-                            <option value="theme-red">赤</option>
-                            <option value="theme-sea">海</option>
-                            <option value="theme-"></option>
-                            <option value="theme-"></option>
-                            <option value="theme-"></option>
-                        </select>
-                    </li>
-                    <li>
-                        <label
-                            >項目名<input id="input-dt" autocomplete="off" />項目内容<textarea
-                                id="input-dd"
-                                autocomplete="off"
-                            ></textarea></label
-                        ><button id="input-dl-btn">追加</button>
-                        <button id="random-dl-btn">ランダム追加</button>
-                        <button id="delete-dl-btn">最後を削除</button>
+                        <label>
+                            <div class="box">項目名<input id="input-dt" autocomplete="off" /></div>
+                            <div class="box">項目内容<textarea id="input-dd" autocomplete="off"></textarea></div>
+                        </label>
+                        <button id="input-dl-btn">項目を追加</button>
+                        <button id="delete-dl-btn">最後の項目を削除</button>
+                        <button id="random-dl-btn">ランダムな内容を追加</button>
                     </li>
                 </ul>
             </section>
 
             <section class="column-right">
-                <button id="random-btn">ランダム決定</button>
-                <button id="delete-btn">リセット</button>
-
-                <button id="cap-btn">とる</button>
+                <div class="button-area">
+                    <button id="random-btn">ランダム生成</button>
+                    <button id="delete-btn">全リセット</button>
+                    <button id="cap-btn">画像で保存</button>
+                </div>
 
                 <div id="screenshot-area" class="theme-light">
-                    <h2 id="prof-h2">プロフィール</h2>
+                    <h2 id="prof-h2">キャラクター名</h2>
                     <div id="prof-looks">
                         <div id="icon" class="icon-default"></div>
                         <div id="hair">
@@ -82,14 +106,14 @@
                             <p id="eye-detail">目の特質</p>
                         </div>
                         <div id="gender-block">
-                            <p id="gender-title">身体</p>
+                            <p id="gender-title">身体的特徴</p>
                             <p id="gender">性別</p>
                         </div>
                     </div>
 
                     <div id="prof-etc">
                         <div id="first-step">
-                            <p id="prof-comment">ひとこと</p>
+                            <p id="prof-comment">一文</p>
                         </div>
                         <dl id="prof-dl">
                             <div class="dl-div"></div>
@@ -99,7 +123,30 @@
             </section>
         </main>
 
-        <script src="html2canvas.js"></script>
+        <div id="info" class="display-none">
+            <div class="window-center">
+                <button id="window-close"><i class="ri-close-fill"></i></button>
+                <div>
+                    <ul>
+                        <li>キャラクターシートを作る・保存するツールです。</li>
+                        <li>利用・加工は個人利用の範囲でご自由にどうぞ。</li>
+                    </ul>
+                    <div class="icon-right">
+                        <a id="h-b-m" href="../../mail.html" target="_blank"><i class="ri-mail-line"></i></a>
+                        <a id="h-b-h" href="../../index.html" target="_blank"><i class="ri-home-7-fill"></i></a>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <ul>
+                        <li><time>9/24</time>ver 0.5　とりあえず形になった。</li>
+                        <li><time>9/25</time>ver 1.0　完成かも。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="../html2canvas.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@ const colorPalette = [0, 1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e', 'f'];
 const conjunction = [
     '、',
     '、',
+    'な',
     'の',
     'や',
     'や、',
@@ -33,7 +34,7 @@ deleteBtn.addEventListener('click', AllDelete);
 
 function AllDelete() {
     //入力欄を白紙化する
-    inputH2.value = 'プロフィール';
+    inputH2.value = 'キャラクター名';
     inputGender.value = '？';
     inputHair.value = '';
     inputEye.value = '';
@@ -44,7 +45,7 @@ function AllDelete() {
     document.getElementById('eye-detail').textContent = '目';
     document.getElementById('input-eye-q').value = '';
 
-    document.getElementById('prof-comment').textContent = 'ひとこと';
+    document.getElementById('prof-comment').textContent = '一文';
     document.getElementById('input-comment').value = '';
 
     for (let i = 0; i < 2; i++) {
@@ -55,7 +56,8 @@ function AllDelete() {
             eleTarget = document.getElementById('eye-color');
         }
         eleTarget.style.backgroundColor = '#eee';
-        eleTarget.textContent = '性別';
+        eleTarget.style.color = '#333';
+        eleTarget.textContent = '身体的特徴';
     }
 
     const div = document.getElementsByClassName('dl-div');
@@ -63,6 +65,13 @@ function AllDelete() {
     for (let i = 0; i < num; i++) {
         dlDelete();
     }
+
+    let theme = document.getElementById('theme');
+    theme.options[0].selected = true;
+
+    const screenArea = document.getElementById('screenshot-area');
+    screenArea.classList.remove(...screenArea.classList);
+    screenArea.classList.toggle(theme.options[0].value);
 
     ReflectInput();
 }
@@ -115,12 +124,13 @@ function Random() {
 
     HistoryDlAdd();
 
-    const pr = Math.floor(Math.random() * 5 + 2);
+    const pr = Math.floor(Math.random() * 5 + 3);
     for (let i = 0; i < pr; i++) {
         DtRandomAdd();
     }
 
     randomIcon();
+    ThemeSelectRandom();
     ReflectInput();
 }
 
@@ -137,11 +147,13 @@ function ReflectInput() {
 //入力の変更を反映する
 
 const inputH2 = document.getElementById('input-h2');
+const inputComment = document.getElementById('input-comment');
 const inputGender = document.getElementById('input-gender');
 const inputHairQuality = document.getElementById('input-hair-q');
 const inputEyeQuality = document.getElementById('input-eye-q');
 
 inputH2.addEventListener('change', AddTextFirst);
+inputComment.addEventListener('change', AddTextFirst);
 inputGender.addEventListener('change', AddTextFirst);
 inputHairQuality.addEventListener('change', AddTextFirst);
 inputEyeQuality.addEventListener('change', AddTextFirst);
@@ -160,6 +172,8 @@ function AddText(targetId, targetValue) {
     let receiveId;
     if (targetId === 'input-h2') {
         receiveId = 'prof-h2';
+    } else if (targetId === 'input-comment') {
+        receiveId = 'prof-comment';
     } else if (targetId === 'input-gender') {
         receiveId = 'gender';
     } else if (targetId === 'input-hair-q') {
@@ -266,7 +280,7 @@ function DtRandomAdd() {
 
 function HistoryDlAdd() {
     const content = OutputRandomQuestion();
-    const old = Math.floor(Math.random() * 10 + 5);
+    const old = Math.floor(Math.random() * 12 + 2);
     const text = `${old}歳の年に${content.text[0]}と関わり、その後${content.text[1]}を知る。やがて、${content.text[2]}が${content.title}になる。`;
 
     const profDl = document.getElementById('prof-dl');
@@ -327,10 +341,29 @@ const theme = document.getElementById('theme');
 theme.addEventListener('change', ThemeSelect);
 
 function ThemeSelect() {
-    console.log(this.value);
     const screenArea = document.getElementById('screenshot-area');
     screenArea.classList.remove(...screenArea.classList);
     screenArea.classList.toggle(this.value);
+}
+
+///////////////////////////
+//テーマをランダムに出力
+
+function ThemeSelectRandom() {
+    let theme = document.getElementById('theme');
+    let elm = theme.options;
+    let array = [];
+    [...elm].forEach((option) => {
+        array.push(option.value);
+    });
+
+    const text = ArrayChoice(array);
+    //入力欄を選択
+    theme.options[array.indexOf(text)].selected = true;
+
+    const screenArea = document.getElementById('screenshot-area');
+    screenArea.classList.remove(...screenArea.classList);
+    screenArea.classList.toggle(text);
 }
 
 //////////////////////////////////////////////////////////////
@@ -360,7 +393,7 @@ function NameMake(e) {
         }
 
         for (let i = 0; i < num; i++) {
-            if (Math.floor(Math.random() * 100) < 25) {
+            if (Math.floor(Math.random() * 100) < 20) {
                 name[c] += wordMultiChoice(1, 1);
             } else {
                 name[c] += wordMultiChoice(1, 0);
@@ -507,3 +540,17 @@ icon.addEventListener('change', function (e) {
     img.src = fileData;
 });
 */
+
+//////////////////////////////////////////////////////
+//情報ウィンドウ関連
+
+const infoBtn = document.getElementsByClassName('ri-information-line');
+infoBtn[0].addEventListener('click', InfoVisibleToggle);
+const closeBtn = document.getElementById('window-close');
+closeBtn.addEventListener('click', InfoVisibleToggle);
+
+function InfoVisibleToggle() {
+    console.log('tojiruyo');
+    const info = document.getElementById('info');
+    info.classList.toggle('display-none');
+}
