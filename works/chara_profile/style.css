@@ -416,7 +416,7 @@ label:has(#input-dt) ~ button {
 
 .column-right-main {
     width: 100%;
-    overflow-x: scroll; /*★*/
+    overflow-x: scroll;
 }
 
 .button-area {
@@ -425,6 +425,7 @@ label:has(#input-dt) ~ button {
 
 .button-area > button {
     margin: 16px 8px 0;
+    font-size: 1em;
 }
 
 #screenshot-area {
@@ -678,9 +679,6 @@ label:has(#input-dt) ~ button {
         position: absolute;
         top: 0;
         left: 320px;
-    }
-
-    .button-area {
     }
 
     .column-left {

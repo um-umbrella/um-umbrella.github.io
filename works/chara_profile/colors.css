@@ -152,6 +152,7 @@
     --decoration-color: #64ccc5; /* 枠とか… */
     --icon-bg: none; /*アイコンの背景*/
 }
+
 .theme-brown {
     --main-theme: #f5f0e8; /* 全体のテーマ（背景）*/
     --sub-theme: #a28f70; /* 一部のテーマ */
