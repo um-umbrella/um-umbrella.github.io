@@ -3,6 +3,7 @@
 
 //◆履歴
 const update = [
+    '9/25　キャラのプロフを作るツールを作った。できた～。',
     '9/22　メモを画像で保存するやつを作った。ちょうどいい感じ。',
     '9/1　クエノのアクション再現を作った。',
     '8/30　当倉庫を作り直し。',
@@ -19,7 +20,7 @@ const update = [
 const workLists = [
     {
         name: "Let's make this person smile",
-        url: '../works/unknown_people/index.html',
+        url: '../works/unknown_people/',
         etc: '習作。にっこりするまでクリックする。',
         thum: 'img/thum.jpg',
     },
@@ -61,15 +62,21 @@ const workLists = [
     },
     {
         name: 'クエノのアクション画面を再現するやつ',
-        url: '../works/qn_reproduct',
+        url: '../works/qn_reproduct/',
         etc: '行動をタイムラインに追加できる。保存機能付き。ちょっと分かりづらいのが反省点。',
         thum: 'img/w08.png',
     },
     {
         name: 'メモを画像で保存する',
-        url: '../works/save_memo_as_image',
+        url: '../works/save_memo_as_image/',
         etc: 'タイトル通り。ほしいから作った。シンプル。',
         thum: 'img/w09.png',
+    },
+    {
+        name: 'キャラのプロフを作るツール',
+        url: '../works/chara_profile',
+        etc: 'キャラシを作る。欲しいから作った。欲しいからランダムも付けた。',
+        thum: 'img/w10.png',
     },
 ];
 
@@ -84,9 +91,8 @@ const studyList = [
 
 const cssLink = [
     { name: 'html2canvas', url: 'https://html2canvas.hertzen.com/', etc: 'ブラウザを画像として取得するスクリプト' },
-    { name: 'BUILD', url: 'https://buildstd.com/journal/', etc: '軽い記事とリンク集' },
-    { name: 'wireframe.cc', url: 'https://wireframe.cc/', etc: 'オンラインワイヤフレームツール' },
-    { name: 'Pa-Tu', url: 'https://pa-tu.work/', etc: 'CSSパーツ、Tips、ジェネレータ集' },
+    { name: 'wireframe.cc', url: 'https://wireframe.cc/', etc: 'オンラインワイヤフレーム' },
+    { name: 'Pa-Tu', url: 'https://pa-tu.work/', etc: 'CSSパーツ、Tips、ジェネレータ' },
     { name: 'DOODAD.dev', url: 'https://doodad.dev/pattern-generator/', etc: 'シームレスデザインジェネレータ' },
 ];
 
