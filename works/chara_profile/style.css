@@ -298,8 +298,10 @@ footer::after {
 /*------------------------------------------------------ */
 
 section {
-    margin: 32px;
+    margin: 0;
     padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 section:last-child {
@@ -353,8 +355,12 @@ li {
     display: block;
 }
 
-input:not(#input-comment) {
+input:not(#input-comment, #input-hair-c, #input-eye-c, #input-gender-c) {
     width: 128px;
+}
+
+input:where(#input-hair-c, #input-eye-c, #input-gender-c) {
+    width: 40px;
 }
 
 label {
@@ -408,8 +414,17 @@ label:has(#input-dt) ~ button {
 .column-right {
 }
 
+.column-right-main {
+    width: 100%;
+    overflow-x: scroll; /*★*/
+}
+
 .button-area {
-    margin-left: 16px;
+    margin-left: 32px;
+}
+
+.button-area > button {
+    margin: 16px 8px 0;
 }
 
 #screenshot-area {
@@ -421,11 +436,11 @@ label:has(#input-dt) ~ button {
     width: 690px;
     height: 480px;
 
+    box-sizing: border-box;
     overflow: hidden;
     font-size: 1em;
     border: 1px solid var(--decoration-color);
     background-color: var(--main-theme);
-    box-sizing: border-box;
 }
 
 #screenshot-area::before,
@@ -529,7 +544,10 @@ label:has(#input-dt) ~ button {
 }
 
 #hair-color,
-#eye-color {
+#eye-color,
+#gender-title {
+    color: #fff;
+    text-shadow: #000 0 0 2px, #000 0 0 2px, #000 0 0 2px;
     background-color: var(--sub-theme);
 }
 
@@ -537,11 +555,6 @@ label:has(#input-dt) ~ button {
 #eye-detail,
 #gender {
     color: var(--text-dark-color);
-}
-
-#gender-title {
-    background-color: var(--sub-theme);
-    color: var(--text-light-color);
 }
 
 #prof-etc {
@@ -652,6 +665,8 @@ label:has(#input-dt) ~ button {
         margin: 0;
         padding: 0;
         height: 100%;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     section {
@@ -665,6 +680,9 @@ label:has(#input-dt) ~ button {
         left: 320px;
     }
 
+    .button-area {
+    }
+
     .column-left {
         position: absolute;
         width: 300px;
@@ -672,6 +690,12 @@ label:has(#input-dt) ~ button {
         padding: 0;
 
         box-sizing: border-box;
+    }
+
+    @media screen and (max-height: 600px) {
+        .column-left {
+            overflow-y: scroll;
+        }
     }
 
     .column-right {
@@ -682,6 +706,12 @@ label:has(#input-dt) ~ button {
         height: 100svh;
 
         box-sizing: border-box;
+        overflow-y: scroll;
+    }
+
+    .column-right-main {
+        width: calc(100% - 320px);
+        overflow-x: scroll;
     }
 
     #screenshit-area {

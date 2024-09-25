@@ -35,29 +35,38 @@ deleteBtn.addEventListener('click', AllDelete);
 function AllDelete() {
     //入力欄を白紙化する
     inputH2.value = 'キャラクター名';
-    inputGender.value = '？';
     inputHair.value = '';
     inputEye.value = '';
-
-    document.getElementById('hair-detail').textContent = '髪';
-    document.getElementById('input-hair-q').value = '';
-
-    document.getElementById('eye-detail').textContent = '目';
-    document.getElementById('input-eye-q').value = '';
+    inputGender.value = '';
 
     document.getElementById('prof-comment').textContent = '一文';
     document.getElementById('input-comment').value = '';
 
-    for (let i = 0; i < 2; i++) {
+    document.getElementById('hair-detail').textContent = '髪';
+    document.getElementById('input-hair-q').value = '';
+    document.getElementById('input-hair-c').value = '#cccccc';
+
+    document.getElementById('eye-detail').textContent = '目';
+    document.getElementById('input-eye-q').value = '';
+    document.getElementById('input-eye-c').value = '#cccccc';
+
+    document.getElementById('gender').textContent = '性別';
+    document.getElementById('input-gender-q').value = '';
+    document.getElementById('input-gender-c').value = '#cccccc';
+
+    for (let i = 0; i < 3; i++) {
         let eleTarget;
         if (i == 0) {
             eleTarget = document.getElementById('hair-color');
-        } else {
+        } else if (i == 1) {
             eleTarget = document.getElementById('eye-color');
+        } else {
+            eleTarget = document.getElementById('gender-title');
         }
+
         eleTarget.style.backgroundColor = '#eee';
-        eleTarget.style.color = '#333';
-        eleTarget.textContent = '身体的特徴';
+
+        eleTarget.textContent = '？';
     }
 
     const div = document.getElementsByClassName('dl-div');
@@ -89,28 +98,24 @@ function Random() {
     inputH2.value = NameMake();
     inputGender.value = ArrayChoice(CsvArrayLoad(2));
 
-    //髪・目の色
+    //髪・目の色・身体的特徴
     for (let i = 0; i < 2; i++) {
         const randomColorCode = RandomColorCode();
         let eleTarget;
         if (i == 0) {
             eleTarget = document.getElementById('hair-color');
             inputHair.value = randomColorCode;
+            document.getElementById('input-hair-c').value = randomColorCode;
         } else {
             eleTarget = document.getElementById('eye-color');
             inputEye.value = randomColorCode;
+            document.getElementById('input-eye-c').value = randomColorCode;
         }
         eleTarget.style.backgroundColor = randomColorCode;
         eleTarget.textContent = randomColorCode;
-
-        if (randomColorCode.includes('0') || randomColorCode.includes('1')) {
-            eleTarget.style.color = '#eee';
-        } else {
-            eleTarget.style.color = '#333';
-        }
     }
 
-    //人となりなど hair, eye,person
+    //人となりなど hair, eye,person,gender
     let personArray = PersonalSelect();
 
     document.getElementById('hair-detail').textContent = personArray.hair;
@@ -121,6 +126,13 @@ function Random() {
 
     document.getElementById('prof-comment').textContent = personArray.person;
     document.getElementById('input-comment').value = personArray.person;
+
+    document.getElementById('gender-title').textContent = '身体的特徴';
+    document.getElementById('input-gender').value = '身体的特徴';
+    document.getElementById('input-gender-c').value = '#cccccc';
+
+    document.getElementById('gender').textContent = personArray.gender;
+    document.getElementById('input-gender-q').value = personArray.gender;
 
     HistoryDlAdd();
 
@@ -138,9 +150,7 @@ function Random() {
 //それぞれの入力を反映する
 
 function ReflectInput() {
-    AddText(inputGender.id, inputGender.value);
     AddText(inputH2.id, inputH2.value);
-    AddText(inputGender.id, inputGender.value);
 }
 
 //////////////////////////////////////////////////
@@ -148,15 +158,15 @@ function ReflectInput() {
 
 const inputH2 = document.getElementById('input-h2');
 const inputComment = document.getElementById('input-comment');
-const inputGender = document.getElementById('input-gender');
 const inputHairQuality = document.getElementById('input-hair-q');
 const inputEyeQuality = document.getElementById('input-eye-q');
+const inputGenderQuality = document.getElementById('input-gender-q');
 
 inputH2.addEventListener('change', AddTextFirst);
 inputComment.addEventListener('change', AddTextFirst);
-inputGender.addEventListener('change', AddTextFirst);
 inputHairQuality.addEventListener('change', AddTextFirst);
 inputEyeQuality.addEventListener('change', AddTextFirst);
+inputGenderQuality.addEventListener('change', AddTextFirst);
 
 //名前、性別
 
@@ -174,12 +184,14 @@ function AddText(targetId, targetValue) {
         receiveId = 'prof-h2';
     } else if (targetId === 'input-comment') {
         receiveId = 'prof-comment';
-    } else if (targetId === 'input-gender') {
-        receiveId = 'gender';
     } else if (targetId === 'input-hair-q') {
         receiveId = 'hair-detail';
     } else if (targetId === 'input-eye-q') {
         receiveId = 'eye-detail';
+    } else if (targetId === 'input-gender-q') {
+        receiveId = 'gender';
+    } else {
+        console.error(`${targetId}が不正！`);
     }
     const prof = document.getElementById(receiveId);
     prof.textContent = targetValue;
@@ -188,10 +200,18 @@ function AddText(targetId, targetValue) {
 //////////////////////////////
 //髪、目
 const inputHair = document.getElementById('input-hair');
+const inputHairColor = document.getElementById('input-hair-c');
 const inputEye = document.getElementById('input-eye');
+const inputEyeColor = document.getElementById('input-eye-c');
+const inputGender = document.getElementById('input-gender');
+const inputGenderColor = document.getElementById('input-gender-c');
 
-inputHair.addEventListener('change', { name: '髪', handleEvent: LookColor });
+inputHair.addEventListener('change', { name: '髪', input: '', handleEvent: LookColor });
+inputHairColor.addEventListener('change', { name: '髪', handleEvent: LookColor });
 inputEye.addEventListener('change', { name: '目', handleEvent: LookColor });
+inputEyeColor.addEventListener('change', { name: '目', handleEvent: LookColor });
+inputGender.addEventListener('change', { name: '身体', handleEvent: LookColor });
+inputGenderColor.addEventListener('change', { name: '身体', handleEvent: LookColor });
 
 function LookColor(e) {
     let eleTarget;
@@ -199,6 +219,8 @@ function LookColor(e) {
         eleTarget = document.getElementById('hair-color');
     } else if (this.name === '目') {
         eleTarget = document.getElementById('eye-color');
+    } else if (this.name === '身体') {
+        eleTarget = document.getElementById('gender-title');
     }
 
     let colorCode;
@@ -415,7 +437,7 @@ function NameMake(e) {
 //髪・目・性格をランダムで選出
 
 function PersonalSelect() {
-    //3髪質　4髪型　5目付き　6目の形　7雰囲気　8性格
+    //2性別 3髪質　4髪型　5目付き　6目の形　7雰囲気　8性格
 
     const hairQualityArray = CsvArrayLoad(3);
     const hairQuality = ArrayChoice(hairQualityArray);
@@ -427,12 +449,20 @@ function PersonalSelect() {
     const eyeStyleArray = CsvArrayLoad(6);
     const eyeStyle = ArrayChoice(eyeStyleArray);
 
+    const genderStyleArray = CsvArrayLoad(2);
+    const genderStyle = ArrayChoice(genderStyleArray);
+
     const lookStyleArray = CsvArrayLoad(7);
     const lookStyle = ArrayChoice(lookStyleArray);
     const talkStyleArray = CsvArrayLoad(8);
     const talkStyle = ArrayChoice(talkStyleArray);
 
-    const array = { hair: hairQuality + hairStyle, eye: eyeQuality + eyeStyle, person: lookStyle + talkStyle };
+    const array = {
+        hair: hairQuality + hairStyle,
+        eye: eyeQuality + eyeStyle,
+        person: lookStyle + talkStyle,
+        gender: genderStyle,
+    };
 
     return array;
 }
@@ -550,7 +580,6 @@ const closeBtn = document.getElementById('window-close');
 closeBtn.addEventListener('click', InfoVisibleToggle);
 
 function InfoVisibleToggle() {
-    console.log('tojiruyo');
     const info = document.getElementById('info');
     info.classList.toggle('display-none');
 }

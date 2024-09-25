@@ -5,8 +5,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="colors.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="colors.css?20240925" rel="stylesheet" />
+        <link href="style.css?20240925" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
         <title>キャラのプロフを作るツール</title>
     </head>
@@ -64,15 +64,24 @@
                         --></select>
                     </li>
                     <li>
-                        <label>髪色<input id="input-hair" autocomplete="off" /></label>
+                        <label
+                            >髪色<input id="input-hair" autocomplete="off" /><input id="input-hair-c" type="color"
+                        /></label>
                         <label>髪質<input id="input-hair-q" autocomplete="off" /></label>
                     </li>
                     <li>
-                        <label>目色<input id="input-eye" autocomplete="off" /></label>
+                        <label
+                            >目色<input id="input-eye" autocomplete="off" /><input id="input-eye-c" type="color"
+                        /></label>
                         <label>目質<input id="input-eye-q" autocomplete="off" /></label>
                     </li>
                     <li>
-                        <label>性別<input id="input-gender" autocomplete="off" /></label>
+                        <label
+                            >身体１<input id="input-gender" autocomplete="off" /><input
+                                id="input-gender-c"
+                                type="color"
+                        /></label>
+                        <label>身体２<input id="input-gender-q" autocomplete="off" /></label>
                     </li>
                     <li>
                         <label>
@@ -93,31 +102,33 @@
                     <button id="cap-btn">画像で保存</button>
                 </div>
 
-                <div id="screenshot-area" class="theme-light">
-                    <h2 id="prof-h2">キャラクター名</h2>
-                    <div id="prof-looks">
-                        <div id="icon" class="icon-default"></div>
-                        <div id="hair">
-                            <p id="hair-color">髪色</p>
-                            <p id="hair-detail">髪の特質</p>
+                <div class="column-right-main">
+                    <div id="screenshot-area" class="theme-light">
+                        <h2 id="prof-h2">キャラクター名</h2>
+                        <div id="prof-looks">
+                            <div id="icon" class="icon-default"></div>
+                            <div id="hair">
+                                <p id="hair-color">髪色</p>
+                                <p id="hair-detail">髪の特質</p>
+                            </div>
+                            <div id="eye">
+                                <p id="eye-color">目色</p>
+                                <p id="eye-detail">目の特質</p>
+                            </div>
+                            <div id="gender-block">
+                                <p id="gender-title">身体的特徴</p>
+                                <p id="gender">性別</p>
+                            </div>
                         </div>
-                        <div id="eye">
-                            <p id="eye-color">目色</p>
-                            <p id="eye-detail">目の特質</p>
-                        </div>
-                        <div id="gender-block">
-                            <p id="gender-title">身体的特徴</p>
-                            <p id="gender">性別</p>
-                        </div>
-                    </div>
 
-                    <div id="prof-etc">
-                        <div id="first-step">
-                            <p id="prof-comment">一文</p>
+                        <div id="prof-etc">
+                            <div id="first-step">
+                                <p id="prof-comment">一文</p>
+                            </div>
+                            <dl id="prof-dl">
+                                <div class="dl-div"></div>
+                            </dl>
                         </div>
-                        <dl id="prof-dl">
-                            <div class="dl-div"></div>
-                        </dl>
                     </div>
                 </div>
             </section>
@@ -139,8 +150,9 @@
                 <hr />
                 <div>
                     <ul>
-                        <li><time>9/24</time>ver 0.5　とりあえず形になった。</li>
+                        <li><time>9/25</time>ver 1.1　表示調整。色選択の追加。身体的特徴の項を増やした。</li>
                         <li><time>9/25</time>ver 1.0　完成かも。</li>
+                        <li><time>9/24</time>ver 0.5　とりあえず形になった。</li>
                     </ul>
                 </div>
             </div>
