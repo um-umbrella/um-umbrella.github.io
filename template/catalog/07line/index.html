@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>テンプレート「線」</title>
+    </head>
+
+    <body>
+        <div>
+            <input type="checkbox" id="check-input" />
+            <label id="check-button" for="check-input"></label>
+            <nav>
+                <ul>
+                    <li><a href="#sec1">メニュー１</a></li>
+                    <li><a href="#sec2">メニュー２</a></li>
+                    <li><a href="#sec3">メニュー３</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <section id="sec1">
+                <h1>Site Name</h1>
+                <p>すっきり白いテーマです。</p>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <ul id="update">
+                    <li><time>10/31</time>更新履歴１</li>
+                    <li><time>10/1</time>更新履歴２</li>
+                    <li><time>9/21</time>更新履歴３</li>
+                </ul>
+            </section>
+
+            <section id="sec2">
+                <h2>見出し２</h2>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <h6>見出し６</h6>
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <button>ボタン</button> <button><a>ボタン</a></button>
+                <p><mark>markで下線を引きます</mark>。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+            </section>
+
+            <section id="sec3">
+                <h2>グリッド・画像</h2>
+
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                </p>
+
+                <hr />
+
+                <div class="grid">
+                    <p>
+                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <div><img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
+                    <div><img class="modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
+                    <div><img class="modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
+                </div>
+
+                <div class="img-grid">
+                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+            </section>
+
+            <footer>
+                <ul>
+                    <li>フッター１</li>
+                    <li>フッター２</li>
+                </ul>
+            </footer>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
