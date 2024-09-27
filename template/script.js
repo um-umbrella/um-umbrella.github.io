@@ -8,9 +8,13 @@ const temp = [
     { name: '04 ラズベリー', file: '04raspberry' },
     { name: '05 道', file: '05load' },
     { name: '06 四角', file: '06square' },
+    { name: '07 線', file: '07line' },
 ];
 
-const materialLink = [{ name: 'jay mantri', file: 'https://jaymantri.com/' }];
+const materialLink = [
+    { name: 'jay mantri', file: 'https://jaymantri.com/' },
+    { name: 'Remix Icon', file: 'https://remixicon.com/' },
+];
 
 const searchLink = [
     { name: 'COMPASS LINK', file: 'https://compslink.jp' },
