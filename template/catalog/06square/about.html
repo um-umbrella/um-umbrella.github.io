@@ -5,7 +5,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>テンプレート「四角」テキストページ</title>
     </head>
@@ -13,7 +14,7 @@
     <body>
         <main>
             <div class="menu_bar">
-                <h1>About</h1>
+                <h1 id="title">About</h1>
                 <nav>
                     <ul>
                         <li><a href="index.html">Gallery</a></li>
@@ -32,9 +33,8 @@
                     >。
                 </p>
                 <ul id="update">
-                    <li><time>10/10</time>更新履歴１</li>
-                    <li><time>9/30</time>更新履歴２</li>
-                    <li><time>9/17</time>更新履歴３</li>
+                    <li><time>9/30</time>CSS差し替え</li>
+                    <li><time>9/17</time>テンプレート公開</li>
                 </ul>
             </section>
 
@@ -55,6 +55,12 @@
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
+                <dl>
+                    <dt>項目名</dt>
+                    <dd>項目の説明</dd>
+                    <dt>項目名</dt>
+                    <dd>項目の説明</dd>
+                </dl>
             </section>
 
             <section>
@@ -92,6 +98,17 @@
                 <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
         </main>
+
+        <footer>
+            <ul>
+                <li>フッター</li>
+                <li>サイト情報など</li>
+            </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
+        </footer>
+
         <script src="script.js"></script>
     </body>
 </html>

@@ -5,7 +5,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>テンプレート「線」</title>
     </head>
@@ -31,9 +32,8 @@
                     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                 </p>
                 <ul id="update">
-                    <li><time>10/31</time>更新履歴１</li>
-                    <li><time>10/1</time>更新履歴２</li>
-                    <li><time>9/21</time>更新履歴３</li>
+                    <li><time>9/29</time>CSS差し替え</li>
+                    <li><time>9/21</time>テンプレート公開</li>
                 </ul>
             </section>
 
@@ -47,12 +47,18 @@
                 <a href="">リンク</a>
                 <a href="">リンク</a>
                 <a href="">リンク</a>
-                <button>ボタン</button> <button><a>ボタン</a></button>
+                <a><button>ボタン</button></a> <a><button>ボタン</button></a>
                 <p><mark>markで下線を引きます</mark>。</p>
                 <ul>
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
+                <dl>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                </dl>
             </section>
 
             <section id="sec3">
@@ -67,7 +73,7 @@
 
                 <div class="grid">
                     <p>
-                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大三列）になります。
+                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大二列）になります。
                     </p>
                     <p>
                         グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
@@ -76,9 +82,9 @@
                         グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                     </p>
 
-                    <div><img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
-                    <div><img class="modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
-                    <div><img class="modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
+                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
                 </div>
 
                 <div class="img-grid">
@@ -91,14 +97,18 @@
 
                 <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
-
-            <footer>
-                <ul>
-                    <li>フッター１</li>
-                    <li>フッター２</li>
-                </ul>
-            </footer>
         </main>
+
+        <footer>
+            <ul>
+                <li>フッター</li>
+                <li>サイト情報など</li>
+            </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
+        </footer>
+
         <script src="script.js"></script>
     </body>
 </html>

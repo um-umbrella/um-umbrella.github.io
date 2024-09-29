@@ -1,0 +1,330 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Sorts+Mill+Goudy&display=swap');
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+nav {
+    display: block;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: static;
+
+    padding: 0;
+    height: auto;
+    top: auto;
+    left: auto;
+    z-index: auto;
+
+    opacity: 1;
+    visibility: visible;
+
+    text-align: left;
+    background-color: transparent;
+}
+
+nav li {
+    padding: 0;
+}
+
+nav li:not(:last-child) {
+    margin: 0;
+    width: auto;
+    border-bottom: none;
+}
+
+:root {
+    --main-theme: #858585;
+    --sub-theme: #999999;
+    --body-bg: #222;
+    --text-light-color: #eee;
+    --text-dark-color: #333;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Sorts Mill Goudy', 'Noto Sans JP', system-ui;
+}
+
+/*------------------------------------------------------ */
+
+.to-top {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+
+    bottom: 16px;
+    right: 16px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+    border: 1px solid var(--sub-theme);
+    background-color: var(--body-bg);
+    transition: border 0.5s;
+}
+
+.to-top::before {
+    position: relative;
+    content: 'TOP';
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: var(--main-theme);
+}
+
+.to-top:hover {
+    border: 1px solid var(--text-light-color);
+    background-color: var(--body-bg);
+    transition: 0.5s;
+}
+
+h1#title {
+    margin: 80px 32px;
+
+    font-family: 'Sorts Mill Goudy', 'Noto Sans JP', system-ui;
+    font-weight: 300;
+    text-align: center;
+    color: var(--text-light-color);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h2::before,
+h2::after {
+    width: 56px;
+    height: 3px;
+
+    content: '';
+    background-color: var(--text-dark-color);
+    opacity: 0.8;
+}
+h2::before {
+    margin-right: 32px;
+    border-radius: 50% 0 0 50%;
+}
+h2::after {
+    border-radius: 0 50% 50% 0;
+    margin-left: 32px;
+}
+
+h3 {
+    position: relative;
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+h3::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    border-radius: 50%;
+
+    content: '';
+    background-color: var(--text-dark-color);
+    opacity: 0.8;
+}
+
+h4,
+h5,
+h6 {
+    position: relative;
+    margin: 8px 0;
+    padding: 8px 0 0;
+
+    text-align: center;
+}
+
+:where(h4, h5, h6)::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    border-radius: 50%;
+
+    content: '';
+    background-color: var(--text-dark-color);
+    opacity: 0.8;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 64px 0;
+
+    font-size: smaller;
+}
+
+nav li {
+    list-style: none;
+    margin: 0;
+    padding-right: 16px;
+}
+
+nav a {
+    color: var(--text-light-color);
+}
+
+nav a:hover {
+    color: var(--text-light-color);
+}
+
+footer,
+#footer-c a {
+    color: var(--text-light-color);
+}
+
+.gallery {
+    margin-inline: auto;
+    width: 95%;
+    max-width: 400px;
+}
+
+.gallery > div {
+    position: relative;
+    margin: 0 32px;
+    margin-inline: auto;
+    overflow: hidden;
+
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+    box-sizing: border-box;
+}
+
+.gallery img {
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
+    margin: 0;
+}
+
+.gallery *:hover img {
+    filter: grayscale(0);
+}
+
+.gallery > div:not(:has(img)) {
+    padding: 16px 32px;
+}
+
+.gallery:last-child {
+    margin-bottom: 64px;
+}
+
+.new::after {
+    position: absolute;
+    z-index: 2;
+    padding: 4px 32px;
+
+    top: 4px;
+    left: -32px;
+    transform: rotate(-45deg);
+
+    content: 'NEW';
+    font-size: 12px;
+    color: var(--text-dark-color);
+    background-color: var(--text-light-color);
+}
+
+.gallery .black {
+    color: var(--text-light-color);
+    background-color: var(--body-bg);
+}
+
+.white {
+    border: 1px solid var(--text-light-color);
+    color: var(--text-dark-color);
+    background-color: var(--main-theme);
+}
+
+/*--------------テキスト向け-------------*/
+
+section:not(.gallery) p {
+    font-size: 1em;
+}
+
+section:not(.gallery) {
+    margin: 0 auto;
+    padding: 32px;
+    max-width: 600px;
+
+    border: 1px solid var(--text-dark-color);
+    color: var(--text-dark-color);
+    background-color: #ccc;
+}
+
+section:not(.gallery):first-of-type {
+    margin-top: 64px;
+}
+
+section:not(.gallery):last-child {
+    margin-bottom: 64px;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    div:has(nav) {
+        display: block;
+        text-align: center;
+    }
+
+    h1#title {
+        display: inline-block;
+        margin-inline: auto;
+        margin-right: 64px;
+    }
+
+    nav {
+        display: inline-block;
+        width: auto;
+    }
+
+    nav ul {
+        margin: 0;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+
+        gap: 16px;
+        margin-top: 64px;
+
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .gallery > div {
+        margin: 0;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    section:not(.gallery) {
+        padding: 64px;
+        width: 80%;
+        min-width: 800px;
+        max-width: 1000px;
+    }
+} /*@media*/

@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #da4167;
+    --sub-theme: #f4d35e;
+
+    --body-bg: #ffffff;
+    --text-light-color: #fff;
+    --text-dark-color: #333;
+}
+
+h1,
+nav,
+footer {
+    background-image: linear-gradient(150deg, var(--main-theme) 20%, var(--sub-theme) 80%);
+    animation: GradientBackground 7s ease infinite;
+    background: linear-gradient(45deg, var(--sub-theme), var(--main-theme));
+    background-size: 400% 400%;
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+section {
+    margin: 32px;
+    padding: 16px;
+}
+
+section:last-child {
+    margin-bottom: 64px;
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    padding: 8px;
+
+    text-align: left;
+    font-size: 1.5em;
+    color: var(--text-light-color);
+}
+
+h2 {
+    position: relative;
+    margin: 40px 0 0;
+    padding: 8px 24px;
+    font-size: 24px;
+
+    border: solid 1px var(--main-theme);
+}
+
+h3 {
+    display: flex;
+    font-size: 1.4em;
+}
+
+h3::after {
+    position: relative;
+    margin: 0 16px;
+    width: 50%;
+    height: 1px;
+    bottom: -0.7em;
+    left: 0;
+
+    content: '';
+    background-color: var(--main-theme);
+}
+
+.fv {
+    padding: 2em 0;
+    margin: 0;
+    opacity: 0.8;
+
+    line-height: 2em;
+    font-family: 'Hina Mincho', 'Noto Sans JP', system-ui;
+    text-align: center;
+    color: var(--text-dark-color);
+}
+
+h1#title,
+nav li a,
+footer li {
+    color: var(--text-light-color);
+}
+
+footer ul {
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+/*-----------------------------------------------------*/
+@media screen and (min-width: 768px) {
+    body {
+        position: relative;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+    }
+
+    nav {
+        display: block;
+        visibility: visible;
+        width: 200px;
+        height: 100%;
+        opacity: 1;
+    }
+
+    nav > * {
+        position: relative;
+        top: 128px;
+    }
+
+    h1#title {
+        position: fixed;
+        z-index: 3;
+        padding: 0;
+        width: 200px;
+        top: 32px;
+        left: 0;
+
+        text-align: center;
+        background: rgba(0, 0, 0, 0);
+    }
+
+    footer {
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: 8px;
+        width: 216px;
+
+        text-align: center;
+        background: rgba(0, 0, 0, 0);
+    }
+} /*@mediaの終わり*/
+
+/*----------------------------------------------------------------*/
+@media screen and (min-width: 1064px) {
+    body {
+        grid-template-columns: 300px 1fr;
+    }
+
+    main {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    h1#title {
+        width: 300px;
+    }
+
+    nav {
+        width: 300px;
+    }
+
+    footer {
+        width: 316px;
+    }
+} /*@mediaの終わり*/

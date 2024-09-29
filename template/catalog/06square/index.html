@@ -6,31 +6,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
 
-        <link href="style.css?0919" rel="stylesheet" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>テンプレート「四角」ギャラリーページ</title>
     </head>
 
     <body>
-        <main>
-            <div class="menu_bar">
-                <h1>Gallery Page Title</h1>
-                <nav>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#">メニュー１</a></li>
-                        <li><a href="#">メニュー２</a></li>
-                    </ul>
-                    <a href="#"><button class="to-top"></button></a>
-                </nav>
-            </div>
+        <div>
+            <h1 id="title">Gallery Page Title</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">メニュー１</a></li>
+                    <li><a href="#">メニュー２</a></li>
+                </ul>
+                <a href="#"><button class="to-top"></button></a>
+            </nav>
+        </div>
 
+        <main>
             <section class="gallery">
                 <div class="white">
                     <p>
-                        ギャラリー向けのテーマです。展示や素材配布など、画像メインでずら～っと並べる想定です。<br />divで囲んだ内容が四角の一つになります。<mark>class="modal-window"</mark>の画像はクリックで拡大表示します。
+                        ギャラリー向けテーマです。展示や素材配布など、画像メインでずら～っと並べる想定。<br />divで囲んだ内容が四角の一つになります。
                     </p>
-                    <p>長文のテキストなどは<a href="about.html">別ページ</a>へ。</p>
+                    <p>
+                        長文のテキストは<a href="about.html">テキスト向けのテンプレート</a
+                        >を使ってください。（このように端がはみだします）
+                    </p>
                 </div>
 
                 <div>
@@ -46,6 +50,7 @@
                 </div>
 
                 <div class="black">
+                    <p><mark>class="modal-window"</mark>の画像はクリックで拡大表示します。</p>
                     <p>
                         divに<mark>class=""</mark>を付けると黒背景になります。<br />divにclass="new"を付けると新着の表示が付きます。
                     </p>
@@ -64,6 +69,17 @@
                 </div>
             </section>
         </main>
+
+        <footer>
+            <ul>
+                <li>フッター</li>
+                <li>サイト情報など</li>
+            </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
+        </footer>
+
         <script src="script.js"></script>
     </body>
 </html>

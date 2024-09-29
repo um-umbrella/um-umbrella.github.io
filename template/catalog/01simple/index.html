@@ -5,61 +5,62 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@300&display=swap"
-            rel="stylesheet"
-        />
 
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-        <link href="style.css?2024091902" rel="stylesheet" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>テンプレート「シンプル」</title>
     </head>
 
     <body>
-        <input type="checkbox" id="check_input" />
-        <label id="menuOpen" for="check_input"><i class="ri-menu-line"></i></label>
-        <div id="menu">
-            <ul>
-                <h1><a href="#">タイトル</a></h1>
-                <li><a href="#s-1">メニュー１</a></li>
-                <li><a href="#s-2">メニュー２</a></li>
-                <li><a href="#s-3">メニュー３</a></li>
-                <li>
-                    <a href="#">メール<i class="ri-mail-fill"></i></a>
-                </li>
-            </ul>
+        <div>
+            <input type="checkbox" id="check-input" />
+            <label id="check-button" for="check-input"></label>
+            <nav>
+                <ul>
+                    <li><a href="#sec1">メニュー１</a></li>
+                    <li><a href="#sec2">メニュー２</a></li>
+                    <li><a href="#sec3">メニュー３</a></li>
+                </ul>
+            </nav>
         </div>
 
         <main>
-            <h1>タイトル</h1>
+            <h1 id="title">ページのタイトル</h1>
 
-            <section id="s-1">
+            <section id="sec1">
                 <p>シンプルめなテーマです。</p>
 
                 <ul id="update">
-                    <li><time>10/3</time>更新内容</li>
-                    <li><time>9/16</time>更新内容</li>
-                    <li><time>8/30</time>更新内容</li>
+                    <li><time>9/28</time>CSS差し替え</li>
+                    <li><time>8/30</time>テンプレート公開</li>
                 </ul>
+            </section>
 
+            <section id="sec2">
                 <h2>見出し２</h2>
                 <h3>見出し３</h3>
                 <h4>見出し４</h4>
                 <h5>見出し５</h5>
                 <h6>見出し６</h6>
+                <hr />
                 <p><a href="#">リンク</a>｜<a href="#">リンク</a></p>
                 <button>ボタン１</button><button>ボタン２</button>
-                <hr />
+                <p class="fv">class="fv"を付けると、中央揃えになります。</p>
+
                 <ul>
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
-                <p class="fv">class="fv"を付けると、色付き・中央揃えの装飾になります。</p>
+                <dl>
+                    <dt>項目名</dt>
+                    <dd>項目の説明</dd>
+                    <dt>項目名</dt>
+                    <dd>項目の説明</dd>
+                </dl>
             </section>
 
-            <section>
+            <section id="sec3">
                 <h2>グリッド・画像</h2>
 
                 <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
@@ -97,11 +98,14 @@
 
         <footer>
             <ul>
-                <li>サイト情報</li>
-                <li>管理者など</li>
+                <li>フッター</li>
+                <li>サイト情報など</li>
             </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
         </footer>
 
-        <script src="script.js?2024091902"></script>
+        <script src="script.js"></script>
     </body>
 </html>
