@@ -430,7 +430,7 @@ button#random-btn {
 }
 
 .short-input {
-    width: 48px;
+    width: auto;
 }
 
 ul:not(#menu-area) {
@@ -448,8 +448,8 @@ ul > ul {
     margin: 32px 0;
     padding: 0;
 
-    width: 160px;
-    height: 32px;
+    width: 200px;
+    height: 40px;
 
     overflow: hidden;
 

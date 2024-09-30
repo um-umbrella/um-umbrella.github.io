@@ -3,6 +3,12 @@
 const colorCodes = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6];
 const windowSize = window.devicePixelRatio;
 
+window.onload = function () {
+    const capArea = document.getElementById('cap-area');
+    capArea.style.width = 200 / windowSize + 'px';
+    capArea.style.height = 40 / windowSize + 'px';
+};
+
 //////////////////////////////////
 //配列から一つを選択する
 
