@@ -141,9 +141,10 @@ function AddCanvas(obj) {
 //その他の全ての内容を反映
 function AddContent(obj) {
     console.log('内容（単位なし）を反映');
+    console.table(obj);
     const element = document.getElementById(obj.outputEle);
-
-    if (obj.id.includes('angle')) {
+    console.log(obj.systemItem);
+    if (obj.styleItem === 'transform') {
         element.style[obj.styleItem] = `rotate(${obj.value}deg)`;
     } else {
         element.style[obj.styleItem] = `${obj.value}`;
@@ -197,6 +198,7 @@ function StyleRandom(e) {
     AddContent(new ObjFrame('input-shapes-color', ColorCode(), 'output-shapes', 'background-color'));
     AddNumPx(new ObjFrame('input-shapes-coordinate-x', Math.floor(Math.random() * 400 - 200), 'output-shapes', 'left'));
     AddNumPx(new ObjFrame('input-shapes-coordinate-y', Math.floor(Math.random() * 80 - 40), 'output-shapes', 'top'));
+    AddContent(new ObjFrame('input-shapes-angle', Math.floor(Math.random() * 360), 'output-shapes', 'transform'));
 }
 
 //////////////////////////////
