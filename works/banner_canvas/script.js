@@ -1,7 +1,6 @@
 'use strict';
 
 const colorCodes = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6];
-
 const windowSize = window.devicePixelRatio;
 
 //////////////////////////////////
@@ -13,10 +12,6 @@ function OneChoice(e) {
 
 ////////////////////////////////////////////////////////////////////
 //入力を反映する（サイズ？用）
-/*
-const a = document.getElementById('ID名');
-ID名.addEventListener('change', ToOutputText);
-*/
 
 const inputBgText = document.getElementById('input-bg-color');
 inputBgText.addEventListener('change', ToOutputText);
@@ -139,8 +134,7 @@ function AddCanvas(obj) {
     console.log('キャンバスサイズを不正する');
     const element = document.getElementById(obj.outputEle);
     let num = obj.value;
-    num = num / 1.25;
-    console.log(num);
+    num = num / windowSize;
     element.style[obj.styleItem] = `${num}px`;
 }
 
@@ -220,7 +214,6 @@ function ColorCode() {
 
 const button = document.getElementById('cap-btn');
 button.addEventListener('click', screenshot);
-const main = document.body;
 
 function screenshot() {
     const canvasX = inputCanvasX.value / windowSize;
