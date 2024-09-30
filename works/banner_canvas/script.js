@@ -2,6 +2,8 @@
 
 const colorCodes = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6];
 
+const windowSize = window.devicePixelRatio;
+
 //////////////////////////////////
 //配列から一つを選択する
 
@@ -221,11 +223,13 @@ button.addEventListener('click', screenshot);
 const main = document.body;
 
 function screenshot() {
-    const canvasX = inputCanvasX.value / 1.25;
-    const canvasY = inputCanvasY.value / 1.25;
+    const canvasX = inputCanvasX.value / windowSize;
+    const canvasY = inputCanvasY.value / windowSize;
 
     html2canvas(document.getElementById('cap-area'), {
-        windowWidth: canvasX + 'px',
+        width: canvasX,
+        height: canvasY,
+        windowWidth: canvasX,
         windowHeight: canvasY,
     }).then(function (canvas) {
         const date = new Date();
