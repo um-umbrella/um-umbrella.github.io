@@ -221,7 +221,13 @@ button.addEventListener('click', screenshot);
 const main = document.body;
 
 function screenshot() {
-    html2canvas(document.getElementById('cap-area'), {}).then(function (canvas) {
+    const canvasX = inputCanvasX.value / 1.25;
+    const canvasY = inputCanvasY.value / 1.25;
+
+    html2canvas(document.getElementById('cap-area'), {
+        windowWidth: canvasX + 'px',
+        windowHeight: canvasY,
+    }).then(function (canvas) {
         const date = new Date();
         let dayPlus = '';
         if (date.getMonth() < 10) {
