@@ -100,7 +100,7 @@ button:hover {
 @media screen and (min-width: 585px) {
     main {
         margin-inline: auto;
-        max-width: 700px;
+        max-width: 480px;
     }
 } /*@media*/
 
@@ -109,6 +109,10 @@ button:hover {
 section:not(#main) {
     margin: 16px;
     padding: 16px;
+}
+
+#main {
+    max-width: 440px;
 }
 
 #main div {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="style.css" rel="stylesheet" />
+
+        <title>バナー画像を作るやつ</title>
+    </head>
+
+    <body>
+        <script src="//accaii.com/works/script.js" async></script>
+        <noscript><img src="//accaii.com/works/script?guid=on" /></noscript>
+
+        <main>
+            <section>
+                <h1>バナー画像を<span class="clause">作るやつ</span></h1>
+                <p>シンプルなバナー画像をさっと作るやつです。バナー画像以外にもどうぞ。</p>
+            </section>
+
+            <section>
+                <ul id="menu-area">
+                    <li>
+                        <label>テキスト<input id="input-text" /></label>
+                        <label>テキスト色<input id="input-text-color" type="color" /> </label>
+                        <label
+                            >サイズ<input
+                                id="input-text-size"
+                                class="short-input"
+                                type="number"
+                                autocomplete="none"
+                                value="14"
+                        /></label>
+                        <label
+                            >座標X:<input id="input-text-coordinate-x" class="short-input" type="number" value="0"
+                        /></label>
+                        <label
+                            >座標Y:<input id="input-text-coordinate-y" class="short-input" type="number" value="0"
+                        /></label>
+                        <label>
+                            フォント
+                            <select id="input-text-style">
+                                <option value="bold" selected>M PLUS Rounded</option>
+                                <option value="mincho">しっぽり明朝</option>
+                            </select></label
+                        >
+                    </li>
+                    <li>
+                        <label
+                            >装飾の図形<select id="input-shapes-design">
+                                <option value="square">四角</option>
+                                <option value="circle">丸</option>
+                                <option value="none" selected>なし</option>
+                            </select></label
+                        >
+                        <label>装飾の色<input id="input-shapes-color" type="color" /> </label>
+                        <label
+                            >図形サイズ<input id="input-shapes-size" class="short-input" type="number" value="100"
+                        /></label>
+                        <label
+                            >座標X:<input id="input-shapes-coordinate-x" class="short-input" type="number" value="0"
+                        /></label>
+                        <label
+                            >座標Y:<input id="input-shapes-coordinate-y" class="short-input" type="number" value="0"
+                        /></label>
+                    </li>
+                    <li>
+                        <label>背景の色<input id="input-bg-color" type="color" /></label>
+
+                        <label
+                            >枠線<select id="input-border-line">
+                                <option value="solid">実線</option>
+                                <option value="dotted">点線</option>
+                                <option value="dashed">破線</option>
+                                <option value="double">二重線</option>
+                                <option value="groove">くぼみ線</option>
+                                <option value="ridge">立体線</option>
+                                <option value="none">なし</option>
+                            </select></label
+                        >
+                        <label>枠線の色 <input id="input-border-color" type="color" /> </label>
+                        <label
+                            >枠線のサイズ<input id="input-border-size" class="short-input" type="number" value="1"
+                        /></label>
+                    </li>
+                    <li>
+                        <label>横幅:<input id="input-canvas-x" class="short-input" type="number" value="200" /></label>
+                        <label>縦幅:<input id="input-canvas-y" class="short-input" type="number" value="40" /></label>
+                        <button id="random-btn">全てをランダム生成</button>
+                    </li>
+                </ul>
+
+                <div id="cap-area">
+                    <p id="output-text" class="bold">ここがバナー画像です</p>
+                    <div id="output-shapes" class="none"></div>
+                </div>
+                <button id="cap-btn">画像を保存</button>
+            </section>
+
+            <hr />
+
+            <section>
+                <ul>
+                    <li><time>9/30</time>作った</li>
+                    <ul>
+                        <li>
+                            ブラウザ上の表示と実際の画像ファイルとでズレがあります（特に文字）。適宜調整してください。
+                        </li>
+                        <li>一部OSは保存ボタンが機能しないかも。</li>
+                    </ul>
+                </ul>
+            </section>
+        </main>
+
+        <script src="../html2canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
