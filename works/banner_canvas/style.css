@@ -155,7 +155,7 @@ img.trim {
     display: none;
 }
 
-#update time {
+time {
     padding-right: 1em;
 }
 
@@ -408,11 +408,14 @@ button#random-btn {
 }
 
 #menu-area > li {
-    margin: 0;
-    padding: 8px;
+    align-content: flex-start;
+    margin: 8px 0;
+    padding: 16px;
     width: 100%;
+    gap: 8px;
 
     box-sizing: border-box;
+    background-color: #eee;
 }
 
 #menu-area > li > label {
@@ -445,8 +448,8 @@ ul > ul {
     margin: 32px 0;
     padding: 0;
 
-    width: 200px;
-    height: 40px;
+    width: 160px;
+    height: 32px;
 
     overflow: hidden;
 
@@ -464,8 +467,8 @@ ul > ul {
     top: 0;
     left: 0;
 
-    font-size: 14px;
-    line-height: 1em;
+    font-size: 16px;
+    line-height: 16px;
     margin: 0;
     padding: 0;
 }
@@ -503,7 +506,7 @@ ul > ul {
 
 /*------------------------------------------------------ */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
     #menu-area {
         display: flex;
         flex-wrap: wrap;
@@ -512,8 +515,9 @@ ul > ul {
     #menu-area > li {
         display: flex;
         flex-wrap: wrap;
+        margin: 0;
 
-        width: calc(100% / 2 - 16px);
+        width: calc(100% / 2 - 32px);
     }
 }
 

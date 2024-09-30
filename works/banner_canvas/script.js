@@ -27,6 +27,8 @@ const inputTextSize = document.getElementById('input-text-size');
 inputTextSize.addEventListener('change', ToOutputText);
 const inputTextStyle = document.getElementById('input-text-style');
 inputTextStyle.addEventListener('change', ToOutputText);
+const inputTextAngle = document.getElementById('input-text-angle');
+inputTextAngle.addEventListener('change', ToOutputText);
 
 const inputTextCoordinateX = document.getElementById('input-text-coordinate-x');
 inputTextCoordinateX.addEventListener('change', ToOutputText);
@@ -51,6 +53,8 @@ const inputBorderCoordinateX = document.getElementById('input-shapes-coordinate-
 inputBorderCoordinateX.addEventListener('change', ToOutputText);
 const inputBorderCoordinateY = document.getElementById('input-shapes-coordinate-y');
 inputBorderCoordinateY.addEventListener('change', ToOutputText);
+const inputShapesAngle = document.getElementById('input-shapes-angle');
+inputShapesAngle.addEventListener('change', ToOutputText);
 
 const inputCanvasX = document.getElementById('input-canvas-x');
 inputCanvasX.addEventListener('change', ToOutputText);
@@ -79,6 +83,8 @@ function ToOutputText(e) {
         AddNumPx(new ObjFrame(id, value, 'output-text', 'font-size'));
     } else if (id === 'input-text-style') {
         AddClassSwap(new ObjFrame(id, value, 'output-text', 'font-family'));
+    } else if (id === 'input-text-angle') {
+        AddContent(new ObjFrame(id, value, 'output-text', 'transform'));
     } else if (id === 'input-text-coordinate-x') {
         AddNumPx(new ObjFrame(id, value, 'output-text', 'left'));
     } else if (id === 'input-text-coordinate-y') {
@@ -99,10 +105,12 @@ function ToOutputText(e) {
         AddNumPx(new ObjFrame(id, value, 'output-shapes', 'left'));
     } else if (id === 'input-shapes-coordinate-y') {
         AddNumPx(new ObjFrame(id, value, 'output-shapes', 'top'));
+    } else if (id === 'input-shapes-angle') {
+        AddContent(new ObjFrame(id, value, 'output-shapes', 'transform'));
     } else if (id === 'input-canvas-x') {
-        AddNumPx(new ObjFrame(id, value, 'cap-area', 'width'));
+        AddCanvas(new ObjFrame(id, value, 'cap-area', 'width'));
     } else if (id === 'input-canvas-y') {
-        AddNumPx(new ObjFrame(id, value, 'cap-area', 'height'));
+        AddCanvas(new ObjFrame(id, value, 'cap-area', 'height'));
     } else {
         console.error('値が不正だよ～');
     }
@@ -124,12 +132,26 @@ function AddNumPx(obj) {
     topInputValue(obj);
 }
 
+//数字反映（キャンバスサイズ不正用）
+function AddCanvas(obj) {
+    console.log('キャンバスサイズを不正する');
+    const element = document.getElementById(obj.outputEle);
+    let num = obj.value;
+    num = num / 1.25;
+    console.log(num);
+    element.style[obj.styleItem] = `${num}px`;
+}
+
 //その他の全ての内容を反映
 function AddContent(obj) {
     console.log('内容（単位なし）を反映');
     const element = document.getElementById(obj.outputEle);
-    element.style[obj.styleItem] = `${obj.value}`;
 
+    if (obj.id.includes('angle')) {
+        element.style[obj.styleItem] = `rotate(${obj.value}deg)`;
+    } else {
+        element.style[obj.styleItem] = `${obj.value}`;
+    }
     topInputValue(obj);
 }
 
@@ -159,9 +181,9 @@ randomBtn.addEventListener('click', StyleRandom);
 
 function StyleRandom(e) {
     AddContent(new ObjFrame('input-bg-color', ColorCode(), 'cap-area', 'background-color'));
-    AddNumPx(new ObjFrame('input-text-size', Math.floor(Math.random() * 20), 'output-text', 'font-size'));
+    AddNumPx(new ObjFrame('input-text-size', Math.floor(Math.random() * 16 + 8), 'output-text', 'font-size'));
     AddContent(new ObjFrame('input-text-color', ColorCode(), 'output-text', 'color'));
-    AddNumPx(new ObjFrame('input-text-coordinate-x', Math.floor(Math.random() * 180 + 10), 'output-text', 'left'));
+    AddNumPx(new ObjFrame('input-text-coordinate-x', Math.floor(Math.random() * 160 + 20), 'output-text', 'left'));
     AddNumPx(new ObjFrame('input-text-coordinate-y', Math.floor(Math.random() * 20 + 10), 'output-text', 'top'));
 
     let array = ['solid', 'dotted', 'double', 'dashed', 'ridge', 'none'];

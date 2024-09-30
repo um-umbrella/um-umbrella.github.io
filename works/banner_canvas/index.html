@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="style.css?20240930" rel="stylesheet" />
 
         <title>バナー画像を作るやつ</title>
     </head>
@@ -31,7 +31,7 @@
                                 class="short-input"
                                 type="number"
                                 autocomplete="none"
-                                value="14"
+                                value="16"
                         /></label>
                         <label
                             >座標X:<input id="input-text-coordinate-x" class="short-input" type="number" value="0"
@@ -46,6 +46,9 @@
                                 <option value="mincho">しっぽり明朝</option>
                             </select></label
                         >
+                        <label
+                            >テキストの角度<input id="input-text-angle" class="short-input" type="number" value="0"
+                        /></label>
                     </li>
                     <li>
                         <label
@@ -64,6 +67,9 @@
                         /></label>
                         <label
                             >座標Y:<input id="input-shapes-coordinate-y" class="short-input" type="number" value="0"
+                        /></label>
+                        <label
+                            >図形の角度<input id="input-shapes-angle" class="short-input" type="number" value="0"
                         /></label>
                     </li>
                     <li>
@@ -99,22 +105,35 @@
                 <button id="cap-btn">画像を保存</button>
             </section>
 
-            <hr />
-
             <section>
+                <hr />
+
                 <ul>
-                    <li><time>9/30</time>作った</li>
-                    <ul>
-                        <li>
-                            ブラウザ上の表示と実際の画像ファイルとでズレがあります（特に文字）。適宜調整してください。
-                        </li>
-                        <li>一部OSは保存ボタンが機能しないかも。</li>
-                    </ul>
+                    <li>
+                        ブラウザ上の表示と実際の画像ファイルとで、文字の表示にズレが出ます。画像を見て適宜調整してください。
+                    </li>
+                    <li>作成した画像は媒体を問わずご自由にお使いいただけます。</li>
+                </ul>
+                <hr />
+                <ul>
+                    <li>
+                        <time>9/30-2</time>修正と調整
+                        <ul>
+                            <li>テキスト・図形に角度オプションを追加。</li>
+                            <li>画像サイズが入力内容と異なるのを、見た目上だけ修正。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <time>9/30-1</time>作った
+                        <ul>
+                            <li>一部OSは保存ボタンが機能しないかも。</li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </main>
 
         <script src="../html2canvas.js"></script>
-        <script src="script.js"></script>
+        <script src="script.js?20240930"></script>
     </body>
 </html>
