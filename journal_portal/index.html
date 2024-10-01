@@ -19,30 +19,44 @@
             <nav>
                 <img src="img/background.jpg" id="nav-bg" />
                 <ul>
-                    <li><a href="#c-0">利用規約</a></li>
-                    <li><a href="#c-1">シナリオ</a></li>
-                    <li class="size-s"><a href="#c-1">『勇躍きたれ』</a></li>
-                    <li class="size-s"><a href="#c-1">『朽廃のささやき』</a></li>
-                    <li class="size-s"><a href="#c-1">『便りに乗せて』</a></li>
-                    <li class="size-s"><a href="#c-1">『灰の卵』</a></li>
-
-                    <li><a href="#c-2">その他</a></li>
+                    <li class="menu-min-only"><a href="#">傘の下</a></li>
+                    <li class="menu-max-only"><a href="#sec2">利用規約</a></li>
+                    <li class="menu-max-only">
+                        <a href="#sec3">シナリオ</a>
+                        <ul>
+                            <li class="menu-max-only"><a href="#c-1">勇躍きたれ</a></li>
+                            <li class="menu-max-only"><a href="#c-2">朽廃のささやき</a></li>
+                            <li class="menu-max-only"><a href="#c-3">便りに乗せて</a></li>
+                            <li class="menu-max-only"><a href="#c-4">灰の卵</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-max-only"><a href="#sec4">その他</a></li>
+                    <li><a href="../mail.html" target="_blank">連絡</a></li>
                 </ul>
             </nav>
         </div>
 
         <main>
             <section id="sec1">
-                <h1 subtitle="Under My Umbrella" id="title">傘の下</h1>
+                <a href="#"><h1 subtitle="Under My Umbrella" id="title">傘の下</h1></a>
                 <p>倉林という個人がソロジャーナル関連のいろいろを作っています。</p>
                 <p>
-                    当サイトにおける「ソロジャーナル」は、<mark>シナリオやダイスの出目に沿って記録をしていく遊び</mark>のことを指しています。制作物はソロ向けですが、誰かと普通のTRPGのように遊ぶのも面白いかもしれません。
+                    当サイトにおける「ソロジャーナル」は、<mark>シナリオやダイスの出目に沿って記録をしていく遊び</mark>をざっくり指します。制作物はソロ向けですが、誰かと普通のTRPGのように遊ぶのも面白いかもしれません。
                 </p>
                 <p>
                     <a href="https://talto.cc/users/ZuKfm1L43lXz96Dn8K7rvP3MgJf2" target="_blank">TALTO</a>｜
                     <a href="https://soloj.hodo49.com/" target="_blank">ソロジャーナルの森</a>｜
-                    <a href="https://umumbrella.itch.io/ " target="_blank">itch.io</a>
-                    ｜ <a href="https://umumbrella.booth.pm/" target="_blank">Booth</a>
+                    <a href="https://umumbrella.itch.io/ " target="_blank">itch.io</a>｜<a
+                        href="https://umumbrella.booth.pm/"
+                        target="_blank"
+                        >Booth</a
+                    >
+                </p>
+
+                <p>
+                    <a href="https://rust-cave-248.notion.site/1-TRPG-eefdcd26fb4d4ea1af797188900c8fcb" target="_blank"
+                        >#1ページTRPG企画</a
+                    ><a href="https://x.com/tiama_matidori/status/1769547017703801024" target="_blank">/告知</a>
                 </p>
                 <ul id="update">
                     <li><time>9/25</time>ツール『キャラのプロフを作るツール』公開</li>
@@ -85,7 +99,7 @@
 
                 <hr />
 
-                <h3 subtitle="Scenario - 01">勇躍きたれ</h3>
+                <h3 id="c-1" subtitle="Scenario - 01">勇躍きたれ</h3>
                 <div class="grid">
                     <div>
                         <img class="modal-window" src="img/t_01.jpg" />
@@ -113,7 +127,7 @@
 
                 <hr />
 
-                <h3 subtitle="Scenario - 02">朽廃のささやき</h3>
+                <h3 id="c-2" subtitle="Scenario - 02">朽廃のささやき</h3>
                 <div class="grid">
                     <div>
                         <img class="modal-window" src="img/t_02.jpg" />
@@ -145,7 +159,7 @@
 
                 <hr />
 
-                <h3 subtitle="Scenario - 03">便りに乗せて</h3>
+                <h3 id="c-3" subtitle="Scenario - 03">便りに乗せて</h3>
                 <div class="grid">
                     <div>
                         <img class="modal-window" src="img/t_03.jpg" />
@@ -171,7 +185,7 @@
 
                 <hr />
 
-                <h3 subtitle="Scenario - 04">灰の卵</h3>
+                <h3 id="c-4" subtitle="Scenario - 04">灰の卵</h3>
                 <div class="grid">
                     <div>
                         <img class="modal-window" src="img/t_04.jpg" />
@@ -252,6 +266,9 @@
             <ul>
                 <li>©2024- 傘の下/倉林</li>
             </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
         </footer>
 
         <script src="script.js"></script>
@@ -267,17 +284,27 @@
             color: #aaa;
         }
 
-        .clause {
-            display: inline-block;
-        }
-
-        .size-s {
+        nav > ul > li > ul {
+            margin: 0;
+            line-height: 1em;
+            white-space: nowrap;
             font-size: smaller;
+            opacity: 0.7;
         }
 
         @media screen and (min-width: 768px) {
-            .size-s {
+            .menu-min-only {
                 display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-max-only {
+                display: none;
+            }
+
+            h1#title {
+                color: #333;
             }
         }
     </style>

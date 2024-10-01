@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 /* -------------------------------------------------------
@@ -52,10 +53,6 @@ section:first-of-type {
 
 section:last-child {
     padding-bottom: 64px;
-}
-
-.line-block {
-    display: inline-block;
 }
 
 h1,
@@ -173,11 +170,12 @@ h6 {
         text-align: center;
     }
 
-    footer::after {
-        color: rgb(0 0 0 /0.7);
-        bottom: 0;
-        left: 80px;
-        content: 'template by u-m-umbrella';
+    #footer-c {
+        top: 0;
+        white-space: nowrap;
+    }
+    #footer-c a {
+        color: var(--text-light-color);
     }
 } /*@media*/
 
@@ -206,6 +204,7 @@ h6 {
     }
 
     footer {
+        bottom: 35vh;
         left: calc(var(--grid-width) - var(--grid-width) * 3.5 / 5);
     }
 } /*@media*/

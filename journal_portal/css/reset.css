@@ -48,6 +48,10 @@ li {
     margin: 0 32px;
 }
 
+li::marker {
+    color: var(--main-theme);
+}
+
 a {
     text-decoration: none;
     color: var(--sub-theme);
@@ -63,7 +67,7 @@ nav a {
     color: var(--text-dark-color);
 }
 
-a:not(:where(nav a, button a)):hover {
+a:hover {
     color: var(--text-dark-color);
 }
 
@@ -103,10 +107,11 @@ h6 {
 
 img:not(:where(.img-grid, .addWindow) > img) {
     display: block;
-    margin: 0 auto;
+    margin: 16px auto;
     object-fit: scale-down;
     width: 100%;
     max-height: 300px;
+    box-sizing: border-box;
 }
 
 img.trim {
@@ -116,7 +121,6 @@ img.trim {
 }
 
 #update {
-    /*更新履歴*/
     overflow-y: scroll;
     list-style: none;
 
@@ -129,7 +133,7 @@ img.trim {
     padding: 0 8px;
 
     line-height: 1em;
-    color: var(--text-color);
+    color: var(--text-dark-color);
     background-color: #eee;
     border-radius: 4px;
     box-sizing: border-box;
@@ -181,6 +185,10 @@ dd {
 
 dd {
     line-height: 1.6em;
+}
+
+.clause {
+    display: inline-block;
 }
 
 /*  メニュー類  ----------------------------*/
@@ -259,7 +267,7 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px 0 32px;
+    padding: 16px 0 0;
 
     list-style: none;
 }
@@ -268,16 +276,21 @@ footer li {
     margin: 0 8px;
 }
 
-footer::after {
-    position: absolute;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
+#footer-c {
+    display: block;
+    position: relative;
+    margin: 0 0 8px;
+    left: 0;
+    bottom: 0;
 
+    text-align: center;
     font-size: x-small;
-    color: var(--text-color);
+    color: var(--text-dark-color);
     opacity: 0.5;
-    content: 'template by under my umbrella';
+}
+
+#footer-c a {
+    color: var(--text-dark-color);
 }
 
 .grid {
