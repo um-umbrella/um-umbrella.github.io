@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="style.css?20240930" rel="stylesheet" />
+        <link href="style.css?20241001" rel="stylesheet" />
 
         <title>バナー画像を作るやつ</title>
     </head>
@@ -26,30 +26,25 @@
                         <label>テキスト<input id="input-text" /></label>
                         <label>テキスト色<input id="input-text-color" type="color" /> </label>
                         <label
-                            >サイズ<input
-                                id="input-text-size"
-                                class="short-input"
-                                type="range"
-                                min="4"
-                                max="20"
-                                value="16"
-                        /></label>
+                            >サイズ
+                            <input id="input-text-size" class="input-short" type="number" value="16" />
+                        </label>
                         <label
                             >座標X:<input
                                 id="input-text-coordinate-x"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="-10"
-                                max="210"
+                                max="150"
                                 value="0"
                         /></label>
                         <label
                             >座標Y:<input
                                 id="input-text-coordinate-y"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="-10"
-                                max="50"
+                                max="40"
                                 value="0"
                         /></label>
                         <label>
@@ -62,7 +57,7 @@
                         <label
                             >テキストの角度<input
                                 id="input-text-angle"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="0"
                                 max="360"
@@ -81,7 +76,7 @@
                         <label
                             >図形サイズ<input
                                 id="input-shapes-size"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="1"
                                 max="200"
@@ -90,7 +85,7 @@
                         <label
                             >座標X:<input
                                 id="input-shapes-coordinate-x"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="-100"
                                 max="200"
@@ -99,7 +94,7 @@
                         <label
                             >座標Y:<input
                                 id="input-shapes-coordinate-y"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="-200"
                                 max="200"
@@ -108,7 +103,7 @@
                         <label
                             >図形の角度<input
                                 id="input-shapes-angle"
-                                class="short-input"
+                                class="input-range"
                                 type="range"
                                 min="0"
                                 max="360"
@@ -133,16 +128,16 @@
                         <label
                             >枠線のサイズ<input
                                 id="input-border-size"
-                                class="short-input"
-                                type="range"
+                                class="input-short"
+                                type="number"
                                 min="1"
                                 max="15"
                                 value="1"
                         /></label>
                     </li>
                     <li>
-                        <label>横幅:<input id="input-canvas-x" class="short-input" type="number" value="200" /></label>
-                        <label>縦幅:<input id="input-canvas-y" class="short-input" type="number" value="40" /></label>
+                        <label>横幅:<input id="input-canvas-x" class="input-range" type="number" value="200" /></label>
+                        <label>縦幅:<input id="input-canvas-y" class="input-range" type="number" value="40" /></label>
                         <button id="random-btn">全てをランダム化</button>
                     </li>
                 </ul>
@@ -165,6 +160,12 @@
                 </ul>
                 <hr />
                 <ul>
+                    <li>
+                        <time>10/2</time>追加
+                        <ul>
+                            <li>バーが不便なやつは数値入力に戻した。</li>
+                        </ul>
+                    </li>
                     <li>
                         <time>10/1</time>修正と調整
                         <ul>

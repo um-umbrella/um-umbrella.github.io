@@ -184,10 +184,10 @@ randomBtn.addEventListener('click', StyleRandom);
 
 function StyleRandom(e) {
     AddContent(new ObjFrame('input-bg-color', ColorCode(), 'cap-area', 'background-color'));
-    AddNumPx(new ObjFrame('input-text-size', Math.floor(Math.random() * 16 + 8), 'output-text', 'font-size'));
+    AddNumPx(new ObjFrame('input-text-size', Math.floor(Math.random() * 16 + 4), 'output-text', 'font-size'));
     AddContent(new ObjFrame('input-text-color', ColorCode(), 'output-text', 'color'));
-    AddNumPx(new ObjFrame('input-text-coordinate-x', Math.floor(Math.random() * 160 + 20), 'output-text', 'left'));
-    AddNumPx(new ObjFrame('input-text-coordinate-y', Math.floor(Math.random() * 20 + 10), 'output-text', 'top'));
+    AddNumPx(new ObjFrame('input-text-coordinate-x', Math.floor(Math.random() * 120 + 20), 'output-text', 'left'));
+    AddNumPx(new ObjFrame('input-text-coordinate-y', Math.floor(Math.random() * 10), 'output-text', 'top'));
 
     let array = ['solid', 'dotted', 'double', 'dashed', 'ridge', 'none'];
     let arrayResult = Math.floor(Math.random() * array.length);

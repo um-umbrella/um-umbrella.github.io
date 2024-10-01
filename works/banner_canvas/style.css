@@ -429,8 +429,12 @@ button#random-btn {
     outline: none;
 }
 
-.short-input {
+.input-range {
     width: auto;
+}
+
+.input-short {
+    width: 48px;
 }
 
 ul:not(#menu-area) {
