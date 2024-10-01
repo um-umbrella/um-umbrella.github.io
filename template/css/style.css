@@ -316,7 +316,7 @@ dl.link-info {
     .grid-2list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px 8px;
+        gap: 32px 8px;
     }
 } /*@media*/
 
