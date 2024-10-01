@@ -1,0 +1,140 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Noto+Sans+JP&display=swap');
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #209bd0;
+    --sub-theme: #fff;
+    --text-dark-color: #333;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+section {
+    margin: 16px;
+    padding: 16px;
+}
+
+section:first-child {
+    padding-top: 200px;
+}
+
+section:last-child {
+    padding-bottom: 64px;
+}
+
+/*------------------------------------------------------ */
+
+#main-bg {
+    position: fixed;
+    object-fit: cover;
+    z-index: -500;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+main {
+    width: 80%;
+    min-width: 300px;
+    height: 100%;
+    margin: 0 auto;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 64px 0;
+    text-shadow: var(--main-theme) 0 0 2px, rgba(255, 255, 255, 0.8) 4px 4px 1px;
+
+    text-align: center;
+    font-size: 4em;
+    font-weight: 300;
+    font-family: 'Neonderthaw', 'Noto Sans JP';
+    color: var(--main-theme);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-shadow: var(--main-theme) 0 0 4px, var(--main-theme) 0 0 2px;
+    color: rgba(0 0 0 / 0);
+    font-weight: 300;
+}
+
+h2 {
+    margin: 16px 0 8px;
+
+    font-size: 2em;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    margin: 16px 0 8px;
+
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+nav {
+    position: absolute;
+
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70%;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+nav li a {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 16px;
+    padding: 0;
+
+    width: auto;
+    height: auto;
+    flex-grow: 3;
+}
+
+nav li:not(:last-child) {
+    width: auto;
+    border: none;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    main {
+        max-width: 1000px;
+    }
+} /*@media*/

@@ -110,7 +110,7 @@ section {
         z-index: 5;
         width: 136px;
         left: 0;
-        bottom: -8px;
+        bottom: 0;
 
         font-size: small;
         border-top: none;
@@ -121,7 +121,7 @@ section {
     }
 
     #footer-c {
-        top: 40px;
+        bottom: 0;
         white-space: nowrap;
     }
 } /*@media*/
@@ -154,6 +154,6 @@ section {
     }
 
     #footer-c {
-        top: 16px;
+        bottom: 0;
     }
 } /*@media*/
