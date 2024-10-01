@@ -6,8 +6,6 @@
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
 *------------------------------------------------------ */
 
-/*   縦メニューにしないときに差し込む   */
-
 nav {
     display: block;
     justify-content: flex-start;
@@ -339,6 +337,10 @@ dl.link-info {
 
         width: calc(100% -400px);
         max-width: 1000px;
+    }
+
+    nav a:hover {
+        color: var(--body-bg);
     }
 
     .curved {
