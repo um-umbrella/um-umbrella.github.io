@@ -12,7 +12,8 @@
             rel="stylesheet"
         />
 
-        <link href="style.css?20240919" rel="stylesheet" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>傘の下 | HTMLテンプレート配布</title>
     </head>
@@ -20,10 +21,11 @@
     <body>
         <script src="//accaii.com/umumhtmltemp/script.js" async></script>
         <noscript><img src="//accaii.com/umumhtmltemp/script?guid=on" /></noscript>
+
         <div class="curved"></div>
         <div id="site-info">
-            <h1>傘の下</h1>
-            <p><span class="bbbrrr">webサイト</span><span class="bbbrrr">テンプレート配布</span></p>
+            <img src="img/name.png" />
+            <p><span class="clause">webサイト</span><span class="clause">テンプレート配布</span></p>
         </div>
 
         <nav>
@@ -37,6 +39,7 @@
 
         <main>
             <section id="s-0">
+                <h1>傘の下</h1>
                 <h2>はじめに</h2>
                 <p>
                     個人が練習で作ったhtml/cssテンプレートを配布しています。<br />利用規約にご同意の上で、同人サイトなどにご自由にお使いいただけます。
@@ -48,6 +51,7 @@
 
                 <div>
                     <ul id="update">
+                        <li><time>10/2</time>ツール「バナー画像を作るやつ」公開</li>
                         <li><time>9/27</time>テンプレート「線」公開</li>
                         <li>
                             <time>9/19</time>テンプレート「四角」公開、「シンプル」を差し替え　<a
@@ -70,7 +74,7 @@
 
             <section id="s-1">
                 <h2>仕様</h2>
-                <ul>
+                <ul class="term-list">
                     <li>レスポンシブ対応です。</li>
                     <li>検索避けタグを入れています。</li>
                     <li>html/css、たまにJavaScriptを使用しています。</li>
@@ -80,11 +84,18 @@
 
             <section id="s-2">
                 <h2>利用規約</h2>
-                <ul>
+                <ul class="term-list">
                     <li id="term">ファイル内容の編集・カスタムはご自由にどうぞ。</li>
                     <li id="term">予告なく内容を変更したり、細々手入れをしたりすることがあります。</li>
                     <li id="taboo">
-                        禁止：テンプレートの再配布、著作権表示の削除、画像類の直リンク、法や公序良俗に反するサイトでの使用、ほか良識のグレーゾーンを故意に狙う用途
+                        以下の利用は禁止です：
+                        <ul>
+                            <li>テンプレートの再配布</li>
+                            <li>CSSの著作権表示の削除</li>
+                            <li>画像類の直リンク</li>
+                            <li>法や公序良俗に反するサイトでの使用</li>
+                            <li>ほか良識のグレーゾーンを故意に狙う用途</li>
+                        </ul>
                     </li>
                     <li id="taboo">当サイト配布物を使用したことによる損害には一切の責任を負いません。</li>
                 </ul>
@@ -92,12 +103,97 @@
 
             <section id="s-3">
                 <h2>テンプレート</h2>
-                <div id="temp-list"></div>
+                <ul class="grid-3list">
+                    <li>
+                        <h3>01 シンプル</h3>
+                        <img src="img/01simple.png" />
+                        <div>
+                            <a href="catalog/01simple/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/01simple.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>02 付箋</h3>
+                        <img src="img/02husen.png" />
+                        <div>
+                            <a href="catalog/02husen/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/02husen.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>03 海と空</h3>
+                        <img src="img/03seaandsky.png" />
+                        <div>
+                            <a href="catalog/03seaandsky/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/03seaandsky.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>04 ラズベリー</h3>
+                        <img src="img/04raspberry.png" />
+                        <div>
+                            <a href="catalog/04raspberry/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/04raspberry.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>05 道</h3>
+                        <img src="img/05load.png" />
+                        <div>
+                            <a href="catalog/05load/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/05load.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>06 四角</h3>
+                        <img src="img/06square.png" />
+                        <div>
+                            <a href="catalog/06square/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/06square.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>07 線</h3>
+                        <img src="img/07line.png" />
+                        <div>
+                            <a href="catalog/07line/index.html" target="_blank"><button>Demo</button></a>
+                            <a href="catalog/07line.zip"><button>Zip</button></a>
+                        </div>
+                    </li>
+
+                    <!--
+                    <li>
+                        <h3>0</h3>
+                        <img src="img" />
+                        <div>
+                            <a href="catalog" target="_blank"><button>Demo</button></a>
+                            <a href="catalog"><button>Zip</button></a>
+                        </div>
+                    </li>
+                --></ul>
+            </section>
+
+            <section id="s-5">
+                <h2>ツール</h2>
+                <ul class="grid-2list">
+                    <li>
+                        <h3>バナー画像を作るやつ</h3>
+                        <img src="img/tool01.png" class="banner" />
+                        <p>
+                            ↑こういうバナー画像をブラウザ上で作ります。<br />文字入れ、簡易な装飾など。そんなに高機能ではないので、手軽にやりたいときや、制作環境がない場合向けです。
+                        </p>
+                        <div>
+                            <a href="../works/banner_canvas/index.html" target="_blank"
+                                ><button>バナー画像を作るやつ</button></a
+                            >
+                        </div>
+                    </li>
+                </ul>
             </section>
 
             <section id="s-4">
                 <h2>リンク</h2>
-                <dl>
+                <dl class="link-info">
                     <dt>サイト名</dt>
                     <dd>傘の下</dd>
                     <dt>サイトURL</dt>
@@ -109,14 +205,26 @@
                 </dl>
 
                 <hr />
+                <p>
+                    <a href="https://jaymantri.com/" target="_blank">jay mantri</a>
+                    ｜
+                    <a href="https://remixicon.com/" target="_blank">Remix Icon</a>
+                </p>
+                <p>
+                    <a href="https://compslink.jp/" target="_blank">COMPASS LINK</a>
+                    ｜
+                    <a href="https://ietsuku.i-ra.site/" target="_blank">いえつく</a>
+                    ｜
+                    <a href="https://lony.jp/" target="_blank">LONY</a>
+                </p>
+                <p><a href="https://zenn.dev/ojk?tab=books" target="_blank">文系大学生のための○○入門</a></p>
             </section>
-
-            <footer>
-                <ul>
-                    <li>©2024- under my umbrella/傘の下 - 倉林</li>
-                </ul>
-            </footer>
         </main>
-        <script src="script.js?20240927"></script>
+
+        <footer>
+            <ul>
+                <li>©2024- under my umbrella/傘の下 - 倉林</li>
+            </ul>
+        </footer>
     </body>
 </html>
