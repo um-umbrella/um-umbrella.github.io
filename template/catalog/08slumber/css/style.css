@@ -1,0 +1,357 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #71b2bc;
+    --sub-theme: #d3e6bf;
+    --body-bg: #fff;
+    --text-dark-color: #333;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text-light-color);
+}
+
+nav a:hover {
+    color: var(--text-light-color);
+}
+
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
+}
+
+#check-input {
+    display: none;
+}
+
+#check-button {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    z-index: 5;
+
+    text-align: right;
+    box-sizing: border-box;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-x: calc(100% - 8px);
+    background-position-y: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+
+    padding: 0 10px;
+    width: 70%;
+    height: 0;
+    top: 0;
+    left: 30%;
+    z-index: 1;
+
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size: 0.9em;
+    background-color: var(--body-bg);
+}
+
+nav > * {
+    width: 100%;
+}
+
+nav ul {
+    display: block;
+    box-sizing: border-box;
+}
+
+nav li {
+    padding: 16px 0;
+}
+
+nav li:not(:last-child)::after {
+    display: block;
+    position: relative;
+    margin-inline: auto;
+    top: 1em;
+    width: 75%;
+    height: 1px;
+
+    content: '';
+    background-color: rgb(0 0 0/0.1);
+}
+
+#check-input[type='checkbox']:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        --nav-width: 200px;
+
+        display: grid;
+        grid-template-columns: var(--nav-width) 1fr;
+    }
+
+    #check-button {
+        display: none;
+    }
+
+    nav {
+        align-items: stretch;
+        position: fixed;
+        width: var(--nav-width);
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        line-height: 1em;
+
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        border: none;
+    }
+
+    nav > * {
+        position: relative;
+        top: 128px;
+    }
+
+    nav li:not(:last-child)::after {
+        background-color: rgb(0 0 0/0);
+    }
+
+    h1#title {
+        position: fixed;
+        z-index: 5;
+
+        top: 32px;
+        left: calc(var(--nav-width) / 8);
+        width: calc(var(--nav-width) - var(--nav-width) / 4);
+
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        --nav-width: 300px;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+#nav-bg {
+    position: absolute;
+    object-fit: cover;
+    margin: 0;
+
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    top: 0;
+    z-index: -5;
+}
+
+section {
+    margin: 32px;
+    padding: 16px;
+}
+
+section:first-of-type {
+    margin-top: 64px;
+}
+
+section:last-child {
+    padding-bottom: 64px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin: 0.8em 0 16px;
+
+    font-family: 'Dancing Script', 'Noto Sans JP', system-ui;
+    font-weight: 300;
+}
+
+:where(h1, h2, h3, h4, h5, h6):before {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0.3;
+    font-size: 2em;
+    text-shadow: 0 0 4px, 0 0 4px, 0 0 2px;
+    content: attr(subtitle);
+    color: var(--main-theme);
+    white-space: nowrap;
+}
+
+:where(h3, h4, h5, h6):before {
+    opacity: 0.5;
+    color: var(--sub-theme);
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    body {
+        --grid-width: 200px;
+
+        display: grid;
+        grid-template-columns: var(--grid-width) 1fr;
+    }
+
+    #check-button {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: calc(var(--grid-width) - var(--grid-width) * 4 / 5);
+
+        width: 160px;
+        height: 70vh;
+
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        border: none;
+    }
+
+    nav ul {
+        margin-top: -16px;
+    }
+
+    nav li {
+        padding: 8px;
+    }
+
+    nav li:not(:last-child) {
+        border: none;
+    }
+
+    #nav-bg {
+        border-radius: 0 0 calc(infinity * 1px) calc(infinity * 1px);
+    }
+
+    dl {
+        grid-template-columns: 128px 1fr;
+    }
+
+    h1#title {
+        position: fixed;
+        width: 128px;
+        top: 16px;
+        left: 56px;
+        z-index: 5;
+
+        text-align: center;
+        font-weight: 300;
+        color: var(--text-light-color);
+        text-shadow: var(--main-theme) 0 0 8px, var(--main-theme) 0 0 8px;
+    }
+
+    h1#title:before {
+        content: '';
+    }
+
+    footer {
+        position: fixed;
+        z-index: 10;
+        bottom: 35vh;
+
+        left: calc(var(--grid-width) - var(--grid-width) * 4 / 5);
+
+        width: 160px;
+        font-size: small;
+        font-weight: 200;
+        color: var(--text-light-color);
+    }
+
+    footer ul {
+        display: block;
+        text-align: center;
+    }
+
+    footer li {
+        padding: 0;
+    }
+
+    #footer-c {
+        top: 0;
+        white-space: nowrap;
+    }
+    #footer-c a {
+        color: var(--text-light-color);
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    body {
+        --grid-width: 300px;
+    }
+
+    main {
+        max-width: 900px;
+    }
+
+    nav {
+        left: calc(var(--grid-width) - var(--grid-width) * 3.5 / 5);
+    }
+
+    h1#title {
+        width: 160px;
+        left: 90px;
+    }
+
+    .grid > * {
+        flex-grow: 1;
+    }
+
+    footer {
+        bottom: 35vh;
+        left: calc(var(--grid-width) - var(--grid-width) * 3.5 / 5);
+    }
+} /*@media*/
