@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+
+:root {
+    --main-theme: #c9bdb5;
+    --sub-theme: #aaa;
+    --text-dark-color: #333;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+body {
+    font-family: 'Shippori Mincho', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+        'BIZ UDPGothic', Meiryo, sans-serif;
+
+    font-size: 14px;
+    color: var(--text-dark-color);
+}
+
+section {
+    margin: 16px;
+    padding: 16px;
+}
+
+section:first-of-type {
+    margin-top: 96px;
+}
+
+section:last-child {
+    margin-bottom: 64px;
+}
+
+div:has(#poem-area) {
+    /*★*/
+    --area-height: auto;
+    --area-min-height: 40%;
+
+    margin: auto;
+
+    width: 100%;
+    height: var(--area-height);
+    min-height: var(--area-min-height);
+
+    font-size: x-large;
+}
+
+#poem-area {
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+
+    margin: 0;
+    margin: auto;
+    padding: 32px 16px 0;
+    width: 80%;
+    min-width: 200px;
+    max-width: 300px;
+    height: 100%;
+
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#poem-area > li {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    margin: 0 8px;
+    padding: 0;
+    height: var(--area-height);
+    min-height: var(--area-min-height);
+    max-height: 90%;
+}
+
+#poem-area > li:first-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+
+    text-align: end;
+    font-size: medium;
+}
+
+li {
+    padding: 0;
+    width: auto;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    main {
+        margin: auto 0;
+
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        &:first-of-type,
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    div:has(#poem-area) {
+        --area-height: 100svh;
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #poem-area {
+        padding: 8vh 0;
+
+        & > li {
+            height: auto;
+        }
+
+        & > li:first-child {
+            bottom: 64px;
+            left: 0;
+        }
+    }
+}
