@@ -3,17 +3,15 @@
 :root {
     --main-theme: #acc;
     --main-bg: #fff;
-    --text: #000;
-    --box-in-text: #2c3a35;
-    --box-color: #eee;
-    --button-text: #000;
+    --text-dark-color: #333;
+    --text-light-color: #fff;
 }
 
 /*------------------------------------------------------------*/
 
 body {
     font-family: sans-serif、system-ui;
-    color: var(--box-in-text);
+    color: var(--text-dark-color);
     padding: 0;
     margin: 0;
     background-color: var(--main-theme);
@@ -22,7 +20,7 @@ body {
 ::selection {
     /*選択中の色変え*/
     background-color: var(--main-theme);
-    color: var(--button-text);
+    color: var(--text-light-color);
 }
 
 main {
@@ -33,10 +31,11 @@ main {
 
 a:any-link {
     text-decoration: none;
-    color: var(--main-theme);
+    color: #348b4d;
 }
+
 h1 {
-    color: var(--text);
+    color: var(--text-dark-color);
 }
 
 form {
@@ -51,27 +50,28 @@ form {
     display: inline;
     padding: 0.5em 1em;
     background-color: var(--main-theme);
-    color: var(--box-color);
+    color: var(--text-light-color);
 }
 
 .button:hover {
-    color: var(--box-in-text);
+    color: var(--text-dark-color);
+}
+
+input,
+textarea {
+    background-color: #eee;
+    color: var(--text-dark-color);
 }
 
 input {
     border: none;
     max-width: 200px;
-
-    color: var(--box-in-text);
-    background-color: var(--box-color);
 }
 
 textarea {
     resize: none;
     width: 100%;
 
-    background-color: var(--box-color);
-    color: var(--box-in-text);
     border-radius: 0.5em;
     border: none;
 }
