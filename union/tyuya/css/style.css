@@ -134,6 +134,7 @@ li {
 
         & > li {
             height: auto;
+            max-height: 100%;
         }
 
         & > li:first-child {
