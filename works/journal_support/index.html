@@ -5,13 +5,8 @@
         <meta charset="utf-8" />
         <meta name="discription" content="ページの説明" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet" />
-
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-        <link href="style.css?ver=1.0.1" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <title>ソロジャーナルプレイ支援ツール</title>
     </head>
@@ -20,67 +15,143 @@
         <script src="//accaii.com/umumsolojport/script.js" async></script>
         <noscript><img src="//accaii.com/umumsolojport/script?guid=on" /></noscript>
 
-        <main>
-            <section>
-                <div id="titleArea" class="m-1">
-                    <h1>ログタイトル<i class="ri-edit-line"></i></h1>
-
-                    <p class="default-text"></p>
-                </div>
-                <div class="action">
-                    <div class="m-2 action-dice">
-                        <p>
-                            <span id="dice" class="button">🎲ダイス</span>
-                            <input id="dice1" class="dicebox" type="number" value="3" /><span class="lonely-text"
-                                >d</span
-                            ><input id="dice2" class="dicebox" type="number" value="6" />
-                        </p>
-                    </div>
-                    <div class="m-2 action-cards">
-                        <p id="cards"><span class="button">🃏トランプ</span></p>
-                    </div>
-                    <div class="m-2 action-hr">
-                        <p>
-                            <span id="horizontal_role" class="button">区切り</span>
-                        </p>
-                    </div>
-                    <div class="m-2 action-input">
-                        <label
-                            ><p class="lonely-text">
-                                書き込み：<input id="input" autocomplete="off" /><span id="input_submit" class="button"
-                                    >送信</span
-                                >
-                            </p></label
-                        >
-                    </div>
-                </div>
-                <div class="m-3">
-                    <label
-                        ><p class="default-text">ログ履歴</p>
-                        <textarea id="output" rows="10" cols="20" autocomplete="off"></textarea>
-                    </label>
-                </div>
-            </section>
-        </main>
-        <div class="demi-footer">
-            <p id="download" class="df">保存<i class="ri-download-2-fill"></i></p>
-            <p id="allClear" class="df">初期化</p>
-            <p id="help" class="df">ヘルプ<i class="ri-question-line"></i></p>
-        </div>
-        <div id="help_txt">
-            <div id="htd">
+        <div>
+            <input type="checkbox" id="check-input" />
+            <label id="check-button" for="check-input">ヘルプ<i class="ri-question-line"></i></label>
+            <nav>
+                <!--アコーディオン内-->
+                <!--ヘルプ-->
                 <p id="htd-menu">
-                    <span id="menuClose">閉じる</span>
-                    ｜<a href="../../mail.html" target="_blank"><i class="ri-mail-fill"></i></a>｜<a
-                        href="../../journal_portal/"
-                        target="_blank"
-                        ><i class="ri-home-4-fill"></i></a
-                    >｜
-                    <span>テーマ</span>
+                    <a href="../../mail.html" target="_blank">Mail<i class="ri-mail-fill"></i></a>｜
+                    <a href="../../journal_portal/" target="_blank">HOME<i class="ri-home-4-fill"></i></a>｜
+                    <label>Color<select id="theme-select"></select></label>
                 </p>
-            </div>
-        </div>
 
+                <!--履歴とかはこの辺？-->
+                <h2>当ツールについて</h2>
+                <p>
+                    このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）<mark>デジタルで遊んだり、プレイログを作ったり</mark>するためのものです。<br />
+                    ランダマイザ、ログの書き込みとその保存（.txtファイル）などの機能を付けています。だいたい押せば動くと思います。ソロジャーナル以外の用途でもどうぞ。
+                </p>
+                <p>不具合は多分ありますが、直せたり直せなかったりします。大目に見てください。</p>
+
+                <h3>細かいこと</h3>
+                <ul id="table-list">
+                    <li>
+                        <span>ログの<span class="clause">操作</span></span
+                        ><span>追加</span>ランダイマイザ（ダイス、トランプ）<br />書き込み（区切り）
+                    </li>
+                    <li><span></span><span>編集</span>ログタイトル、ログ履歴</li>
+                    <li>
+                        <span>その他<span class="clause">機能</span></span
+                        ><span>保存</span> ログ履歴を.txtファイルでダウンロードします。<br />
+                        「ログタイトル＋日付」 >がファイル名になります。
+                    </li>
+                    <li>
+                        <span></span
+                        ><span>初期化</span>
+                        タイトル・ログ履歴を全て消去します。<br />ブラウザ自体の再読み込みなどでも同様に初期化されます。
+                    </li>
+                </ul>
+
+                <h3>更新履歴</h3>
+
+                <ul id="table-list">
+                    <li>
+                        <time>2024/<span class="clause">8/18</span></time>
+                        <span>ver0.01（仮）</span>
+                        <span>作り始めた。</span>
+                    </li>
+                    <li>
+                        <time>8/20</time>
+                        <span>ver1.0</span>
+                        <span>いったん完成。</span>
+                    </li>
+
+                    <li>
+                        <time>8/25</time>
+                        <span>ver1.1</span>
+                        <span
+                            >細かい手入れと使用アイコンの差し替え。タイトル編集時に編集マークが消える不具合を生んだ（直せたら直します）。</span
+                        >
+                    </li>
+                    <li>
+                        <time>8/29</time>
+                        <span>ver1.2</span>
+                        <span
+                            >保存ログのファイル名について、日付とタイトルが逆だったうっかりを修正。<br />また、ダイスロール後のフォーカスを、ダイスではなく書き込みエリアに戻るよう変更。</span
+                        >
+                    </li>
+                    <li>
+                        <time>8/30</time>
+                        <span>ver1.3</span>
+                        <span
+                            >保存ログのファイル名について、肝心の日付が一か月前になっていたぽんこつを修正。ついでに、10月未満の日付がちゃんと連番になるように変更。</span
+                        >
+                    </li>
+                    <li>
+                        <time>10/9</time>
+                        <span>ver1.5</span>
+                        <span
+                            >保存ログのファイル名について、10未満の値がズレまくるのを直した。今度こそ直した。<br />ついでに全体的な見た目を調整。中身のスパゲッティも解いた。</span
+                        >
+                    </li>
+                    <!--
+                    <li>
+                        <time></time>
+                        <span></span>
+                        <span></span>
+                    </li>
+                --></ul>
+            </nav>
+
+            <main>
+                <section>
+                    <hgroup>
+                        <h1>ログタイトル</h1>
+                        <button id="titleButton" class="none">決定</button>
+                    </hgroup>
+                </section>
+
+                <section>
+                    <div class="input-area">
+                        <p>
+                            <span id="dice">ダイス</span>
+                            <span class="clause">
+                                <input id="dice1" class="input-space-short" type="number" value="3" />
+                                <span class="input-space-short">d</span>
+                                <input id="dice2" class="input-space-short" type="number" value="6" />
+                            </span>
+                        </p>
+
+                        <p><span id="cards">トランプ</span></p>
+
+                        <p>
+                            <span id="horizontal_role">区切り</span>
+                        </p>
+                    </div>
+
+                    <label>
+                        <p>
+                            <textarea id="input" autocomplete="off" class="input-space-long"></textarea>
+                            <button id="input_submit" class="button">書き込み</button>
+                        </p>
+                    </label>
+
+                    <div class="">
+                        <label
+                            ><p class="default-text">ログ履歴</p>
+                            <textarea id="output" rows="10" cols="20" autocomplete="off"></textarea>
+                        </label>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p id="download" class="df">保存 <i class="ri-download-2-fill"></i></p>
+                <p id="allClear" class="df">初期化</p>
+            </footer>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

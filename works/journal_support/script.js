@@ -1,38 +1,6 @@
 'use strict';
-//アイコンが消える：h1の削除をstyle.display.noneに変えてみる？
 
-const version = 'ver 1.3';
-
-const anoTxt = [
-    'このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）デジタルで遊んだり、プレイログを作ったりするためのものです。',
-    'ランダマイザ、ログの書き込みとその保存（.txtファイル）などの機能を付けています。だいたい押せば動くと思います。ソロジャーナル以外の用途でもどうぞ。',
-    '不具合は多分ありますが、直せたり直せなかったりします。大目に見てください。',
-];
-
-const memo = [
-    '操作できる項目：ダイス、トランプ、区切り。',
-    '編集できる項目：ログタイトル、ログ履歴。',
-    '下部「保存」　：ログ履歴を.txtファイルでダウンロードします。「ログタイトル＋日付」がファイル名になります。',
-    '下部「初期化」：タイトル・ログ履歴を全て消去します。ブラウザ自体の再読み込みなどでも同様に初期化されます。',
-    'デザインが崩れている→すみません。大目に見てください。',
-];
-const update = [
-    { day: '8/18', change: 'ver 0.01（仮）　作り始めた。' },
-    { day: '8/20', change: 'ver 1.0　いったん完成。' },
-    {
-        day: '8/25',
-        change: 'ver 1.1　細かい手入れと使用アイコンの差し替え。タイトル編集時に編集マークが消える不具合を生んだ（直せたら直します）。',
-    },
-    {
-        day: '8/29',
-        change: 'ver 1.2　保存ログのファイル名について、日付とタイトルが逆だったうっかりを修正。また、ダイスロール後のフォーカスを、ダイスではなく書き込みエリアに戻るよう変更。',
-    },
-    {
-        day: '8/30',
-        change: 'ver 1.3　保存ログのファイル名について、肝心の日付が一か月前になっていたぽんこつを修正。ついでに、10月未満の日付がちゃんと連番になるように変更。',
-    },
-];
-
+const version = 'ver 1.5';
 const theme = ['mint', 'red', 'grass', 'sea', 'robot', 'brown', 'gray', 'night'];
 
 const h1 = document.querySelector('h1');
@@ -45,8 +13,8 @@ const output = document.getElementById('output');
 
 const download = document.getElementById('download');
 const allClear = document.getElementById('allClear');
-const help = document.getElementById('help');
-const help_txt = document.getElementById('help_txt');
+//const help = document.getElementById('help');
+//const help_txt = document.getElementById('help_txt');
 
 //===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
@@ -59,7 +27,6 @@ function write(txt) {
     output.value += `${txt}\n`;
     //テキストボックスの末尾にキャレット移動
     const len = output.value.length;
-    output.focus(); //フォーカスをログに
     output.setSelectionRange(len, len);
     input.focus(); //フォーカスを入力に
 }
@@ -78,8 +45,8 @@ function keydown(e) {
     if (e.key === 'Enter') {
         write(input.value);
         input.value = '';
-        //inputをformの中に入れると消える（何で…？）
         input.focus();
+        e.preventDefault();
     }
 }
 
@@ -87,19 +54,20 @@ function keydown(e) {
 dice.addEventListener('click', () => {
     const diceSide = document.getElementById('dice2').value;
     const dicePiece = document.getElementById('dice1').value;
-    console.log('ダイス処理↓' + dicePiece + 'd' + diceSide);
+
     if (dicePiece <= 0 || diceSide <= 0) {
-        //処理中断
+        //処理を中断
         return;
     }
+
     const result = [];
     for (let i = 0; i < dicePiece; i++) {
         const num = Math.floor(Math.random() * diceSide + 1); //ダイスの出目を決定
         result.push(num);
     }
+
     let txt = `🎲${dicePiece}d${diceSide} →　${result}`;
     if (dicePiece > 1) {
-        //合計あり
         txt += `（合計 ${result.reduce((previousValue, currentValue) => previousValue + currentValue, 0)}）`;
     }
     write(txt);
@@ -122,46 +90,46 @@ horizontal_role.addEventListener('click', () => {
     write('\n－－－－－　－－－－－　－－－－－　\n');
 });
 
+const hgroup = document.querySelector('hgroup');
+
 //クリックでテキストエリアに変化
 function titleEdit() {
-    //  titleAreaのh1を消去
+    //  hgroupのh1を消去
     h1.remove();
+    //ボタンを表示
+    document.getElementById('titleButton').classList.toggle('none');
     //  一時的なinputを生成
     const input = document.createElement('input');
     //inputを配置
-    const titleArea = document.getElementById('titleArea');
-    titleArea.insertBefore(input, titleArea.lastElementChild);
+    hgroup.insertBefore(input, hgroup.lastElementChild);
     input.value = h1.textContent;
     input.id = 'titleName';
+    input.autocomplete = 'off';
+
     //inputにaddEve
     input.addEventListener('keydown', titleKeydown);
     input.addEventListener('blur', titleKeydown);
     input.focus();
 
-    //決定ボタンを生成します…
-    const h1_after = document.createElement('p');
-    h1_after.textContent = '決定';
-    h1_after.id = 'titleButton';
-    h1_after.className = 'button';
-    input.parentElement.insertBefore(h1_after, input.parentElement.lastElementChild);
-    h1_after.addEventListener('click', titleSubmit);
+    //決定ボタン
+    const titleButton = document.getElementById('titleButton');
+    titleButton.addEventListener('click', titleSubmit);
 }
 
-//エンターを押したとき  //、またはフォーカスが外れたとき（無理でした）
+//エンターを押したとき、またはフォーカスが外れたとき（無理でした）
 function titleKeydown(e) {
     if (e.key === 'Enter') {
-        console.log('エンターを押した！');
         titleSubmit();
     }
 }
 
 //タイトルを編集
 function titleSubmit(e) {
-    const titleName = document.getElementById('titleName');
-    const text = titleName.value;
     const input = document.getElementById('titleName');
+    const text = input.value;
 
-    document.getElementById('titleButton').remove(); //決定ボタンを削除
+    //決定ボタンを非表示
+    document.getElementById('titleButton').classList.toggle('none');
 
     //input削除
     input.remove();
@@ -169,7 +137,7 @@ function titleSubmit(e) {
     const hi = document.createElement('h1');
     h1.textContent = text;
     hi.autocomplete = 'off';
-    titleArea.insertBefore(h1, titleArea.firstElementChild);
+    hgroup.insertBefore(h1, hgroup.firstElementChild);
 
     //addEveを戻す
     hi.addEventListener('keydown', titleEdit);
@@ -187,20 +155,30 @@ download.addEventListener('click', () => {
 
         //日付でファイル名生成
         const date = new Date();
-        let dayPlus = '';
-        if (date.getMonth() < 10) {
-            dayPlus = 0;
-        }
-        console.log(dayPlus);
-        const filename = `${h1.textContent}_${date.getFullYear()}${dayPlus}${
-            date.getMonth() + 1
-        }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 
-        const blob = new Blob([text], { type: 'text/plain' }); //クラスか
+        const nowDateArray = [
+            date.getMonth() + 1,
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+        ];
+
+        for (let i = 0; i < nowDateArray.length; i++) {
+            if (nowDateArray[i] < 10) {
+                nowDateArray[i] = '0' + nowDateArray[i];
+            }
+        }
+
+        const filename = `${h1.textContent}_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${
+            nowDateArray[2]
+        }${nowDateArray[3]}${nowDateArray[4]}`;
+
+        const blob = new Blob([text], { type: 'text/plain' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = filename;
-        link.click(); //リンクをクリックした状態を起こすってこと！？
+        link.click(); //リンクをクリック
     }
 });
 
@@ -219,90 +197,18 @@ allClear.addEventListener('click', (e) => {
     }
 });
 
-/* ---------------------------------------------------------------------- */
-
-//ヘルプ関連
-// クリックの度にdisplayプロパティを切り替える
-help.addEventListener('click', displaySwitch);
-
-function displaySwitch() {
-    if (help_txt.style.display === 'block') {
-        help_txt.style.display = 'none';
-    } else {
-        help_txt.style.display = 'block';
-    }
-}
-
-//要素呼び出し
-const h2 = document.createElement('h2'); //当ツールについて
-const h3_list = document.createElement('h3'); //細かいこと
-const h3_update = document.createElement('h3'); //更新履歴
-const ano_ol = document.createElement('ol'); //リストを生成
-
-//要素のタイトル
-h2.textContent = '当ツールについて';
-h3_list.textContent = '細かいこと';
-h3_update.textContent = '更新履歴';
-
-htd.appendChild(h2);
-htd.appendChild(ano_ol);
-for (const txt of anoTxt) {
-    const ano_li = document.createElement('li');
-    ano_li.textContent = txt;
-    ano_ol.appendChild(ano_li);
-}
-
-//追加！
-htd.appendChild(h3_list);
-memoWrite(memo);
-htd.appendChild(h3_update);
-updateWrite(update);
-
-//配列を羅列
-function memoWrite() {
-    const ul = document.createElement('ul');
-    htd.appendChild(ul);
-    for (const txt of memo) {
-        const li = document.createElement('li');
-        li.textContent = txt;
-        ul.appendChild(li);
-    }
-}
-
-//オブジェクトを羅列
-function updateWrite(ev) {
-    const dl = document.createElement('dl');
-    htd.appendChild(dl);
-    for (const ob of ev) {
-        const dt = document.createElement('dt');
-        const dd = document.createElement('dd');
-
-        const { day, change } = ob;
-        dt.textContent = day;
-        dd.textContent = change;
-        dl.appendChild(dt);
-        dl.appendChild(dd);
-    }
-}
-
-//★ヘルプのメニュー用意～～～～～------------------------------------
-const htdMenu = document.getElementById('htd-menu'); //戻るボタンの行
-const menuClose = document.getElementById('menuClose');
-const menuMail = document.getElementById('menuMail');
-const menuSelect = document.createElement('Select');
-menuClose.addEventListener('click', displaySwitch);
+/////////////////////////////////////////////////////////////
+//テーマ関連
 
 themeChangePre();
 
 //テーマ切り替えの設置
 function themeChangePre() {
-    const form = document.createElement('form');
-    htdMenu.appendChild(form);
+    const menuSelect = document.getElementById('theme-select');
+
     for (const el of theme) {
         const option = document.createElement('option');
         option.textContent = el;
-        form.appendChild(menuSelect);
-
         menuSelect.appendChild(option);
         menuSelect.addEventListener('change', themeChange);
     }
