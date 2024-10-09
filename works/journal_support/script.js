@@ -13,8 +13,6 @@ const output = document.getElementById('output');
 
 const download = document.getElementById('download');
 const allClear = document.getElementById('allClear');
-//const help = document.getElementById('help');
-//const help_txt = document.getElementById('help_txt');
 
 //===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
@@ -51,10 +49,15 @@ function keydown(e) {
     }
 }
 
-//ランダムダイス
-dice.addEventListener('click', () => {
+//ダイス
+dice.addEventListener('click', (e) => {
     const diceSide = document.getElementById('dice2').value;
     const dicePiece = document.getElementById('dice1').value;
+
+    console.log(e.target.id);
+    if (!(e.target.id === 'dice')) {
+        return;
+    }
 
     if (dicePiece <= 0 || diceSide <= 0) {
         //処理を中断
