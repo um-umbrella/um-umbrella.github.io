@@ -28,6 +28,7 @@ function write(txt) {
     //テキストボックスの末尾にキャレット移動
     const len = output.value.length;
     output.setSelectionRange(len, len);
+    output.focus();
     input.focus(); //フォーカスを入力に
 }
 
