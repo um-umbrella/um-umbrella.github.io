@@ -6,7 +6,7 @@
         <meta name="discription" content="ページの説明" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style.css?20241009" rel="stylesheet" />
 
         <title>ソロジャーナルプレイ支援ツール</title>
     </head>
@@ -30,7 +30,7 @@
                 <!--履歴とかはこの辺？-->
                 <h2>当ツールについて</h2>
                 <p>
-                    このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）<mark>デジタルで遊んだり、プレイログを作ったり</mark>するためのものです。<br />
+                    このツールは、ソロジャーナルを（物理的な紙やサイコロではなく）デジタルで遊んだり、プレイログを作ったりするためのものです。<br />
                     ランダマイザ、ログの書き込みとその保存（.txtファイル）などの機能を付けています。だいたい押せば動くと思います。ソロジャーナル以外の用途でもどうぞ。
                 </p>
                 <p>不具合は多分ありますが、直せたり直せなかったりします。大目に見てください。</p>
@@ -115,32 +115,32 @@
 
                 <section>
                     <div class="input-area">
-                        <p>
+                        <button>
                             <span id="dice">ダイス</span>
                             <span class="clause">
                                 <input id="dice1" class="input-space-short" type="number" value="3" />
                                 <span class="input-space-short">d</span>
                                 <input id="dice2" class="input-space-short" type="number" value="6" />
                             </span>
-                        </p>
+                        </button>
 
-                        <p><span id="cards">トランプ</span></p>
+                        <button><span id="cards">トランプ</span></button>
 
-                        <p>
+                        <button>
                             <span id="horizontal_role">区切り</span>
-                        </p>
+                        </button>
                     </div>
 
                     <label>
                         <p>
                             <textarea id="input" autocomplete="off" class="input-space-long"></textarea>
-                            <button id="input_submit" class="button">書き込み</button>
+                            <button id="input_submit">書き込み</button>
                         </p>
                     </label>
 
                     <div class="">
                         <label
-                            ><p class="default-text">ログ履歴</p>
+                            ><p>ログ履歴</p>
                             <textarea id="output" rows="10" cols="20" autocomplete="off"></textarea>
                         </label>
                     </div>
@@ -152,6 +152,6 @@
                 <p id="allClear" class="df">初期化</p>
             </footer>
         </div>
-        <script src="script.js"></script>
+        <script src="script.js?20241009"></script>
     </body>
 </html>
