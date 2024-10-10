@@ -314,7 +314,7 @@ textarea {
 }
 
 input {
-    margin: -2px 4px 4px;
+    margin: 0;
     height: 1.5em;
 }
 
