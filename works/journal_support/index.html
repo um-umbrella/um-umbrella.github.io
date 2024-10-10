@@ -6,7 +6,7 @@
         <meta name="discription" content="ページの説明" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-        <link href="css/style.css?20241009-3" rel="stylesheet" />
+        <link href="css/style.css?20241010" rel="stylesheet" />
 
         <title>ソロジャーナルプレイ支援ツール</title>
     </head>
@@ -38,14 +38,15 @@
                 <h3>細かいこと</h3>
                 <ul id="table-list">
                     <li>
-                        <span>ログの<span class="clause">操作</span></span
-                        ><span>追加</span>ランダイマイザ（ダイス、トランプ）<br />書き込み（区切り）
+                        <span>ログ関連</span
+                        ><span>追加</span>ランダイマイザ（ダイス、トランプ）、整形文の出力（区切り）。
                     </li>
-                    <li><span></span><span>編集</span>ログタイトル、ログ履歴</li>
+                    <li><span></span><span>編集</span>ログタイトル、ログ履歴の直接の編集。</li>
+                    <li><span></span><span>おまけ</span>メモ欄。単にメモをするところ。ログには反映されません。</li>
                     <li>
                         <span>その他<span class="clause">機能</span></span
-                        ><span>保存</span> ログ履歴を.txtファイルでダウンロードします。<br />
-                        「ログタイトル＋日付」 >がファイル名になります。
+                        ><span>保存</span>ログ履歴を.txtファイルでダウンロードします。<br />
+                        「ログタイトル＋日付」がファイル名になります。
                     </li>
                     <li>
                         <span></span
@@ -97,6 +98,11 @@
                         >
                         <span></span><span></span><span>上記の更新に伴うダイスの暴発を修正。</span>
                     </li>
+                    <li>
+                        <time>10/10</time>
+                        <span>ver1.6</span>
+                        <span>ログに影響されない用途として、メモ欄を追加。それに伴うCSSの調整。</span>
+                    </li>
                     <!--
                     <li>
                         <time></time>
@@ -105,6 +111,8 @@
                     </li>
                 --></ul>
             </nav>
+
+            <!-- ------------------------------------------------ -->
 
             <main>
                 <section>
@@ -137,10 +145,14 @@
                         </p>
                     </label>
 
-                    <div class="">
+                    <div class="log-area">
                         <label
                             ><p>ログ履歴</p>
                             <textarea id="output" rows="10" cols="20" autocomplete="off"></textarea>
+                        </label>
+                        <label
+                            ><p>メモ欄</p>
+                            <textarea id="memo" rows="10" cols="20" autocomplete="off"></textarea>
                         </label>
                     </div>
                 </section>
@@ -148,10 +160,10 @@
 
             <footer>
                 <p id="download" class="df">保存 <i class="ri-download-2-fill"></i></p>
-                <p id="allClear" class="df">初期化</p>
+                <p id="allClear" class="df">初期化 <i class="ri-donut-chart-line"></i></p>
             </footer>
         </div>
 
-        <script src="script.js?20241009-2"></script>
+        <script src="script.js?20241010"></script>
     </body>
 </html>

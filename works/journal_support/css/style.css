@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
 /* -------------------------------------------------------
 * Template: 倉林
@@ -19,16 +18,18 @@ html {
 body {
     position: relative;
 
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', Meiryo,
-        sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     font-weight: 300;
 
     color: var(--text-dark-color);
-    background-color: var(--body-bg);
+    background-color: var(--main-theme);
 }
 
 main {
     position: relative;
+    height: 100svh;
+    box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 ::selection {
@@ -133,6 +134,10 @@ button:hover {
 
 footer {
     position: relative;
+    padding: 8px;
+    width: 100%;
+    height: 32px;
+    background-color: var(--body-bg);
 }
 
 footer ul {
@@ -156,7 +161,7 @@ footer li {
     --main-theme: #71b2bc;
     --sub-theme: #aaa;
     --body-bg: #ffffff;
-    --text-dark-color: #333;
+    --text-dark-color: #1b1b1b;
     --text-light-color: #fff;
 }
 
@@ -165,8 +170,8 @@ body {
     background-color: var(--main-theme);
 }
 
-body > div {
-    container-type: size;
+body {
+    container-type: inline-size;
 }
 
 nav a {
@@ -217,6 +222,8 @@ nav {
     visibility: hidden;
     box-sizing: border-box;
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     font-size: 0.9em;
     background-color: var(--body-bg);
@@ -238,7 +245,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 32px;
 
     position: fixed;
     bottom: 0;
@@ -327,12 +334,14 @@ input {
     margin: 8px 0;
 }
 
-#output {
+#output,
+#memo {
     height: 80px;
 }
 
 textarea {
     height: 2em;
+    line-height: 1.7em;
 }
 
 p:has(#input) {
@@ -347,18 +356,28 @@ p:has(#input) {
 }
 
 @container (min-width: 575px) {
-    #output {
-        height: calc(50vh - 64px);
+    .log-area {
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        gap: 16px;
+    }
+
+    .log-area p {
+        margin-bottom: 0;
     }
 
     #input {
         width: 100%;
         max-width: calc(100% - 96px);
 
-        field-sizing: content;
-        min-height: 1.5em !important;
-        height: 48px;
-        max-height: 35em !important;
+        height: 4em;
+    }
+}
+
+@container (min-width: 800px) {
+    #output,
+    #memo {
+        height: calc(100vh - 400px);
     }
 }
 
@@ -404,26 +423,26 @@ p:has(#input) {
 #mint {
     --main-theme: #acc;
     --body-bg: #fff;
-    --text-dark-color: #000;
+    --text-dark-color: #1b1b1b;
     --box-in-text: #2c3a35;
     --box-color: #eee;
-    --button-text: #000;
+    --button-text: #1b1b1b;
 }
 #red {
     --main-theme: #de4d71;
     --body-bg: #e5e5dd;
     --text-dark-color: #712222;
-    --box-in-text: #000000;
+    --box-in-text: #1b1b1b;
     --box-color: #ffffff;
-    --button-text: #000;
+    --button-text: #1b1b1b;
 }
 #grass {
     --main-theme: #efe9e9;
     --body-bg: #a8c888;
-    --text-dark-color: #000;
+    --text-dark-color: #1b1b1b;
     --box-in-text: #901b44;
     --box-color: #e3e3cd;
-    --button-text: #000;
+    --button-text: #1b1b1b;
 }
 #sea {
     --main-theme: #5cafc2;
@@ -437,23 +456,23 @@ p:has(#input) {
     --main-theme: #212541;
     --body-bg: #504f95;
     --text-dark-color: #eee8e8;
-    --box-in-text: #000000;
+    --box-in-text: #1b1b1b;
     --box-color: #91c2be;
     --button-text: #f5ffca;
 }
 #brown {
     --main-theme: #876060;
     --body-bg: #aeac91;
-    --text-dark-color: #000;
-    --box-in-text: #000;
+    --text-dark-color: #1b1b1b;
+    --box-in-text: #1b1b1b;
     --box-color: #eee;
     --button-text: #e5e9c0;
 }
 #gray {
     --main-theme: #8a8a8a;
     --body-bg: #c1c1c1;
-    --text-dark-color: #000;
-    --box-in-text: #000000;
+    --text-dark-color: #1b1b1b;
+    --box-in-text: #1b1b1b;
     --box-color: #e9e9e9;
     --button-text: #000;
 }

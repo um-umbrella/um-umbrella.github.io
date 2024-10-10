@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'ver 1.5';
+const version = 'ver 1.6';
 const theme = ['mint', 'red', 'grass', 'sea', 'robot', 'brown', 'gray', 'night'];
 
 const h1 = document.querySelector('h1');
