@@ -5,91 +5,97 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400&display=swap" rel="stylesheet" />
-        <link href="css/reset.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/reset.css?20241010" rel="stylesheet" />
+        <link href="css/style.css?20241010" rel="stylesheet" />
 
-        <title>テンプレート「ラズベリー」</title>
+        <title>タイトル</title>
     </head>
 
     <body>
         <div class="title"></div>
+
         <main>
             <section>
                 <h1 id="title">タイトル</h1>
                 <p class="centerText">なんだかぐちゃぐちゃしているテーマです。<br />ゆるっとしたい雰囲気向け。</p>
                 <ul id="update">
+                    <li><time>10/10</time>CSS差し替え</li>
                     <li><time>9/30</time>CSS差し替え</li>
                     <li><time>8/30</time>テンプレート公開</li>
+                    <li><time></time></li>
                 </ul>
             </section>
 
-            <section>
+            <section id="sec2">
                 <h2>見出し２</h2>
-                <p>
-                    <a href="">リンク</a><a href="">リンク</a><a href="">リンク</a><br />
-                    markで<mark>下線を引きます</mark>。
-                </p>
-                <ul>
-                    <li>リスト１</li>
-                    <li>リスト２</li>
-                </ul>
-                <dl>
-                    <dt>項目名</dt>
-                    <dd>dl要素は中央に寄せた一覧表示になります。<br />リンク集などに。</dd>
-                    <dt>項目</dt>
-                    <dd>項目の説明</dd>
-                    <dt>項目</dt>
-                    <dd>項目の説明</dd>
-                </dl>
                 <h3>見出し３</h3>
                 <h4>見出し４</h4>
                 <h5>見出し５</h5>
                 <h6>見出し６</h6>
-                <p>
-                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                </p>
-                <p class="centerText">
-                    pに<mark>class="centerText"</mark>を付けると、<br />テキストを中央寄せで表示します。
-                </p>
+
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a><button>ボタン</button></a> <button><a>ボタン</a></button>
+                <p><mark>markで下線を引きます</mark>。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+
+                <dl>
+                    <dt>項目テキスト</dt>
+                    <dd>
+                        項目の説明<br />
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                </dl>
+                <p class="centerText"><mark>class="centerText"</mark>を指定すると、中央揃えの文章になります。</p>
             </section>
 
-            <section>
+            <section id="sec3">
                 <h2>グリッド・画像</h2>
 
                 <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
                 <p>
-                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。それ以外の場合、大きい画像は最大縦300pxで表示されます。
                 </p>
 
+                <h3>グリッド表示</h3>
                 <div class="grid">
-                    <div>
-                        <h3>見出し３（文字数で縦に伸びます）</h3>
-                        <p>
-                            グリッド表示１。<br /><mark>div class="grid"</mark
-                            >の中身はグリッド表示（最大二列）になります。
-                        </p>
-                    </div>
-                    <div>
-                        <h3>見出し３</h3>
-                        <p>
-                            グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                    <div>
-                        <h3>見出し３</h3>
-                        <p>
-                            グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
+                    <p>
+                        グリッド表示1-1。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大二列）になります。
+                    </p>
+                    <p>
+                        グリッド表示1-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示1-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                </div>
 
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
+                <div class="grid-triple">
+                    <p>
+                        グリッド表示2-1。<br /><mark>div class="grid-triple"</mark
+                        >の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示2-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示2-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
                 </div>
 
                 <div class="img-grid">
-                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <!--画像をぎっしり並べたい場合は親要素にimg-gridクラスを指定してください（小さい画像向け）-->
                     <img src="img/banner.jpg" />
                     <img src="img/banner.jpg" />
                     <img src="img/banner.jpg" />

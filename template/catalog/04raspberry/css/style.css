@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;900&display=swap');
 /* -------------------------------------------------------
 * Template: 倉林
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
@@ -9,7 +9,7 @@
     --main-theme: #a50043;
     --sub-theme: #e3cbc4;
     --body-bg: #fbf2d4;
-    --text-dark-color: #333;
+    --text-dark-color: #1b1b1b;
     --text-light-color: #eee;
     /*上下の枠の塗り色を変える場合は      */
     /*   rgb(165, 0, 67)             */
@@ -23,7 +23,8 @@ body {
     padding: 0;
     margin: 0;
 
-    font-family: Zen Maru Gothic, system-ui;
+    font-family: Zen Maru Gothic, 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+        sans-serif;
 }
 
 .title {
@@ -56,8 +57,9 @@ section {
     padding: 16px;
 }
 
-.centerText {
-    text-align: center;
+li {
+    margin: inherit 32px;
+    padding: 2px;
 }
 
 dl {
@@ -126,9 +128,12 @@ h6 {
     border-radius: 50% 30% 20% 50%/50% 30% 50% 60%;
 }
 
-li {
-    margin: 0 32px;
-    padding: 2px;
+#update {
+    background-color: var(--sub-theme);
+}
+
+.centerText {
+    text-align: center;
 }
 
 footer::after {
@@ -155,11 +160,7 @@ footer::after {
 }
 
 #footer-c {
-    top: 8px;
-}
-
-.grid {
-    margin: 64px 0 0;
+    top: 0;
 }
 
 /*------------------------------------------------------ */

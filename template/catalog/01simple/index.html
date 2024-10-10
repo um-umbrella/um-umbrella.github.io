@@ -5,11 +5,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="css/reset.css?20241010" rel="stylesheet" />
+        <link href="css/style.css?20241010" rel="stylesheet" />
 
-        <link href="css/reset.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-
-        <title>テンプレート「シンプル」</title>
+        <title>タイトル</title>
     </head>
 
     <body>
@@ -17,23 +16,26 @@
             <input type="checkbox" id="check-input" />
             <label id="check-button" for="check-input"></label>
             <nav>
-                <ul>
-                    <li><a href="#sec1">メニュー１</a></li>
-                    <li><a href="#sec2">メニュー２</a></li>
-                    <li><a href="#sec3">メニュー３</a></li>
-                </ul>
+                <div>
+                    <ul>
+                        <li><a href="#sec1">メニュー１</a></li>
+                        <li><a href="#sec2">メニュー２</a></li>
+                        <li><a href="#sec3">メニュー３</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
 
         <main>
-            <h1 id="title">ページのタイトル</h1>
-
             <section id="sec1">
-                <p>シンプルめなテーマです。</p>
+                <h1 id="title">ページタイトル</h1>
+                <p>シンプルなテーマです。</p>
 
                 <ul id="update">
+                    <li><time>10/10</time>CSS差し替え</li>
                     <li><time>9/28</time>CSS差し替え</li>
                     <li><time>8/30</time>テンプレート公開</li>
+                    <li><time></time></li>
                 </ul>
             </section>
 
@@ -43,19 +45,25 @@
                 <h4>見出し４</h4>
                 <h5>見出し５</h5>
                 <h6>見出し６</h6>
-                <hr />
-                <p><a href="#">リンク</a>｜<a href="#">リンク</a></p>
-                <button>ボタン１</button><button>ボタン２</button>
-                <p class="fv">class="fv"を付けると、中央揃えになります。</p>
 
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a><button>ボタン</button></a> <button><a>ボタン</a></button>
+                <p><mark>markで下線を引きます</mark>。</p>
                 <ul>
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
+
                 <dl>
-                    <dt>項目名</dt>
-                    <dd>項目の説明</dd>
-                    <dt>項目名</dt>
+                    <dt>項目テキスト</dt>
+                    <dd>
+                        項目の説明<br />
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </dd>
+                    <dt>項目</dt>
                     <dd>項目の説明</dd>
                 </dl>
             </section>
@@ -65,27 +73,40 @@
 
                 <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
                 <p>
-                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。それ以外の場合、大きい画像は最大縦300pxで表示されます。
                 </p>
 
                 <div class="grid">
                     <p>
-                        グリッド表示１。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大三列）になります。
+                        グリッド表示1-1。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大二列）になります。
                     </p>
                     <p>
-                        グリッド表示２。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        グリッド表示1-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                     </p>
                     <p>
-                        グリッド表示３。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        グリッド表示1-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                </div>
+
+                <div class="grid-triple">
+                    <p>
+                        グリッド表示2-1。<br /><mark>div class="grid-triple"</mark
+                        >の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示2-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示2-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                     </p>
 
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" /></div>
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" /></div>
-                    <div><img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" /></div>
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
                 </div>
 
                 <div class="img-grid">
-                    <!--３列以上並べたい場合はimg-gridを指定してください（小さい画像向け）-->
+                    <!--画像をぎっしり並べたい場合は親要素にimg-gridクラスを指定してください（小さい画像向け）-->
                     <img src="img/banner.jpg" />
                     <img src="img/banner.jpg" />
                     <img src="img/banner.jpg" />

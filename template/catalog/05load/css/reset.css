@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
 /* -------------------------------------------------------
 * Template: 倉林
@@ -19,9 +18,10 @@ html {
 body {
     position: relative;
 
-    font-family: 'Noto Sans JP', system-ui;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     font-weight: 300;
     background-color: var(--body-bg);
+    color: var(--text-dark-color);
 }
 
 main {
@@ -33,19 +33,14 @@ main {
     color: var(--body-bg);
 }
 
-nav > ul {
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0 8px;
+ul {
+    margin: 16px;
 }
 
 li {
-    margin: 0 32px;
+    margin: 8px 16px;
+    padding-left: 16px;
+    line-height: 1.6em;
 }
 
 li::marker {
@@ -54,17 +49,8 @@ li::marker {
 
 a {
     text-decoration: none;
-    color: var(--sub-theme);
-    transition: color 0.3s;
-}
-
-a:not(:where(nav a, button a)) {
     color: var(--main-theme);
-    transition: 0.3s;
-}
-
-nav a {
-    color: var(--text-dark-color);
+    transition: color 0.3s;
 }
 
 a:hover {
@@ -83,7 +69,9 @@ mark {
 }
 
 hr {
-    margin: 32px;
+    margin: 64px;
+    margin-inline: auto;
+    width: 70%;
     border: none;
     border-top: 1px solid rgb(0 0 0 /0.1);
 }
@@ -128,7 +116,7 @@ img.trim {
     font-size: inherit;
 
     width: 100%;
-    height: 64px;
+    height: 80px;
     margin: 0 auto;
     padding: 0 8px;
 
@@ -140,7 +128,7 @@ img.trim {
 }
 
 #update > li {
-    margin: 8px 0;
+    margin: 4px 0;
     padding: 0;
 }
 
@@ -158,8 +146,17 @@ button {
     border: none;
 
     background-color: var(--main-theme);
-    color: var(--body-bg);
+    color: var(--text-light-color);
     transition: background-color 0.3s;
+}
+
+button a,
+a button {
+    color: var(--text-light-color);
+}
+
+button a:hover {
+    color: var(--text-light-color);
 }
 
 button:hover {
@@ -169,13 +166,13 @@ button:hover {
 dl {
     display: grid;
     grid-template-columns: 84px 1fr;
-    gap: 16px 0;
+    gap: 0;
 
     margin: 16px 0;
 }
 
 dt {
-    border: 1px solid var(--main-theme);
+    text-align: right;
 }
 
 dt,
@@ -191,71 +188,11 @@ dd {
     display: inline-block;
 }
 
-/*  メニュー類  ----------------------------*/
+/*  レイアウト  ----------------------------*/
 
-#check-input {
-    display: none;
-}
-
-#check-button {
-    display: block;
-    position: fixed;
-    width: 100%;
-    top: 4px;
-    right: 4px;
-    padding: 12px;
-    z-index: 5;
-
-    text-align: right;
-    box-sizing: border-box;
-
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 100%;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-
-    padding: 0 10px;
-    width: 100%;
-    height: 0;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    opacity: 0;
-    transition: 0.5s;
-    visibility: hidden;
-    box-sizing: border-box;
-
-    text-align: center;
-    background-color: var(--body-bg);
-}
-
-nav ul {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-nav li {
-    padding: 16px 0;
-}
-
-nav li:not(:last-child) {
-    margin: 0 auto;
-    width: 80%;
-    border-bottom: 1px solid rgb(0 0 0 /0.1);
-}
-
-#check-input[type='checkbox']:checked ~ nav {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
+main {
+    container-type: inline-size;
+    container-name: main-container;
 }
 
 footer {
@@ -267,6 +204,8 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin: 8px 0;
     padding: 16px 0 0;
 
     list-style: none;
@@ -279,8 +218,7 @@ footer li {
 #footer-c {
     display: block;
     position: relative;
-    margin: 0;
-    padding: 0 0 8px;
+    margin: 0 0 8px;
     left: 0;
     bottom: 0;
 
@@ -294,44 +232,60 @@ footer li {
     color: var(--text-dark-color);
 }
 
-.grid {
+.grid,
+.grid-triple {
     display: flex;
     flex-wrap: wrap;
+    margin: 16px 0;
 
     --grid-gap: 16px;
     gap: var(--grid-gap);
 }
 
-.grid > * {
+:is(.grid, .grid-triple) > * {
     display: block;
+    margin: 0;
     width: 100%;
 }
 
 .img-grid {
     --grid-gap: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
     margin: calc(var(--grid-gap));
+    margin-inline: 0;
     gap: calc(var(--grid-gap));
 
     text-align: center;
 }
 
-@media screen and (min-width: 600px) {
-    .grid {
+@container main-container (min-width:600px) {
+    .grid,
+    .grid-triple {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .img-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     .img-grid > img {
         max-width: 300px;
     }
-} /*600px*/
+
+    dl {
+        grid-template-columns: 128px 1fr;
+    }
+}
+
+@container main-container (min-width:840px) {
+    .grid-triple {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 /*モーダルウィンドウ*/
 .addWindow {
@@ -375,17 +329,5 @@ footer li {
     text-align: center;
     color: var(--text-light-color);
 }
-
-/*------------------------------------------------------ */
-
-@media screen and (min-width: 768px) {
-    #check-button {
-        display: none;
-    }
-
-    dl {
-        grid-template-columns: 128px 1fr;
-    }
-} /*@media*/
 
 /*------------------------------------------------------ */

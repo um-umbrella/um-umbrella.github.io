@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 /* -------------------------------------------------------
 * Template: 倉林
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
@@ -11,7 +11,164 @@
 
     --body-bg: #ffffff;
     --text-light-color: #fff;
-    --text-dark-color: #333;
+    --text-dark-color: #1b1b1b;
+}
+
+/*------------------------------------------------------ */
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text-dark-color);
+}
+
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
+}
+
+#check-input {
+    display: none;
+}
+
+#check-button {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    z-index: 10;
+
+    text-align: right;
+    box-sizing: border-box;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-x: calc(100% - 8px);
+    background-position-y: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+
+    padding: 0 10px;
+    width: 50%;
+    height: 0;
+    top: 0;
+    left: 50%;
+    z-index: 5;
+
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size: 0.9em;
+    background-color: var(--body-bg);
+}
+
+nav > * {
+    width: 100%;
+}
+
+nav ul {
+    display: block;
+    box-sizing: border-box;
+}
+
+nav li {
+    padding: 16px 0;
+}
+
+nav li:not(:last-child)::after {
+    display: block;
+    position: relative;
+    margin-inline: auto;
+    top: 1em;
+    width: 75%;
+    height: 1px;
+
+    content: '';
+    background-color: rgb(0 0 0/0.1);
+}
+
+#check-input[type='checkbox']:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        --nav-width: 200px;
+
+        display: grid;
+        grid-template-columns: var(--nav-width) 1fr;
+    }
+
+    #check-button {
+        display: none;
+    }
+
+    nav {
+        align-items: stretch; /*縦中央揃えにするならここ*/
+        position: fixed;
+        width: var(--nav-width);
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        line-height: 1em;
+
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        border: none;
+    }
+
+    nav > * {
+        position: relative;
+        top: 128px;
+    }
+
+    nav li:not(:last-child)::after {
+        background-color: rgb(0 0 0/0);
+    }
+
+    h1#title {
+        top: 32px;
+        z-index: 5;
+        left: calc(var(--nav-width) / 8);
+        width: calc(var(--nav-width) - var(--nav-width) / 4);
+
+        text-align: center;
+        background-image: none;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        --nav-width: 300px;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+body {
+    font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+        sans-serif;
 }
 
 h1,
@@ -38,8 +195,12 @@ footer {
 }
 
 section {
-    margin: 32px;
+    margin: 16px;
     padding: 16px;
+}
+
+section:first-of-type {
+    margin-top: 64px;
 }
 
 section:last-child {
@@ -47,13 +208,25 @@ section:last-child {
 }
 
 h1 {
+    display: flex;
+    align-items: center;
     position: relative;
+    z-index: 0;
     margin: 0;
-    padding: 8px;
+    padding-left: 8px;
+    height: 40px;
 
-    text-align: left;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    font-weight: 300;
     color: var(--text-light-color);
+}
+
+h1#title {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 h2 {
@@ -99,76 +272,56 @@ footer li {
     color: var(--text-light-color);
 }
 
-footer ul {
-    align-content: flex-end;
-    flex-wrap: wrap;
+#footer-c {
+    margin: 0;
+    top: -8px;
 }
 
-/*-----------------------------------------------------*/
+#footer-c a {
+    color: var(--text-light-color);
+}
+
+/*------------------------------------------------------ */
+
 @media screen and (min-width: 768px) {
-    body {
+    main {
         position: relative;
-        display: grid;
-        grid-template-columns: 200px 1fr;
-    }
-
-    nav {
-        display: block;
-        visibility: visible;
-        width: 200px;
-        height: 100%;
-        opacity: 1;
-    }
-
-    nav > * {
-        position: relative;
-        top: 128px;
     }
 
     h1#title {
+        display: block;
         position: fixed;
-        z-index: 3;
+        z-index: 5;
         padding: 0;
-        width: 200px;
-        top: 32px;
+
         left: 0;
+        top: 32px;
+        width: var(--nav-width);
 
         text-align: center;
-        background: rgba(0, 0, 0, 0);
     }
 
     footer {
         position: fixed;
-        z-index: 100;
+        z-index: 10;
+        bottom: 0;
         left: 0;
-        bottom: 8px;
-        width: 216px;
+        width: var(--nav-width);
 
-        text-align: center;
-        background: rgba(0, 0, 0, 0);
+        font-size: small;
+        background-image: none;
     }
-} /*@mediaの終わり*/
+} /*@media*/
 
-/*----------------------------------------------------------------*/
-@media screen and (min-width: 1064px) {
-    body {
-        grid-template-columns: 300px 1fr;
-    }
+/*------------------------------------------------------ */
 
+@media screen and (min-width: 1080px) {
     main {
         width: 100%;
         max-width: 1000px;
     }
+} /*@media*/
 
-    h1#title {
-        width: 300px;
-    }
-
-    nav {
-        width: 300px;
-    }
-
-    footer {
-        width: 316px;
-    }
-} /*@mediaの終わり*/
+/*
+  360 585 600 800 834
+*/

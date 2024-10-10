@@ -5,15 +5,22 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link href="css/reset.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/reset.css?20241010" rel="stylesheet" />
+        <link href="css/style.css?20241010" rel="stylesheet" />
 
-        <title>テンプレート「道」</title>
+        <title>タイトル</title>
     </head>
 
     <body>
-        <!-- サイト基本情報 -->
-        <div class="ab">
+        <nav>
+            <ul>
+                <a href="#sec1"><li>メニュー１</li></a>
+                <a href="#sec2"><li>メニュー２</li></a>
+                <a href="#sec3"><li>メニュー３</li></a>
+            </ul>
+        </nav>
+
+        <div id="site-title">
             <h1 class="title">Site Name</h1>
             <div class="subtitle">
                 <p>サブタイトル的な内容</p>
@@ -23,27 +30,20 @@
             <img class="title_bg" src="img/background.jpg" />
         </div>
 
-        <nav>
-            <!--ナビメニュー-->
-            <ul>
-                <li><a href="#">TOP</a></li>
-                <li><a href="#sec1">メニュー１</a></li>
-                <li><a href="#sec2">メニュー２</a></li>
-                <li><a href="#sec3">メニュー３</a></li>
-            </ul>
-        </nav>
         <main>
             <section id="sec1">
-                <p>透明感とシンプルを目標にしたテーマです。</p>
+                <p>タイトル画像付きのテーマです。</p>
                 <p>
-                    PCなどでは本文の左側と被るので、タイトル画像は淡い色彩のものが向くかもしれません。<br />
+                    PCなどでは画像と本文の左側とが被るので、淡い色彩の画像が向くかもしれません。<br />
                     タイトル画像をよりしっかり見せたいときには、sectionに<mark>class="none"</mark>を付けると、テキストエリアの背景を透過します。（タイトル画像:
                     <a href="https://jaymantri.com/" target="_blank">jay mantry</a>）
                 </p>
 
                 <ul id="update">
+                    <li><time>10/10</time>CSS差し替え</li>
                     <li><time>9/28</time>CSS差し替え</li>
                     <li><time>9/11</time>テンプレート公開</li>
+                    <li><time></time></li>
                 </ul>
             </section>
 
@@ -53,29 +53,75 @@
                 <h4>見出し４</h4>
                 <h5>見出し５</h5>
                 <h6>見出し６</h6>
+
+                <hr />
                 <a href="">リンク</a>
                 <a href="">リンク</a>
                 <a href="">リンク</a>
-                <a><button>ボタン</button></a> <a><button>ボタン</button></a>
+                <a><button>ボタン</button></a> <button><a>ボタン</a></button>
                 <p><mark>markで下線を引きます</mark>。</p>
                 <ul>
                     <li>リスト１</li>
                     <li>リスト２</li>
                 </ul>
+
+                <dl>
+                    <dt>項目テキスト</dt>
+                    <dd>
+                        項目の説明<br />
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                </dl>
             </section>
 
             <section id="sec3">
-                <h2>画像</h2>
+                <h2>グリッド・画像</h2>
 
                 <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
                 <p>
-                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。<br />それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。それ以外の場合、大きい画像は最大縦300pxで表示されます。
                 </p>
 
-                <img class="modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
-                <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
-                <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
-                <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
+                <div class="grid">
+                    <p>
+                        グリッド表示1-1。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大二列）になります。
+                    </p>
+                    <p>
+                        グリッド表示1-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示1-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                </div>
+
+                <div class="grid-triple">
+                    <p>
+                        グリッド表示2-1。<br /><mark>div class="grid-triple"</mark
+                        >の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示2-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示2-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
+                </div>
+
+                <div class="img-grid">
+                    <!--画像をぎっしり並べたい場合は親要素にimg-gridクラスを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
             </section>
         </main>
 
