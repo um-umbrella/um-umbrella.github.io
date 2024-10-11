@@ -538,14 +538,26 @@ function ScreenGo() {
     const h2 = document.getElementById('prof-h2').textContent;
 
     html2canvas(document.getElementById('screenshot-area'), {}).then(function (canvas) {
+        //日付でファイル名生成
         const date = new Date();
-        let dayPlus = '';
-        if (date.getMonth() < 10) {
-            dayPlus = 0;
+
+        const nowDateArray = [
+            date.getMonth() + 1,
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+        ];
+
+        for (let i = 0; i < nowDateArray.length; i++) {
+            if (nowDateArray[i] < 10) {
+                nowDateArray[i] = '0' + nowDateArray[i];
+            }
         }
-        const filename = `${h2}_${date.getFullYear()}${dayPlus}${
-            date.getMonth() + 1
-        }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+
+        const filename = `${h2}_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${nowDateArray[2]}${
+            nowDateArray[3]
+        }${nowDateArray[4]}`;
 
         const imageData = canvas.toDataURL('image/png');
         const element = document.createElement('a');

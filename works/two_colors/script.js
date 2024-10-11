@@ -7,7 +7,6 @@ const colorCodes = [0, 1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e', 'f'];
 //キー押下・クリック時に発火
 document.body.addEventListener('keydown', colorChange);
 document.body.addEventListener('click', colorChange);
-//クリックで全反応→困る→Pだけ除外する方法を探る→（CSSでz-indexをいじってみたりするが空振り）→pのときだけ処理を中止したらいいんじゃね！？と気付く→出た！！targetだ～～！！！！
 
 ///////////////////////
 //色をclassに適用
@@ -36,13 +35,13 @@ function colorChange(e) {
 function colorSelect() {
     let colorCode = '';
     for (let i = 0; i < 6; i++) {
-        colorCode += oneChoise(colorCodes);
+        colorCode += OneChoice(colorCodes);
     }
     return `#${colorCode}`;
 }
 
 //配列から一つを選択
-function oneChoise(e) {
+function OneChoice(e) {
     return e[Math.floor(Math.random() * e.length)];
 }
 
@@ -62,14 +61,24 @@ function screenGo() {
 
         //日付でファイル名生成
         const date = new Date();
-        let dayPlus = '';
-        if (date.getMonth() < 10) {
-            dayPlus = 0;
+
+        const nowDateArray = [
+            date.getMonth() + 1,
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+        ];
+
+        for (let i = 0; i < nowDateArray.length; i++) {
+            if (nowDateArray[i] < 10) {
+                nowDateArray[i] = '0' + nowDateArray[i];
+            }
         }
-        console.log(dayPlus);
-        const filename = `twoColors_${date.getFullYear()}${dayPlus}${
-            date.getMonth() + 1
-        }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+
+        const filename = `twoColors_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${nowDateArray[2]}${
+            nowDateArray[3]
+        }${nowDateArray[4]}`;
 
         const imageData = canvas.toDataURL('image/png');
         const element = document.createElement('a');

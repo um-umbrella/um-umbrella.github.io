@@ -233,15 +233,26 @@ function screenshot() {
         windowWidth: canvasX,
         windowHeight: canvasY,
     }).then(function (canvas) {
+        //日付でファイル名生成
         const date = new Date();
-        let dayPlus = '';
-        if (date.getMonth() < 10) {
-            dayPlus = 0;
+
+        const nowDateArray = [
+            date.getMonth() + 1,
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+        ];
+
+        for (let i = 0; i < nowDateArray.length; i++) {
+            if (nowDateArray[i] < 10) {
+                nowDateArray[i] = '0' + nowDateArray[i];
+            }
         }
-        console.log(dayPlus);
-        const filename = `バナー画像を作るやつ_${date.getFullYear()}${dayPlus}${
-            date.getMonth() + 1
-        }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+
+        const filename = `バナー画像_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${nowDateArray[2]}${
+            nowDateArray[3]
+        }${nowDateArray[4]}`;
 
         const imageData = canvas.toDataURL('image/png');
         const element = document.createElement('a');

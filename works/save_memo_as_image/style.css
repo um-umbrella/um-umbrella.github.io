@@ -26,7 +26,8 @@ li {
 }
 
 body {
-    font-family: 'Zen Maru Gothic', 'Noto Sans JP', system-ui;
+    font-family: 'Zen Maru Gothic', 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+        'Hiragino Sans', Meiryo, sans-serif;
 
     font-weight: 300;
 }
@@ -135,7 +136,7 @@ section:not(#main) {
     height: 32px;
 
     border: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0 0 0 / 0);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM12 15C13.3807 15 14.5 13.8807 14.5 12.5C14.5 11.1193 13.3807 9.99998 12 9.99998C10.6193 9.99998 9.5 11.1193 9.5 12.5C9.5 13.8807 10.6193 15 12 15Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
