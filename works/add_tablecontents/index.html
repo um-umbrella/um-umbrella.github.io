@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <title>目次追加JS</title>
+    </head>
+
+    <body>
+        <div>
+            <input type="checkbox" id="check-input" />
+            <label id="check-button" for="check-input"></label>
+            <nav>
+                <div>
+                    <p>↓ここに本文中の目次が<span class="clause">追加されています↓</span></p>
+                    <ul id="contents-table"></ul>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <section id="sec1">
+                <h1>目次追加JS</h1>
+
+                <p></p>
+                <p>
+                    本文中から<mark>見出しタグを取得し、目次として追加する</mark>JavaScriptファイルです。<br />手打ちでHTMLを編集しているサイト用。動作はこのページ自体で確認できます。
+                </p>
+                <p>ファイル読み込みとタグひとつの追加で使えます。お好きなCSSテンプレートと一緒にご利用ください。</p>
+
+                <ul id="update">
+                    <li><time>10/5</time>公開</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>内容物</h2>
+                <ul>
+                    <li>
+                        Javascriptファイル（二点）
+                        <ul>
+                            <li>contents_table_h1h2.js（最初のh1＋全てのh2を目次に反映）</li>
+                            <li>contents_table_h2h3.js（最初のh2＋全てのh3を目次に反映）</li>
+                        </ul>
+                    </li>
+                    <li>HTMLファイル（この説明書）</li>
+                </ul>
+
+                <h2>使い方</h2>
+                <ol>
+                    <li>JavaScriptファイルをHTML内で読み込む</li>
+                    <li>目次を追加したい箇所にid="#contents-table"を設定する</li>
+                    <li>本文の内容を追加する</li>
+                </ol>
+
+                <h3>使い方詳細</h3>
+                <ol>
+                    <li>
+                        以下をbodyタグ内の最下部に記載します。<br />
+                        <mark>&lt;script src="（.jsファイルのURL）"&gt&lt;/script&gt</mark><br />
+                    </li>
+                    <li>
+                        <mark>&lt;ul id="contents-table"&gt&lt;/ul&gt</mark
+                        >のように、ul/olタグが望ましいです。それ以外でも機能はしますが非推奨です。
+                    </li>
+                    <li>あとは普通に本文の内容を書きます。</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>仕様・注意点</h2>
+                <ul>
+                    <li>
+                        hタグにidがある場合、目次にページ内リンクを追加します。id自体は何でもいいです。<br /><mark
+                            >～_h1h2.js使用時のh1</mark
+                        >または<mark>～_h2h3.js使用時のh2</mark>にidがない場合、ページ最上部へのジャンプを追加します。<br />それ以外は、リンクしないただのテキストになります。
+                    </li>
+                    <li>
+                        h1/h2の順序は考慮しません。目次は必ずh1→h2→…またはh2→h3→…の順になります。<br />例えば、h1がh2より後の行にある場合でも、h1を目次の一番最初に表示します。
+                        <ul>
+                            <li>
+                                これらはHTML側の編集箇所を増やせばきちんと対応できるのですが、導入が気軽でなくなるので（<mark>導入のためにHTMLをいっぱいいじるのは本末転倒</mark>）、対応予定はないです。他の方法は勉強中です。
+                            </li>
+                        </ul>
+                    </li>
+                    <li>HTML/CSSベタ打ちのページでの使用を想定しています。それ以外での動作は未確認です。</li>
+                </ul>
+            </section>
+        </main>
+
+        <script src="contents_table_h1h2.js"></script>
+    </body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+        /* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+
+            font-family: 'Noto Sans JP', system-ui;
+            font-weight: 300;
+            background-color: #fff;
+        }
+
+        main {
+            position: relative;
+        }
+
+        ::selection {
+            background-color: #71b2bc;
+            color: #fff;
+        }
+
+        ul {
+            margin: 16px;
+        }
+
+        li {
+            margin: 8px 16px;
+            padding-left: 16px;
+            line-height: 1.6em;
+        }
+
+        li::marker {
+            color: #71b2bc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #71b2bc;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        p {
+            line-height: 1.8em;
+            margin: 16px 0;
+        }
+
+        mark {
+            color: inherit;
+            background-color: rgb(255, 255, 255, 0);
+            background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #eee 60%);
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 16px 0 8px;
+        }
+
+        #update {
+            overflow-y: scroll;
+            list-style: none;
+
+            font-family: inherit;
+            font-size: inherit;
+
+            width: 100%;
+            height: 64px;
+            margin: 0 auto;
+            padding: 0 8px;
+
+            line-height: 1em;
+            background-color: #eee;
+            box-sizing: border-box;
+        }
+
+        #update > li {
+            margin: 8px 0;
+            padding: 0;
+        }
+
+        #update time {
+            padding-right: 1em;
+        }
+
+        .clause {
+            display: inline-block;
+        }
+
+        nav > ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            list-style: none;
+            margin: 0;
+            padding: 0 8px;
+        }
+
+        #check-input {
+            display: none;
+        }
+
+        #check-button {
+            display: block;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 20px;
+            z-index: 5;
+
+            text-align: right;
+            box-sizing: border-box;
+
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-position-x: calc(100% - 8px);
+            background-position-y: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: fixed;
+
+            padding: 0 10px;
+            width: 50%;
+            height: 0;
+            top: 0;
+            left: 50%;
+            z-index: 1;
+
+            opacity: 0;
+            transition: 0.5s;
+            visibility: hidden;
+            box-sizing: border-box;
+
+            text-align: center;
+            font-size: 0.9em;
+            background-color: #fff;
+        }
+
+        nav > * {
+            width: 100%;
+        }
+
+        nav ul {
+            display: block;
+            box-sizing: border-box;
+        }
+
+        nav li {
+            padding: 16px 0;
+        }
+
+        nav li:not(:last-child)::after {
+            display: block;
+            position: relative;
+            margin-inline: auto;
+            top: 1em;
+            width: 75%;
+            height: 1px;
+
+            content: '';
+            background-color: rgb(0 0 0/0.1);
+        }
+
+        #check-input[type='checkbox']:checked ~ nav {
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                --nav-width: 200px;
+
+                display: grid;
+                grid-template-columns: var(--nav-width) 1fr;
+            }
+
+            #check-button {
+                display: none;
+            }
+
+            nav {
+                align-items: stretch;
+                position: fixed;
+                width: var(--nav-width);
+                height: 100%;
+                top: 0;
+                left: 0;
+
+                line-height: 1em;
+
+                opacity: 1;
+                visibility: visible;
+                transition: none;
+                border: none;
+            }
+
+            nav > * {
+                position: relative;
+                top: 128px;
+            }
+
+            nav li:not(:last-child)::after {
+                background-color: rgb(0 0 0/0);
+            }
+        }
+
+        @media screen and (min-width: 1080px) {
+            body {
+                --nav-width: 300px;
+            }
+        } /*@media*/
+
+        section {
+            margin: 16px;
+            padding: 16px;
+        }
+
+        section:first-of-type {
+            margin-top: 64px;
+        }
+
+        section:last-child {
+            margin-bottom: 64px;
+        }
+
+        @media screen and (min-width: 1080px) {
+            main {
+                width: 100%;
+                max-width: 1000px;
+            }
+        } /*@media*/
+    </style>
+</html>
