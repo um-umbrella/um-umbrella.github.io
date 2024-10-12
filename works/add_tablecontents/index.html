@@ -29,10 +29,12 @@
                 <p>
                     本文中から<mark>見出しタグを取得し、目次として追加する</mark>JavaScriptファイルです。<br />手打ちでHTMLを編集しているサイト用。動作はこのページ自体で確認できます。
                 </p>
-                <p>ファイル読み込みとタグひとつの追加で使えます。お好きなCSSテンプレートと一緒にご利用ください。</p>
+                <p>
+                    ファイル読み込みとタグひとつの追加で使えます。Javascriptファイルだけなので、たいていのサーバーで動くと思います。<br />お好きなCSSテンプレートと一緒にご利用ください。
+                </p>
 
                 <ul id="update">
-                    <li><time>10/5</time>公開</li>
+                    <li><time>10/12</time>公開</li>
                 </ul>
             </section>
 
@@ -71,18 +73,24 @@
             </section>
 
             <section>
-                <h2>仕様・注意点</h2>
+                <h2>その他</h2>
+                <h3>仕様</h3>
+                <ul>
+                    <li>hタグにidがある場合、目次にページ内リンクを追加します。<br />id自体は何でもいいです。</li>
+                    <li>
+                        <mark>～_h1h2.js使用時のh1</mark>または<mark>～_h2h3.js使用時のh2</mark>
+                        にidがない場合、ページ最上部へのジャンプを追加します。
+                    </li>
+                    <li>それ以外は、リンクしないただのテキストになります。</li>
+                </ul>
+                <h3>注意点</h3>
                 <ul>
                     <li>
-                        hタグにidがある場合、目次にページ内リンクを追加します。id自体は何でもいいです。<br /><mark
-                            >～_h1h2.js使用時のh1</mark
-                        >または<mark>～_h2h3.js使用時のh2</mark>にidがない場合、ページ最上部へのジャンプを追加します。<br />それ以外は、リンクしないただのテキストになります。
-                    </li>
-                    <li>
-                        h1/h2の順序は考慮しません。目次は必ずh1→h2→…またはh2→h3→…の順になります。<br />例えば、h1がh2より後の行にある場合でも、h1を目次の一番最初に表示します。
+                        h1/h2の順序は考慮しません。目次は必ずh1→h2→…またはh2→h3→…の順になります。
                         <ul>
+                            <li>例えば、h1がh2より後の行にある場合でも、h1を目次の一番最初に表示します。</li>
                             <li>
-                                これらはHTML側の編集箇所を増やせばきちんと対応できるのですが、導入が気軽でなくなるので（<mark>導入のためにHTMLをいっぱいいじるのは本末転倒</mark>）、対応予定はないです。他の方法は勉強中です。
+                                これらはHTML側の編集箇所を増やせばきちんと対応できるのですが、導入が気軽でなくなるので（導入のためにHTMLをいっぱいいじるのは本末転倒）、対応予定はないです。他の方法は勉強中です。
                             </li>
                         </ul>
                     </li>
@@ -95,8 +103,6 @@
     </body>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
-
         /* -------------------------------------------------------
 * Template: 倉林
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
@@ -113,9 +119,7 @@
 
         body {
             position: relative;
-
-            font-family: 'Noto Sans JP', system-ui;
-            font-weight: 300;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             background-color: #fff;
         }
 
