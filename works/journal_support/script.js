@@ -82,10 +82,10 @@ cards.addEventListener('click', () => {
     if (Math.floor(Math.random() * 100 + 1 < 3)) {
         write(`🃏 →　Joker！`);
     } else {
-        const suit = ['🧡', '♠', '🍀', '🔶'];
+        const suit = ['♠スペード', '🧡ハート', '🔶ダイヤ', '🍀クローバー'];
         const random = Math.floor(Math.random() * 4);
         const card = Math.floor(Math.random() * 13) + 1;
-        write(`🃏 →　${card + suit[random]}`);
+        write(`🃏 →　${suit[random]}の ${card}`);
     }
 });
 
