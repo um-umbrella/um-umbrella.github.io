@@ -25,9 +25,8 @@
             <section id="sec1">
                 <h1>目次追加JS</h1>
 
-                <p></p>
                 <p>
-                    本文中の<mark>見出しタグ（h2）を取得し、目次として追加する</mark>JavaScriptファイルです。<br />手打ちでHTMLを編集しているサイト向け。動作はこのページ自体で確認できます。
+                    本文中の<mark>見出しタグ（h2～h3）を取得し、目次（ol）として追加する</mark>JavaScriptファイルです。<br />手打ちでHTMLを編集しているサイト向け。動作はこのページ自体で確認できます。
                 </p>
                 <p>
                     ファイル読み込みとタグひとつの追加で使えます。Javascriptファイルだけなので、たいていのサーバーで動くと思います。<br />お好きなCSSテンプレートと一緒にご利用ください。
@@ -40,9 +39,9 @@
             </section>
 
             <section>
-                <h2>内容物</h2>
+                <h2>内容物（h2）</h2>
                 <ul>
-                    <li>contents_table_h2.js</li>
+                    <li>contents_table.js</li>
                     <li>
                         旧版のJavascriptファイル（二点）
                         <ul>
@@ -53,21 +52,21 @@
                     <li>HTMLファイル（この説明書）</li>
                 </ul>
 
-                <h2 id="howtouse">使い方</h2>
+                <h2 id="howtouse">使い方（h2）</h2>
                 <ol>
                     <li>JavaScriptファイルをHTML内で読み込む</li>
                     <li>目次を追加したい箇所にid="#contents-table"を設定する</li>
                     <li>本文の内容を追加する</li>
                 </ol>
 
-                <h3>使い方詳細</h3>
+                <h3>使い方詳細（h3）</h3>
                 <ol>
                     <li>
                         以下をbodyタグ内の最下部に記載します。<br />
                         <mark>&lt;script src="（.jsファイルのURL）"&gt&lt;/script&gt</mark><br />
                     </li>
                     <li>
-                        <mark>&lt;div id="contents-table"&gt&lt;/div&gt</mark
+                        目次は<mark>&lt;div id="contents-table"&gt&lt;/div&gt</mark
                         >のようにします。divやnavなどのブロック要素が望ましいです。それ以外でもたぶん機能はしますが非推奨です。
                     </li>
                     <li>あとは普通に本文の内容を書きます。</li>
@@ -75,15 +74,19 @@
             </section>
 
             <section>
-                <h2>仕様</h2>
+                <h2>仕様（h2）</h2>
                 <ul>
+                    <li>id="#contents-table"内にolを生成します。目次化する対象はページ内のh2とh3です。</li>
                     <li>
-                        目次には各見出しへのページ内リンクを追加します。<br />その際、idのあるh2はそのidを使用し、idがないh2には「contents-table-数字」のIDを追加します。
+                        目次には各見出しへのページ内リンクを追加します。<br />その際、idがあるh2はそのidを使用し、idがないh2には「contents-table-数字」のidを追加します。
+                    </li>
+                    <li>
+                        目次にはそれぞれクラスを追加します。デザイン調整に使ってください。<br />元がh2：contents-table-h2<br />元がh3：contents-table-h3
                     </li>
                 </ul>
 
-                <h2>旧版について</h2>
-                <h3>仕様</h3>
+                <h2>旧版について（h2）</h2>
+                <h3>仕様（h3）</h3>
                 <ul>
                     <li>hタグにidがある場合、目次にページ内リンクを追加します。<br />id自体は何でもいいです。</li>
                     <li>
@@ -92,7 +95,7 @@
                     </li>
                     <li>それ以外は、リンクしないただのテキストになります。</li>
                 </ul>
-                <h3>注意点</h3>
+                <h3>注意点（h3）</h3>
                 <ul>
                     <li>
                         h1/h2の順序は考慮しません。目次は必ずh1→h2→…またはh2→h3→…の順になります。
@@ -108,7 +111,7 @@
             </section>
         </main>
 
-        <script src="contents_table_h2.js"></script>
+        <script src="contents_table.js"></script>
     </body>
 
     <style>
@@ -141,7 +144,8 @@
             color: #fff;
         }
 
-        ul {
+        ul,
+        ol {
             margin: 16px;
         }
 
@@ -192,7 +196,7 @@
             font-size: inherit;
 
             width: 100%;
-            height: 64px;
+            height: 80px;
             margin: 0 auto;
             padding: 0 8px;
 
@@ -202,16 +206,12 @@
         }
 
         #update > li {
-            margin: 8px 0;
+            margin: 4px 0;
             padding: 0;
         }
 
         #update time {
             padding-right: 1em;
-        }
-
-        .clause {
-            display: inline-block;
         }
 
         nav > ul {
@@ -222,7 +222,13 @@
         nav li {
             list-style: none;
             margin: 0;
-            padding: 0 8px;
+            padding: 0 4px;
+        }
+
+        .contents-table-h2 {
+        }
+        .contents-table-h3 {
+            font-size: 0.6em;
         }
 
         #check-input {
