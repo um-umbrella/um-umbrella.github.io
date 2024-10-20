@@ -1,13 +1,123 @@
 'use strict';
 
-const version = 'ver 1.7';
+const version = 'ver 1.8';
 const theme = ['mint', 'red', 'grass', 'sea', 'robot', 'brown', 'gray', 'night'];
+const majorArcanas = [
+    { name: '愚者', power: '自由/夢想/型破り', abuse: '極端/苛立ち/落ちこぼれ' },
+    {
+        name: '魔術師',
+        power: '意志/才能/創造',
+        abuse: '混迷/スランプ/裏切り',
+    },
+
+    {
+        name: '女教皇',
+        power: '感性/神秘/聡明',
+        abuse: '悲観/孤立/疑心暗鬼',
+    },
+    {
+        name: '女帝',
+        power: '豊穣/情熱/謙虚',
+        abuse: '挫折/嫉妬/虚言',
+    },
+    {
+        name: '皇帝',
+        power: '統治/堅固/責任感',
+        abuse: '未熟/傲慢/意志薄弱',
+    },
+    {
+        name: '教皇',
+        power: '人徳/尊敬/社会性',
+        abuse: '束縛/不信/虚栄',
+    },
+    {
+        name: '恋人',
+        power: '愛美/自信/情熱',
+        abuse: '空虚/無干渉/不道徳',
+    },
+    {
+        name: '戦車',
+        power: '勝利/征服',
+        abuse: '暴走/独断/傍若無人',
+    },
+    {
+        name: '力',
+        power: '強大/強固/不撓不屈',
+        abuse: '甘え/卑下/人任せ',
+    },
+    {
+        name: '隠者',
+        power: '深慮/難解/高尚な助言',
+        abuse: '閉鎖/陰湿',
+    },
+    {
+        name: '運命の輪',
+        power: '転機/変化/向上',
+        abuse: '悪化/別れ/降格',
+    },
+    {
+        name: '正義',
+        power: '公平/正当/均衡',
+        abuse: '偏向/不均等/一方通行',
+    },
+    {
+        name: '吊るされた男',
+        power: '忍耐/努力/試練',
+        abuse: '徒労/投げやり/やせ我慢',
+    },
+    {
+        name: '死神',
+        power: '停止/離散/終局',
+        abuse: '再生/転生/新展開',
+    },
+    {
+        name: '節制',
+        power: '謙虚/倹約/管理',
+        abuse: '浪費/消耗/不規則',
+    },
+    {
+        name: '悪魔',
+        power: '暴力/束縛/悪循環',
+        abuse: '回復/反省/転生',
+    },
+    {
+        name: '塔',
+        power: '破滅/悲劇/崩壊',
+        abuse: '緊迫/誤解/必要悪/不幸',
+    },
+    {
+        name: '星',
+        power: '希望/閃き/吉兆',
+        abuse: '絶望/無気力/高望み',
+    },
+    {
+        name: '月',
+        power: '幻惑/欺瞞/潜在的な危険',
+        abuse: '好転/優れた直感',
+    },
+    {
+        name: '太陽',
+        power: '成功/祝福/約束された将来',
+        abuse: '不調/落胆/衰退/無為な時間',
+    },
+    {
+        name: '審判',
+        power: '復活/改善/更新',
+        abuse: '悔恨/再起不能/悪い知らせ',
+    },
+    {
+        name: '世界',
+        power: '完成/永久不滅/約束された成功',
+        abuse: '衰退/低迷/調和の崩壊',
+    },
+];
 
 const h1 = document.querySelector('h1');
 const input = document.getElementById('input');
 const input_submit = document.getElementById('input_submit');
 const dice = document.getElementById('dice');
 const cards = document.getElementById('cards');
+const majorArcana = document.getElementById('major_arcana');
 const horizontal_role = document.getElementById('horizontal_role');
 const output = document.getElementById('output');
 
@@ -77,7 +187,7 @@ dice.addEventListener('click', (e) => {
     write(txt);
 });
 
-//トランプ  1~13かつ❤️♠♦🍀、ジョーカー2枚（３％）　全54枚
+//トランプ  1~13かつ❤️♠♦🍀/ジョーカー2枚（３％）　全54枚
 cards.addEventListener('click', () => {
     if (Math.floor(Math.random() * 100 + 1 < 3)) {
         write(`🃏 →　Joker！`);
@@ -87,6 +197,16 @@ cards.addEventListener('click', () => {
         const card = Math.floor(Math.random() * 13) + 1;
         write(`🃏 →　${suit[random]}の ${card}`);
     }
+});
+
+//タロット・大アルカナ
+majorArcana.addEventListener('click', () => {
+    const num = Math.floor(Math.random() * majorArcanas.length);
+    let number = num;
+    if (num < 10) {
+        number = ' ' + number;
+    }
+    write(`🔮＜${number} ${majorArcanas[num].name}＞　${majorArcanas[num].power} // ${majorArcanas[num].abuse}`);
 });
 
 //区切り線
@@ -120,7 +240,7 @@ function titleEdit() {
     titleButton.addEventListener('click', titleSubmit);
 }
 
-//エンターを押したとき、またはフォーカスが外れたとき（無理でした）
+//エンターを押したとき/またはフォーカスが外れたとき（無理でした）
 function titleKeydown(e) {
     if (e.key === 'Enter') {
         titleSubmit();

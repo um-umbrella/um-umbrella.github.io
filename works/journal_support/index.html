@@ -37,9 +37,16 @@
 
                 <h3>細かいこと</h3>
                 <ul id="table-list">
+                    <li><span>ログ関連</span><span>追加</span>ランダマイザ（ダイス）、整形文の出力（区切り用）。</li>
                     <li>
-                        <span>ログ関連</span
-                        ><span>追加</span>ランダイマイザ（ダイス、トランプ）、整形文の出力（区切り）。
+                        <span></span
+                        ><span></span
+                        >ランダマイザ（トランプ）<br />ジョーカーあり。山札の概念はなく、常に全種類から抽選されます。
+                    </li>
+                    <li>
+                        <span></span
+                        ><span></span
+                        >ランダマイザ（タロット）<br />大アルカナのみ。位置の解釈は、いくつかの資料からふんわりバランスを取って記載しています。
                     </li>
                     <li><span></span><span>編集</span>ログタイトル、ログ履歴の直接の編集。</li>
                     <li><span></span><span>おまけ</span>メモ欄。単にメモをするところ。ログには反映されません。</li>
@@ -103,11 +110,15 @@
                         <span>ver1.6</span>
                         <span>ログに影響されない用途として、メモ欄を追加。それに伴うCSSの調整。</span>
                     </li>
-
                     <li>
                         <time>10/13</time>
                         <span>ver1.7</span>
                         <span>トランプの結果の表示をちょっと変更。絵文字がなくても分かるように。</span>
+                    </li>
+                    <li>
+                        <time>10/21</time>
+                        <span>ver1.8</span>
+                        <span>タロットの大アルカナを実装。<br />ダイスのデフォルトを3d6→1d6に。</span>
                     </li>
                     <!--
                     <li>
@@ -133,13 +144,15 @@
                         <button id="dice">
                             ダイス
                             <span class="clause">
-                                <input id="dice1" class="input-space-short" type="number" value="3" />
+                                <input id="dice1" class="input-space-short" type="number" value="1" />
                                 <span class="input-space-short">d</span>
                                 <input id="dice2" class="input-space-short" type="number" value="6" />
                             </span>
                         </button>
 
                         <button id="cards">トランプ</button>
+
+                        <button id="major_arcana">タロット</button>
 
                         <button id="horizontal_role">区切り</button>
                     </div>
@@ -170,6 +183,6 @@
             </footer>
         </div>
 
-        <script src="script.js?20241013"></script>
+        <script src="script.js"></script>
     </body>
 </html>
