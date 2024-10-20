@@ -1,0 +1,359 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #ff6e69;
+    --sub-theme: #ffefad;
+    --body-bg: #fff;
+    --text-dark-color: #333;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text-dark-color);
+}
+
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
+}
+
+#check-input {
+    display: none;
+}
+
+#check-button {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    z-index: 5;
+
+    text-align: right;
+    box-sizing: border-box;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-x: calc(100% - 8px);
+    background-position-y: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    padding: 0 10px;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    box-sizing: border-box;
+
+    text-align: center;
+    background-color: var(--body-bg);
+}
+
+nav ul {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav li {
+    padding: 16px 0;
+}
+
+nav li:not(:last-child)::after {
+    display: block;
+    position: relative;
+    margin-inline: auto;
+    top: 1em;
+    width: 75%;
+    height: 1px;
+
+    content: '';
+    background-color: rgb(0 0 0/0.1);
+}
+
+#check-input[type='checkbox']:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        --nav-width: 200px;
+
+        display: grid;
+        grid-template-columns: var(--nav-width) 1fr;
+    }
+
+    #check-button {
+        display: none;
+    }
+
+    nav {
+        align-items: stretch;
+        position: fixed;
+        width: var(--nav-width);
+        height: 100%;
+        top: 128px;
+
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        border: none;
+        line-height: 1em;
+    }
+
+    nav li:not(:last-child)::after {
+        background-color: rgb(0 0 0/0);
+    }
+
+    h1#title {
+        position: fixed;
+        z-index: 5;
+
+        top: 32px;
+        left: calc(var(--nav-width) / 8);
+        width: calc(var(--nav-width) - var(--nav-width) / 4);
+
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        --nav-width: 300px;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+body {
+    background-attachment: fixed;
+}
+
+main {
+    overflow: hidden;
+}
+
+main::before {
+    display: block;
+    position: fixed;
+    z-index: -1;
+
+    width: 110vh;
+    height: 110vh;
+    top: -5vh;
+    left: -64px;
+
+    border-radius: 60% 50% 40% 40%;
+
+    content: '';
+    background-color: var(--body-bg);
+}
+
+section {
+    margin: 16px;
+    padding: 16px;
+}
+
+section:first-child {
+    margin-top: 64px;
+}
+
+section:last-child {
+    margin-bottom: 64px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding-left: 1.2em;
+    position: relative;
+}
+
+:where(h1, h2, h3, h4, h5, h6)::before {
+    display: block;
+    position: absolute;
+
+    z-index: -1;
+    width: 1em;
+    height: 1em;
+    bottom: 0.1em;
+    left: 0;
+
+    rotate: -5deg;
+
+    content: '';
+    border-radius: 41% 15% 30% 20%;
+    background-color: var(--main-theme);
+}
+
+:where(h2, h3)::before {
+    bottom: 0.5em;
+}
+
+:where(h3, h4, h5, h6)::before {
+    opacity: 0.5;
+}
+
+nav {
+    left: 50%;
+    width: 50%;
+
+    background-color: var(--sub-theme);
+}
+
+#update {
+    display: inline-block;
+    width: 100%;
+
+    box-sizing: border-box;
+    background-color: var(--sub-theme);
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+    #check-button {
+        display: none;
+    }
+
+    body {
+        --nav-width: 240px;
+
+        display: grid;
+        grid-template-columns: var(--nav-width) 1fr;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+
+        margin-inline: auto;
+    }
+
+    main::before {
+        width: 120vh;
+        height: 120vh;
+        top: -10vh;
+        left: 16vw;
+    }
+
+    section {
+        margin-left: 0;
+        padding: 16px 32px;
+    }
+
+    nav {
+        position: fixed;
+        width: calc(var(--nav-width));
+        height: 100%;
+        left: 0;
+
+        line-height: 1em;
+        background-color: rgb(0 0 0 /0);
+    }
+
+    nav li {
+        margin: 8px;
+        margin-inline: auto;
+        padding: 0.5em;
+        width: calc(var(--nav-width) / 2);
+
+        font-size: smaller;
+        background-color: rgb(253, 221, 134);
+        border-radius: 25% 33% 19% 36%;
+    }
+
+    nav li:nth-of-type(even) {
+        border-radius: 40% 26% 39% 19%;
+        width: calc(var(--nav-width) / 2 - 16px);
+    }
+
+    nav li:not(:last-child)::after {
+        background-color: rgb(0 0 0 / 0);
+    }
+
+    h1#title {
+        position: fixed;
+
+        top: 32px;
+        left: calc(var(--nav-width) / 8);
+        width: calc(var(--nav-width) - var(--nav-width) / 4);
+
+        text-align: center;
+    }
+
+    h1#title::before {
+        background-color: rgb(0 0 0 / 0);
+    }
+
+    footer {
+        position: fixed;
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+        width: var(--nav-width);
+        font-size: small;
+    }
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    body {
+        --nav-width: 400px;
+    }
+
+    main::before {
+        width: 120vw;
+        height: 160vh;
+        top: -35vh;
+        left: calc(128px + 10vw);
+    }
+
+    .grid {
+        display: grid;
+    }
+} /*@media*/
+
+@media screen and (min-width: 1280px) {
+    main {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    main::before {
+        left: 280px;
+    }
+}

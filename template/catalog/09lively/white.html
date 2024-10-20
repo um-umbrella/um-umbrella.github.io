@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style_white.css" rel="stylesheet" />
+
+        <title>テンプレート「にぎやか」 - ひかえめ</title>
+    </head>
+
+    <body>
+        <div>
+            <input type="checkbox" id="check-input" />
+            <label id="check-button" for="check-input"></label>
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="#sec1">メニュー１</a></li>
+                        <li><a href="#sec2">メニュー２</a></li>
+                        <li><a href="#sec3">メニュー３</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <section id="sec1">
+                <h1 id="title">ページタイトル</h1>
+                <p>ごちゃっとカラフルなテーマです。</p>
+                <p>
+                    楽しくて作りすぎたバリエーションがあります。<br />
+                    <a href="foods.html">たべもの</a>｜<a href="candy.html">キャンディ</a>｜<a href="yoyo.html"
+                        >ヨーヨー</a
+                    >｜<a href="christmas.html">クリスマス</a>｜ひかえめ
+                </p>
+
+                <ul id="update">
+                    <li><time>1/1</time>更新履歴</li>
+                    <li><time>10/20</time>公開</li>
+                </ul>
+            </section>
+
+            <section id="sec2">
+                <h2>見出し２</h2>
+                <h3>見出し３</h3>
+                <h4>見出し４</h4>
+                <h5>見出し５</h5>
+                <h6>見出し６</h6>
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a><button>ボタン</button></a> <button><a>ボタン</a></button>
+                <p><mark>markで下線を引きます</mark>。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+
+                <dl>
+                    <dt>項目テキスト</dt>
+                    <dd>
+                        項目の説明<br />
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </dd>
+                    <dt>項目</dt>
+                    <dd>項目の説明</dd>
+                </dl>
+            </section>
+
+            <section id="sec3">
+                <h2>グリッド・画像</h2>
+
+                <p>imgに<mark>class="modal-window"</mark>を付けると、クリック時にモーダルウィンドウで表示します。</p>
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                </p>
+
+                <div class="grid">
+                    <p>
+                        グリッド表示1-1。<br /><mark>div class="grid"</mark>の中身はグリッド表示（最大二列）になります。
+                    </p>
+                    <p>
+                        グリッド表示1-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示1-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                </div>
+
+                <div class="grid-triple">
+                    <p>
+                        グリッド表示2-1。<br /><mark>div class="grid-triple"</mark
+                        >の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示2-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示2-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum.jpg" />
+                    <img class="trim modal-window" alt="画像の説明" src="img/thum_ver.jpg" />
+                </div>
+
+                <div class="img-grid">
+                    <!--画像をぎっしり並べたい場合は親要素にimg-gridクラスを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="modal-window" alt="画像の説明" src="img/thum_ob.jpg" />
+            </section>
+        </main>
+
+        <footer>
+            <ul>
+                <li>フッター</li>
+                <li>サイト情報など</li>
+            </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
