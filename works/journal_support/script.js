@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'ver 1.8';
+const version = 'ver 2.0';
 const theme = ['mint', 'red', 'grass', 'sea', 'robot', 'brown', 'gray', 'night'];
 const majorArcanas = [
     { name: '愚者', power: '自由/夢想/型破り', abuse: '極端/苛立ち/落ちこぼれ' },
@@ -112,12 +112,123 @@ const majorArcanas = [
     },
 ];
 
+const MinorArcanaSuits = [
+    { num: 0, suit: '棒♣️', illu: 'wand' },
+    { num: 1, suit: '聖杯♥️', illu: 'cup' },
+    { num: 2, suit: '剣♠️', illu: 'sword' },
+    { num: 3, suit: '硬貨♦️', illu: 'coin' },
+];
+const MinorArcanaCards = [
+    {
+        num: '1/Ace',
+        wand: '創造力/出発点',
+        cup: '喜び/満足',
+        sword: '力の勝利/愛憎の大きな力',
+        coin: '完全な満足/金',
+    },
+    {
+        num: '2',
+        wand: '財産/荘厳さ/領主',
+        cup: '愛/友情/一致',
+        sword: '均衡/条件付きの調和/',
+        coin: '陽気さ/文書の報せ',
+    },
+    {
+        num: '3',
+        wand: '確立された力/交易/ビジネス上の協力',
+        cup: '豊か/幸福/成就/治癒',
+        sword: '撤退/断絶/悲しみ',
+        coin: '技芸/取引/熟練工',
+    },
+    {
+        num: '4',
+        wand: '仕事の完成/休息/平和',
+        cup: '倦怠/飽食/混ぜ合わされた快楽',
+        sword: '退却/隠遁/墓/棺',
+        coin: '所有の保証/所有物への執着/贈り物',
+    },
+    {
+        num: '5',
+        wand: '熱心な競争/スポーツ',
+        cup: '損失/期待ほどではない遺産',
+        sword: '堕落/廃止/損失',
+        coin: '物質的なトラブル',
+    },
+    {
+        num: '6',
+        wand: '勝利者/大ニュースの到着',
+        cup: '過去を振り返る/幸福/楽しみ',
+        sword: '仕事をやりこなす/仲介者/得策',
+        coin: '成功/贈り物',
+    },
+    {
+        num: '7',
+        wand: '勇気/ディスカッション/交渉',
+        cup: '幻想/一時的なある程度の成功',
+        sword: '企画/計画',
+        coin: '金銭/ビジネス/交易',
+    },
+    {
+        num: '8',
+        wand: '活動性/素早さ',
+        cup: '成功の放棄/謙遜',
+        sword: '拘束された力/非難/悪い知らせ',
+        coin: '職人気質/準備',
+    },
+    {
+        num: '9',
+        wand: '抑圧下での強さ',
+        cup: '物質的安寧/満足',
+        sword: '失望/幻滅',
+        coin: '物質的な豊かさ/達成',
+    },
+    {
+        num: '10',
+        wand: '抑圧/多すぎる財産',
+        cup: '満足/人間愛と友情の完全さ',
+        sword: '荒廃/苦痛',
+        coin: '利益/財産/家族',
+    },
+    {
+        num: '小姓',
+        wand: '若い男性/忠実/外交使節/郵便',
+        cup: '勉強熱心な若者/熟考',
+        sword: '監視/警戒/スパイ/試験',
+        coin: '精励勤勉/学生',
+    },
+    {
+        num: '騎士',
+        wand: '出発/親しみやすい若者',
+        cup: '到着/発展/提案/鼓舞',
+        sword: '勇ましさ/激怒',
+        coin: '有用/財産/責任/廉直',
+    },
+    {
+        num: '女王',
+        wand: '田舎の女性/親しみやすく貞淑/尊敬できる',
+        cup: '善良で公正な女性/幸福/叡智',
+        sword: '貞淑で悲しみ多き女性/未亡人/喪失',
+        coin: '富/寛大/安全',
+    },
+    {
+        num: '王',
+        wand: '田舎の男性/正直/良心的',
+        cup: '公正な男性/創造的知性',
+        sword: '裁判官/正義/権威/命令',
+        coin: '実際的な知性/ビジネス/成功',
+    },
+];
+
 const h1 = document.querySelector('h1');
 const input = document.getElementById('input');
 const input_submit = document.getElementById('input_submit');
 const dice = document.getElementById('dice');
 const cards = document.getElementById('cards');
+
+const arcana = document.getElementById('arcana');
 const majorArcana = document.getElementById('major_arcana');
+const minorArcana = document.getElementById('minor_arcana');
+
 const horizontal_role = document.getElementById('horizontal_role');
 const output = document.getElementById('output');
 
@@ -199,15 +310,43 @@ cards.addEventListener('click', () => {
     }
 });
 
+//タロット・全て
+arcana.addEventListener('click', Arcana);
+function Arcana() {
+    const random = Math.floor(Math.random() * 78);
+    console.log(random);
+    if (random <= 22) {
+        MajorArcana();
+    } else {
+        MinorArcana();
+    }
+}
+
 //タロット・大アルカナ
-majorArcana.addEventListener('click', () => {
+majorArcana.addEventListener('click', MajorArcana);
+
+function MajorArcana() {
     const num = Math.floor(Math.random() * majorArcanas.length);
     let number = num;
     if (num < 10) {
         number = ' ' + number;
     }
     write(`🔮＜${number} ${majorArcanas[num].name}＞　${majorArcanas[num].power} // ${majorArcanas[num].abuse}`);
-});
+}
+
+//タロット・小アルカナ
+minorArcana.addEventListener('click', MinorArcana);
+
+function MinorArcana() {
+    const cardSuit = Math.floor(Math.random() * 4);
+    const cardNum = Math.floor(Math.random() * MinorArcanaCards.length);
+
+    write(
+        `🔮＜${MinorArcanaSuits[cardSuit].suit} ${MinorArcanaCards[cardNum].num} ＞　${
+            MinorArcanaCards[cardNum][MinorArcanaSuits[cardSuit].illu]
+        }`
+    );
+}
 
 //区切り線
 horizontal_role.addEventListener('click', () => {

@@ -6,7 +6,7 @@
         <meta name="discription" content="ページの説明" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-        <link href="css/style.css?20241010-2" rel="stylesheet" />
+        <link href="css/style.css?20241023" rel="stylesheet" />
 
         <title>ソロジャーナルプレイ支援ツール</title>
     </head>
@@ -46,7 +46,7 @@
                     <li>
                         <span></span
                         ><span></span
-                        >ランダマイザ（タロット）<br />大アルカナのみ。位置の解釈は、いくつかの資料からふんわりバランスを取って記載しています。
+                        >ランダマイザ（タロット）<br />大小のアルカナ。意味合いの解釈は、いくつかの資料からふんわりバランスを取って記載しています。
                     </li>
                     <li><span></span><span>編集</span>ログタイトル、ログ履歴の直接の編集。</li>
                     <li><span></span><span>おまけ</span>メモ欄。単にメモをするところ。ログには反映されません。</li>
@@ -120,6 +120,11 @@
                         <span>ver1.8</span>
                         <span>タロットの大アルカナを実装。<br />ダイスのデフォルトを3d6→1d6に。</span>
                     </li>
+                    <li>
+                        <time>10/23</time>
+                        <span>ver2.0</span>
+                        <span>タロットの小アルカナを実装。表示調整。</span>
+                    </li>
                     <!--
                     <li>
                         <time></time>
@@ -152,7 +157,11 @@
 
                         <button id="cards">トランプ</button>
 
-                        <button id="major_arcana">タロット</button>
+                        <div class="clause">
+                            <button id="arcana">タロット</button>
+                            <button id="major_arcana" class="sub-button">大</button>
+                            <button id="minor_arcana" class="sub-button">小</button>
+                        </div>
 
                         <button id="horizontal_role">区切り</button>
                     </div>
@@ -183,6 +192,6 @@
             </footer>
         </div>
 
-        <script src="script.js"></script>
+        <script src="script.js?20241023"></script>
     </body>
 </html>
