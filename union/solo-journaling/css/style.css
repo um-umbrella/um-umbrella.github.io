@@ -167,6 +167,11 @@ h2 {
     background-color: #fff;
 }
 
+p,
+ul {
+    font-size: 0.9em;
+}
+
 section {
     margin: 32px 16px;
     padding: 32px 16px;
@@ -192,7 +197,7 @@ li {
     position: relative;
     margin: 0;
     margin-left: 1.5em;
-    padding: 0.7em 0;
+    padding: 8px 0;
 
     list-style: none;
 }
@@ -226,6 +231,16 @@ li:nth-child(3n - 1)::before {
 }
 
 /*------------------------------------------------------ */
+
+@media screen and (max-width: 600px) {
+    section {
+        margin: 0;
+    }
+
+    .page {
+        padding: 32px;
+    }
+}
 
 @media screen and (min-width: 900px) {
     body {
