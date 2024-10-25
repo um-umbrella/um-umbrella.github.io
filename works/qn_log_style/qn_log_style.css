@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --theme: #6c7374;
+    --onepoint: #d8c44f;
+    --body-bg: #f7f3f2;
+    --text-color: #1b1b1b;
+    --serif-bg: #fefefe;
+    --serif-line: #aeb2b7;
+    --skill-bg: #eee;
+    --skill-line: #bc9f9f;
+
+    background-color: var(--body-bg);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+body {
+    font-family: 'Noto Sans JP', system-ui;
+
+    font-weight: 300;
+    background-color: var(--body-bg);
+}
+
+a {
+    text-decoration: none;
+    color: var(--onepoint);
+}
+
+a:hover {
+    color: var(--theme);
+}
+
+::selection {
+    background-color: var(--theme);
+    color: var(--body-bg);
+}
+
+h1 {
+    margin: 32px 0;
+    border-bottom: solid 2px var(--text-color);
+}
+
+h2 {
+    padding: 16px 0 8px;
+}
+h3 {
+    padding: 16px 0 8px;
+}
+
+h4 {
+    padding: 8px 0 0;
+}
+
+h4::before {
+    display: inline-block;
+    position: relative;
+    margin-right: 4px;
+
+    content: '';
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+
+    background-color: var(--theme);
+}
+
+h5 {
+    padding: 8px 0 0;
+}
+
+button {
+    padding: 4px 16px;
+    border: none;
+
+    background-color: var(--theme);
+    color: var(--body-bg);
+}
+
+button:hover {
+    background-color: var(--onepoint);
+}
+
+/*------------------------------------------------------ */
+
+.content {
+    margin: 32px;
+    padding: 32px;
+}
+
+div:where(.Board, .Event, .Phrase, .Party) {
+    margin: 8px 0;
+    padding: 0;
+}
+
+.Board,
+.Phrase,
+.Party {
+    display: flex;
+    position: relative;
+}
+
+/*フキダシを付ける*/
+.Board > .text,
+.Phrase > .text:last-child {
+    position: relative;
+    margin: 0 16px 8px;
+    padding: 0 16px 20px;
+
+    line-height: 20px;
+
+    border: 2px solid var(--serif-line);
+    border-radius: 16px;
+    background: var(--serif-bg);
+}
+.Board > .text:after,
+.Board > .text:before,
+.Phrase > .text:last-child:after,
+.Phrase > .text:last-child:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.Board > .text:after,
+.Phrase > .text:last-child:after {
+    border-right-color: var(--serif-bg);
+    border-width: 5px;
+    margin-top: -5px;
+}
+.Board > .text:before,
+.Phrase > .text:last-child:after {
+    border-right-color: var(--serif-line);
+    border-width: 8px;
+    margin-top: -8px;
+}
+
+/*名前を消去*/
+.Board > .text::first-line,
+.Party > .text::first-line {
+    color: rgba(0, 0, 0, 0);
+}
+
+/*判定・スキル使用時の名前を消去*/
+.Phrase:has(.image) > .text:nth-child(2) {
+    color: rgba(0, 0, 0, 0);
+}
+
+.Phrase:has:not(.image) > .text:nth-child(2) {
+    /*NPCのスキル使用時の名前（消去しない）*/
+}
+
+/*判定のフキダシ*/
+.Phrase > .text:last-child {
+    position: relative;
+    left: -32px;
+    padding: 16px 16px 8px;
+    background: #fefefe;
+    border: 3px solid var(--skill-line);
+
+    border-radius: 50px;
+}
+.Phrase > .text:last-child:after,
+.Phrase > .text:last-child:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.Phrase > .text:last-child:after {
+    border-right-color: var(--skill-bg);
+    border-width: 4px;
+    margin-top: -4px;
+}
+.Phrase > .text:last-child:before {
+    border-right-color: var(--skill-line);
+    border-width: 7px;
+    margin-top: -7px;
+}
+
+/*notice*/
+.Notice {
+    display: flex;
+    margin: 16px 0;
+}
+
+.Notice > .text {
+    opacity: 0.5;
+}
+
+.Effect {
+    display: flex;
+}
+
+/*パーティ*/
+.Party > .text {
+    margin: 0 16px;
+    padding: 0 20px 16px;
+    line-height: 16px;
+
+    border: 3px dotted #e49438;
+    border-radius: 32px;
+
+    color: #555;
+    background-color: #fff;
+}
+
+.Event {
+    margin: 16px 0;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+} /*@media*/
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    /*
+    doは最小575にしてる
+    【スマホ】375px〜428px
+    【タブレット】768px〜960px
+    【PC】960px〜1280px、それ以上
+
+    スマホは1080、PCは1280以上ある
+    */
+} /*@media*/
