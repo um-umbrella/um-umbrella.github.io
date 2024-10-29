@@ -135,14 +135,16 @@ a:hover {
 }
 
 textarea {
-    width: 50%;
+    width: 75%;
+    height: 3rem;
+
     resize: none;
     outline: none;
     border: none;
 
     font-family: inherit;
     font-weight: 300;
-    background-color: #576e9c;
+    background-color: #858d9c;
 }
 
 .flex-list {
