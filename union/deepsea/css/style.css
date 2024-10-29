@@ -147,6 +147,8 @@ textarea {
 
 .flex-list {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     list-style: none;
 
@@ -161,6 +163,20 @@ textarea {
 
 .flex-list li:not(:last-child) {
     border-right: 1px solid rgb(255 255 255/0.3);
+}
+
+.flex-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 16px 0;
+}
+
+.flex-area img {
+    width: auto;
+    height: auto;
+    border: 1px solid var(--sub-theme);
 }
 
 /*------------------------------------------------------ */
