@@ -1,0 +1,362 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+/* -------------------------------------------------------
+* Template: 倉林
+* ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #e4f1f7;
+    --sub-theme: #c6e3ff;
+    --body-bg: #ffffff;
+    --text-dark-color: #1b1b1b;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+body {
+    font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+        sans-serif;
+
+    color: var(--text-light-color);
+    background: linear-gradient(45deg, #010b3b, #076e81);
+    background-size: 400% 400%;
+    animation: GradientBackground 10s ease infinite;
+}
+
+::selection {
+    background-color: var(--sub-theme);
+    color: var(--text-dark-color);
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+section {
+    position: relative;
+    margin: 128px 0;
+    padding: 32px 48px;
+}
+
+h1,
+h2 {
+    padding-top: 0;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Silkscreen', 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+        Meiryo, sans-serif;
+
+    font-weight: 300;
+}
+
+h1 {
+    position: relative;
+    margin: 128px auto;
+}
+
+h1::after {
+    position: absolute;
+
+    right: 0;
+    left: 0;
+    top: 2em;
+
+    content: attr(subtitle);
+
+    font-size: 0.5em;
+}
+
+h2 {
+    position: absolute;
+
+    top: -1em;
+    left: 0;
+    right: 0;
+}
+
+p,
+ul:not(:has(p)) {
+    opacity: 0.9;
+}
+
+li {
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+#footer-c {
+    margin-bottom: 32px;
+}
+
+#footer-c,
+#footer-c a {
+    color: var(--text-light-color) !important;
+}
+
+/*------------------------------------------------------ */
+a {
+    opacity: 0.9;
+    transition: 0.3s;
+    color: var(--sub-theme);
+}
+
+a:hover {
+    opacity: 1;
+    transition: 0.3s;
+    color: var(--text-light-color);
+}
+
+textarea {
+    width: 50%;
+    resize: none;
+
+    font-family: inherit;
+    font-weight: 300;
+    background-color: steelblue;
+}
+
+.flex-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    margin-inline: 8px;
+    margin-top: 0;
+}
+
+.flex-list li {
+    margin: 0.5em 0;
+    padding: 0 0.5em;
+}
+
+.flex-list li:not(:last-child) {
+    border-right: 1px solid rgb(255 255 255/0.3);
+}
+
+/*------------------------------------------------------ */
+/*カラムの泡*/
+
+.bubble {
+    background-color: var(--text-dark-color);
+    border-radius: 64px;
+    position: relative;
+}
+
+.bubble:before,
+.bubble:after {
+    content: '';
+    background-color: var(--text-dark-color);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+.bubble:before {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    left: 28px;
+    box-shadow: -50px 30px 0 -12px var(--text-dark-color);
+}
+.bubble:after {
+    bottom: -10px;
+    right: 26px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 40px -34px 0 0 var(--text-dark-color), -28px -6px 0 -2px var(--text-dark-color),
+        -24px 17px 0 -6px var(--text-dark-color), -5px 25px 0 -10px var(--text-dark-color);
+}
+
+.bubble:nth-child(odd)::before {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    left: 28px;
+    box-shadow: 48px -20px 0 -16px var(--text-dark-color), -50px 128px 0 -8px var(--text-dark-color);
+}
+
+.bubble:nth-child(even)::after {
+    box-shadow: 40px -80px 0 0 var(--text-dark-color), -128px 4px 0 5px var(--text-dark-color),
+        -106px 20px 0 -8px var(--text-dark-color), -160px 16px 0 -10px var(--text-dark-color);
+}
+
+.bubble:nth-child(even)::before {
+    box-shadow: 80px -16px 0 -8px var(--text-dark-color), 104px -32px 0 -16px var(--text-dark-color);
+}
+
+/*------------------------------------------------------ */
+/*背景の泡*/
+
+body {
+    overflow-x: hidden;
+}
+
+.ocean {
+    width: 100svw;
+    height: 100svh;
+    position: fixed;
+    overflow: hidden;
+}
+
+.bubble-bg {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: -64px;
+
+    border-radius: 100%;
+    background-color: var(--text-light-color);
+    opacity: 0.2;
+    animation: bubble 15s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.06;
+    }
+    100% {
+        transform: translateY(-110vh);
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 200px;
+    }
+}
+
+.bubble--1 {
+    left: 10%;
+    animation-delay: 0.5s;
+    animation-duration: 16s;
+    opacity: 0.2;
+}
+
+.bubble--2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    opacity: 0.1;
+}
+
+.bubble--3 {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 5s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--4 {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    opacity: 0.2;
+}
+
+.bubble--5 {
+    width: 16px;
+    height: 16px;
+    left: 60%;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    opacity: 0.1;
+}
+
+.bubble--6 {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-delay: 3s;
+    animation-duration: 30s;
+    opacity: 0.4;
+}
+
+.bubble--7 {
+    width: 15px;
+    height: 15px;
+    left: 90%;
+    animation-delay: -7s;
+    animation-duration: 25s;
+    opacity: 0.3;
+}
+
+.bubble--9 {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: 30px;
+    animation-delay: -5s;
+    animation-duration: 19s;
+    opacity: 0.2;
+}
+
+.bubble--10 {
+    width: 20px;
+    height: 20px;
+    left: 30%;
+    bottom: 30px;
+    animation-delay: -21s;
+    animation-duration: 16s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 16px;
+    height: 16px;
+    left: 60%;
+    bottom: 30px;
+    animation-delay: -13.75s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 30px;
+    animation-delay: -10.5s;
+    animation-duration: 19s;
+    opacity: 0.3;
+}
