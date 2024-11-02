@@ -110,7 +110,7 @@ const workLists = [
         name: '深海同盟',
         url: '../union/deepsea/',
         etc: '同盟。ラフ通りに作れた。雰囲気はある。',
-        thum: 'img/thum.png',
+        thum: 'img/w14.jpg',
     },
 ];
 
