@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+        <title>依頼ジェネレータ</title>
+    </head>
+
+    <body>
+        <main>
+            <hgroup>
+                <h1>
+                    <span class="clause">依頼</span><span class="clause">ジェネ<span class="clause">レータ</span></span>
+                </h1>
+                <button id="shuffle">All Shuffle</button>
+                <button id="cap_btn">Screenshot</button>
+            </hgroup>
+
+            <div id="cap_area">
+                <section class="sec_short">
+                    <button id="quest_button" class="random_button"></button>
+                    <h2 id="quest_title">○○依頼</h2>
+                    <p id="quest_text">（依頼の概要）</p>
+                    <p id="quest_name" class="text_right">依頼人名</p>
+                </section>
+
+                <section class="sec_long">
+                    <ul class="sec_long_ul">
+                        <!--
+                    <li>
+                        <button id="arrayQuest" class="random_button switchButton"></button>
+                        <h3>依頼</h3>
+                        <p id="arrayQuestInput">内容</p>
+                    </li>
+                    -->
+                        <li>
+                            <button id="arrayAction" class="random_button switchButton"></button>
+                            <h3>行動</h3>
+                            <p id="arrayActionInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayAnimal" class="random_button switchButton"></button>
+                            <h3>生物</h3>
+                            <p id="arrayAnimalInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayColor" class="random_button"></button>
+                            <h3>色</h3>
+                            <p id="arrayColorInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayMaterial" class="random_button switchButton"></button>
+                            <h3>材料</h3>
+                            <p id="arrayMaterialInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayFood" class="random_button switchButton"></button>
+                            <h3>飲食物</h3>
+                            <p id="arrayFoodInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayJob" class="random_button switchButton"></button>
+                            <h3>職業</h3>
+                            <p id="arrayJobInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayArea" class="random_button switchButton"></button>
+                            <h3>場所</h3>
+                            <p id="arrayAreaInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayWeapon" class="random_button switchButton"></button>
+                            <h3>武具</h3>
+                            <p id="arrayWeaponInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayAdjective" class="random_button switchButton"></button>
+                            <h3>形容詞</h3>
+                            <p id="arrayAdjectiveInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayPoemWord" class="random_button switchButton"></button>
+                            <h3>概念</h3>
+                            <p id="arrayPoemWordInput">内容</p>
+                        </li>
+                        <li>
+                            <button id="arrayPoemObj" class="random_button switchButton"></button>
+                            <h3>物体</h3>
+                            <p id="arrayPoemObjInput">内容</p>
+                        </li>
+                    </ul>
+                </section>
+                <p id="credit">
+                    <a href="../../mail.html" target="_blank">依頼ジェネレータ　<i class="ri-mail-line"></i></a>
+                </p>
+            </div>
+        </main>
+
+        <script src="../html2canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
