@@ -112,6 +112,12 @@ const workLists = [
         etc: '同盟。ラフ通りに作れた。雰囲気はある。',
         thum: 'img/w14.jpg',
     },
+    {
+        name: '依頼ジェネレータ',
+        url: '../union/random_quest/',
+        etc: 'ファンタジー依頼生成器。',
+        thum: 'img/w15.png',
+    },
 ];
 
 const studyList = [
