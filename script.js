@@ -115,7 +115,7 @@ const workLists = [
     },
     {
         name: '依頼ジェネレータ',
-        url: '../union/random_quest/',
+        url: '../works/random_quest/',
         etc: 'ファンタジー依頼生成器。',
         thum: 'img/w15.png',
     },
