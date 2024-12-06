@@ -6,7 +6,7 @@
 
 const congratulations =
     'お誕生日です、おめでとうございます！！　やった～～～！　めでたい！　人生最初の記念日！！！　🍖🍻🎉🎂HAPPY BIRTH DAY🎂🎉🍻🍖　今後益々のご活躍とご健勝をお祈り申し上げます！！！！！';
-const day = 21; //21
+const day = 6; //21
 
 Main();
 
