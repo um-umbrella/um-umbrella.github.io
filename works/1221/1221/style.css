@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------
+HAPPY BIRTH DAY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
+*------------------------------------------------------ */
+
+:root {
+    --main-theme: #71b2bc;
+    --sub-theme: #aaa;
+    --body-bg: #ffffff;
+    --text-dark-color: #1b1b1b;
+    --text-light-color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    line-height: 1.8em;
+
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', Meiryo,
+        sans-serif;
+    font-weight: 300;
+    background-color: var(--body-bg);
+    color: var(--text-dark-color);
+}
+
+main {
+    position: relative;
+}
+
+::selection {
+    background-color: var(--main-theme);
+    color: var(--body-bg);
+}
+
+p {
+    line-height: 1.8em;
+    margin: 16px 0;
+}
+
+h1 {
+    padding: 16px 0 8px;
+
+    line-height: 1.5em;
+    font-weight: 300;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    text-align: center;
+}
+
+.clause {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
+
+/*  レイアウト  ----------------------------*/
+
+main {
+    container-type: inline-size;
+    container-name: main-container;
+}
+
+footer {
+    position: relative;
+    font-size: smaller;
+}
+
+@container main-container (min-width:600px) {
+}
+
+/*いじる------------------------------------------------------ */
+
+body {
+    position: relative;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    opacity: 0.3;
+    text-align: center;
+}
+
+/*通常時-------------------------------------------------------*/
+
+body.default {
+    background: linear-gradient(45deg, #ded8db, #ffffff);
+    background-size: 400% 400%;
+    animation: GradientBackground 5s ease infinite;
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.default {
+    main {
+        margin-inline: auto;
+        padding: 48px;
+
+        width: 50%;
+        min-width: 400px;
+        max-width: 600px;
+
+        box-sizing: border-box;
+        color: #1b1b1b;
+        background-color: #fff;
+    }
+
+    @media screen and (max-width: 400px) {
+        main {
+            padding: 32px;
+            min-width: 100%;
+        }
+    }
+
+    .confetti canvas {
+        display: none;
+    }
+}
+
+/*優遇時（birthday）-------------------------------------------------------------*/
+
+.birthday {
+    background: linear-gradient(45deg, #ff7f00, #0bd00b, #d8106d, #0de0c4, rgb(17, 113, 208));
+    background-size: 800% 800%;
+    animation: GradientBackground 7s ease infinite;
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.birthday {
+    position: relative;
+    main {
+        margin-inline: auto;
+        padding: 48px 64px;
+
+        width: 100%;
+        height: 100%;
+
+        box-sizing: border-box;
+        color: #eee;
+        background-color: rgb(0 0 0 /0);
+    }
+
+    h1,
+    #section_text {
+        font-size: xx-large;
+        font-weight: 800;
+        transition: 1s;
+    }
+
+    h1 {
+        padding: 0;
+
+        font-weight: 800;
+        font-size: 3em;
+        color: #fff3b7;
+        mix-blend-mode: overlay;
+    }
+
+    /*紙吹雪*/
+    .confetti canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 500px) {
+        main {
+            padding: 16px;
+        }
+    }
+
+    /*フォントサイズ可変／基準は1rem=10px*/
+    html {
+        font-size: 62.5%;
+    }
+
+    .font-size-M {
+        font-size: clamp(1.2rem, calc(2.5rem + 1vw), 100rem) !important;
+    }
+
+    .font-size-L {
+        font-size: clamp(2.4rem, calc(3rem + 2.5vw), 100rem) !important;
+    }
+}
+
+/*-----------------------------------------------------------------*/
