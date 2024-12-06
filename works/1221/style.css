@@ -207,10 +207,9 @@ body.default {
         width: 100%;
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 500px) {
         main {
-            padding: 32px;
-            min-width: 100%;
+            padding: 16px;
         }
     }
 
