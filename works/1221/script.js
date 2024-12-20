@@ -5,7 +5,7 @@
  *------------------------------------------------------ */
 
 const congratulations =
-    'お誕生日です、おめでとうございます！！　やった～～～！　めでたい！　人生最初の記念日！！！　🍖🍻🎉🎂HAPPY BIRTH DAY🎂🎉🍻🍖　今後益々のご活躍とご健勝をお祈り申し上げます！！！！！';
+    'がお誕生日の方、おめでとうございます！！　やった～～～！　めでたい！　人生最初の記念日！！！　🍖🍻🎉🎂HAPPY BIRTH DAY🎂🎉🍻🍖　今後益々のご活躍とご健勝をお祈り申し上げます！！！！！';
 const day = 21; //21
 
 Main();
@@ -15,7 +15,7 @@ function Main() {
     const days = Scheduling();
     if ((days.month === 12, days.date === day)) {
         console.log('主役の日だ！　祭りだ！');
-        document.getElementById('section_text').innerText = `本日${days.month}月${days.date}日は` + congratulations;
+        document.getElementById('section_text').innerText = `本日${days.month}月${days.date}日` + congratulations;
         document.body.classList.toggle('default');
         document.body.classList.toggle('birthday');
         Confetti();
