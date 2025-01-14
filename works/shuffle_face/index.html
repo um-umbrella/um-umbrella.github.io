@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <link href="css/style.css" rel="stylesheet" />
+
+        <title>顔をシャッフルするやつ</title>
+    </head>
+
+    <body>
+        <main>
+            <h1>
+                <span class="clause">顔を</span><span class="clause">シャッフル</span><span class="clause">する</span
+                ><span class="clause">やつ</span>
+            </h1>
+            <p>男女兼用　完全ランダムしかない　作：倉林</p>
+            <button id="play_button">やっぞ</button>
+
+            <div id="canvas">
+                <!-- 前髪、後ろ髪、眉、目、髭、口、アクセ、輪郭 -->
+                <img src="./img/face_0.png" class="parts" id="parts_face" />
+                <img src="./img/paint_0.png" class="parts" id="parts_paint" />
+                <img src="./img/mouse_0.png" class="parts" id="parts_mouse" />
+                <img src="./img/_nullimage.png" class="parts" id="parts_whisker" />
+                <img src="./img/eye_0.png" class="parts" id="parts_eye" />
+                <img src="./img/eyebrow_0.png" class="parts" id="parts_eyebrow" />
+                <img src="./img/hairback_0.png" class="parts" id="parts_hairback" />
+                <img src="./img/hairfront_0.png" class="parts" id="parts_hairfront" />
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>

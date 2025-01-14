@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+:root {
+    --main-theme: #71b2bc;
+    --sub-theme: #aaa;
+    --body-bg: #ffffff;
+    --text-dark-color: #1b1b1b;
+    --text-light-color: #fff;
+}
+
+/*------------------------------------------------------ */
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    line-height: 1.8em;
+
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    font-weight: 300;
+    background-color: var(--body-bg);
+    color: var(--text-dark-color);
+}
+
+main {
+    position: relative;
+}
+
+::selection {
+    background-color: var(--text-dark-color);
+    color: var(--body-bg);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-theme);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--text-dark-color);
+}
+
+p,
+h1 {
+    line-height: 1.2em;
+    margin: 16px 0;
+}
+
+button {
+    margin: 0 4px;
+    padding: 8px 16px;
+    border: none;
+
+    background-color: var(--main-theme);
+    color: var(--text-light-color);
+    transition: background-color 0.3s;
+}
+
+button a,
+a button {
+    color: var(--text-light-color);
+}
+
+button a:hover {
+    color: var(--text-light-color);
+}
+
+button:hover {
+    background-color: var(--sub-theme);
+}
+
+.clause {
+    display: inline-block;
+}
+
+/*  レイアウト  ----------------------------*/
+
+main {
+    margin: 32px;
+    margin-inline: auto;
+    width: 400px;
+
+    container-type: inline-size;
+    container-name: main-container;
+    box-sizing: content-box;
+}
+
+#canvas {
+    position: absolute;
+    top: -48px;
+    left: -36px;
+}
+
+img {
+    max-width: 100%;
+
+    /* PCでの右クリック禁止 */
+    pointer-events: none;
+    /* スマホでSPの長押し禁止 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-touch-callout: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/*------------------------------------------------------ */
+
+#canvas {
+    position: relative;
+}
+
+.parts {
+    position: fixed;
+}
