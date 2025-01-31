@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #4f4f4f;
+    background-size: cover;
+}
+
+section {
+    position: relative;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f9f1e3;
+    border: 2px solid #8e7d56;
+
+    box-shadow: inset 1px 1px 32px rgba(0 0 0 / 0.1) /* 右下 */;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #3a3a2f;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+button {
+    position: absolute;
+    padding: 8px 16px;
+
+    top: -1em;
+    right: 2em;
+
+    background-color: #d5b276; /* 羊皮紙っぽい色 */
+    color: #5f4d2e;
+    font-size: 1em;
+
+    border: 2px solid #8e7d56; /* ボタンの枠線 */
+
+    transition: background-color 0.3s, transform 0.3s, right 0.5s, top 0.5s, rotate 0.5s;
+    text-transform: uppercase;
+    rotate: 1deg;
+}
+
+button:hover {
+    background-color: #e4c9bc;
+    top: 0em;
+    right: 1.5em;
+    rotate: 5deg;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/*-----------------------------------------*/
