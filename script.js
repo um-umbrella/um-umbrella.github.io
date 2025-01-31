@@ -3,6 +3,7 @@
 
 //◆履歴
 const update = [
+    '～1/31　いろいろ。',
     '11/26　依頼ジェネレータを作った。',
     '～11/1　深海同盟を作った。',
     '～10/25　目次JSやソロジャ支援ツールの強化。ソロジャ同盟の公開。PHPもちょっと触った。',
@@ -118,6 +119,26 @@ const workLists = [
         url: '../works/random_quest/',
         etc: 'ファンタジー依頼生成器。',
         thum: 'img/w15.png',
+    },
+
+    {
+        name: '１２月生まれを優遇するページ',
+        url: '../works/1221/',
+        etc: '人のお誕生日を祝いました。',
+        thum: 'img/w16.jpg',
+    },
+
+    {
+        name: 'ランダム依頼ジェネレータ',
+        url: '../works/random_quest2',
+        etc: 'またそういうの作ってる。',
+        thum: 'img/w17.jpg',
+    },
+    {
+        name: '旅のいちにち',
+        url: '../works/idle_traveler',
+        etc: '操作不要な放置ゲーム。ほとんどChatGPTの力。',
+        thum: 'img/w18.jpg',
     },
 ];
 
