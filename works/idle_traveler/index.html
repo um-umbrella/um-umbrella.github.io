@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>旅の一日</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+            }
+
+            #logContainer {
+                margin: 20px auto;
+                padding: 10px;
+                max-width: 600px;
+                height: 300px;
+
+                border: 2px solid #333;
+                background-color: #fff;
+
+                overflow-y: auto;
+                text-align: left;
+            }
+
+            button {
+            }
+        </style>
+    </head>
+    <body>
+        <h1>旅の一日</h1>
+        <div id="logContainer"></div>
+
+        <button id="saveButton">テキスト保存</button>
+
+        <p>
+            ５秒ごとにテキストログが増えます。
+            <br />内容はランダムです。
+        </p>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
