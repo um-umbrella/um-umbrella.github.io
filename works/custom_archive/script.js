@@ -5,7 +5,7 @@ let editIndex = null;
 
 // ページロード時に呼び出し
 window.onload = function () {
-    loadCookies();
+    loadStorage();
 };
 
 /////////////////////////////////////////////////
@@ -97,7 +97,7 @@ function saveData() {
         cards.push(data);
     }
 
-    saveToCookies();
+    saveToStorage();
     displayCards();
     clearInput();
 }
@@ -144,19 +144,15 @@ function createCard(data, index) {
 }
 
 /////////////////////////////////////
-//クッキー操作
+//データ保存
 
-// クッキーにデータを保存
-function saveToCookies() {
-    document.cookie =
-        'inputCardsData=' + encodeURIComponent(JSON.stringify(cards)) + ';max-age=' + 60 * 60 * 24 * 365 + ';path=/';
-
-    //ローカルストレージに保存
+// ローカルストレージに保存
+function saveToStorage() {
     localStorage.setItem('saveData', JSON.stringify(cards));
 }
 
-// クッキーからデータを読み込む
-function loadCookies() {
+// ストレージから読み込む
+function loadStorage() {
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.trim().split('=');
         acc[key] = decodeURIComponent(value);
@@ -169,7 +165,11 @@ function loadCookies() {
     }
 
     //ローカルストレージから読み込み？
-    const loadedData = JSON.parse(localStorage.getItem('saveData') || '[]');
+    let savedData = localStorage.getItem('saveData');
+    if (savedData) {
+        cards = JSON.parse(savedData); // 取得データをオブジェクトに変換
+        displayCards(); // 画面に反映
+    }
 }
 
 // 保存されたカードを表示する
@@ -241,7 +241,7 @@ function editData(index) {
 // カードを削除する
 function deleteData(index) {
     cards.splice(index, 1);
-    saveToCookies();
+    saveToStorage();
     displayCards();
 }
 
@@ -255,8 +255,7 @@ function getRandomDarkColor() {
 
 // クッキーを削除
 function clearData() {
-    document.cookie = 'inputCardsData=; max-age=0; path=/'; // クッキー
-    document.cookie = 'tagColors=; max-age=0; path=/'; // タグのカラーコード
+    localStorage.removeItem('saveData'); // ローカルストレージのキー
     cards = []; // ローカル変数のカードデータ
     displayCards();
 }
@@ -266,24 +265,8 @@ function clearData() {
 
 document.getElementById('fileOutput').addEventListener('click', saveCookiesToFile);
 
-// 現在のクッキーをファイルに保存
+// 現在の内容をファイルに保存
 function saveCookiesToFile() {
-    /*
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.trim().split('=');
-        if (key && value) {
-            acc[key] = JSON.parse(decodeURIComponent(value));
-        }
-        return acc;
-    }, {});
-
-    const blob = new Blob([JSON.stringify(cookies, null, 2)], { type: 'application/json' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'save.json';
-    link.click();
-    */
-
     const dataStr = JSON.stringify(cards, null, 2);
     const blob = new Blob([dataStr], { type: 'application/json' });
     const link = document.createElement('a');
@@ -303,7 +286,7 @@ function uploadCookiesFromFile(event) {
     reader.onload = function (e) {
         try {
             const parsedData = JSON.parse(e.target.result);
-            localStorage.setItem('saveData', JSON.stringify(parsedData)); // ★ 修正: JSON.parse でオブジェクト化
+            localStorage.setItem('saveData', JSON.stringify(parsedData)); // JSON.parse でオブジェクト化
             cards = parsedData;
             displayCards();
         } catch (error) {
@@ -311,41 +294,4 @@ function uploadCookiesFromFile(event) {
         }
     };
     reader.readAsText(file);
-
-    /*
-    const file = event.target.files[0]; // アップロードされたファイルを取得
-
-    if (!file) {
-        alert('ファイルが選択されていません');
-        return;
-    }
-
-    // FileReaderでファイルを読み込む
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const fileContent = e.target.result;
-
-        try {
-            // JSONとしてファイルを解析
-            const parsedData = JSON.parse(fileContent);
-
-            // ファイル内容をクッキーとして設定
-            for (const key in parsedData) {
-                if (parsedData.hasOwnProperty(key)) {
-                    document.cookie = `${key}=${encodeURIComponent(
-                        JSON.stringify(parsedData[key])
-                    )}; path=/; max-age=31536000`;
-                }
-            }
-
-            location.reload(); // 読み込み後に反映
-        } catch (error) {
-            alert('ファイルの読み込みに失敗しました。');
-            console.error(error);
-        }
-    };
-
-    reader.readAsText(file); // ファイルをテキストとして読み込む
-
-    */
 }
