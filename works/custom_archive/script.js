@@ -245,7 +245,8 @@ function getRandomDarkColor() {
 // データを削除
 function clearData() {
     localStorage.removeItem('saveData'); // ローカルストレージのキー
-    document.cookie = 'tagColors=; max-age=0; path=/; domain=' + location.hostname + ';';
+    document.cookie = 'tagColors=; path=/; Secure; SameSite=None; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+
     cards = []; // ローカル変数のカードデータ
     location.reload(); // ページ再読み込み
 
