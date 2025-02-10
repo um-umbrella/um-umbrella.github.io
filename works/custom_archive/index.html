@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>資料庫</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h2>資料庫</h2>
+
+        <!-- 入力エリア -->
+        <section id="inputArea">
+            <div></div>
+            <div>
+                <label for="location" autocomplete="off">名称</label>
+                <input type="text" id="location" />
+            </div>
+
+            <div>
+                <label for="material">タグ</label>
+                <input type="text" id="material" />
+                <button onclick="addMaterial()">追加</button>
+                <ul id="materialList"></ul>
+            </div>
+
+            <div>
+                <label for="facility">情報</label>
+                <input type="text" id="facility" />
+                <button onclick="addFacility()">追加</button>
+                <ul id="facilityList"></ul>
+            </div>
+
+            <button class="buttonSave" onclick="saveData()">保存</button>
+        </section>
+
+        <section>
+            <h3>資料一覧</h3>
+            <div id="cardContainer"></div>
+        </section>
+
+        <section class="flex">
+            <!-- セーブデータ管理 -->
+            <div>データをファイルで<button id="fileOutput">保存</button></div>
+            <div>データファイルを読み込み<input type="file" id="fileInput" /></div>
+            <button onclick="clearData()">データを全削除</button>
+        </section>
+
+        <section class="intro">
+            <h3>これについて</h3>
+            <ul>
+                <li>ブラウザ上でメモするやつです。</li>
+                <li>メモの保存にはクッキーを使用します。ローカルファイルで保存もできます。</li>
+            </ul>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
