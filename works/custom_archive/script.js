@@ -153,6 +153,7 @@ function saveToStorage() {
 
 // ストレージから読み込む
 function loadStorage() {
+    /*
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.trim().split('=');
         acc[key] = decodeURIComponent(value);
@@ -163,6 +164,7 @@ function loadStorage() {
         cards = JSON.parse(cookies.inputCardsData);
         displayCards();
     }
+        */
 
     //ローカルストレージから読み込み？
     let savedData = localStorage.getItem('saveData');
@@ -253,9 +255,11 @@ function getRandomDarkColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// クッキーを削除
+// データを削除
 function clearData() {
     localStorage.removeItem('saveData'); // ローカルストレージのキー
+    document.cookie = 'tagColors=; max-age=0; path=/; domain=' + location.hostname + ';';
+
     cards = []; // ローカル変数のカードデータ
     displayCards();
 }
@@ -285,6 +289,8 @@ function uploadCookiesFromFile(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         try {
+            clearData(); //クッキーを削除してみる
+
             const parsedData = JSON.parse(e.target.result);
             localStorage.setItem('saveData', JSON.stringify(parsedData)); // JSON.parse でオブジェクト化
             cards = parsedData;
