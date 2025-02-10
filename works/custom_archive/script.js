@@ -150,6 +150,9 @@ function createCard(data, index) {
 function saveToCookies() {
     document.cookie =
         'inputCardsData=' + encodeURIComponent(JSON.stringify(cards)) + ';max-age=' + 60 * 60 * 24 * 365 + ';path=/';
+
+    //ローカルストレージに保存
+    localStorage.setItem('saveData', JSON.stringify(cards));
 }
 
 // クッキーからデータを読み込む
@@ -164,6 +167,9 @@ function loadCookies() {
         cards = JSON.parse(cookies.inputCardsData);
         displayCards();
     }
+
+    //ローカルストレージから読み込み？
+    const loadedData = JSON.parse(localStorage.getItem('saveData') || '[]');
 }
 
 // 保存されたカードを表示する
@@ -260,8 +266,9 @@ function clearData() {
 
 document.getElementById('fileOutput').addEventListener('click', saveCookiesToFile);
 
-// 現在のクッキーを保存
+// 現在のクッキーをファイルに保存
 function saveCookiesToFile() {
+    /*
     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
         const [key, value] = cookie.trim().split('=');
         if (key && value) {
@@ -275,12 +282,37 @@ function saveCookiesToFile() {
     link.href = URL.createObjectURL(blob);
     link.download = 'save.json';
     link.click();
+    */
+
+    const dataStr = JSON.stringify(cards, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'saveData.json';
+    link.click();
 }
 
 document.getElementById('fileInput').addEventListener('change', uploadCookiesFromFile);
 
-// セーブデータをアップロードしてクッキーに読み込む
+// セーブデータをアップロードして読み込む
 function uploadCookiesFromFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        try {
+            const parsedData = JSON.parse(e.target.result);
+            localStorage.setItem('saveData', JSON.stringify(parsedData)); // ★ 修正: JSON.parse でオブジェクト化
+            cards = parsedData;
+            displayCards();
+        } catch (error) {
+            alert('無効なデータ形式です');
+        }
+    };
+    reader.readAsText(file);
+
+    /*
     const file = event.target.files[0]; // アップロードされたファイルを取得
 
     if (!file) {
@@ -314,4 +346,6 @@ function uploadCookiesFromFile(event) {
     };
 
     reader.readAsText(file); // ファイルをテキストとして読み込む
+
+    */
 }
