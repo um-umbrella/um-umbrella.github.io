@@ -289,7 +289,7 @@ function uploadCookiesFromFile(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         try {
-            clearData(); //クッキーを削除してみる
+            clearData(); //クッキーを削除
 
             const parsedData = JSON.parse(e.target.result);
             localStorage.setItem('saveData', JSON.stringify(parsedData)); // JSON.parse でオブジェクト化
