@@ -153,23 +153,10 @@ function saveToStorage() {
 
 // ストレージから読み込む
 function loadStorage() {
-    /*
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.trim().split('=');
-        acc[key] = decodeURIComponent(value);
-        return acc;
-    }, {});
-
-    if (cookies.inputCardsData) {
-        cards = JSON.parse(cookies.inputCardsData);
-        displayCards();
-    }
-        */
-
     //ローカルストレージから読み込み？
     let savedData = localStorage.getItem('saveData');
     if (savedData) {
-        cards = JSON.parse(savedData); // 取得データをオブジェクトに変換
+        cards = JSON.parse(savedData); // オブジェクトに変換
         displayCards(); // 画面に反映
     }
 }
@@ -259,8 +246,9 @@ function getRandomDarkColor() {
 function clearData() {
     localStorage.removeItem('saveData'); // ローカルストレージのキー
     document.cookie = 'tagColors=; max-age=0; path=/; domain=' + location.hostname + ';';
-
     cards = []; // ローカル変数のカードデータ
+    location.reload(); // ページ再読み込み
+
     displayCards();
 }
 
