@@ -134,7 +134,7 @@ function screenshot() {
             }
         }
 
-        const filename = `ランダムお題_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${nowDateArray[2]}${
+        const filename = `クエストお題_${date.getFullYear()}${nowDateArray[0]}${nowDateArray[1]}${nowDateArray[2]}${
             nowDateArray[3]
         }${nowDateArray[4]}`;
 
