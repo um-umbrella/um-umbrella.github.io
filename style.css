@@ -96,7 +96,7 @@ hr {
 }
 
 #update > li {
-    margin: 4px 0;
+    margin: 8px 8px;
     padding: 0;
 }
 
@@ -197,7 +197,8 @@ main {
 }
 
 #update {
-    max-width: 50%;
+    max-width: 80%;
+    height: 150px;
 }
 
 h1,
@@ -228,18 +229,18 @@ img {
 
 .gridList {
     display: grid;
-    gap: 32px;
+    gap: 0 32px;
     grid-template-columns: 1fr;
     margin: 32px;
 }
 
 .gridList > * {
-    padding: 16px;
+    padding: 64px 32px 48px;
     margin-inline: auto;
 
     width: 100%;
     max-width: 400px;
-    border: 1px solid #1b1b1b;
+    border-top: 1px solid #1b1b1b;
 }
 
 dl {
