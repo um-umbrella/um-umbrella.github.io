@@ -193,7 +193,7 @@ main {
     padding: 16px;
 
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 #update {
@@ -268,6 +268,9 @@ footer {
 /*@media*/
 
 @media screen and (min-width: 1080px) {
+    .gridList {
+        grid-template-columns: repeat(3, 1fr);
+    }
 } /*@media*/
 
 /*目次整形----------------------------------------*/
