@@ -1,6 +1,5 @@
 @charset "utf-8";
-/*@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
-*/
+
 :root {
     --main-theme: var(--text-dark-color);
     --body-bg: #ffffff;
@@ -178,3 +177,62 @@ img {
         max-width: 1000px;
     }
 } /*@media*/
+
+/*-------------------------------------------------------*/
+/*追加CSS*/
+
+/* ローディング画面 */
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #0bd;
+}
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin: 200px auto;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sk-scaleout 1s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* コンテンツ部分の装飾 */
+.gallery {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #614444;
+
+    /* 以下のコードを追加 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
