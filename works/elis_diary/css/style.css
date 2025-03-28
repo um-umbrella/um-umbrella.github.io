@@ -1,0 +1,180 @@
+@charset "utf-8";
+/*@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+*/
+:root {
+    --main-theme: var(--text-dark-color);
+    --body-bg: #ffffff;
+    --text-dark-color: #1b1b1b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*------------------------------------------------------ */
+
+nav div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+nav a {
+    color: #fcf9f5;
+}
+
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
+}
+
+#check-input {
+    display: none;
+}
+
+#check-button {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    z-index: 5;
+
+    text-align: right;
+    box-sizing: border-box;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-x: calc(100% - 8px);
+    background-position-y: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+
+    padding: 0 10px;
+    width: 50%;
+    height: 0;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size: 0.9em;
+    background-color: #614444;
+}
+
+nav > * {
+    width: 100%;
+}
+
+nav ul {
+    display: block;
+    box-sizing: border-box;
+}
+
+nav li {
+    padding: 16px 0;
+}
+
+nav li:not(:last-child)::after {
+    display: block;
+    position: relative;
+    margin-inline: auto;
+    top: 1em;
+    width: 75%;
+    height: 1px;
+
+    content: '';
+    background-color: rgb(0 0 0/0.1);
+}
+
+#check-input[type='checkbox']:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+/*------------------------------------------------------ */
+
+body {
+    font-family: 'Shippori Mincho', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+        sans-serif;
+    color: #1b1b1b;
+}
+
+main {
+    margin-inline: auto;
+}
+
+section {
+    margin: 32px;
+    margin-inline: auto;
+    padding: 32px;
+    width: 600px;
+    max-width: 100%;
+
+    background-color: #fcf9f5;
+    box-shadow: 0 0 128px rgb(27 27 27 / 0.05) inset;
+}
+
+/*------------------------------------------------------ */
+
+hgroup {
+    margin: 128px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 64px 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 0;
+    margin-top: 32px;
+    padding: 0;
+}
+
+h2,
+p {
+    font-size: medium;
+}
+
+p {
+    margin: 12px 0;
+}
+
+.etc {
+    opacity: 0.4;
+}
+
+section li {
+    padding: 0;
+    list-style: #1b1b1b;
+}
+
+img {
+    max-height: 200px !important;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 1080px) {
+    main {
+        width: 100%;
+        max-width: 1000px;
+    }
+} /*@media*/
