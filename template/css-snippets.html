@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+
+        <title>CSSパーツ</title>
+    </head>
+
+    <body>
+        <main>
+            <section>
+                <h1>CSSパーツ</h1>
+
+                <nav id="contents-table"></nav>
+
+                <h2>概要</h2>
+                <p>部分的なCSSの配布ページです。自分が普段使っているやつを整形して公開しています。</p>
+
+                <ul id="update">
+                    <li><time>5/19</time>公開し忘れてた。公開した</li>
+                    <li>
+                        <time>2025/5/15</time
+                        >ページを作った。<br />二点追加：リストを横並びにするやつ、リンクをカードっぽくするやつ
+                    </li>
+                    <li><time></time></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CSSパーツ</h2>
+                <p>各ボックスからコピーしてご利用ください。</p>
+                <!--
+                  <div class="grid2"><textarea onclick="this.select()"></textarea><textarea onclick="this.select()"></textarea></div>
+                -->
+
+                <h3>リストを横並びに</h3>
+                <ul class="flex-list">
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                    <li>リスト３</li>
+                    <li>リスト４</li>
+                    <li>リスト５</li>
+                </ul>
+                <p>リストを横並びにし、区切りをつけます。<br />改行は項目単位です。</p>
+                <div class="grid2">
+                    <textarea onclick="this.select()">
+<!-- リストを横並びにするタグ -->
+<ul class="flex-list">
+    <li>リスト１</li>
+    <li>リスト２</li>
+    <li>リスト３</li>
+</ul>
+                </textarea
+                    >
+                    <textarea onclick="this.select()">
+/* リストを横並びにするCSS */
+ul.flex-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0.5em 0;
+        padding: 0 1em;
+        list-style: none;
+    }
+
+    li:not(:last-child) {
+        border-right: 1px solid rgb(0 0 0 / 0.3);
+    }
+}
+                </textarea
+                    >
+                </div>
+
+                <h3>リンクをカードっぽくする</h3>
+                <a href="リンク先のURL" class="link-card">リンク先ページのタイトルを表示</a>
+                <p>リンクをカードっぽくします。あくまでもそれっぽく。</p>
+                <p>
+                    長すぎるリンク名は省略されます。<br />青い部分にはお好みの色やアイコンフォントなどでカスタムしてください。
+                </p>
+                <div class="grid2">
+                    <textarea onclick="this.select()">
+<!-- リンクをカードっぽくするタグ -->
+<a href="リンク先のURL" class="link-card">リンク先ページのタイトル</a>
+                    </textarea>
+                    <textarea onclick="this.select()">
+/*リンクをカードっぽくする*/
+.link-card {
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    padding: 2em 1em;
+    padding-left: 120px;
+
+    width: 100%;
+    max-width: 360px;
+    height: 120px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    border: 1px solid rgb(0 0 0 / 0.3);
+}
+
+.link-card::before {
+    display: block;
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+    top: 18px;
+    left: 18px;
+
+    content: '';
+    background: linear-gradient(to right, #5fffe2, #7ba7fe);
+    border-radius: 1em;
+}
+
+.link-card::after {
+    display: block;
+    position: absolute;
+    max-width: 240px;
+    bottom: 2em;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    content: attr(href);
+    color: #000;
+    opacity: 0.3;
+}
+                    </textarea>
+                </div>
+            </section>
+        </main>
+
+        <script src="contents_table.js"></script>
+    </body>
+
+    <style>
+        /* -------------------------------------------------------
+        * Template: 倉林
+        * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+        *------------------------------------------------------ */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            --main-theme: #92513a;
+        }
+
+        body {
+            position: relative;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #fff;
+            color: #1b1b1b;
+        }
+
+        main {
+            position: relative;
+        }
+
+        ::selection {
+            background-color: var(--main-theme);
+            color: #fff;
+        }
+
+        section {
+            margin: 3em 2em;
+            padding: 0 2em;
+            margin-inline: auto;
+
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 3em 0 1em;
+        }
+
+        h3 {
+            margin-top: 4em;
+        }
+
+        h2,
+        h3 {
+            position: relative;
+            padding-left: 1em;
+        }
+
+        h2::before,
+        h3::before {
+            display: block;
+            position: absolute;
+            padding-right: 0.2em;
+
+            top: 0;
+            left: 0;
+
+            content: '■';
+            color: #000;
+        }
+
+        h3::before {
+            content: '□';
+        }
+
+        li {
+            margin: 8px 16px;
+            padding-left: 8px;
+            line-height: 1.6em;
+        }
+
+        li::marker {
+            color: var(--main-theme);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--main-theme);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1b1b1b;
+        }
+
+        p {
+            line-height: 1.8em;
+            margin: 0.6em 0;
+        }
+
+        mark {
+            color: inherit;
+            background-color: rgb(255, 255, 255, 0);
+            background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #eee 60%);
+        }
+
+        textarea {
+            margin: 1em;
+            padding: 0.5em;
+            width: 100%;
+            height: 80px;
+
+            text-wrap: wrap;
+            resize: none;
+
+            line-height: 1.4em;
+            color: #ccc;
+            background-color: #1b1b1b;
+        }
+
+        /* 追加デザイン --------------------- */
+
+        #update {
+            margin: 0;
+            padding: 0.5em 2em;
+            width: 100%;
+            height: 160px;
+
+            overflow-y: auto;
+            list-style: none;
+            background-color: #f7f7f7;
+        }
+
+        #update > li {
+            margin: 0;
+            padding: 1em 0;
+        }
+
+        #update > li:not(:last-child) {
+            border-bottom: 1px solid rgb(0 0 0 / 0.1);
+        }
+
+        #update time {
+            padding-right: 1em;
+        }
+
+        #contents-table {
+            padding: 1em;
+
+            border-radius: 1em;
+            background-color: #f7f7f7;
+        }
+
+        #contents-table ul {
+            list-style: none;
+        }
+
+        .contents-table-h2,
+        .contents-table-h3 {
+            position: relative;
+            padding-left: 1em;
+        }
+
+        .contents-table-h3 {
+            padding-left: 2em;
+        }
+
+        .contents-table-h2::before,
+        .contents-table-h3::before {
+            position: absolute;
+            color: #ccc;
+            left: 0;
+        }
+
+        .contents-table-h2::before {
+            content: '■';
+        }
+
+        .contents-table-h3::before {
+            content: '□';
+            left: 1em;
+        }
+
+        @media screen and (min-width: 480px) {
+            .grid2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1em;
+            }
+        }
+
+        /* 配布パーツ ----------------------------------- */
+
+        /*リストを横並びに表示*/
+        ul.flex-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin: 0.5em 0;
+                padding: 0 1em;
+                list-style: none;
+            }
+
+            li:not(:last-child) {
+                border-right: 1px solid rgb(0 0 0 / 0.3);
+            }
+        }
+
+        /*リンクをカードっぽくする*/
+        .link-card {
+            display: block;
+            position: relative;
+            margin: 1em 0;
+            padding: 2em 1em;
+            padding-left: 120px;
+
+            width: 100%;
+            max-width: 360px;
+            height: 120px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            border: 1px solid rgb(0 0 0 / 0.3);
+        }
+
+        .link-card::before {
+            display: block;
+            position: absolute;
+
+            width: 80px;
+            height: 80px;
+            top: 18px;
+            left: 18px;
+
+            content: '';
+            background: linear-gradient(to right, #5fffe2, #7ba7fe);
+            border-radius: 1em;
+        }
+
+        .link-card::after {
+            display: block;
+            position: absolute;
+            max-width: 240px;
+            bottom: 2em;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            content: attr(href);
+            color: #000;
+            opacity: 0.3;
+        }
+    </style>
+</html>
