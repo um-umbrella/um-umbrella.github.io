@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 /* -------------------------------------------------------
 * Template: 倉林
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
@@ -47,8 +46,7 @@ nav li {
 
     text-align: right;
     box-sizing: border-box;
-
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='white'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: 100%;
     background-position-x: calc(100% - 8px);
@@ -123,7 +121,7 @@ nav li:not(:last-child)::after {
     }
 
     nav {
-        align-items: stretch; /*縦中央揃えにするならここ*/
+        align-items: stretch;
         position: fixed;
         width: var(--nav-width);
         height: 100%;
@@ -167,44 +165,32 @@ nav li:not(:last-child)::after {
 /*------------------------------------------------------ */
 
 body {
-    font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
-        sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
 }
 
 h1,
-nav,
-footer {
-    background-image: linear-gradient(150deg, var(--main-theme) 20%, var(--sub-theme) 80%);
-    animation: GradientBackground 7s ease infinite;
-    background: linear-gradient(45deg, var(--sub-theme), var(--main-theme));
-    background-size: 400% 400%;
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 2em 0 1em;
 }
 
-@keyframes GradientBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+h2 {
+    font-size: 1.8em;
 }
-
-section {
-    margin: 16px;
-    padding: 16px;
+h3 {
+    font-size: 1.6em;
 }
-
-section:first-of-type {
-    margin-top: 64px;
+h4 {
+    font-size: 1.4em;
 }
-
-section:last-child {
-    margin-bottom: 64px;
+h5 {
+    font-size: 1.2em;
+}
+h6 {
+    font-size: 1em;
 }
 
 h1 {
@@ -233,17 +219,18 @@ h2 {
     position: relative;
     margin: 40px 0 0;
     padding: 8px 24px;
-    font-size: 24px;
 
     border: solid 1px var(--main-theme);
 }
 
-h3 {
+h3,
+h4,
+h5,
+h6 {
     display: flex;
-    font-size: 1.4em;
 }
 
-h3::after {
+:where(h3, h4, h5, h6)::after {
     position: relative;
     margin: 0 16px;
     width: 50%;
@@ -255,21 +242,105 @@ h3::after {
     background-color: var(--main-theme);
 }
 
-.fv {
-    padding: 2em 0;
-    margin: 0;
-    opacity: 0.8;
+#update {
+    padding: 0.8em;
+    height: 216px;
 
-    line-height: 2em;
-    font-family: 'Hina Mincho', 'Noto Sans JP', system-ui;
-    text-align: center;
-    color: var(--text-dark-color);
+    background-color: rgb(0 0 0 / 0.05);
+    background-color: rgb(255, 252, 245);
+
+    li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        margin: 4px 0;
+        padding: 1em 0;
+        line-height: 2.2;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px dotted var(--main-theme);
+    }
+
+    time {
+        padding: 0em 1em;
+    }
+}
+
+h1,
+nav,
+footer {
+    background-image: linear-gradient(150deg, var(--main-theme) 20%, var(--sub-theme) 80%);
+    animation: GradientBackground 7s ease infinite;
+    background: linear-gradient(45deg, var(--sub-theme), var(--main-theme));
+    background-size: 400% 400%;
+}
+
+li {
+    padding-left: 0;
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1#title,
 nav li a,
 footer li {
     color: var(--text-light-color);
+}
+
+li a:hover {
+    color: var(--sub-theme);
+}
+
+dl {
+    grid-template-columns: 1fr;
+}
+
+dt,
+dd {
+    text-align: left;
+}
+
+dt {
+    display: inline-block;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+    width: fit-content;
+
+    color: var(--text-light-color);
+    background-color: var(--main-theme);
+}
+
+dd {
+    margin: 0 1em 1em;
+    padding: 0;
+    padding-left: 1em;
+    border-left: #da4167 1px solid;
+}
+
+section {
+    margin: 16px;
+    padding: 16px;
+}
+
+section:first-of-type {
+    margin-top: 64px;
+}
+
+section:last-child {
+    margin-bottom: 64px;
 }
 
 #footer-c {
