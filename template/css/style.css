@@ -162,14 +162,16 @@ div:has(#update) {
     background-color: var(--body-bg);
 
     li {
+        display: grid;
+        grid-template-columns: auto 1fr;
         margin: 1em 0;
-
         line-height: 2em;
     }
 
     time {
         margin: 0 1em;
         padding: 0.2em 1em;
+        height: min-content;
 
         border-radius: calc(1px * infinity);
         color: var(--text-light-color);
