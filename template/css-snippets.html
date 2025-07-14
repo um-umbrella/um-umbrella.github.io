@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex,nofollow,noarchive" />
 
+        <meta http-equiv="Cache-Control" content="no-store" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
         <title>CSSパーツ</title>
     </head>
 
@@ -20,6 +24,7 @@
                 <p>部分的なCSSの配布ページです。自分が普段使っているやつを整形して公開しています。</p>
 
                 <ul id="update">
+                    <li><time>7/14</time>改行をほどよくするやつを追加</li>
                     <li><time>5/19</time>公開し忘れてた。公開した</li>
                     <li>
                         <time>2025/5/15</time
@@ -32,9 +37,6 @@
             <section>
                 <h2>CSSパーツ</h2>
                 <p>各ボックスからコピーしてご利用ください。</p>
-                <!--
-                  <div class="grid2"><textarea onclick="this.select()"></textarea><textarea onclick="this.select()"></textarea></div>
-                -->
 
                 <h3>リストを横並びに</h3>
                 <ul class="flex-list">
@@ -136,6 +138,49 @@ ul.flex-list {
 }
                     </textarea>
                 </div>
+
+                <!-- １コンテンツ始まり -->
+                <h3>改行をほどよく</h3>
+                <p>装飾的なタイトルなど、改行をある程度管理したいときに自分がよくやるやつです。</p>
+                <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
+                    長いタイトルやサイト名が途中で改行されて微妙になる
+                </div>
+                <p>ようなとき、<mark>display: inline-block;</mark>のクラスで文節ごとに囲むと、</p>
+                <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
+                    <span class="clause">長いタイトルや</span><span class="clause">サイト名が</span
+                    ><span class="clause">途中で</span><span class="clause">改行されて</span
+                    ><span class="clause">微妙になる</span>
+                </div>
+                <p>
+                    となります。言葉の一塊を指定する感じです。<br />あまり細かくしようとすると大変ですが、タイトルなど短い文章ならいい感じにしやすいと思います。レスポンシブ対応の一環にも。
+                </p>
+                <div class="grid2">
+                    <textarea onclick="this.select()">
+<p>
+<span class="clause">長いタイトルや</span>
+<span class="clause">サイト名が</span>
+<span class="clause">途中で</span>
+……
+</p>
+                    </textarea>
+                    <textarea onclick="this.select()">
+/*改行を整える*/
+.clause {
+    display: inline-block;
+}</textarea
+                    >
+                </div>
+                <!-- １コンテンツ終わり -->
+
+                <!-- １コンテンツ始まり 
+                <h3>タイトル</h3>
+                <div>実例</div>
+                <p>解説</p>
+                <div class="grid2">
+                    <textarea onclick="this.select()">HTML</textarea>
+                    <textarea onclick="this.select()">CSS</textarea>
+                </div>
+                <!-- １コンテンツ終わり -->
             </section>
         </main>
 
@@ -276,19 +321,22 @@ ul.flex-list {
             overflow-y: auto;
             list-style: none;
             background-color: #f7f7f7;
-        }
 
-        #update > li {
-            margin: 0;
-            padding: 1em 0;
-        }
+            li {
+                display: grid;
+                grid-template-columns: auto 1fr;
 
-        #update > li:not(:last-child) {
-            border-bottom: 1px solid rgb(0 0 0 / 0.1);
-        }
+                margin: 0;
+                padding: 1em 0;
+            }
 
-        #update time {
-            padding-right: 1em;
+            li:not(:last-child) {
+                border-bottom: 1px solid rgb(0 0 0 / 0.1);
+            }
+
+            time {
+                padding-right: 1em;
+            }
         }
 
         #contents-table {
@@ -400,6 +448,11 @@ ul.flex-list {
             content: attr(href);
             color: #000;
             opacity: 0.3;
+        }
+
+        /*改行*/
+        .clause {
+            display: inline-block;
         }
     </style>
 </html>
