@@ -4,10 +4,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+        <meta name="robots" content="noindex,nofollow,noarchive" />
         <meta name="discription" content="個人製作ソロジャーナル置き場" />
-        <link href="css/reset.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style.css?2025/7/15" rel="stylesheet" />
 
         <title>傘の下 | ソロジャーナル制作物</title>
     </head>
@@ -16,48 +15,22 @@
         <div>
             <input type="checkbox" id="check-input" />
             <label id="check-button" for="check-input"></label>
-            <nav>
-                <img src="img/background.jpg" id="nav-bg" />
+            <nav class="bg-cover">
                 <ul>
-                    <li class="menu-min-only"><a href="#">傘の下</a></li>
-                    <li class="menu-max-only"><a href="#sec2">利用規約</a></li>
-                    <li class="menu-max-only">
-                        <a href="#sec3">シナリオ</a>
-                    </li>
-                    <li class="menu-max-only"><a href="#sec4">その他</a></li>
+                    <li><a href="#sec1">利用規約</a></li>
+                    <li><a href="#sec2">シナリオ</a></li>
+                    <li><a href="#sec3">その他</a></li>
                     <li><a href="../mail.html" target="_blank">連絡</a></li>
                 </ul>
             </nav>
         </div>
 
         <main>
-            <section id="sec1">
-                <a href="#"><h1 subtitle="Under My Umbrella" id="title">傘の下</h1></a>
+            <section id="#">
+                <h1 id="title"><a href="#" style="color: var(--text-dark-color)">Under my unbrella</a></h1>
+                <h2 title="！">About</h2>
                 <p>倉林という個人がソロジャーナル関連のいろいろを作っています。</p>
-                <p>
-                    当サイトにおける「ソロジャーナル」は、<mark>シナリオやランダマイザに沿って記録をしていく遊び</mark>をざっくり指します。制作物はソロ向けですが、誰かと普通のTRPGのように遊ぶのも面白いかもしれません。
-                </p>
-                <p>
-                    <a href="https://talto.cc/users/ZuKfm1L43lXz96Dn8K7rvP3MgJf2" target="_blank">TALTO</a>｜
-                    <a href="https://umumbrella.itch.io/ " target="_blank">itch.io</a>｜<a
-                        href="https://umumbrella.booth.pm/"
-                        target="_blank"
-                        >Booth</a
-                    >｜<a href="https://soloj.hodo49.com/" target="_blank">ソロジャーナルの森</a>｜
-                    <a href="https://www.tinytableindex.com/" target="_blank">Tiny Table Index</a>
-                </p>
 
-                <p>
-                    <a href="https://rust-cave-248.notion.site/1-TRPG-eefdcd26fb4d4ea1af797188900c8fcb" target="_blank"
-                        >#1ページTRPG企画</a
-                    >/<a href="https://x.com/tiama_matidori/status/1769547017703801024" target="_blank">告知</a> ｜<a
-                        href="https://crr.stars.ne.jp/site/"
-                        target="_blank"
-                        >プレイログ置き場</a
-                    >｜<a href="https://um-umbrella.github.io/union/solo-journaling/" target="_blank"
-                        >ソロジャーナル同盟</a
-                    >
-                </p>
                 <ul id="update">
                     <li><time>7/15</time>『いつか笑う話』公開</li>
                     <li><time>5/12</time>『荒鉄の辻』公開、各シナリオへBoothリンク追加</li>
@@ -76,17 +49,48 @@
                     <li><time>8/7</time>『勇躍きたれ』加筆・修正</li>
                     <li><time>8/4</time>『朽廃のささやき』公開</li>
                     <li><time>7/31</time>『勇躍きたれ』公開</li>
+                    <!--
                     <li><time></time></li>
+                    -->
+                </ul>
+
+                <p>
+                    当サイトにおける「ソロジャーナル」は、<mark>シナリオやランダマイザに沿って記録をしていく遊び</mark>をざっくり指します。<br />制作物はソロ向けですが、誰かと普通のTRPGのように遊ぶのも面白いかもしれません。
+                </p>
+
+                <!-- リストを横並びにするタグ -->
+                <ul class="flex-list">
+                    <li><a href="https://talto.cc/users/ZuKfm1L43lXz96Dn8K7rvP3MgJf2" target="_blank">TALTO</a></li>
+
+                    <li><a href="https://umumbrella.itch.io/ " target="_blank">itch.io</a></li>
+                    <li><a href="https://umumbrella.booth.pm/" target="_blank">Booth</a></li>
+                    <li><a href="https://soloj.hodo49.com/" target="_blank">ソロジャーナルの森</a></li>
+                    <li><a href="https://www.tinytableindex.com/" target="_blank">Tiny Table Index</a></li>
+
+                    <li>
+                        <a
+                            href="https://rust-cave-248.notion.site/1-TRPG-eefdcd26fb4d4ea1af797188900c8fcb"
+                            target="_blank"
+                            >#1ページTRPG企画</a
+                        >
+                    </li>
+                    <li><a href="https://x.com/tiama_matidori/status/1769547017703801024" target="_blank">告知</a></li>
+                    <li><a href="https://crr.stars.ne.jp/site/" target="_blank">プレイログ置き場</a></li>
+                    <li>
+                        <a href="https://um-umbrella.github.io/union/solo-journaling/" target="_blank"
+                            >ソロジャーナル同盟</a
+                        >
+                    </li>
                 </ul>
             </section>
 
-            <section id="sec2">
-                <h2 subtitle="Terms and Conditions">取り扱い・利用規約</h2>
+            <section id="sec1">
+                <h2 title="02">利用規約</h2>
                 <p>詳細は<a href="./teams.html">「シナリオの利用にあたって」</a>をご確認ください。</p>
                 <dl>
                     <dt>遊び方</dt>
                     <dd>
-                        既存PCや新規PC、現代や中世ファンタジーなど、お好きな世界観で遊んでください。<br />意にそぐわない解釈の改変、判定に寄らず好みで結果を選択する、などもしていだたいて構いません。
+                        既存PC／新規PC、現代／中世ファンタジーなど、お好きな世界観で遊んでください。<br />意にそぐわない解釈の改変、判定に寄らず好みで結果を選択する、などもしていだたいて構いません。
                     </dd>
                     <dt>プレイログの<span class="clause">公開</span></dt>
                     <dd>
@@ -97,374 +101,359 @@
                 </dl>
             </section>
 
-            <section>
-                <h2 subtitle="All">製作物目次</h2>
+            <section id="">
+                <h2 title="03">制作物</h2>
                 <div id="contents-table"></div>
-            </section>
 
-            <section id="sec3">
-                <h2 subtitle="Scenario">シナリオ</h2>
-                <p>
-                    各シナリオは複数個所に投稿していますが、今のところファイル内容に違いはありません。<br />お好きな媒体でご覧ください。
-                </p>
+                <h3 title="Journaling scenario" id="sec2">シナリオ</h3>
+                <p>配布媒体ごとのシナリオの差異はほぼ言語のみです。<br />お好きな媒体でご覧ください。</p>
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 01" class="scenario-h3">勇躍きたれ</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_01.jpg" />
-                        <p class="fv">
-                            <span class="clause">あなたは、</span><span class="clause">ある目的を胸に</span
-                            ><span class="clause">この闘技場を訪れた。</span><br /><span class="clause"
-                                >求めるものは富か？　</span
-                            ><span class="clause">名声か？　</span><span class="clause">それとも力か？</span><br />
-                        </p>
-                        <p class="fv">――あなたの数日間は、<span class="clause">武器を握ることで始まる。</span></p>
+                <div>
+                    <h4 title="Scenario - 01">勇躍きたれ</h4>
+                    <div class="grid2">
+                        <img src="img/t_01.jpg" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause">あなたは、</span><span class="clause">ある目的を胸に</span
+                                ><span class="clause">この闘技場を訪れた。</span><br /><span class="clause"
+                                    >求めるものは富か？　</span
+                                ><span class="clause">名声か？　</span><span class="clause">それとも力か？</span><br />
+                            </p>
+                            <p>――あなたの数日間は、<span class="clause">武器を握ることで始まる。</span></p>
+                        </div>
                     </div>
-                    <div>
-                        <p>闘技場で過ごす数日間を記すソロジャーナルシナリオです。「ゆうやく～」と読みます。</p>
-                        <p>バトルが主軸ですが、勝敗は運です。負けロールを楽しむ心があるとよいでしょう。</p>
+                    <div class="ano-text">
                         <p>
-                            初めて作ったので要素の引き算ができませんでした。真面目にやると、ひたすら対戦相手のキャラメイクをすることになります。
+                            闘技場で過ごす数日間を記すソロジャーナルシナリオです。「ゆうやく～」と読みます。<br />バトルが主軸ですが、勝敗は運です。負けロールを楽しむ心があるとよいでしょう。
                         </p>
-                        <a href="https://talto.cc/projects/_jNR5bkGRvckQ6kTGBn7o" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/5991476" target="_blank"><button>Booth</button></a>
-                        <a href="https://umumbrella.itch.io/yuyakukitare" target="_blank"><button>itch.io</button></a>
+                        <p>
+                            初めて作ったので要素の引き算ができませんでした。真面目にやると、ひたすら対戦相手のキャラメイクをすることになります。<br />Ver3でキャラメイク度をちょっと緩和しました。
+                        </p>
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/_jNR5bkGRvckQ6kTGBn7o" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/5991476" target="_blank">Booth</a>
+                        <a href="https://umumbrella.itch.io/yuyakukitare" target="_blank">itch.io</a>
                     </div>
                 </div>
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 02" class="scenario-h3">朽廃のささやき</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_02.jpg" />
-                        <p class="fv">
-                            <span class="clause">とある場所で、</span
-                            ><span class="clause">未踏の建造物が発見された！</span>
-                        </p>
-                        <p class="fv">
-                            <span class="clause">そこは一体</span><span class="clause">なんのための建築物で、</span
-                            ><span class="clause">何が隠されているのだろう？</span><br /><span class="clause"
-                                >物言わぬ建造物のしらべに</span
-                            ><span class="clause">耳を傾けてみるとしよう。</span>
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 02">朽廃のささやき</h4>
+                    <div class="grid2">
+                        <img src="./img/t_02.jpg" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause">とある場所で、</span>
+                                <span class="clause">未踏の建築物が</span>
+                                <span class="clause">発見された！</span>
+                            </p>
+                            <p>
+                                <span class="clause">そこは一体</span><span class="clause">なんのための</span
+                                ><span class="clause">建築物で、</span
+                                ><span class="clause">何が隠されているのだろう？</span><span class="clause"></span
+                                ><br /><span class="clause">物言わぬ</span><span class="clause">建造物のしらべに</span
+                                ><span class="clause">耳を傾けて</span><span class="clause">みるとしよう。</span>
+                            </p>
+                        </div>
                     </div>
-
-                    <div>
+                    <div class="ano-text">
                         <p>建築物の調査内容を記すソロジャーナルシナリオです。「きゅうはいの～」と読みます。</p>
                         <p>
                             フレーバーですが間取りの概念があるので、テキスト以外に絵が描けるような用意があると楽しいかもしれません。
                         </p>
                         <p>マップ作成のジェネレーター代わりにするとか、そういう感じのこともご自由にどうぞ。</p>
-                        <a href="https://talto.cc/projects/Gqf7rLQHdAzQ7Fn-kIJ1j" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/5991840" target="_blank"><button>Booth</button></a>
-                        <a href="https://umumbrella.itch.io/kyuhainosasayaki " target="_blank"
-                            ><button>itch.io</button></a
-                        >
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/Gqf7rLQHdAzQ7Fn-kIJ1j" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/5991840" target="_blank">Booth</a>
+                        <a href="https://umumbrella.itch.io/kyuhainosasayaki " target="_blank">itch.io</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 03" class="scenario-h3">便りに乗せて</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_03.jpg" />
-                        <p class="fv">あなたに手紙を送りたい。</p>
-                        <p class="fv">
-                            <span class="clause">私の選んだ便箋でなくとも、</span
-                            ><span class="clause">私の記した文字でなくとも、</span
-                            ><span class="clause">伝えたいことには変わりがないから。</span>
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 03">便りに乗せて</h4>
+                    <div class="grid2">
+                        <img src="./img/t_03.jpg" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause">あなたに手紙を</span>
+                                <span class="clause">送りたい。</span>
+                            </p>
+                            <p>
+                                <span class="clause">私の選んだ便箋でなくとも、</span
+                                ><span class="clause">私の記した文字でなくとも、</span
+                                ><br />伝えたいことには変わりがないから。
+                            </p>
+                        </div>
                     </div>
-
-                    <div>
+                    <div class="ano-text">
                         <p>
                             手紙を書けない誰かの代筆をするソロジャーナルシナリオです。<br />
                             「手紙」モチーフなので、記録を便箋に書いたり、封筒を選んだり、封蝋で閉じたりと、実際の手紙のように記録してみるのも面白いかもしれません。
                         </p>
                         <p>切手の画像を作れるテンプレートを同封したかった。</p>
-                        <a href="https://talto.cc/projects/EE38t57pHyhCxPNVv51Xw" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6024315" target="_blank"><button>Booth</button></a>
-                        <a href="https://umumbrella.itch.io/letterwrite" target="_blank"><button>itch.io</button></a>
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/EE38t57pHyhCxPNVv51Xw" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6024315" target="_blank">Booth</a>
+                        <a href="https://umumbrella.itch.io/letterwrite" target="_blank">itch.io</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 04" class="scenario-h3">灰の卵</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_04.jpg" />
-                        <p class="fv">
-                            <span class="clause">強すぎた意志は、</span><span class="clause">時に濁って煮詰まり、</span
-                            ><span class="clause">時に人の理から離れた形を成して、</span>
-                        </p>
-                        <p class="fv">
-                            <span class="clause">刻一刻と、</span><span class="clause">ぐずぐずと膨らんでいく。</span>
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 04">灰の卵</h4>
+                    <div class="grid2">
+                        <img src="./img/t_04.jpg" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause">強すぎた意志は、</span
+                                ><span class="clause">時に濁って煮詰まり、</span
+                                ><span class="clause">時に人の理から離れた形を成して、</span>
+                            </p>
+                            <p>
+                                <span class="clause">刻一刻と、</span
+                                ><span class="clause">ぐずぐずと膨らんでいく。</span>
+                            </p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>ある研究に狂った研究者の最後の数日を記すソロジャーナルシナリオです。</p>
                         <p>
-                            「人倫にもとる手記」「因果応報で滅ぶ研究者」を見たくて作りました。そういう気分を高めて遊ぶといいかもしれません。
+                            「人倫にもとる手記」「因果応報で滅ぶ研究者」を見たくて作りました。<br />そういう気分を高めて遊ぶといいかもしれません。
                         </p>
-                        <a href="https://talto.cc/projects/iafxkpxwIydwKvdpY-ARY " target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6637441" target="_blank"><button>Booth</button></a>
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/iafxkpxwIydwKvdpY-ARY " target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6637441" target="_blank">Booth</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 05" class="scenario-h3">旅といちにち</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_05.jpg" />
-                        <p class="fv">あなたは、今日も<span class="clause">道を踏みしめる。</span></p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 05">旅といちにち</h4>
+                    <div class="grid2">
+                        <img src="./img/t_05.jpg" />
+                        <div class="fv">
+                            <p>あなたは、今日も<span class="clause">道を踏みしめる。</span></p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>
                             旅人の一日を振り返るソロジャーナルです。PDFはお手軽１ページ。<br />PLの裁量次第で、のんびりできたりできなかったりします。
                         </p>
                         <p>
-                            試験的に英語版を作ってみました（itchにあります）。両版で表記ゆれ程度に内容の違いがあります。
+                            試験的に英語版を作ってみました。itchにあります。<br />両版で表記ゆれ程度に内容の違いがあります。
                         </p>
-                        <a href="https://talto.cc/projects/MrdhuX04PSJ-lafZjUEql" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6666367" target="_blank"><button>Booth</button></a>
-                        <a href="https://umumbrella.itch.io/every-day-every-trip" target="_blank"
-                            ><button>itch.io</button></a
-                        >
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/MrdhuX04PSJ-lafZjUEql" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6666367" target="_blank">Booth</a>
+                        <a href="https://umumbrella.itch.io/every-day-every-trip" target="_blank">itch.io</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 06">星のあわい</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_06.jpg" />
-                        <p class="fv">
-                            <span class="clause">あなたは星をみる。</span>
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 06">星のあわい</h4>
+                    <div class="grid2">
+                        <img src="./img/t_06.jpg" />
+                        <div class="fv">
+                            <p>あなたは星をみる。</p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>星座を作るだけの短編ソロジャーナルシナリオです。</p>
                         <p>プレイ時は、お手元に書き込める表とかを用意してどうぞ。</p>
-                        <a href="https://talto.cc/projects/FCubc75Xm3MICgM9sqEWq" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6729657" target="_blank"><button>Booth</button></a>
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/FCubc75Xm3MICgM9sqEWq" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6729657" target="_blank">Booth</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 id="" subtitle="Scenario - 07">鍋が歌うまで</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_07.jpg" />
-                        <p class="fv">
-                            <span class="clause"
-                                >よく混ぜ込んで、<span class="clause">トカゲの尾っぽをひとつまみ。</span
-                                ><br />さあ、飲み干してごらんなさい。</span
-                            >
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 07">鍋が歌うまで</h4>
+                    <div class="grid2">
+                        <img src="./img/t_07.jpg" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause"
+                                    >よく混ぜ込んで、<span class="clause">トカゲの尾っぽをひとつまみ。</span
+                                    ><br />さあ、飲み干してごらんなさい。</span
+                                >
+                            </p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>
                             素材採取・調合シナリオです。<br />ストーリーはないので、ただひたすら調合しまくるか、任意のPC・展開と組み合わせてどうぞ。
                         </p>
                         <p>架空アイテムとその加工が楽しすぎる～。</p>
-                        <a href="https://talto.cc/projects/aT3C22hVq3oBJHQmja5-l" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6729667" target="_blank"><button>Booth</button></a>
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/aT3C22hVq3oBJHQmja5-l" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6729667" target="_blank">Booth</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 subtitle="Scenario - 08">荒鉄の辻</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_08.png" />
-                        <p class="fv">
-                            <span class="clause"
-                                >月がまさに明るい晩の片峠である。<br />べったりと曇った日のことである。<br />雨が圧しかかる中の出来事である。<br /><br />辻斬りが、人を斬る。</span
-                            >
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 08">荒鉄の辻</h4>
+                    <div class="grid2">
+                        <img src="./img/t_08.png" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause"
+                                    >月がまさに明るい晩の片峠である。<br />べったりと曇った日のことである。<br />雨が圧しかかる中の出来事である。<br /><br />辻斬りが、人を斬る。</span
+                                >
+                            </p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>辻斬りシナリオです。<br />いつになくふんわりした雰囲気。斬ったり斬られたりしましょう。</p>
                         <p>itchに英語版があります。英語版にはジャパニーズな部分の軽い解説が付いています。</p>
-                        <a href="https://talto.cc/projects/s7tB7_BdvEtqPtT3CygvA" target="_blank"
-                            ><button>TALTO</button></a
-                        >
-                        <a href="https://umumbrella.booth.pm/items/6909990" target="_blank"><button>Booth</button></a>
-                        <a href="https://umumbrella.itch.io/steel-at-the-crossroads" target="_blank"
-                            ><button>itch</button></a
-                        >
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/s7tB7_BdvEtqPtT3CygvA" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/6909990" target="_blank">Booth</a>
+                        <a href="https://umumbrella.itch.io/steel-at-the-crossroads" target="_blank">itch</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
-
-                <h3 subtitle="Scenario - 09">いつか笑う話</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/t_09.png" />
-                        <p class="fv">
-                            <span class="clause"
-                                >ある日、［村］に見慣れない客が訪れた。<br />［私］は［彼］に話をねだることにした。</span
-                            >
-                        </p>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Scenario - 09">いつか笑う話</h4>
+                    <div class="grid2">
+                        <img src="./img/t_09.png" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause">ある日、［村］に</span
+                                ><span class="clause">見慣れない客が訪れた。</span><br /><span class="clause"
+                                    >［私］は［彼］に</span
+                                ><span class="clause">話をねだることにした。</span>
+                            </p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="ano-text">
                         <p>
                             いわゆる「村にやってきた冒険者にやたら懐く子ども」をやるシナリオです。<br />未知の世界に憧れましょう。
                         </p>
                         <p>「ああいうこともあったよね」と笑える話になるかどうかは、プレイ次第です。</p>
-                        <a href="https://talto.cc/projects/uFcipxg23V8sxDbxF6UMb" target="_blank"
-                            ><button>TALTO</button></a
-                        >
+                    </div>
+                    <div class="button-area">
+                        <a href="https://talto.cc/projects/uFcipxg23V8sxDbxF6UMb" target="_blank">TALTO</a>
+                        <a href="https://umumbrella.booth.pm/items/7186225" target="_blank">Booth</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <!--
-
-                <hr />
-
-                <h3 subtitle="Scenario - 0">？</h3>
-                <div class="grid">
-                    <div>
-                        <img class="modal-window" src="img/" />
-                        <p class="fv">
-                            <span class="clause">フレーバー文</span>
-                        </p>
+                <!--項目始まり--><!--
+                <div>
+                    <h4 title="Scenario - 0"></h4>
+                    <div class="grid2">
+                        <img src="./img/" />
+                        <div class="fv">
+                            <p>
+                                <span class="clause"></span>
+                                <span class="clause"></span>
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p>内容</p>
-                        <a href="" target="_blank"
-                            ><button>TALTO</button></a
-                        >
+                    <div class="ano-text">
+                        <p>シナリオ概要</p>
                     </div>
-                </div>
-            --></section>
-
-            <section id="sec4">
-                <h2 subtitle="etc tools">その他</h2>
-                <h3 id="op1" subtitle="tool - 01">ソロジャーナルプレイ支援ツール</h3>
-                <div class="grid">
-                    <img class="modal-window" src="img/etc_01.png" />
-                    <div>
-                        <p>
-                            デジタルでのプレイをちょっと補助・肩代わりするツールです。<br />ダイス・トランプ・タロット、ログ生成、テキストファイル出力、無駄なテーマ切り替え機能などがあります。
-                        </p>
-                        <p>HTML/CSS/JavaScript勉強の一発目で作りました。ちびちび改良しています。</p>
-
-                        <a href="../works/journal_support/index.html" target="_blank"
-                            ><button>ソロジャーナルプレイ支援ツール</button></a
-                        >
+                    <div class="button-area">
+                        <a href="" target="_blank">TALTO</a>
+                        <a href="" target="_blank">Booth</a>
+                        <a href="" target="_blank">itch</a>
                     </div>
                 </div>
+                <!--項目終わり-->
+            </section>
 
-                <hr />
+            <section>
+                <h3 title="tool" id="sec3">その他ツール</h3>
+                <p>ソロジャーナルのプレイ用などに作ったやつです。</p>
 
-                <h3 id="op2" subtitle="tool - 02">ランダムヒト</h3>
-                <div class="grid">
-                    <img class="modal-window" src="img/etc_02.png" />
-                    <div>
-                        <p>ランダムなキャラクター設定を表示します。</p>
-                        <p>
-                            項目は三つ（＋色が二つ）です。表示内容をクリップボードにコピー、または画像としての保存ができます。
-                        </p>
-                        <p>
-                            ソロジャーナル開始時のキャラクター作成で詰まる人（自分）のために作りました。現在は以下の「キャラのプロフを作るツール」の下位互換です。
-                        </p>
-                        <a href="../works/random_character/" target="_blank"><button>ランダムヒト</button></a>
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Tools - 01">ソロジャーナルプレイ支援ツール</h4>
+                    <div class="grid12">
+                        <img src="./img/etc_01.png" style="max-height: 216px" />
+                        <div class="ano-text">
+                            <p>
+                                デジタルでのプレイをちょっと補助・肩代わりするツールです。<br />ダイス・トランプ・タロット、ログ生成、テキストファイル出力、無駄なテーマ切り替え機能などがあります。
+                            </p>
+                            <p>HTML/CSS/JavaScript勉強の一発目で作りました。ちびちび改良しています。</p>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <a href="../works/journal_support/index.html" target="_blank">ソロジャーナルプレイ支援ツール</a>
                     </div>
                 </div>
+                <!--項目終わり-->
 
-                <hr />
+                <!--項目始まり-->
+                <div>
+                    <h4 title="Tools - 02">ランダムヒト</h4>
+                    <div class="grid12">
+                        <img src="./img/etc_02.png" style="max-height: 300px" />
+                        <div class="ano-text">
+                            <p>ランダムなキャラクター設定を表示します。</p>
+                            <p>
+                                項目は三つ（＋色が二つ）です。表示内容をクリップボードにコピー、または画像としての保存ができます。
+                            </p>
+                            <p>
+                                ソロジャーナル開始時のキャラクター作成で詰まる人（自分）のために作りました。現在は以下の「キャラのプロフを作るツール」の下位互換です。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <a href="../works/random_character/" target="_blank">ランダムヒト</a>
+                    </div>
+                </div>
+                <!--項目終わり-->
 
-                <h3 id="op3" subtitle="tool - 03">キャラのプロフを作るツール</h3>
-                <div class="grid">
-                    <img class="modal-window" src="img/etc_03.png" />
-                    <div>
+                <!--項目始まり-->
+                <div class="item">
+                    <h4 title="Tools - 03">キャラのプロフを作るツール</h4>
+                    <img src="./img/etc_03.png" />
+                    <div class="ano-text">
                         <p>プロフィールカード的な画像を作って保存します。</p>
                         <p>
                             既存のキャラクターのキャラシを作ったり、今からするシナリオ用のキャラを臨時で作ったり、というときにどうぞ。
                         </p>
                         <p>ランダムジェネレータが大好きな人（自分）のために作りました。</p>
-                        <a href="../works/chara_profile/" target="_blank"
-                            ><button>キャラのプロフを作るツール</button></a
-                        >
+                    </div>
+                    <div class="button-area">
+                        <a href="../works/chara_profile/" target="_blank">キャラのプロフを作るツール</a>
                     </div>
                 </div>
+                <!--項目終わり-->
             </section>
         </main>
 
         <footer>
-            <ul>
-                <li>©2024- 傘の下/倉林</li>
-            </ul>
             <p id="footer-c">
                 <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
             </p>
         </footer>
-
-        <script src="contents_table.js"></script>
-        <script src="script.js"></script>
+        <script src="./contents_table.js"></script>
     </body>
-    <style>
-        .fv {
-            margin: 32px 0;
-            padding: 0 8px;
-
-            font-size: smaller;
-            font-family: 'Hina Mincho', 'Noto Sans JP', system-ui;
-            text-align: center;
-            color: #aaa;
-        }
-
-        nav > ul > li > ul {
-            margin: 0;
-            line-height: 1em;
-            white-space: nowrap;
-            font-size: smaller;
-            opacity: 0.7;
-        }
-
-        .contents-table-h2 {
-            display: none;
-        }
-
-        @media screen and (min-width: 768px) {
-            .menu-min-only {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .menu-max-only {
-                display: none;
-            }
-
-            h1#title {
-                color: #333;
-            }
-        }
-    </style>
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
 </html>

@@ -5,7 +5,7 @@
  * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
  *------------------------------------------------------ */
 
-//h2/h3を目次として#contents-table下に追加します。
+//h3/h4を目次として#contents-table下に追加します。
 
 window.onload = function () {
     Search();
@@ -23,7 +23,7 @@ function Search() {
     const idName = 'contents-table-';
 
     //全ての要素を取得
-    const allDocument = Array.from(document.querySelectorAll('h2, h3'));
+    const allDocument = Array.from(document.querySelectorAll(' h3,h4'));
     console.log(allDocument);
 
     for (let i = 0; i < allDocument.length; i++) {
