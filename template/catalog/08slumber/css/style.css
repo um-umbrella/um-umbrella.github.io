@@ -316,10 +316,10 @@ footer {
             grid-template-columns: repeat(3, 1fr);
         }
         .grid12 {
-            grid-template-columns: 1fr, 2fr;
+            grid-template-columns: 1fr 2fr;
         }
         .grid21 {
-            grid-template-columns: 2fr, 1fr;
+            grid-template-columns: 2fr 1fr;
         }
     }
 }
@@ -379,11 +379,15 @@ h6 {
     font-size: 1.1em;
 }
 
-:where(h1:not(#title), h2)::before {
+:where(h1:not(#title), h2) {
+    text-shadow: 0 0 2px var(--main-theme);
+}
+
+:where(h1:not(#title), h2, h3, h4, h5, h6)::before {
     display: block;
     position: absolute;
     padding: 1em;
-    top: -0.5em;
+    top: -0.55em;
     left: 0;
     width: 1em;
     height: 1em;
@@ -392,7 +396,7 @@ h6 {
     text-wrap: nowrap;
     content: attr(title);
 
-    opacity: 0.5;
+    opacity: 0.8;
     border-radius: calc(1px * infinity);
     font-size: 1em;
     text-shadow: 0 0 2px var(--main-theme);
@@ -406,48 +410,32 @@ h6 {
 }
 
 :is(h3, h4, h5, h6) {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    padding-left: 0;
-
-    text-align: center;
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+    font-weight: normal;
 }
 
-:where(h3, h4, h5, h6)::after {
-    margin: -0.5em 0;
-    padding: 0.5em 3em;
-    width: fit-content;
-    z-index: -1;
+:where(h3, h4, h5, h6)::before {
+    padding: 0;
+    width: 1.2em;
+    height: 1.2em;
+    top: 0.4em;
 
-    text-wrap: nowrap;
-    overflow-x: hidden;
-    content: attr(title);
-    opacity: 0.8;
+    content: '';
+    opacity: 1;
 
-    text-shadow: 0 0 2px var(--main-theme);
-
-    font-size: 0.8em;
     color: var(--text-light-color);
-    background-color: var(--main-theme);
-    background-image: url(../img/background.jpg);
-    background-position: top;
-    background-size: 160%;
-    background-repeat: no-repeat;
 }
 
-:where(h4, h5, h6)::after {
-    margin: -0.5em 0;
-    padding: 0em 3em;
+h4::before {
     opacity: 0.6;
-    font-size: 0.6em;
-    background-position: bottom right;
 }
 
-:where(h5, h6)::after {
-    margin: -0.6em 0;
-    opacity: 0.3;
-    font-size: 0.8em;
+:where(h5, h6)::before {
+    top: 0.65em;
+    opacity: 1;
+    background-color: var(--sub-theme);
+    background-image: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -536,7 +524,7 @@ section {
 }
 
 #update {
-    margin: 0 auto;
+    margin: 2em auto;
     padding: 0.5em;
     width: 100%;
     height: 216px;
@@ -577,15 +565,3 @@ section {
 }
 
 /*------------------------------------------------------ */
-
-@media screen and (min-width: 768px) {
-} /*@media*/
-
-/*------------------------------------------------------ */
-
-@media screen and (min-width: 1080px) {
-} /*@media*/
-
-/*
-  360 585 600 800 834
-*/
