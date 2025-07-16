@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link href="css/style.css" rel="stylesheet" />
+
+        <title>テンプレート「ティラミス」</title>
+    </head>
+
+    <body>
+        <nav>
+            <div>
+                <h1 id="title">Site name</h1>
+                <ul>
+                    <a href="#sec1"><li>Menu 1</li></a>
+                    <a href="#sec2"><li>Menu 2</li></a>
+                    <a href="#sec3"><li>Menu 3</li></a>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <section id="sec1">
+                <h2>About</h2>
+                <p>ティラミスが食べたいな～と思いながら作りました。<br />タイトルや見出しは英字向けです。</p>
+
+                <ul id="update">
+                    <li><time>7.17</time>CSS差し替え</li>
+                    <li><time>2025.5.1</time>テンプレート公開</li>
+                    <li><time>11.31</time>更新履歴２</li>
+                    <li><time>8.32</time>更新履歴３</li>
+                </ul>
+            </section>
+
+            <section id="sec2">
+                <h2>Heading 2</h2>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+
+                <h3>Heading 3</h3>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+
+                <h4>Heading 4</h4>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+
+                <h5>Heading 5</h5>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+
+                <h6>Heading 6</h6>
+                <p>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+
+                <hr />
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a href="">リンク</a>
+                <a><button>ボタン</button></a> <button><a>ボタン</a></button>
+                <p><mark>markで下線を引きます</mark>。</p>
+                <ul>
+                    <li>リスト１</li>
+                    <li>リスト２</li>
+                </ul>
+
+                <dl>
+                    <dt>項目テキスト</dt>
+                    <dd>
+                        項目の説明<br />
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </dd>
+                    <dt>項目テキスト</dt>
+                    <dd>項目の説明</dd>
+                </dl>
+            </section>
+
+            <section id="sec3">
+                <h2>グリッド・画像</h2>
+
+                <p>
+                    imgに<mark>class="trim"</mark>を付けると、横いっぱい・縦最大300pxでトリミングして表示します。縦横比に差がある画像向け。それ以外の場合、大きい画像は最大縦300pxで表示されます。
+                </p>
+
+                <div class="grid2">
+                    <p>
+                        グリッド表示1-1。<br /><mark>div class="grid2"</mark
+                        >の中身はグリッド表示（最大二列）になります。
+                    </p>
+                    <p>
+                        グリッド表示1-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示1-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                </div>
+
+                <div class="grid3">
+                    <p>
+                        グリッド表示2-1。<br /><mark>div class="grid3"</mark
+                        >の中身はグリッド表示（最大三列）になります。
+                    </p>
+                    <p>
+                        グリッド表示2-2。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p>
+                        グリッド表示2-3。<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </p>
+
+                    <img class="trim" alt="画像の説明" src="img/thum_ob.jpg" />
+                    <img class="trim" alt="画像の説明" src="img/thum.jpg" />
+                    <img class="trim" alt="画像の説明" src="img/thum_ver.jpg" />
+                </div>
+
+                <div class="img-grid">
+                    <!--画像をぎっしり並べたい場合は、親要素にimg-gridクラスを指定してください（小さい画像向け）-->
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                    <img src="img/banner.jpg" />
+                </div>
+
+                <img class="" alt="画像の説明" src="img/thum_ob.jpg" />
+            </section>
+        </main>
+
+        <footer>
+            <ul>
+                <li>フッター</li>
+                <li>サイト情報など</li>
+            </ul>
+            <p id="footer-c">
+                <a href="https://um-umbrella.github.io/template/" target="_blank">template by 傘の下</a>
+            </p>
+        </footer>
+    </body>
+</html>
