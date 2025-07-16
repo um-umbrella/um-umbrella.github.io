@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <title>目次追加JS</title>
+    </head>
+
+    <body>
+        <main>
+            <section>
+                <h1>目次追加JS</h1>
+
+                <div id="contents-table">
+                    <p>↓追加した見出し↓</p>
+                </div>
+
+                <h2>概要</h2>
+                <p>
+                    ページ中の<mark>見出しタグ（h2～h4）から目次（ul）を生成する</mark>JavaScriptファイルです。小説作品などを公開する際に楽するために作りました。<br />手打ちで編集するHTML向けですが、PPPなど一部CMSでも動作確認済みです。
+                </p>
+                <p>
+                    ファイル読み込みとタグ追加のみで使えます。導入はJavascriptファイルだけなので、たいていの環境で動作します。<br />お好きなCSSテンプレートなどと一緒にご利用ください。
+                </p>
+
+                <h3>更新履歴</h3>
+                <ul id="update">
+                    <li><time>7/16</time>H4を追加するように<br />関連CSSを追加</li>
+                    <li><time>2025/1/31</time>軽量化、できていたらいいな～</li>
+                    <li><time>2025/1/16</time>修正と変更・ファイルの削除・CSS表示調整など</li>
+                    <li><time>10/20</time>動作の変更・ファイル追加</li>
+                    <li><time>2024/10/12</time>公開</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>内容物</h2>
+                <ul>
+                    <li>JSファイル（contents-table.js）</li>
+                    <li>HTMLファイル（このページ）</li>
+                </ul>
+
+                <h3>使い方</h3>
+                <ol>
+                    <li>
+                        JavaScriptファイルを任意のHTMLファイル内で読み込む
+                        <ul>
+                            <li>
+                                以下をbodyタグ内に挿入します。<br />
+                                <code><mark>&lt;script src="（.jsファイルのURL）"&gt&lt;/script&gt</mark></code
+                                ><br />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        目次を追加する箇所に<mark><code>id="contents-table"</code></mark
+                        >を設定する
+                        <ul>
+                            <li>
+                                divやnavなどのブロック要素に、<mark
+                                    ><code>&lt;div id="contents-table"&gt&lt;/div&gt</code></mark
+                                >というように記載します。<br />それ以外の位置は非推奨です（機能はしますが、表示が崩れるかも）。
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>仕様</h3>
+                <ul>
+                    <li>id="contents-table"内にulリストを生成します。</li>
+                    <li>
+                        目次化する対象はページ内のh2・h3・h4です。<br />目次には各見出しへのページ内リンクを追加します。その際、h2・h3・h4にidがある場合はそのidを使用し、idがない場合は「contents-table-連番」のidを追加します。
+                    </li>
+                    <li>
+                        目次にはそれぞれクラスを追加します（デザイン調整用）。<br />元がh2：contents-table-h2<br />元がh3：contents-table-h3<br />元がh4：contents-table-h4
+                    </li>
+                </ul>
+
+                <h3>デザイン調整</h3>
+
+                <h4>最低限のリスト構造</h4>
+                <p>見出しの強度に応じて字下げをするCSSです。<br />任意の装飾に差し替えてください。</p>
+                <div class="contents-table">
+                    <ul>
+                        <li class="contents-table-h2">見出し２</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h2">見出し２</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                    </ul>
+                </div>
+                <div class="grid2">
+                    <textarea onclick="this.select()"><div id="contents-table"></div></textarea>
+                    <textarea onclick="this.select()">
+/* 目次・最低限のリスト構造 */
+#contents-table ul {
+    list-style: none;
+}
+
+.contents-table-h3 {
+    padding-left: 1.5em;
+}
+
+.contents-table-h4 {
+    padding-left: 2em;
+}
+
+:where(.contents-table-h2, .contents-table-h3, .contents-table-h4)::before {
+    color: chocolate;
+    padding-right: 0.3em;
+}
+
+.contents-table-h2::before {
+    content: '◆';
+}
+
+.contents-table-h3::before {
+    content: '◇';
+}
+
+.contents-table-h4::before {
+    content: '・';
+}
+                    </textarea>
+                </div>
+
+                <h4>H4を削除</h4>
+                <p>
+                    不要な見出しを非表示にする場合、該当するクラス部分に<mark>display: none;</mark
+                    >を追加します。<br />以下はH4を非表示にする場合です。
+                </p>
+
+                <div class="grid2">
+                    <textarea onclick="this.select()"><div id="contents-table"></div></textarea>
+                    <textarea onclick="this.select()">
+.contents-table-h4{
+    display: none;
+}</textarea
+                    >
+                </div>
+
+                <h4>カウンター付き</h4>
+                <p>
+                    本ファイルはulを追加するものなので、olのような連番がありません。<br />CSS側でカウンターを付けると以下のようになります。
+                </p>
+                <div class="counter-list">
+                    <ul>
+                        <li class="contents-table-h2">見出し２</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h2">見出し２</li>
+                        <li class="contents-table-h3">見出し３</li>
+                        <li class="contents-table-h4">見出し４</li>
+                        <li class="contents-table-h4">見出し４</li>
+                    </ul>
+                </div>
+                <div class="grid2">
+                    <textarea onclick="this.select()"><div id="contents-table"></div></textarea>
+                    <textarea onclick="this.select()">
+/*カウンター付き*/
+#contents-table ul {
+    list-style: none;
+    counter-reset: level1;
+}
+
+li.contents-table-h2 {
+    margin-left: 0;
+    font-weight: bold;
+    counter-increment: level1;
+    counter-reset: level2;
+}
+
+li.contents-table-h3 {
+    margin-left: 1em;
+    counter-increment: level2;
+    counter-reset: level3;
+}
+
+li.contents-table-h4 {
+    padding-left: 2em;
+    counter-increment: level3;
+    counter-reset: level4;
+}
+
+:where(.contents-table-h2, .contents-table-h3, .contents-table-h4)::before {
+    color: chocolate;
+    margin-right: 0.5em;
+}
+
+li.contents-table-h2::before {
+    content: counter(level1);
+}
+
+li.contents-table-h3::before {
+    content: counter(level1) '-' counters(level2, '.');
+}
+
+li.contents-table-h4::before {
+    content: counter(level1) '-' counter(level2) '-' counter(level3);
+}
+                    </textarea>
+                </div>
+            </section>
+        </main>
+
+        <script src="contents-table.js"></script>
+    </body>
+
+    <style>
+        /* -------------------------------------------------------
+                * Template: 倉林
+                * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
+                *------------------------------------------------------ */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            --main-theme: #92513a;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #fff;
+            color: #1b1b1b;
+        }
+
+        main {
+            position: relative;
+        }
+
+        ::selection {
+            background-color: var(--main-theme);
+            color: #fff;
+        }
+
+        section {
+            margin: 64px 16px;
+            padding: 16px;
+            margin-inline: auto;
+
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        ul,
+        ol {
+            margin: 8px;
+        }
+
+        li {
+            margin: 8px 16px;
+            padding-left: 8px;
+            line-height: 1.6em;
+        }
+
+        li::marker {
+            color: var(--main-theme);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--main-theme);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1b1b1b;
+        }
+
+        p {
+            line-height: 1.8em;
+            margin: 16px 0;
+        }
+
+        mark {
+            color: inherit;
+            background-color: rgb(255, 255, 255, 0);
+            background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #eee 60%);
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 16px 0;
+        }
+
+        #update {
+            width: 100%;
+            height: 196px;
+            margin: 0 auto;
+            padding: 0 8px;
+
+            overflow-y: scroll;
+            list-style: none;
+
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #f7f7f7;
+
+            li {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                align-items: center;
+                margin: 0.5em;
+                padding: 0.5em;
+            }
+
+            time {
+                margin-right: 0.7em;
+                padding: 0.5em 1em;
+                background-color: #e5e5e5;
+            }
+        }
+
+        h2::before,
+        h3::before,
+        h4::before {
+            display: inline-block;
+            position: relative;
+            padding-right: 0.2em;
+            width: 1em;
+            height: 1em;
+            content: '';
+            background-repeat: no-repeat;
+        }
+
+        h2::before {
+            top: 4px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='lightgray'%3E%3Cpath d='M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        h3::before {
+            top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='lightgray'%3E%3Cpath d='M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        h4::before {
+            content: '・';
+        }
+
+        textarea {
+            margin: 1em;
+            padding: 0.5em;
+            width: 90%;
+            height: 80px;
+
+            text-wrap: wrap;
+            resize: none;
+
+            line-height: 1.4em;
+            color: #ccc;
+            background-color: #1b1b1b;
+        }
+
+        /*目次*/
+
+        #contents-table {
+            margin: 16px 0;
+            padding: 8px 16px;
+
+            border-radius: 8px;
+            background-color: #f7f7f7;
+        }
+
+        #contents-table ul {
+            list-style: none;
+        }
+
+        .contents-table-h2 {
+            padding-left: 0;
+        }
+
+        .contents-table-h3 {
+            padding-left: 1em;
+        }
+
+        .contents-table-h4 {
+            padding-left: 2em;
+        }
+
+        :where(.contents-table-h2, .contents-table-h3, .contents-table-h4)::before {
+            color: chocolate;
+            padding-right: 0.3em;
+        }
+
+        .contents-table-h2::before {
+            content: '◆';
+        }
+
+        .contents-table-h3::before {
+            content: '◇';
+        }
+
+        .contents-table-h4::before {
+            content: '・';
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contents-table {
+            /*一例目*/
+
+            margin: 16px 0;
+            padding: 8px 16px;
+
+            border-radius: 8px;
+            background-color: #f7f7f7;
+
+            ul {
+                list-style: none;
+            }
+
+            .contents-table-h3 {
+                padding-left: 1.5em;
+            }
+
+            .contents-table-h4 {
+                padding-left: 2em;
+            }
+
+            :where(.contents-table-h2, .contents-table-h3, .contents-table-h4)::before {
+                color: chocolate;
+                padding-right: 0.3em;
+            }
+
+            .contents-table-h2::before {
+                content: '◆';
+            }
+
+            .contents-table-h3::before {
+                content: '◇';
+            }
+
+            .contents-table-h4::before {
+                content: '・';
+            }
+        }
+
+        .counter-list {
+            margin: 16px 0;
+            padding: 8px 16px;
+
+            border-radius: 8px;
+            background-color: #f7f7f7;
+
+            /*カウンター付き*/
+
+            ul {
+                list-style: none;
+                counter-reset: level1;
+            }
+
+            li.contents-table-h2 {
+                margin-left: 0;
+                font-weight: bold;
+                counter-increment: level1;
+                counter-reset: level2;
+            }
+
+            li.contents-table-h3 {
+                margin-left: 1em;
+                counter-increment: level2;
+                counter-reset: level3;
+            }
+
+            li.contents-table-h4 {
+                padding-left: 2em;
+                counter-increment: level3;
+                counter-reset: level4;
+            }
+
+            :where(.contents-table-h2, .contents-table-h3, .contents-table-h4)::before {
+                color: chocolate;
+                margin-right: 0.5em;
+            }
+
+            li.contents-table-h2::before {
+                content: counter(level1);
+            }
+
+            li.contents-table-h3::before {
+                content: counter(level1) '-' counters(level2, '.');
+            }
+
+            li.contents-table-h4::before {
+                content: counter(level1) '-' counter(level2) '-' counter(level3);
+            }
+            /* カウンタ付きここまで */
+        }
+    </style>
+</html>
