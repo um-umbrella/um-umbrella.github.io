@@ -1,5 +1,6 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&family=Shippori+Mincho+B1:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Shippori+Mincho&display=swap');
+
 /* -------------------------------------------------------
 * Template: 倉林
 * ©2024 under my umbrella（https://um-umbrella.github.io/template/）
@@ -7,7 +8,7 @@
 
 :root {
     --main-theme: #a19b1d;
-    --sub-theme: #edede4;
+    --sub-theme: #ebece9;
     --body-bg: #ffffff;
     --text-dark-color: #1b1b1b;
     --text-light-color: #fff;
@@ -15,19 +16,139 @@
 
 /*------------------------------------------------------ */
 
-nav > ul {
-    display: flex;
-    justify-content: center;
+/* リセットCSS */
+
+html {
+    scroll-behavior: smooth;
 }
 
-nav a {
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.8em;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 300;
+    background-color: var(--body-bg);
     color: var(--text-dark-color);
 }
 
-nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0 8px;
+ol,
+ul {
+    margin: 1em;
+}
+
+li {
+    margin: 0.4em 1em;
+    line-height: 1.6em;
+}
+
+li::marker {
+    color: var(--main-theme);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-theme);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--text-dark-color);
+}
+
+p {
+    line-height: 1.8em;
+    margin: 0.5em 0;
+}
+
+mark {
+    color: inherit;
+    background-color: rgb(0 0 0 / 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, var(--sub-theme) 60%);
+}
+
+::selection {
+    background-color: var(--main-theme);
+    color: var(--body-bg);
+}
+
+hr {
+    margin: 128px;
+    margin-inline: auto;
+    width: 100%;
+    border: none;
+    border-top: 3px double rgb(0 0 0 /0.1);
+}
+
+button {
+    margin: 0 0.2em;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    background-color: var(--main-theme);
+    color: var(--text-light-color);
+    transition: background-color 0.3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 基本レイアウト -------------------------*/
+
+main {
+    container-type: inline-size;
+    container-name: main-container;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+
+    padding: 0 1em;
+    width: 60%;
+    min-width: 200px;
+    height: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+
+    text-align: center;
+    font-size: 0.9em;
+    background-color: var(--body-bg);
+    box-shadow: 0 0 4px var(--sub-theme), 0 0 4px var(--sub-theme);
+
+    ul {
+        display: block;
+        width: 100%;
+    }
+
+    li {
+        margin: 0;
+        padding: 1em 0;
+
+        list-style: none;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid rgb(0 0 0/0.1);
+    }
+
+    a {
+        color: var(--text-dark-color);
+    }
 }
 
 #check-input {
@@ -45,7 +166,6 @@ nav li {
     z-index: 5;
 
     text-align: right;
-    box-sizing: border-box;
 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' height='32' fill='currentColor'%3E%3Cpath d='M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -54,67 +174,51 @@ nav li {
     background-position-y: center;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: fixed;
-
-    padding: 0 10px;
-    width: 50%;
-    height: 0;
-    top: 0;
-    left: 50%;
-    z-index: 1;
-
-    opacity: 0;
-    transition: 0.5s;
-    visibility: hidden;
-    box-sizing: border-box;
-
-    text-align: center;
-    font-size: 0.9em;
-    background-color: var(--body-bg);
-}
-
-nav > * {
-    width: 100%;
-}
-
-nav ul {
-    display: block;
-    box-sizing: border-box;
-}
-
-nav li {
-    padding: 16px 0;
-}
-
-nav li:not(:last-child)::after {
-    display: block;
-    position: relative;
-    margin-inline: auto;
-    top: 1em;
-    width: 75%;
-    height: 1px;
-
-    content: '';
-    background-color: rgb(0 0 0/0.1);
-}
-
 #check-input[type='checkbox']:checked ~ nav {
     opacity: 1;
     visibility: visible;
     height: 100%;
 }
 
+footer {
+    font-size: smaller;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0.5em 0;
+        padding: 1em 0 0;
+
+        list-style: none;
+    }
+
+    li {
+        margin: 0 0.5em;
+    }
+
+    #footer-c {
+        display: block;
+        margin: 0 0 1em;
+        left: 0;
+        bottom: 0;
+
+        opacity: 0.5;
+        text-align: center;
+        font-size: x-small;
+        color: var(--text-dark-color);
+
+        a {
+            color: var(--text-dark-color);
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     body {
-        --nav-width: 200px;
-
         display: grid;
-        grid-template-columns: var(--nav-width) 1fr;
+        grid-template-columns: 1fr 3fr;
     }
 
     #check-button {
@@ -122,230 +226,30 @@ nav li:not(:last-child)::after {
     }
 
     nav {
-        align-items: stretch; /*縦中央揃えにするならここ*/
+        z-index: -1;
         position: fixed;
-        width: var(--nav-width);
+        align-items: stretch;
+        align-content: center;
+        width: calc(100vw / 4.042);
         height: 100%;
         top: 0;
         left: 0;
 
-        line-height: 1em;
-
         opacity: 1;
         visibility: visible;
         transition: none;
+        line-height: 1em;
         border: none;
-    }
 
-    nav > * {
-        position: relative;
-        top: 128px;
-    }
+        box-shadow: 0 0 1em var(--sub-theme);
 
-    nav li:not(:last-child)::after {
-        background-color: rgb(0 0 0/0);
-    }
+        li {
+            padding: 0.5em 0;
+        }
 
-    h1#title {
-        position: fixed;
-        z-index: 5;
-
-        top: 32px;
-        left: calc(var(--nav-width) / 8);
-        width: calc(var(--nav-width) - var(--nav-width) / 4);
-
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 1080px) {
-    body {
-        --nav-width: 300px;
-    }
-} /*@media*/
-
-/*------------------------------------------------------ */
-
-body {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-}
-
-section {
-    margin: 32px 16px;
-    padding: 16px;
-}
-
-section:first-of-type {
-    margin-top: 64px;
-}
-
-section:last-child {
-    margin-bottom: 64px;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.8em;
-}
-
-h4 {
-    font-size: 1.4em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin: 32px;
-    padding: 16px 0 8px;
-    font-weight: 300;
-    text-align: center;
-    font-family: 'Qwitcher Grypen', 'Shippori Mincho B1', 'Noto Sans JP', 'Helvetica Neue', Arial,
-        'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-}
-
-:where(h1, h2, h3, h4, h5, h6)::before {
-    display: block;
-    position: absolute;
-
-    bottom: -0.5em;
-    left: 0;
-    right: 0;
-
-    font-size: 0.8em;
-    white-space: nowrap;
-    content: attr(subtitle);
-    color: var(--main-theme);
-}
-
-:where(h2, h3)::before {
-    bottom: -0.1em;
-}
-
-#update {
-    background-color: rgb(0 0 0/0);
-    border: 1px solid var(--main-theme);
-}
-
-button {
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-button:hover {
-    background-color: var(--main-theme);
-    opacity: 1;
-}
-
-dl.dl-list {
-    display: block;
-    margin: 16px 0;
-}
-
-.dl-list dt {
-    display: inline-block;
-    position: relative;
-
-    margin-bottom: 4px;
-    padding: 0;
-    padding-left: 20px;
-
-    border-bottom: 1px solid var(--main-theme);
-}
-
-.dl-list dt::before {
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 4px;
-    left: 0px;
-
-    content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.dl-list dt.new::before {
-    top: 0;
-    left: -4px;
-
-    content: 'NEW';
-    font-size: 0.5em;
-    color: tomato;
-    background-image: none;
-}
-
-.dl-list dt.pict::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M19.5762 14.5759L15.7073 10.707C15.3168 10.3164 14.6836 10.3164 14.2931 10.707L6.86516 18.1349C5.11372 16.6674 4 14.4637 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 12.9012 19.851 13.7676 19.5762 14.5759ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM11 10C11 11.1046 10.1046 12 9 12C7.89543 12 7 11.1046 7 10C7 8.89543 7.89543 8 9 8C10.1046 8 11 8.89543 11 10Z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.dl-list dd {
-    margin: 0;
-    margin-bottom: 8px;
-    padding: 0;
-}
-
-/*注釈ブロック*/
-.notes {
-    display: block;
-    padding: 32px;
-    min-width: 300px;
-
-    border-radius: 4px;
-    background-color: var(--sub-theme);
-}
-
-/*右寄せ*/
-.right-text {
-    text-align: right;
-}
-
-/*------------------------------------------------------ */
-
-@media screen and (min-width: 768px) {
-    section {
-        padding: 16px 32px;
-    }
-
-    h1#title {
-        position: fixed;
-        margin: 0;
-        left: 0;
-        top: 32px;
-
-        text-align: center;
-        width: var(--nav-width);
-    }
-
-    nav {
-        background-color: rgb(0 0 0/0);
-    }
-
-    nav::after {
-        display: block;
-        position: absolute;
-        right: 0;
-        width: 1px;
-        height: 100%;
-        opacity: 0.3;
-
-        content: '';
-        background-color: var(--main-theme);
-    }
-
-    nav li {
-        padding: 0;
-        width: 100%;
-
-        text-align: center;
-        line-height: 2em;
-        font-size: medium;
+        li:not(:last-child) {
+            border: none;
+        }
     }
 
     footer {
@@ -353,10 +257,256 @@ dl.dl-list {
         z-index: 10;
         bottom: 0;
         left: 0;
-        width: var(--nav-width);
+        width: calc(100vw / 4.042);
 
         font-size: small;
     }
+}
+
+@media screen and (min-width: 768px) {
+    .grid2,
+    .grid3,
+    .grid12,
+    .grid21 {
+        display: grid;
+        gap: 1em;
+        margin: 1em 0;
+    }
+
+    .grid2,
+    .grid3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1080px) {
+        .grid3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid12 {
+            grid-template-columns: 1fr 2fr;
+        }
+        .grid21 {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+}
+
+/*------------------------------------------------------ */
+
+/* パーツデザイン ----------------------*/
+
+:where(h1:not(#title), h2)::after,
+:where(h3, h4, h5, h6)::before,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#update time {
+    font-family: 'Dancing Script', 'Shippori Mincho', serif;
+}
+
+h1:not(#title),
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 5em 0 2em;
+    margin-left: -0.5em;
+    padding: 0;
+}
+
+h1:not(#title),
+h2 {
+    margin: 3em 0;
+    margin-inline: auto;
+    width: fit-content;
+
+    text-align: center;
+    border-bottom: 3px double var(--main-theme);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h1#title {
+    line-height: 1em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5,
+h6 {
+    font-size: 1.1em;
+}
+
+:where(h1:not(#title), h2)::after {
+    display: block;
+    position: absolute;
+    bottom: -1em;
+    left: 0;
+    right: 0;
+
+    font-size: 0.7em;
+    font-weight: normal;
+    content: attr(subtitle);
+    color: var(--main-theme);
+}
+
+:is(h3, h4, h5, h6) {
+    padding-left: 2em;
+}
+
+:where(h3, h4, h5, h6)::before {
+    display: block;
+    position: absolute;
+    top: -0.2em;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    line-height: 0.8em;
+    font-size: 2.5em;
+    font-weight: normal;
+    content: attr(subtitle);
+    color: var(--sub-theme);
+}
+
+@media screen and (min-width: 768px) {
+    h1#title {
+        position: fixed;
+        z-index: 5;
+
+        top: 3em;
+        left: 0;
+        width: calc(100vw / 4.042);
+
+        text-align: center;
+    }
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 2em 0;
+
+    dt {
+        padding: 0.2em 1em;
+        width: fit-content;
+
+        font-size: 0.9em;
+        border-top: 1px solid var(--main-theme);
+        border-bottom: 1px solid var(--main-theme);
+    }
+
+    dd {
+        margin-bottom: 1em;
+        margin-left: 1em;
+        padding: 0.5em;
+        padding-top: 0;
+
+        font-size: 0.8em;
+    }
+}
+
+button:hover {
+    background-color: #a19a1dae;
+    transition: 0.3s;
+}
+
+button a,
+a button {
+    color: var(--text-light-color);
+}
+
+button a:hover {
+    color: var(--text-light-color);
+}
+
+img.trim {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+section {
+    margin: 0 2em;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* 追加のデザイン -------------------*/
+
+.clause {
+    display: inline-block;
+}
+
+.bg-cover {
+    padding: 1em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#update {
+    margin: 1em auto;
+    padding: 0 0.5em;
+    width: 100%;
+    height: 216px;
+
+    overflow-y: scroll;
+    list-style: none;
+
+    line-height: 1em;
+    color: var(--text-dark-color);
+    border-top: 3px double var(--main-theme);
+    border-bottom: 3px double var(--main-theme);
+
+    li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+
+        margin: 0.5em 0;
+        padding: 1em 0;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 2px dotted var(--sub-theme);
+    }
+
+    time {
+        margin: 0 1em;
+        padding: 0;
+        height: fit-content;
+
+        font-size: 1em;
+        color: var(--main-theme);
+    }
+}
+
+#update::-webkit-scrollbar {
+    display: none;
+}
+
+/*------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
 } /*@media*/
 
 /*------------------------------------------------------ */
@@ -364,6 +514,10 @@ dl.dl-list {
 @media screen and (min-width: 1080px) {
     main {
         width: 100%;
-        max-width: 1000px;
+        max-width: 800px;
+    }
+
+    section {
+        margin-left: 3em;
     }
 } /*@media*/
