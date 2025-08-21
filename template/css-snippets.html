@@ -24,6 +24,7 @@
                 <p>部分的なCSSの配布ページです。自分が普段使っているやつを整形して公開しています。</p>
 
                 <ul id="update">
+                    <li><time>8/18</time>スポイラー、画像ぼかしを追加</li>
                     <li><time>7/14</time>改行をほどよくするやつを追加</li>
                     <li><time>5/19</time>公開し忘れてた。公開した</li>
                     <li>
@@ -39,16 +40,17 @@
                 <p>各ボックスからコピーしてご利用ください。</p>
 
                 <h3>リストを横並びに</h3>
-                <ul class="flex-list">
-                    <li>リスト１</li>
-                    <li>リスト２</li>
-                    <li>リスト３</li>
-                    <li>リスト４</li>
-                    <li>リスト５</li>
-                </ul>
-                <p>リストを横並びにし、区切りをつけます。<br />改行は項目単位です。</p>
-                <div class="grid2">
-                    <textarea onclick="this.select()">
+                <div class="item">
+                    <ul class="flex-list">
+                        <li>リスト１</li>
+                        <li>リスト２</li>
+                        <li>リスト３</li>
+                        <li>リスト４</li>
+                        <li>リスト５</li>
+                    </ul>
+                    <p>リストを横並びにし、区切りをつけます。<br />改行は項目単位です。</p>
+                    <div class="grid2">
+                        <textarea onclick="this.select()">
 <!-- リストを横並びにするタグ -->
 <ul class="flex-list">
     <li>リスト１</li>
@@ -56,8 +58,8 @@
     <li>リスト３</li>
 </ul>
                 </textarea
-                    >
-                    <textarea onclick="this.select()">
+                        >
+                        <textarea onclick="this.select()">
 /* リストを横並びにするCSS */
 ul.flex-list {
     display: flex;
@@ -74,21 +76,24 @@ ul.flex-list {
     }
 }
                 </textarea
-                    >
+                        >
+                    </div>
                 </div>
 
                 <h3>リンクをカードっぽくする</h3>
-                <a href="リンク先のURL" class="link-card">リンク先ページのタイトルを表示</a>
-                <p>リンクをカードっぽくします。あくまでもそれっぽく。</p>
-                <p>
-                    長すぎるリンク名は省略されます。<br />青い部分にはお好みの色やアイコンフォントなどでカスタムしてください。
-                </p>
-                <div class="grid2">
-                    <textarea onclick="this.select()">
+                <div class="item">
+                    <a href="リンク先のURL" class="link-card">リンク先ページのタイトルを表示</a>
+                    <p>リンクをカードっぽくします。あくまでもそれっぽく。</p>
+                    <p>
+                        長すぎるリンク名は省略されます。<br />青い部分にはお好みの色やアイコンフォントなどでカスタムしてください。
+                    </p>
+                    <div class="grid2">
+                        <textarea onclick="this.select()">
 <!-- リンクをカードっぽくするタグ -->
 <a href="リンク先のURL" class="link-card">リンク先ページのタイトル</a>
-                    </textarea>
-                    <textarea onclick="this.select()">
+                    </textarea
+                        >
+                        <textarea onclick="this.select()">
 /*リンクをカードっぽくする*/
 .link-card {
     display: block;
@@ -136,43 +141,108 @@ ul.flex-list {
     color: #000;
     opacity: 0.3;
 }
-                    </textarea>
+                    </textarea
+                        >
+                    </div>
                 </div>
 
                 <!-- １コンテンツ始まり -->
                 <h3>改行をほどよく</h3>
-                <p>装飾的なタイトルなど、改行をある程度管理したいときに自分がよくやるやつです。</p>
-                <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
-                    長いタイトルやサイト名が途中で改行されて微妙になる
-                </div>
-                <p>ようなとき、<mark>display: inline-block;</mark>のクラスで文節ごとに囲むと、</p>
-                <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
-                    <span class="clause">長いタイトルや</span><span class="clause">サイト名が</span
-                    ><span class="clause">途中で</span><span class="clause">改行されて</span
-                    ><span class="clause">微妙になる</span>
-                </div>
-                <p>
-                    となります。言葉の一塊を指定する感じです。<br />あまり細かくしようとすると大変ですが、タイトルなど短い文章ならいい感じにしやすいと思います。レスポンシブ対応の一環にも。
-                </p>
-                <div class="grid2">
-                    <textarea onclick="this.select()">
+                <div class="item">
+                    <p>装飾的なタイトルなど、改行をある程度管理したいときに自分がよくやるやつです。</p>
+                    <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
+                        長いタイトルやサイト名が途中で改行されて微妙になる
+                    </div>
+                    <p>ようなとき、<mark>display: inline-block;</mark>のクラスで文節ごとに囲むと、</p>
+                    <div style="width: 100%; max-width: 180px; padding: 0.5em 1em; border: 1px solid #f6d0d0">
+                        <span class="clause">長いタイトルや</span><span class="clause">サイト名が</span
+                        ><span class="clause">途中で</span><span class="clause">改行されて</span
+                        ><span class="clause">微妙になる</span>
+                    </div>
+                    <p>
+                        となります。言葉の一塊を指定する感じです。<br />あまり細かくしようとすると大変ですが、タイトルなど短い文章ならいい感じにしやすいと思います。レスポンシブ対応の一環にも。
+                    </p>
+                    <div class="grid2">
+                        <textarea onclick="this.select()">
 <p>
 <span class="clause">長いタイトルや</span>
 <span class="clause">サイト名が</span>
 <span class="clause">途中で</span>
 ……
 </p>
-                    </textarea>
-                    <textarea onclick="this.select()">
+                    </textarea
+                        >
+                        <textarea onclick="this.select()">
 /*改行を整える*/
 .clause {
     display: inline-block;
 }</textarea
-                    >
+                        >
+                    </div>
                 </div>
                 <!-- １コンテンツ終わり -->
 
-                <!-- １コンテンツ始まり 
+                <!-- １コンテンツ始まり -->
+                <h3>スポイラー</h3>
+                <div class="item">
+                    <div>ネタバレをしたくない文章に対して<span class="spoiler">黒塗りで隠す</span>CSSです。</div>
+                    <p>
+                        カーソルを合わせる（スマホなどではタップする）と中身を表示します。<br />
+                        万全な非表示ではないことをご留意ください。
+                    </p>
+                    <div class="grid2">
+                        <textarea onclick="this.select()">
+<span class="spoiler">スポイラー</span>
+                    </textarea
+                        >
+                        <textarea onclick="this.select()">
+/*スポイラー*/
+.spoiler {
+    margin: 0 0.2em;
+    padding: 0.2em 1em;
+    transition: 0.3s;
+    color: rgb(0 0 0 / 0);
+    background-color: #000;
+}
+
+.spoiler:hover {
+    color: #000;
+    background-color: rgb(0 0 0 / 0.1);
+}
+                    </textarea
+                        >
+                    </div>
+                </div>
+                <!-- １コンテンツ終わり -->
+
+                <!-- １コンテンツ始まり -->
+                <h3>画像ぼかし</h3>
+                <div class="item">
+                    <img class="img-spoiler" src="img/thum_ob.jpg" />
+                    <p>画像版のスポイラーです。カーソルを合わせる（スマホなどではタップする）と中身を表示します。</p>
+                    <div class="grid2">
+                        <textarea onclick="this.select()">
+<img class="img-spoiler" src="～.png" />
+                    </textarea
+                        >
+                        <textarea onclick="this.select()">
+/*画像ぼかし*/
+.img-spoiler {
+    filter: blur(20px);
+    transition: 0.3s;
+}
+
+.img-spoiler:hover {
+    filter: none;
+}
+                    </textarea
+                        >
+                    </div>
+                </div>
+
+                <!-- １コンテンツ終わり -->
+
+                <!-- １コンテンツ始まり --><!--
                 <h3>タイトル</h3>
                 <div>実例</div>
                 <p>解説</p>
@@ -235,34 +305,24 @@ ul.flex-list {
         h4,
         h5,
         h6 {
-            margin: 3em 0 1em;
+            margin: 4em 0 1em;
+        }
+
+        h2 {
+            padding: 0;
+            padding-left: 0.5em;
+
+            border-left: 5px solid var(--main-theme);
         }
 
         h3 {
-            margin-top: 4em;
-        }
+            padding: 0.5em 2em;
+            width: fit-content;
 
-        h2,
-        h3 {
-            position: relative;
-            padding-left: 1em;
-        }
-
-        h2::before,
-        h3::before {
-            display: block;
-            position: absolute;
-            padding-right: 0.2em;
-
-            top: 0;
-            left: 0;
-
-            content: '■';
-            color: #000;
-        }
-
-        h3::before {
-            content: '□';
+            color: #fff;
+            font-size: 0.9em;
+            font-weight: normal;
+            background-color: var(--main-theme);
         }
 
         li {
@@ -296,8 +356,13 @@ ul.flex-list {
             background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, #eee 60%);
         }
 
+        img {
+            max-width: 100%;
+            max-height: 200px;
+        }
+
         textarea {
-            margin: 1em;
+            margin: 1em 0;
             padding: 0.5em;
             width: 100%;
             height: 80px;
@@ -325,9 +390,10 @@ ul.flex-list {
             li {
                 display: grid;
                 grid-template-columns: auto 1fr;
+                align-items: center;
 
                 margin: 0;
-                padding: 1em 0;
+                padding: 0.5em 0;
             }
 
             li:not(:last-child) {
@@ -335,7 +401,10 @@ ul.flex-list {
             }
 
             time {
+                margin-right: 1em;
+                padding: 0.5em 1em;
                 padding-right: 1em;
+                background-color: #eee;
             }
         }
 
@@ -374,6 +443,12 @@ ul.flex-list {
         .contents-table-h3::before {
             content: '□';
             left: 1em;
+        }
+
+        .item {
+            margin-top: -1em;
+            padding: 1em;
+            border: 1px solid var(--main-theme);
         }
 
         @media screen and (min-width: 480px) {
@@ -453,6 +528,30 @@ ul.flex-list {
         /*改行*/
         .clause {
             display: inline-block;
+        }
+
+        /*スポイラー*/
+        .spoiler {
+            margin: 0 0.2em;
+            padding: 0.2em 1em;
+            transition: 0.3s;
+            color: rgb(0 0 0 / 0);
+            background-color: #000;
+        }
+
+        .spoiler:hover {
+            color: #000;
+            background-color: rgb(0 0 0 / 0.1);
+        }
+
+        /*画像ぼかし*/
+        .img-spoiler {
+            filter: blur(20px);
+            transition: 0.3s;
+        }
+
+        .img-spoiler:hover {
+            filter: none;
         }
     </style>
 </html>
