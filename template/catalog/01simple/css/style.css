@@ -224,7 +224,9 @@ footer {
     }
 
     nav {
+        /*
         z-index: -1;
+        */
         position: fixed;
         align-items: stretch;
         align-content: center;
