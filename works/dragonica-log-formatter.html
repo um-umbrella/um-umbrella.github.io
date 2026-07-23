@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ドラゴニカログ整形</title>
+        <style>
+            textarea {
+                margin: 1em 0;
+                width: 100%;
+                max-width: 600px;
+                height: 200px;
+                font-family:
+                    monospace, 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic',
+                    Meiryo, sans-serif;
+            }
+
+            ul {
+                padding-left: 2em;
+
+                ul {
+                    padding-left: 0.5em;
+                }
+            }
+
+            li {
+                font-size: small;
+            }
+        </style>
+    </head>
+
+    <body>
+        <textarea id="inputText" placeholder="ドラゴニカ・ログを入力"></textarea>
+        <div>
+            <button onclick="replaceText()">整形</button>
+            <label> <input type="checkbox" />返信行を消去する </label>
+        </div>
+        <textarea id="outputText" placeholder="整形後のログを表示"></textarea>
+        <ul>
+            <li>
+                ドラゴニカのテキストログを成形するよ　ルームの発言をまるまるコピペしてきてね
+                <ul>
+                    <li>ログの新旧を逆にする</li>
+                    <li>発言ごとに行頭に■を追加（目印）</li>
+                    <li>二行以上の空白行は一行に省略</li>
+                    <li>編集、削除、返信などのテキストを消去</li>
+                    <br />
+                    <li>カットインの跡地を消すの忘れた</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            const checkbox = document.querySelector('input[type="checkbox"]');
+
+            function replaceText() {
+                let input = document.getElementById('inputText').value;
+
+                //ラスト発言のみ改行が足りないので、力業で付けとく
+                input += '\n';
+
+                // 基本形の整形 /////////////////////////////////////////////////////////
+
+                // 日付の行（2026-～）の行頭に■を追加
+                input = input.replace(/^.*2026-\d{2}-\d{2}.*$/gm, '■ $&');
+
+                if (checkbox.checked) {
+                    // 返信行（>>～）を消す
+                    input = input.replace(/^(>>.*への返信)$/gm, '');
+                }
+
+                // メタな行を削除
+                input = input.replace(/^(編集|削除|返信する|icon)$/gm, '');
+
+                // ログ順整形 //////////////////////////////////////////////////////////////
+
+                //新旧を逆にする
+                const parts = input.split(/(?=^■)/m);
+                const head = parts[0].startsWith('■') ? '' : parts.shift();
+                input = head + parts.reverse().join('');
+
+                // 改行ととのえ ///////////////////////////////////////////////////
+
+                // 返信がない場合、日付の後に改行
+                input = input.replace(/^■.*\n(?!>>)/gm, '$&\n');
+
+                // 三行以上の改行を二行に縮める
+                input = input.replace(/(\n\s*){3,}/g, '\n\n');
+
+                // 結果を表示 ////////////////////////////////////////////////////
+                document.getElementById('outputText').value = input;
+            }
+        </script>
+    </body>
+</html>
