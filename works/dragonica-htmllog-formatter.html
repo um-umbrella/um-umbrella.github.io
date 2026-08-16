@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ドラゴニカHTMLログ整形</title>
+        <style>
+            textarea {
+                margin: 1em 0;
+                width: 100%;
+                max-width: 600px;
+                height: 200px;
+                font-family:
+                    monospace, 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic',
+                    Meiryo, sans-serif;
+            }
+
+            ul {
+                padding-left: 2em;
+
+                ul {
+                    padding-left: 0.5em;
+                }
+            }
+
+            li {
+                font-size: small;
+            }
+        </style>
+    </head>
+
+    <body>
+        <textarea id="inputText" placeholder="ドラゴニカ・ログを入力"></textarea>
+        <div>
+            <button onclick="replaceText()">整形</button>
+            <label> <input type="checkbox" />リプライのアンカーを消去 </label>
+        </div>
+        <textarea id="outputText" placeholder="整形後のログを表示"></textarea>
+        <ul>
+            <li>
+                ドラゴニカのHTMLログを成形するよ
+                <ul>
+                    <li>リプ時の引用の消去（サシログをちょっとさっぱりする用）</li>
+                    <li>リプ時のアンカーの消去（オプション）</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            const checkbox = document.querySelector('input[type="checkbox"]');
+
+            function replaceText() {
+                let input = document.getElementById('inputText').value;
+
+                //リプライ行を削除/////////////////////////////////////////////////////////
+
+                if (checkbox.checked) {
+                    //リプライ宛先を消す　<p class="reply-to">～</p>
+                    input = input.replace(/<p class="reply-to">.*<\/p>/gm, '');
+                }
+
+                //引用タグ内を消す　<div class="saboten-reply-quote">～</div></div></div>
+                input = input.replace(/<div class="saboten-reply-quote">(?:[\s\S]*?<\/div>){3}/gm, '');
+
+                // 結果を表示 ////////////////////////////////////////////////////
+                document.getElementById('outputText').value = input;
+            }
+        </script>
+    </body>
+</html>
